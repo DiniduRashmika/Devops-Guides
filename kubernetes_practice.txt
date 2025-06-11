@@ -1,0 +1,67 @@
+rashmika@adsl-dynamic-ipv6:~$ sudo su
+[sudo] password for rashmika: 
+root@adsl-dynamic-ipv6:/home/rashmika# kubectl version --client
+Client Version: v1.30.13
+Kustomize Version: v5.0.4-0.20230601165947-6ce0bf390ce3
+root@adsl-dynamic-ipv6:/home/rashmika# kubectl cluster-info
+E0611 16:38:23.265047   49776 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+E0611 16:38:23.268494   49776 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+E0611 16:38:23.273465   49776 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+E0611 16:38:23.285008   49776 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+E0611 16:38:23.285976   49776 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+root@adsl-dynamic-ipv6:/home/rashmika# minikube start
+bash: minikube: command not found...
+root@adsl-dynamic-ipv6:/home/rashmika# curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  126M  100  126M    0     0   563k      0  0:03:49  0:03:49 --:--:--  576k
+root@adsl-dynamic-ipv6:/home/rashmika# kubectl config get-context
+error: unknown command "get-context"
+See 'kubectl config -h' for help and examples
+root@adsl-dynamic-ipv6:/home/rashmika# kubectl config get-contexts
+CURRENT   NAME   CLUSTER   AUTHINFO   NAMESPACE
+root@adsl-dynamic-ipv6:/home/rashmika# sudo install minikube-linux-amd64 /usr/local/bin/minikube
+root@adsl-dynamic-ipv6:/home/rashmika# minikube version
+minikube version: v1.36.0
+commit: f8f52f5de11fc6ad8244afac475e1d0f96841df1-dirty
+root@adsl-dynamic-ipv6:/home/rashmika# kubectl config get-contexts
+CURRENT   NAME   CLUSTER   AUTHINFO   NAMESPACE
+root@adsl-dynamic-ipv6:/home/rashmika# kubectl config current-context
+error: current-context is not set
+root@adsl-dynamic-ipv6:/home/rashmika# kubectl cluster-info
+E0611 16:50:12.153988   50327 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+E0611 16:50:12.158170   50327 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+E0611 16:50:12.164951   50327 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+E0611 16:50:12.169912   50327 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+E0611 16:50:12.175579   50327 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+root@adsl-dynamic-ipv6:/home/rashmika# minikube start
+😄  minikube v1.36.0 on Fedora 42 (vbox/amd64)
+✨  Automatically selected the docker driver. Other choices: podman, qemu2, none, ssh
+
+⛔  Exiting due to RSRC_INSUFFICIENT_CORES:  has less than 2 CPUs available, but Kubernetes requires at least 2 to be available
+
+root@adsl-dynamic-ipv6:/home/rashmika# kubectl cluster-info
+E0611 16:51:12.085773   50484 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+E0611 16:51:12.087568   50484 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+E0611 16:51:12.088296   50484 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+E0611 16:51:12.090057   50484 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+E0611 16:51:12.090828   50484 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+root@adsl-dynamic-ipv6:/home/rashmika# kubectl get nodes
+E0611 16:51:54.140374   50514 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+E0611 16:51:54.141569   50514 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+E0611 16:51:54.142508   50514 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+E0611 16:51:54.144383   50514 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+E0611 16:51:54.146163   50514 memcache.go:265] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+root@adsl-dynamic-ipv6:/home/rashmika# nproc
+1
+root@adsl-dynamic-ipv6:/home/rashmika# 
