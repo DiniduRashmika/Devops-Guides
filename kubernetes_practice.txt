@@ -65,3 +65,656 @@ The connection to the server localhost:8080 was refused - did you specify the ri
 root@adsl-dynamic-ipv6:/home/rashmika# nproc
 1
 root@adsl-dynamic-ipv6:/home/rashmika# 
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+rashmika@adsl-dynamic-ipv6:~$ minikube start --driver=none
+😄  minikube v1.36.0 on Fedora 42 (vbox/amd64)
+
+💢  Exiting due to GUEST_DRIVER_MISMATCH: The existing "minikube" cluster was created using the "qemu2" driver, which is incompatible with requested "none" driver.
+💡  Suggestion: Delete the existing 'minikube' cluster using: 'minikube delete', or start the existing 'minikube' cluster using: 'minikube start --driver=qemu2'
+
+rashmika@adsl-dynamic-ipv6:~$ minidube delete --driver=quem2
+bash: minidube: command not found...
+rashmika@adsl-dynamic-ipv6:~$ minikube delete
+🔥  Deleting "minikube" in qemu2 ...
+💀  Removed all traces of the "minikube" cluster.
+rashmika@adsl-dynamic-ipv6:~$ dnf list installed | grep qemu
+Updating and loading repositories:
+ Kubernetes                             100% |   1.9 KiB/s |   2.4 KiB |  00m01s
+>>> Librepo error: repomd.xml GPG signature verification error: Signing key not 
+ https://pkgs.k8s.io/core:/stable:/v1.3 100% |   2.8 KiB/s |   1.7 KiB |  00m01s
+Importing OpenPGP key 0x9A296436:
+ UserID     : "isv:kubernetes OBS Project <isv:kubernetes@build.opensuse.org>"
+ Fingerprint: DE15B14486CD377B9E876E1A234654DA9A296436
+ From       : https://pkgs.k8s.io/core:/stable:/v1.30/rpm/repodata/repomd.xml.key
+Is this ok [y/N]: y
+The key was successfully imported.
+Repositories loaded.
+No matching packages to list
+rashmika@adsl-dynamic-ipv6:~$ minikube start --driver=none
+😄  minikube v1.36.0 on Fedora 42 (vbox/amd64)
+✨  Using the none driver based on user configuration
+
+🤷  Exiting due to PROVIDER_NONE_NOT_FOUND: The 'none' provider was not found: running the 'none' driver as a regular user requires sudo permissions
+
+rashmika@adsl-dynamic-ipv6:~$ sudo minikube start --driver=none
+[sudo] password for rashmika: 
+😄  minikube v1.36.0 on Fedora 42 (vbox/amd64)
+✨  Using the none driver based on user configuration
+
+🧯  The requested memory allocation of 2200MiB does not leave room for system overhead (total system memory: 2310MiB). You may face stability issues.
+💡  Suggestion: Start minikube with less memory allocated: 'minikube start --memory=2200mb'
+
+👍  Starting "minikube" primary control-plane node in "minikube" cluster
+🤹  Running on localhost (CPUs=2, Memory=2310MB, Disk=39933MB) ...
+
+🐳  Exiting due to NOT_FOUND_CRI_DOCKERD: 
+
+💡  Suggestion: 
+
+    The none driver with Kubernetes v1.24+ and the docker container-runtime requires cri-dockerd.
+    
+    Please install cri-dockerd using these instructions:
+    
+    https://github.com/Mirantis/cri-dockerd
+
+rashmika@adsl-dynamic-ipv6:~$ minikube start --driver=docker
+😄  minikube v1.36.0 on Fedora 42 (vbox/amd64)
+✨  Using the docker driver based on user configuration
+
+🧯  The requested memory allocation of 2200MiB does not leave room for system overhead (total system memory: 2310MiB). You may face stability issues.
+💡  Suggestion: Start minikube with less memory allocated: 'minikube start --memory=2200mb'
+
+📌  Using Docker driver with root privileges
+👍  Starting "minikube" primary control-plane node in "minikube" cluster
+🚜  Pulling base image v0.0.47 ...
+    > gcr.io/k8s-minikube/kicbase...:  502.26 MiB / 502.26 MiB  100.00% 416.24 
+🔥  Creating docker container (CPUs=2, Memory=2200MB) ...
+🐳  Preparing Kubernetes v1.33.1 on Docker 28.1.1 ...
+    ▪ Generating certificates and keys ...
+    ▪ Booting up control plane ...
+    ▪ Configuring RBAC rules ...
+🔗  Configuring bridge CNI (Container Networking Interface) ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+E0612 11:24:31.729045    3313 start.go:160] Unable to scale down deployment "coredns" in namespace "kube-system" to 1 replica: non-retryable failure while rescaling coredns deployment: Operation cannot be fulfilled on deployments.apps "coredns": the object has been modified; please apply your changes to the latest version and try again
+🌟  Enabled addons: storage-provisioner, default-storageclass
+
+❗  /usr/bin/kubectl is version 1.30.13, which may have incompatibilities with Kubernetes 1.33.1.
+    ▪ Want kubectl v1.33.1? Try 'minikube kubectl -- get pods -A'
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+rashmika@adsl-dynamic-ipv6:~$ minikube start --driver=docker --memory=1500mb
+😄  minikube v1.36.0 on Fedora 42 (vbox/amd64)
+✨  Using the docker driver based on existing profile
+
+⛔  Exiting due to RSRC_INSUFFICIENT_REQ_MEMORY: Requested memory allocation 1500MiB is less than the usable minimum of 1800MB
+
+rashmika@adsl-dynamic-ipv6:~$ minikube start --driver=docker --memory=1800mb
+😄  minikube v1.36.0 on Fedora 42 (vbox/amd64)
+✨  Using the docker driver based on existing profile
+
+⛔  Requested memory allocation (1800MB) is less than the recommended minimum 1900MB. Deployments may fail.
+
+
+🧯  The requested memory allocation of 1800MiB does not leave room for system overhead (total system memory: 2310MiB). You may face stability issues.
+💡  Suggestion: Start minikube with less memory allocated: 'minikube start --memory=2200mb'
+
+
+⛔  Requested memory allocation (1800MB) is less than the recommended minimum 1900MB. Deployments may fail.
+
+
+🧯  The requested memory allocation of 1800MiB does not leave room for system overhead (total system memory: 2310MiB). You may face stability issues.
+💡  Suggestion: Start minikube with less memory allocated: 'minikube start --memory=2200mb'
+
+❗  You cannot change the memory size for an existing minikube cluster. Please first delete the cluster.
+
+🧯  The requested memory allocation of 2200MiB does not leave room for system overhead (total system memory: 2310MiB). You may face stability issues.
+💡  Suggestion: Start minikube with less memory allocated: 'minikube start --memory=2200mb'
+
+👍  Starting "minikube" primary control-plane node in "minikube" cluster
+🚜  Pulling base image v0.0.47 ...
+🏃  Updating the running docker "minikube" container ...
+❗  Failing to connect to https://registry.k8s.io/ from inside the minikube container
+💡  To pull new external images, you may need to configure a proxy: https://minikube.sigs.k8s.io/docs/reference/networking/proxy/
+🐳  Preparing Kubernetes v1.33.1 on Docker 28.1.1 ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+^C
+rashmika@adsl-dynamic-ipv6:~$ minikube delete
+🔥  Deleting "minikube" in docker ...
+🔥  Deleting container "minikube" ...
+🔥  Removing /home/rashmika/.minikube/machines/minikube ...
+💀  Removed all traces of the "minikube" cluster.
+rashmika@adsl-dynamic-ipv6:~$ minikube start --driver=docker --memory=1900mb
+😄  minikube v1.36.0 on Fedora 42 (vbox/amd64)
+✨  Using the docker driver based on user configuration
+
+🧯  The requested memory allocation of 1900MiB does not leave room for system overhead (total system memory: 2310MiB). You may face stability issues.
+💡  Suggestion: Start minikube with less memory allocated: 'minikube start --memory=2200mb'
+
+📌  Using Docker driver with root privileges
+👍  Starting "minikube" primary control-plane node in "minikube" cluster
+🚜  Pulling base image v0.0.47 ...
+🔥  Creating docker container (CPUs=2, Memory=1900MB) ...
+🐳  Preparing Kubernetes v1.33.1 on Docker 28.1.1 ...
+    ▪ Generating certificates and keys ...
+    ▪ Booting up control plane ...
+    ▪ Configuring RBAC rules ...
+🔗  Configuring bridge CNI (Container Networking Interface) ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: default-storageclass, storage-provisioner
+
+❗  /usr/bin/kubectl is version 1.30.13, which may have incompatibilities with Kubernetes 1.33.1.
+    ▪ Want kubectl v1.33.1? Try 'minikube kubectl -- get pods -A'
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+rashmika@adsl-dynamic-ipv6:~$ sudo curl -LO "https://dl.k8s.io/release/$(curl -Ls https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+[sudo] password for rashmika: 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   138  100   138    0     0    301      0 --:--:-- --:--:-- --:--:--   302
+100 57.3M  100 57.3M    0     0   286k      0  0:03:24  0:03:24 --:--:--  597k
+rashmika@adsl-dynamic-ipv6:~$ kubectl version
+Client Version: v1.33.1
+Kustomize Version: v5.6.0
+Server Version: v1.33.1
+rashmika@adsl-dynamic-ipv6:~$ kubectl cluster-info
+Kubernetes control plane is running at https://192.168.49.2:8443
+CoreDNS is running at https://192.168.49.2:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+rashmika@adsl-dynamic-ipv6:~$ kubectl get nodes
+NAME       STATUS   ROLES           AGE   VERSION
+minikube   Ready    control-plane   10m   v1.33.1
+rashmika@adsl-dynamic-ipv6:~$ kubectl get pod -A
+
+NAMESPACE     NAME                               READY   STATUS    RESTARTS   AGE
+kube-system   coredns-674b8bbfcf-2f2jq           1/1     Running   0          11m
+kube-system   etcd-minikube                      1/1     Running   0          12m
+kube-system   kube-apiserver-minikube            1/1     Running   0          11m
+kube-system   kube-controller-manager-minikube   1/1     Running   0          11m
+kube-system   kube-proxy-fc9hz                   1/1     Running   0          11m
+kube-system   kube-scheduler-minikube            1/1     Running   0          11m
+kube-system   storage-provisioner                1/1     Running   0          11m
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+rashmika@adsl-dynamic-ipv6:~$ kubectl current-context
+error: unknown command "current-context" for "kubectl"
+rashmika@adsl-dynamic-ipv6:~$ kubectl config current-context
+minikube
+rashmika@adsl-dynamic-ipv6:~$ kubectl config get-contexts
+CURRENT   NAME       CLUSTER    AUTHINFO   NAMESPACE
+*         minikube   minikube   minikube   default
+rashmika@adsl-dynamic-ipv6:~$ 
+
+rashmika@adsl-dynamic-ipv6:~$ kubectx ps
+bash: kubectx: command not found...
+rashmika@adsl-dynamic-ipv6:~$ sudo dnf install kubectx
+[sudo] password for rashmika: 
+Updating and loading repositories:
+ Fedora 42 openh264 (From Cisco) - x86_64                                                                     100% |   1.4 KiB/s | 989.0   B |  00m01s
+Repositories loaded.
+Failed to resolve the transaction:
+No match for argument: kubectx
+You can try to add to command line:
+  --skip-unavailable to skip unavailable packages
+rashmika@adsl-dynamic-ipv6:~$ sudo apt install kubectx
+sudo: apt: command not found
+rashmika@adsl-dynamic-ipv6:~$ kubectx
+bash: kubectx: command not found...
+rashmika@adsl-dynamic-ipv6:~$ sudo dnf install kubectx
+[sudo] password for rashmika: 
+Updating and loading repositories:
+Repositories loaded.
+Failed to resolve the transaction:
+No match for argument: kubectx
+You can try to add to command line:
+  --skip-unavailable to skip unavailable packages
+rashmika@adsl-dynamic-ipv6:~$ git clone https://github.com/ahmetb/kubectx.git ~/.kubectx
+Cloning into '/home/rashmika/.kubectx'...
+remote: Enumerating objects: 1540, done.
+remote: Counting objects: 100% (469/469), done.
+remote: Compressing objects: 100% (110/110), done.
+remote: Total 1540 (delta 407), reused 360 (delta 359), pack-reused 1071 (from 2)
+Receiving objects: 100% (1540/1540), 931.35 KiB | 1.33 MiB/s, done.
+Resolving deltas: 100% (896/896), done.
+rashmika@adsl-dynamic-ipv6:~$ echo 'export PATH=$PATH:$HOME/.kubectx' >> ~/.bashrc
+source ~/.bashrc
+rashmika@adsl-dynamic-ipv6:~$ kubectx 
+minikube
+rashmika@adsl-dynamic-ipv6:~$ kubectl create -f main.yaml
+error: the path "main.yaml" does not exist
+rashmika@adsl-dynamic-ipv6:~$ kubectl create -f /home/rashmika/Documents/test data
+error: Unexpected args: [data]
+See 'kubectl create -h' for help and examples
+rashmika@adsl-dynamic-ipv6:~$ kubectl create -f /home/rashmika/Documents/testdata
+error: error validating "/home/rashmika/Documents/testdata/docker-compose.yaml": error validating data: [apiVersion not set, kind not set]; if you choose to ignore these errors, turn validation off with --validate=false
+rashmika@adsl-dynamic-ipv6:~$ kubectl create -f /home/rashmika/Documents/testdata/new.yaml
+error: the path "/home/rashmika/Documents/testdata/new.yaml" does not exist
+rashmika@adsl-dynamic-ipv6:~$ kubectl create deeploy mynginx --image=nginx --port=80 --replicas=3 --dry-run= client -o yaml > /home/rashmika/Documents/testdata/new.yaml
+bash: /home/rashmika/Documents/testdata/new.yaml: Permission denied
+rashmika@adsl-dynamic-ipv6:~$ kubectl create deeploy mynginx --image=nginx --port=80 --replicas=3 --dry-run= client -o yaml > /home/rashmika/Documents/testdata/
+bash: /home/rashmika/Documents/testdata/: Is a directory
+rashmika@adsl-dynamic-ipv6:~$ kubectl create deeploy mynginx --image=nginx --port=80 --replicas=3 --dry-run= client -o yaml > /home/rashmika/Documents/testdata/hello.txt
+bash: /home/rashmika/Documents/testdata/hello.txt: Permission denied
+rashmika@adsl-dynamic-ipv6:~$ sudo chown -R rashmika:rashmika /home/rashmika/Documents/testdata/new.yaml
+
+[sudo] password for rashmika: 
+Sorry, try again.
+[sudo] password for rashmika: 
+Sorry, try again.
+[sudo] password for rashmika: 
+chown: cannot access '/home/rashmika/Documents/testdata/new.yaml': No such file or directory
+rashmika@adsl-dynamic-ipv6:~$ sudo chown -R rashmika:rashmika /home/rashmika/Documents/testdata/hello.txt
+rashmika@adsl-dynamic-ipv6:~$ kubectl create deeploy mynginx --image=nginx --port=80 --replicas=3 --dry-run= client -o yaml > /home/rashmika/Documents/testdata/hello.txt
+error: unknown flag: --image
+See 'kubectl create --help' for usage.
+rashmika@adsl-dynamic-ipv6:~$ kubectl create deployment mynginx --image=nginx --port=80 --replicas=3 --dry-run=client -o yaml > /home/rashmika/Documents/testdata/hello.txt
+rashmika@adsl-dynamic-ipv6:~$ kubectl apply -f /home/rashmika/Documents/testdata/hello.txt
+deployment.apps/mynginx created
+rashmika@adsl-dynamic-ipv6:~$ kubectl get deployment
+NAME      READY   UP-TO-DATE   AVAILABLE   AGE
+mynginx   0/3     3            0           38s
+rashmika@adsl-dynamic-ipv6:~$ kubectl get pods
+NAME                     READY   STATUS              RESTARTS   AGE
+mynginx-fb7f4c54-4r2r6   0/1     ContainerCreating   0          64s
+mynginx-fb7f4c54-mvvz4   0/1     ContainerCreating   0          64s
+mynginx-fb7f4c54-skqpr   0/1     ContainerCreating   0          64s
+rashmika@adsl-dynamic-ipv6:~$ kubectl get svc
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   4h19m
+.
+.
+.
+..
+.
+.
+.
+.
+.
+.
+.
+.
+rashmika@adsl-dynamic-ipv6:~$ cd /home/rashmika/Documents
+rashmika@adsl-dynamic-ipv6:~/Documents$ ll
+total 0
+drwxr-xr-x. 1 rashmika rashmika 130 Jun  3 16:46 PFX_Certificate
+drwxr-xr-x. 1 root     root      82 Jun 11 10:09 testdata
+rashmika@adsl-dynamic-ipv6:~/Documents$ cd testdata
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ nano docker-compose.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ nano new.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ nano new.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ echo new1.txt
+new1.txt
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ ll
+total 12
+drwxr-xr-x. 1 root root  20 Jun 11 10:08 app
+-rw-r--r--. 1 root root 157 Jun 11 10:12 docker-compose.yaml
+-rw-r--r--. 1 root root  64 Jun 11 10:11 Dockerfile
+-rw-r--r--. 1 root root  13 Jun  9 12:33 hello.txt
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ ll -a
+total 12
+drwxr-xr-x. 1 root     root      82 Jun 11 10:09 .
+drwxr-xr-x. 1 rashmika rashmika  46 Jun  9 12:31 ..
+drwxr-xr-x. 1 root     root      20 Jun 11 10:08 app
+-rw-r--r--. 1 root     root     157 Jun 11 10:12 docker-compose.yaml
+-rw-r--r--. 1 root     root      64 Jun 11 10:11 Dockerfile
+-rw-r--r--. 1 root     root      13 Jun  9 12:33 hello.txt
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ ehco new1.txt
+bash: ehco: command not found...
+Similar command is: 'echo'
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ echo new1.txt
+new1.txt
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ ll
+total 12
+drwxr-xr-x. 1 root root  20 Jun 11 10:08 app
+-rw-r--r--. 1 root root 157 Jun 11 10:12 docker-compose.yaml
+-rw-r--r--. 1 root root  64 Jun 11 10:11 Dockerfile
+-rw-r--r--. 1 root root  13 Jun  9 12:33 hello.txt
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ nano hello.txt
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ 
+
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get ns
+NAME              STATUS   AGE
+default           Active   22h
+kube-node-lease   Active   22h
+kube-public       Active   22h
+kube-system       Active   22h
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get pods --all-namespaces
+NAMESPACE     NAME                               READY   STATUS    RESTARTS   AGE
+default       mynginx-fb7f4c54-4r2r6             1/1     Running   0          18h
+default       mynginx-fb7f4c54-mvvz4             1/1     Running   0          18h
+default       mynginx-fb7f4c54-skqpr             1/1     Running   0          18h
+kube-system   coredns-674b8bbfcf-2f2jq           1/1     Running   0          22h
+kube-system   etcd-minikube                      1/1     Running   0          22h
+kube-system   kube-apiserver-minikube            1/1     Running   0          22h
+kube-system   kube-controller-manager-minikube   1/1     Running   0          22h
+kube-system   kube-proxy-fc9hz                   1/1     Running   0          22h
+kube-system   kube-scheduler-minikube            1/1     Running   0          22h
+kube-system   storage-provisioner                1/1     Running   0          22h
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get pods --kube-public 
+error: unknown flag: --kube-public
+See 'kubectl get --help' for usage.
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get pods
+NAME                     READY   STATUS    RESTARTS   AGE
+mynginx-fb7f4c54-4r2r6   1/1     Running   0          18h
+mynginx-fb7f4c54-mvvz4   1/1     Running   0          18h
+mynginx-fb7f4c54-skqpr   1/1     Running   0          18h
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get context
+error: the server doesn't have a resource type "context"
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl current-context
+error: unknown command "current-context" for "kubectl"
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl config current-context
+minikube
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get pods namespace=kube-public
+Error from server (NotFound): pods "namespace=kube-public" not found
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get pods --namespace=kube-public
+No resources found in kube-public namespace.
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get pods -n kube-system
+NAME                               READY   STATUS    RESTARTS   AGE
+coredns-674b8bbfcf-2f2jq           1/1     Running   0          22h
+etcd-minikube                      1/1     Running   0          22h
+kube-apiserver-minikube            1/1     Running   0          22h
+kube-controller-manager-minikube   1/1     Running   0          22h
+kube-proxy-fc9hz                   1/1     Running   0          22h
+kube-scheduler-minikube            1/1     Running   0          22h
+storage-provisioner                1/1     Running   0          22h
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl create hello
+error: Unexpected args: [hello]
+See 'kubectl create -h' for help and examples
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl create ns hello
+namespace/hello created
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get pods
+NAME                     READY   STATUS    RESTARTS   AGE
+mynginx-fb7f4c54-4r2r6   1/1     Running   0          18h
+mynginx-fb7f4c54-mvvz4   1/1     Running   0          18h
+mynginx-fb7f4c54-skqpr   1/1     Running   0          18h
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get ns
+NAME              STATUS   AGE
+default           Active   22h
+hello             Active   78s
+kube-node-lease   Active   22h
+kube-public       Active   22h
+kube-system       Active   22h
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl delete hello
+error: the server doesn't have a resource type "hello"
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl delete ns hello
+namespace "hello" deleted
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get ns
+NAME              STATUS   AGE
+default           Active   22h
+kube-node-lease   Active   22h
+kube-public       Active   22h
+kube-system       Active   22h
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl nodes
+error: unknown command "nodes" for "kubectl"
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl node
+error: unknown command "node" for "kubectl"
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get nodes
+NAME       STATUS   ROLES           AGE   VERSION
+minikube   Ready    control-plane   24h   v1.33.1
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl describe node
+Name:               minikube
+Roles:              control-plane
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=minikube
+                    kubernetes.io/os=linux
+                    minikube.k8s.io/commit=f8f52f5de11fc6ad8244afac475e1d0f96841df1-dirty
+                    minikube.k8s.io/name=minikube
+                    minikube.k8s.io/primary=true
+                    minikube.k8s.io/updated_at=2025_06_12T11_37_36_0700
+                    minikube.k8s.io/version=v1.36.0
+                    node-role.kubernetes.io/control-plane=
+                    node.kubernetes.io/exclude-from-external-load-balancers=
+Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: unix:///var/run/cri-dockerd.sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Thu, 12 Jun 2025 11:37:21 +0530
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  minikube
+  AcquireTime:     <unset>
+  RenewTime:       Fri, 13 Jun 2025 12:26:20 +0530
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Fri, 13 Jun 2025 12:23:33 +0530   Thu, 12 Jun 2025 11:37:14 +0530   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Fri, 13 Jun 2025 12:23:33 +0530   Thu, 12 Jun 2025 11:37:14 +0530   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Fri, 13 Jun 2025 12:23:33 +0530   Thu, 12 Jun 2025 11:37:14 +0530   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Fri, 13 Jun 2025 12:23:33 +0530   Thu, 12 Jun 2025 11:37:22 +0530   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  192.168.49.2
+  Hostname:    minikube
+Capacity:
+  cpu:                2
+  ephemeral-storage:  39933Mi
+  hugepages-2Mi:      0
+  memory:             2366020Ki
+  pods:               110
+Allocatable:
+  cpu:                2
+  ephemeral-storage:  39933Mi
+  hugepages-2Mi:      0
+  memory:             2366020Ki
+  pods:               110
+System Info:
+  Machine ID:                 7d19967724644cf1987cdcf5dc138c71
+  System UUID:                6c7d33d6-e2c7-4ece-bbd5-66c7d96e6e4c
+  Boot ID:                    832713fb-ba1a-4939-b0ca-d93d05c31079
+  Kernel Version:             6.14.9-300.fc42.x86_64
+  OS Image:                   Ubuntu 22.04.5 LTS
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  docker://28.1.1
+  Kubelet Version:            v1.33.1
+  Kube-Proxy Version:         
+PodCIDR:                      10.244.0.0/24
+PodCIDRs:                     10.244.0.0/24
+Non-terminated Pods:          (10 in total)
+  Namespace                   Name                                CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                   ----                                ------------  ----------  ---------------  -------------  ---
+  default                     mynginx-fb7f4c54-4r2r6              0 (0%)        0 (0%)      0 (0%)           0 (0%)         20h
+  default                     mynginx-fb7f4c54-mvvz4              0 (0%)        0 (0%)      0 (0%)           0 (0%)         20h
+  default                     mynginx-fb7f4c54-skqpr              0 (0%)        0 (0%)      0 (0%)           0 (0%)         20h
+  kube-system                 coredns-674b8bbfcf-2f2jq            100m (5%)     0 (0%)      70Mi (3%)        170Mi (7%)     24h
+  kube-system                 etcd-minikube                       100m (5%)     0 (0%)      100Mi (4%)       0 (0%)         24h
+  kube-system                 kube-apiserver-minikube             250m (12%)    0 (0%)      0 (0%)           0 (0%)         24h
+  kube-system                 kube-controller-manager-minikube    200m (10%)    0 (0%)      0 (0%)           0 (0%)         24h
+  kube-system                 kube-proxy-fc9hz                    0 (0%)        0 (0%)      0 (0%)           0 (0%)         24h
+  kube-system                 kube-scheduler-minikube             100m (5%)     0 (0%)      0 (0%)           0 (0%)         24h
+  kube-system                 storage-provisioner                 0 (0%)        0 (0%)      0 (0%)           0 (0%)         24h
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests    Limits
+  --------           --------    ------
+  cpu                750m (37%)  0 (0%)
+  memory             170Mi (7%)  170Mi (7%)
+  ephemeral-storage  0 (0%)      0 (0%)
+  hugepages-2Mi      0 (0%)      0 (0%)
+Events:              <none>
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ create pod
+bash: create: command not found...
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl run mynginx --image=nginx
+pod/mynginx created
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get pods
+NAME                     READY   STATUS    RESTARTS   AGE
+mynginx                  1/1     Running   0          38s
+mynginx-fb7f4c54-4r2r6   1/1     Running   0          22h
+mynginx-fb7f4c54-mvvz4   1/1     Running   0          22h
+mynginx-fb7f4c54-skqpr   1/1     Running   0          22h
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get pods --all-namespaces
+NAMESPACE     NAME                               READY   STATUS    RESTARTS   AGE
+default       mynginx                            1/1     Running   0          114s
+default       mynginx-fb7f4c54-4r2r6             1/1     Running   0          22h
+default       mynginx-fb7f4c54-mvvz4             1/1     Running   0          22h
+default       mynginx-fb7f4c54-skqpr             1/1     Running   0          22h
+kube-system   coredns-674b8bbfcf-2f2jq           1/1     Running   0          27h
+kube-system   etcd-minikube                      1/1     Running   0          27h
+kube-system   kube-apiserver-minikube            1/1     Running   0          27h
+kube-system   kube-controller-manager-minikube   1/1     Running   0          27h
+kube-system   kube-proxy-fc9hz                   1/1     Running   0          27h
+kube-system   kube-scheduler-minikube            1/1     Running   0          27h
+kube-system   storage-provisioner                1/1     Running   0          27h
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get pods --namespace=default
+NAME                     READY   STATUS    RESTARTS   AGE
+mynginx                  1/1     Running   0          3m13s
+mynginx-fb7f4c54-4r2r6   1/1     Running   0          22h
+mynginx-fb7f4c54-mvvz4   1/1     Running   0          22h
+mynginx-fb7f4c54-skqpr   1/1     Running   0          22h
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get ns
+NAME              STATUS   AGE
+default           Active   27h
+kube-node-lease   Active   27h
+kube-public       Active   27h
+kube-system       Active   27h
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get pod -o wide
+NAME                     READY   STATUS    RESTARTS   AGE     IP           NODE       NOMINATED NODE   READINESS GATES
+mynginx                  1/1     Running   0          4m53s   10.244.0.7   minikube   <none>           <none>
+mynginx-fb7f4c54-4r2r6   1/1     Running   0          22h     10.244.0.6   minikube   <none>           <none>
+mynginx-fb7f4c54-mvvz4   1/1     Running   0          22h     10.244.0.5   minikube   <none>           <none>
+mynginx-fb7f4c54-skqpr   1/1     Running   0          22h     10.244.0.4   minikube   <none>           <none>
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl delete pod mynginx
+pod "mynginx" deleted
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kube get pods
+bash: kube: command not found...
+^[[Arashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kube get pods^C
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl getpods
+error: unknown command "getpods" for "kubectl"
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get pods
+NAME                     READY   STATUS    RESTARTS   AGE
+mynginx-fb7f4c54-4r2r6   1/1     Running   0          22h
+mynginx-fb7f4c54-mvvz4   1/1     Running   0          22h
+mynginx-fb7f4c54-skqpr   1/1     Running   0          22h
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl decribe get pods
+error: unknown command "decribe" for "kubectl"
+
+Did you mean this?
+	describe
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl decribe pod mynginx
+error: unknown command "decribe" for "kubectl"
+
+Did you mean this?
+	describe
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl run mynginx --image=nginx
+pod/mynginx created
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl describe pod mynginx
+Name:             mynginx
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Fri, 13 Jun 2025 14:57:42 +0530
+Labels:           run=mynginx
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.8
+IPs:
+  IP:  10.244.0.8
+Containers:
+  mynginx:
+    Container ID:   docker://8ca55ebc491ecf70d38ea18b02e35b52ac9206fec35123bf6e344350605b66e7
+    Image:          nginx
+    Image ID:       docker-pullable://nginx@sha256:6784fb0834aa7dbbe12e3d7471e69c290df3e6ba810dc38b34ae33d3c1c05f7d
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Fri, 13 Jun 2025 14:57:47 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-qszz9 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-qszz9:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  25s   default-scheduler  Successfully assigned default/mynginx to minikube
+  Normal  Pulling    23s   kubelet            Pulling image "nginx"
+  Normal  Pulled     20s   kubelet            Successfully pulled image "nginx" in 2.77s (2.77s including waiting). Image size: 192461947 bytes.
+  Normal  Created    20s   kubelet            Created container: mynginx
+  Normal  Started    20s   kubelet            Started container mynginx
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl delete pod mynginx
+pod "mynginx" deleted
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ ^C
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl run mybox --image=busybox --it -- /bin/sh
+error: unknown flag: --it
+See 'kubectl run --help' for usage.
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl run mybox --image=busybox -it -- /bin/sh
+ll
+If you don't see a command prompt, try pressing enter.
+/ # ll
+/bin/sh: ll: not found
+/ # ll
+/bin/sh: ll: not found
+/ # ls
+bin    dev    etc    home   lib    lib64  proc   root   sys    tmp    usr    var
+/ # cd var
+/var # ls
+run    spool  www
+/var # cd www
+/var/www # ls
+/var/www # ehco index.html
+/bin/sh: ehco: not found
+/var/www # touch index.html
+/var/www # ls
+index.html
+/var/www # nano index.html
+/bin/sh: nano: not found
+/var/www # dnf install nano
+/bin/sh: dnf: not found
+/var/www # apt install nano
+/bin/sh: apt: not found
+/var/www # install nano
+BusyBox v1.37.0 (2024-09-26 21:31:42 UTC) multi-call binary.
