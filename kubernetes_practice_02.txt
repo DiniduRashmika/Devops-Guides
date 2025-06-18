@@ -1,0 +1,1018 @@
+rashmika@adsl-dynamic-ipv6:~$ kubectl cluster-info
+E0618 08:46:16.257437    3970 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://192.168.49.2:8443/api?timeout=32s\": dial tcp 192.168.49.2:8443: connect: no route to host"
+E0618 08:46:19.326272    3970 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://192.168.49.2:8443/api?timeout=32s\": dial tcp 192.168.49.2:8443: connect: no route to host"
+E0618 08:46:22.398198    3970 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://192.168.49.2:8443/api?timeout=32s\": dial tcp 192.168.49.2:8443: connect: no route to host"
+E0618 08:46:25.469411    3970 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://192.168.49.2:8443/api?timeout=32s\": dial tcp 192.168.49.2:8443: connect: no route to host"
+E0618 08:46:28.542651    3970 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://192.168.49.2:8443/api?timeout=32s\": dial tcp 192.168.49.2:8443: connect: no route to host"
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+Unable to connect to the server: dial tcp 192.168.49.2:8443: connect: no route to host
+rashmika@adsl-dynamic-ipv6:~$ minikube status
+minikube
+type: Control Plane
+host: Stopped
+kubelet: Stopped
+apiserver: Stopped
+kubeconfig: Stopped
+
+rashmika@adsl-dynamic-ipv6:~$ minikube start
+😄  minikube v1.36.0 on Fedora 42 (vbox/amd64)
+✨  Using the docker driver based on existing profile
+
+🧯  The requested memory allocation of 1900MiB does not leave room for system overhead (total system memory: 2310MiB). You may face stability issues.
+💡  Suggestion: Start minikube with less memory allocated: 'minikube start --memory=2200mb'
+
+👍  Starting "minikube" primary control-plane node in "minikube" cluster
+🚜  Pulling base image v0.0.47 ...
+🔄  Restarting existing docker container for "minikube" ...
+🐳  Preparing Kubernetes v1.33.1 on Docker 28.1.1 ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: storage-provisioner, default-storageclass
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+rashmika@adsl-dynamic-ipv6:~$ minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+rashmika@adsl-dynamic-ipv6:~$ minikube ip
+192.168.49.2
+rashmika@adsl-dynamic-ipv6:~$ ping 192.168.49.2
+PING 192.168.49.2 (192.168.49.2) 56(84) bytes of data.
+64 bytes from 192.168.49.2: icmp_seq=1 ttl=64 time=0.182 ms
+64 bytes from 192.168.49.2: icmp_seq=2 ttl=64 time=0.052 ms
+64 bytes from 192.168.49.2: icmp_seq=3 ttl=64 time=0.106 ms
+64 bytes from 192.168.49.2: icmp_seq=4 ttl=64 time=0.108 ms
+64 bytes from 192.168.49.2: icmp_seq=5 ttl=64 time=0.080 ms
+64 bytes from 192.168.49.2: icmp_seq=6 ttl=64 time=0.079 ms
+64 bytes from 192.168.49.2: icmp_seq=7 ttl=64 time=0.118 ms
+64 bytes from 192.168.49.2: icmp_seq=8 ttl=64 time=0.100 ms
+64 bytes from 192.168.49.2: icmp_seq=9 ttl=64 time=0.081 ms
+64 bytes from 192.168.49.2: icmp_seq=10 ttl=64 time=0.073 ms
+64 bytes from 192.168.49.2: icmp_seq=11 ttl=64 time=0.075 ms
+64 bytes from 192.168.49.2: icmp_seq=12 ttl=64 time=0.076 ms
+64 bytes from 192.168.49.2: icmp_seq=13 ttl=64 time=0.075 ms
+64 bytes from 192.168.49.2: icmp_seq=14 ttl=64 time=0.076 ms
+64 bytes from 192.168.49.2: icmp_seq=15 ttl=64 time=0.102 ms
+64 bytes from 192.168.49.2: icmp_seq=16 ttl=64 time=0.134 ms
+64 bytes from 192.168.49.2: icmp_seq=17 ttl=64 time=0.164 ms
+^C
+--- 192.168.49.2 ping statistics ---
+17 packets transmitted, 17 received, 0% packet loss, time 16391ms
+rtt min/avg/max/mdev = 0.052/0.098/0.182/0.033 ms
+rashmika@adsl-dynamic-ipv6:~$ minikube profile list
+|----------|-----------|---------|--------------|------|---------|--------|-------|----------------|--------------------|
+| Profile  | VM Driver | Runtime |      IP      | Port | Version | Status | Nodes | Active Profile | Active Kubecontext |
+|----------|-----------|---------|--------------|------|---------|--------|-------|----------------|--------------------|
+| minikube | docker    | docker  | 192.168.49.2 | 8443 | v1.33.1 | OK     |     1 | *              | *                  |
+|----------|-----------|---------|--------------|------|---------|--------|-------|----------------|--------------------|
+rashmika@adsl-dynamic-ipv6:~$ kubectl cluster info
+error: unknown command "cluster" for "kubectl"
+
+Did you mean this?
+	cluster-info
+rashmika@adsl-dynamic-ipv6:~$ kubectl cluster-info
+Kubernetes control plane is running at https://192.168.49.2:8443
+CoreDNS is running at https://192.168.49.2:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+rashmika@adsl-dynamic-ipv6:~$ kubectl get nodes
+NAME       STATUS   ROLES           AGE     VERSION
+minikube   Ready    control-plane   5d21h   v1.33.1
+rashmika@adsl-dynamic-ipv6:~$ kubectl config get-contexts
+CURRENT   NAME       CLUSTER    AUTHINFO   NAMESPACE
+*         minikube   minikube   minikube   default
+rashmika@adsl-dynamic-ipv6:~$ kubectl config current-context
+minikube
+rashmika@adsl-dynamic-ipv6:~$ kubectl get pods -A
+NAMESPACE     NAME                               READY   STATUS    RESTARTS       AGE
+default       mybox                              1/1     Running   2 (24m ago)    4d17h
+default       mynginx-fb7f4c54-4r2r6             1/1     Running   1 (24m ago)    5d17h
+default       mynginx-fb7f4c54-mvvz4             1/1     Running   1 (24m ago)    5d17h
+default       mynginx-fb7f4c54-skqpr             1/1     Running   1 (24m ago)    5d17h
+kube-system   coredns-674b8bbfcf-2f2jq           1/1     Running   1 (24m ago)    5d21h
+kube-system   etcd-minikube                      1/1     Running   1 (24m ago)    5d21h
+kube-system   kube-apiserver-minikube            1/1     Running   9 (24m ago)    5d21h
+kube-system   kube-controller-manager-minikube   1/1     Running   8 (24m ago)    5d21h
+kube-system   kube-proxy-fc9hz                   1/1     Running   1 (24m ago)    5d21h
+kube-system   kube-scheduler-minikube            1/1     Running   2 (24m ago)    5d21h
+kube-system   storage-provisioner                1/1     Running   30 (22m ago)   5d21h
+rashmika@adsl-dynamic-ipv6:~$ kubectx
+minikube
+rashmika@adsl-dynamic-ipv6:~$ kubectl cluster-info --context kind-kind
+error: context "kind-kind" does not exist
+rashmika@adsl-dynamic-ipv6:~$ kind version
+bash: kind: command not found...
+rashmika@adsl-dynamic-ipv6:~$ curl -Lo ./kind https://kind.sigs.k8s.io/dl/latest/kind-linux-amd64
+chmod +x ./kind
+sudo mv ./kind /usr/local/bin/kind
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    86  100    86    0     0    178      0 --:--:-- --:--:-- --:--:--   178
+100 10.5M  100 10.5M    0     0   605k      0  0:00:17  0:00:17 --:--:--  584k
+[sudo] password for rashmika: 
+rashmika@adsl-dynamic-ipv6:~$ chmod +x ./kind
+chmod: cannot access './kind': No such file or directory
+rashmika@adsl-dynamic-ipv6:~$ curl -Lo ./kind https://kind.sigs.k8s.io/dl/latest/kind-linux-amd64
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    86  100    86    0     0    177      0 --:--:-- --:--:-- --:--:--   178
+100 10.5M  100 10.5M    0     0   600k      0  0:00:17  0:00:17 --:--:--  569k
+rashmika@adsl-dynamic-ipv6:~$ chmod +x ./kind
+rashmika@adsl-dynamic-ipv6:~$ sudo mv ./kind /usr/local/bin/kind
+rashmika@adsl-dynamic-ipv6:~$ kind version
+kind v0.30.0-alpha+3df64e784cc0ea go1.24.4 linux/amd64
+rashmika@adsl-dynamic-ipv6:~$ kind create cluster
+Creating cluster "kind" ...
+ ✓ Ensuring node image (kindest/node:v1.33.1) 🖼 
+ ✓ Preparing nodes 📦  
+ ✓ Writing configuration 📜 
+ ✗ Starting control-plane 🕹️ 
+Deleted nodes: ["kind-control-plane"]
+ERROR: failed to create cluster: failed to init node with kubeadm: command "docker exec --privileged kind-control-plane kubeadm init --config=/kind/kubeadm.conf --skip-token-print --v=6" failed with error: exit status 1
+Command Output: I0618 06:03:26.978707     173 initconfiguration.go:261] loading configuration from "/kind/kubeadm.conf"
+W0618 06:03:26.997395     173 common.go:101] your configuration file uses a deprecated API spec: "kubeadm.k8s.io/v1beta3" (kind: "ClusterConfiguration"). Please use 'kubeadm config migrate --old-config old-config-file --new-config new-config-file', which will write the new, similar spec using a newer API version.
+W0618 06:03:27.011685     173 common.go:101] your configuration file uses a deprecated API spec: "kubeadm.k8s.io/v1beta3" (kind: "InitConfiguration"). Please use 'kubeadm config migrate --old-config old-config-file --new-config new-config-file', which will write the new, similar spec using a newer API version.
+W0618 06:03:27.015484     173 common.go:101] your configuration file uses a deprecated API spec: "kubeadm.k8s.io/v1beta3" (kind: "JoinConfiguration"). Please use 'kubeadm config migrate --old-config old-config-file --new-config new-config-file', which will write the new, similar spec using a newer API version.
+W0618 06:03:27.016776     173 initconfiguration.go:362] [config] WARNING: Ignored configuration document with GroupVersionKind kubeadm.k8s.io/v1beta3, Kind=JoinConfiguration
+[init] Using Kubernetes version: v1.33.1
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+I0618 06:03:27.035521     173 certs.go:112] creating a new certificate authority for ca
+[certs] Generating "ca" certificate and key
+I0618 06:03:32.566804     173 certs.go:473] validating certificate period for ca certificate
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [kind-control-plane kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local localhost] and IPs [10.96.0.1 172.18.0.2 127.0.0.1]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+I0618 06:03:56.902631     173 certs.go:112] creating a new certificate authority for front-proxy-ca
+[certs] Generating "front-proxy-ca" certificate and key
+I0618 06:03:59.351898     173 certs.go:473] validating certificate period for front-proxy-ca certificate
+[certs] Generating "front-proxy-client" certificate and key
+I0618 06:04:01.542686     173 certs.go:112] creating a new certificate authority for etcd-ca
+[certs] Generating "etcd/ca" certificate and key
+I0618 06:04:05.372973     173 certs.go:473] validating certificate period for etcd/ca certificate
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [kind-control-plane localhost] and IPs [172.18.0.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [kind-control-plane localhost] and IPs [172.18.0.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+I0618 06:04:13.465430     173 certs.go:78] creating new public/private key files for signing service account users
+[certs] Generating "sa" key and public key
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+I0618 06:04:19.099064     173 kubeconfig.go:111] creating kubeconfig file for admin.conf
+[kubeconfig] Writing "admin.conf" kubeconfig file
+I0618 06:04:28.445771     173 kubeconfig.go:111] creating kubeconfig file for super-admin.conf
+[kubeconfig] Writing "super-admin.conf" kubeconfig file
+I0618 06:04:29.219300     173 kubeconfig.go:111] creating kubeconfig file for kubelet.conf
+[kubeconfig] Writing "kubelet.conf" kubeconfig file
+I0618 06:04:32.593249     173 kubeconfig.go:111] creating kubeconfig file for controller-manager.conf
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+I0618 06:04:53.250123     173 kubeconfig.go:111] creating kubeconfig file for scheduler.conf
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[etcd] Creating static Pod manifest for local etcd in "/etc/kubernetes/manifests"
+I0618 06:05:00.026621     173 local.go:66] [etcd] wrote Static Pod manifest for a local etcd member to "/etc/kubernetes/manifests/etcd.yaml"
+I0618 06:05:00.028997     173 manifests.go:104] [control-plane] getting StaticPodSpecs
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+I0618 06:05:00.098407     173 certs.go:473] validating certificate period for CA certificate
+I0618 06:05:00.107115     173 manifests.go:130] [control-plane] adding volume "ca-certs" for component "kube-apiserver"
+I0618 06:05:00.107190     173 manifests.go:130] [control-plane] adding volume "etc-ca-certificates" for component "kube-apiserver"
+I0618 06:05:00.107240     173 manifests.go:130] [control-plane] adding volume "k8s-certs" for component "kube-apiserver"
+I0618 06:05:00.107321     173 manifests.go:130] [control-plane] adding volume "usr-local-share-ca-certificates" for component "kube-apiserver"
+I0618 06:05:00.107392     173 manifests.go:130] [control-plane] adding volume "usr-share-ca-certificates" for component "kube-apiserver"
+I0618 06:05:00.172662     173 manifests.go:159] [control-plane] wrote static Pod manifest for component "kube-apiserver" to "/etc/kubernetes/manifests/kube-apiserver.yaml"
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+I0618 06:05:00.177483     173 manifests.go:104] [control-plane] getting StaticPodSpecs
+I0618 06:05:00.178129     173 manifests.go:130] [control-plane] adding volume "ca-certs" for component "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+I0618 06:05:00.185577     173 manifests.go:130] [control-plane] adding volume "etc-ca-certificates" for component "kube-controller-manager"
+I0618 06:05:00.185785     173 manifests.go:130] [control-plane] adding volume "flexvolume-dir" for component "kube-controller-manager"
+I0618 06:05:00.185856     173 manifests.go:130] [control-plane] adding volume "k8s-certs" for component "kube-controller-manager"
+I0618 06:05:00.185874     173 manifests.go:130] [control-plane] adding volume "kubeconfig" for component "kube-controller-manager"
+I0618 06:05:00.185961     173 manifests.go:130] [control-plane] adding volume "usr-local-share-ca-certificates" for component "kube-controller-manager"
+I0618 06:05:00.185979     173 manifests.go:130] [control-plane] adding volume "usr-share-ca-certificates" for component "kube-controller-manager"
+I0618 06:05:00.190536     173 manifests.go:159] [control-plane] wrote static Pod manifest for component "kube-controller-manager" to "/etc/kubernetes/manifests/kube-controller-manager.yaml"
+I0618 06:05:00.190620     173 manifests.go:104] [control-plane] getting StaticPodSpecs
+I0618 06:05:00.192135     173 manifests.go:130] [control-plane] adding volume "kubeconfig" for component "kube-scheduler"
+I0618 06:05:00.347846     173 manifests.go:159] [control-plane] wrote static Pod manifest for component "kube-scheduler" to "/etc/kubernetes/manifests/kube-scheduler.yaml"
+I0618 06:05:00.347980     173 kubelet.go:70] Stopping the kubelet
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Starting the kubelet
+I0618 06:05:07.894713     173 loader.go:402] Config loaded from file:  /etc/kubernetes/admin.conf
+I0618 06:05:08.290800     173 envvar.go:172] "Feature gate default state" feature="ClientsAllowCBOR" enabled=false
+I0618 06:05:08.309369     173 envvar.go:172] "Feature gate default state" feature="ClientsPreferCBOR" enabled=false
+I0618 06:05:08.309466     173 envvar.go:172] "Feature gate default state" feature="InformerResourceVersion" enabled=false
+I0618 06:05:08.309515     173 envvar.go:172] "Feature gate default state" feature="InOrderInformers" enabled=true
+I0618 06:05:08.309559     173 envvar.go:172] "Feature gate default state" feature="WatchListClient" enabled=false
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests"
+[kubelet-check] Waiting for a healthy kubelet at http://127.0.0.1:10248/healthz. This can take up to 4m0s
+[kubelet-check] The kubelet is healthy after 40.858433397s
+[control-plane-check] Waiting for healthy control plane components. This can take up to 4m0s
+[control-plane-check] Checking kube-apiserver at https://172.18.0.2:6443/livez
+[control-plane-check] Checking kube-controller-manager at https://127.0.0.1:10257/healthz
+[control-plane-check] Checking kube-scheduler at https://127.0.0.1:10259/livez
+I0618 06:05:49.924238     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=110
+I0618 06:05:50.308289     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=9
+I0618 06:05:50.817401     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=5
+I0618 06:05:51.302287     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=2
+I0618 06:05:51.801149     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=0
+I0618 06:05:52.300170     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=0
+I0618 06:05:52.860821     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=32
+I0618 06:05:53.303038     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=1
+I0618 06:05:53.827297     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=17
+I0618 06:05:54.435660     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=11
+I0618 06:05:54.831252     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=5
+I0618 06:05:55.725111     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=419
+I0618 06:05:55.801611     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=0
+I0618 06:05:56.343574     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=3
+I0618 06:05:56.944102     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=143
+I0618 06:05:57.369762     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=18
+I0618 06:05:57.802872     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=3
+I0618 06:05:58.336525     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=4
+I0618 06:05:58.803956     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=1
+I0618 06:05:59.308361     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=1
+I0618 06:05:59.803091     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=2
+I0618 06:06:00.300693     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=1
+I0618 06:06:00.814312     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=5
+I0618 06:06:01.325188     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=1
+I0618 06:06:01.809246     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=7
+I0618 06:06:02.307479     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=7
+I0618 06:06:02.801068     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=1
+I0618 06:06:03.299912     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=0
+I0618 06:06:03.801505     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=1
+I0618 06:06:04.327684     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=4
+I0618 06:06:04.802317     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=2
+I0618 06:06:05.300822     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=0
+I0618 06:06:05.800407     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=0
+I0618 06:06:06.302175     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=2
+I0618 06:06:06.801551     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=1
+I0618 06:06:07.526160     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=226
+I0618 06:06:07.800985     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=1
+I0618 06:06:08.302280     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=0
+I0618 06:06:08.804595     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=2
+I0618 06:06:09.322208     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=22
+I0618 06:06:09.804373     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=5
+I0618 06:06:10.313783     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=12
+I0618 06:06:10.800729     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=0
+I0618 06:06:11.361603     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=60
+I0618 06:06:11.809001     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=9
+I0618 06:06:12.316282     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=1
+I0618 06:06:12.801714     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=1
+I0618 06:06:13.379539     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=29
+I0618 06:06:13.807576     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=4
+I0618 06:06:14.346912     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=5
+I0618 06:06:14.855627     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=1
+I0618 06:06:15.307255     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=0
+I0618 06:06:15.801236     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=1
+I0618 06:06:16.300380     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=1
+I0618 06:06:16.816184     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=15
+I0618 06:06:17.300271     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=0
+I0618 06:06:17.816959     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=0
+I0618 06:06:18.306900     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=1
+I0618 06:06:18.924469     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=114
+I0618 06:06:19.302041     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=2
+I0618 06:06:19.801558     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=1
+I0618 06:06:20.303563     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=3
+I0618 06:06:20.801371     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=0
+I0618 06:06:21.357279     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=0
+I0618 06:06:22.034171     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=82
+I0618 06:06:22.300833     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=0
+I0618 06:06:22.803179     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=3
+I0618 06:06:23.412348     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=107
+
+I0618 06:08:40.674553     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=11259
+[control-plane-check] kube-controller-manager is healthy after 3m0.168673692s
+I0618 06:08:51.566237     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=9996
+I0618 06:09:03.522102     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=9998
+[control-plane-check] kube-scheduler is healthy after 3m17.795157896s
+I0618 06:09:15.727745     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=10038
+I0618 06:09:26.529950     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=10204
+I0618 06:09:40.088963     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=10777
+[control-plane-check] kube-apiserver is not healthy after 4m1.879570004s
+
+A control plane component may have crashed or exited when started by the container runtime.
+To troubleshoot, list all containers using your preferred container runtimes CLI.
+Here is one example how you may list all running Kubernetes containers by using crictl:
+	- 'crictl --runtime-endpoint unix:///run/containerd/containerd.sock ps -a | grep kube | grep -v pause'
+	Once you have found the failing container, you can inspect its logs with:
+	- 'crictl --runtime-endpoint unix:///run/containerd/containerd.sock logs CONTAINERID'
+
+I0618 06:09:51.515928     173 round_trippers.go:632] "Response" verb="GET" url="https://kind-control-plane:6443/livez?timeout=10s" status="" milliseconds=9964
+kube-apiserver check failed at https://172.18.0.2:6443/livez: Get "https://kind-control-plane:6443/livez?timeout=10s": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+failed while waiting for the control plane to start
+k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/init.runWaitControlPlanePhase
+	k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/init/waitcontrolplane.go:106
+k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow.(*Runner).Run.func1
+	k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow/runner.go:261
+k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow.(*Runner).visitAll
+	k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow/runner.go:450
+k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow.(*Runner).Run
+	k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow/runner.go:234
+k8s.io/kubernetes/cmd/kubeadm/app/cmd.newCmdInit.func1
+	k8s.io/kubernetes/cmd/kubeadm/app/cmd/init.go:132
+github.com/spf13/cobra.(*Command).execute
+	github.com/spf13/cobra@v1.8.1/command.go:985
+github.com/spf13/cobra.(*Command).ExecuteC
+	github.com/spf13/cobra@v1.8.1/command.go:1117
+github.com/spf13/cobra.(*Command).Execute
+	github.com/spf13/cobra@v1.8.1/command.go:1041
+k8s.io/kubernetes/cmd/kubeadm/app.Run
+	k8s.io/kubernetes/cmd/kubeadm/app/kubeadm.go:47
+main.main
+	k8s.io/kubernetes/cmd/kubeadm/kubeadm.go:25
+runtime.main
+	runtime/proc.go:283
+runtime.goexit
+	runtime/asm_amd64.s:1700
+error execution phase wait-control-plane
+k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow.(*Runner).Run.func1
+	k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow/runner.go:262
+k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow.(*Runner).visitAll
+	k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow/runner.go:450
+k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow.(*Runner).Run
+	k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow/runner.go:234
+k8s.io/kubernetes/cmd/kubeadm/app/cmd.newCmdInit.func1
+	k8s.io/kubernetes/cmd/kubeadm/app/cmd/init.go:132
+github.com/spf13/cobra.(*Command).execute
+	github.com/spf13/cobra@v1.8.1/command.go:985
+github.com/spf13/cobra.(*Command).ExecuteC
+	github.com/spf13/cobra@v1.8.1/command.go:1117
+github.com/spf13/cobra.(*Command).Execute
+	github.com/spf13/cobra@v1.8.1/command.go:1041
+k8s.io/kubernetes/cmd/kubeadm/app.Run
+	k8s.io/kubernetes/cmd/kubeadm/app/kubeadm.go:47
+main.main
+	k8s.io/kubernetes/cmd/kubeadm/kubeadm.go:25
+runtime.main
+	runtime/proc.go:283
+runtime.goexit
+	runtime/asm_amd64.s:1700
+rashmika@adsl-dynamic-ipv6:~$ kind create cluster --image kindest/node:v1.29.2
+Creating cluster "kind" ...
+ ✓ Ensuring node image (kindest/node:v1.29.2) 🖼 
+ ✓ Preparing nodes 📦  
+ ✓ Writing configuration 📜 
+ ✓ Starting control-plane 🕹️ 
+ ✓ Installing CNI 🔌 
+ ✓ Installing StorageClass 💾 
+Set kubectl context to "kind-kind"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-kind
+
+Thanks for using kind! 😊
+rashmika@adsl-dynamic-ipv6:~$ kubectl config get-contexts 
+CURRENT   NAME        CLUSTER     AUTHINFO    NAMESPACE
+*         kind-kind   kind-kind   kind-kind   
+          minikube    minikube    minikube    default
+rashmika@adsl-dynamic-ipv6:~$ kubectl get nodes
+NAME                 STATUS   ROLES           AGE     VERSION
+kind-control-plane   Ready    control-plane   5m37s   v1.29.2
+rashmika@adsl-dynamic-ipv6:~$ su
+Password: 
+su: Authentication failure
+rashmika@adsl-dynamic-ipv6:~$ sudo su
+[sudo] password for rashmika: 
+root@adsl-dynamic-ipv6:/home/rashmika# ll
+total 188432
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Desktop
+drwxr-xr-x. 1 rashmika rashmika        46 Jun  9 12:31 Documents
+drwxr-xr-x. 1 rashmika rashmika       104 Jun  2 10:00 Downloads
+-rw-r--r--. 1 root     root      60121272 Jun 12 11:42 kubectl
+-rw-r--r--. 1 rashmika rashmika     10174 Apr 20  2024 LICENSE
+drwxr-xr-x. 1 rashmika rashmika         0 Jun  2 11:55 Media
+-rw-r--r--. 1 root     root     132766301 Jun 11 16:45 minikube-linux-amd64
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Music
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Pictures
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Public
+-rw-r--r--. 1 rashmika rashmika     49052 Apr 19 23:37 README.md
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Templates
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Videos
+root@adsl-dynamic-ipv6:/home/rashmika# cd Documents
+root@adsl-dynamic-ipv6:/home/rashmika/Documents# ll
+total 0
+drwxr-xr-x. 1 rashmika rashmika 130 Jun  3 16:46 PFX_Certificate
+drwxr-xr-x. 1 root     root      82 Jun 11 10:09 testdata
+root@adsl-dynamic-ipv6:/home/rashmika/Documents# mkdir My_K8s_Projects
+root@adsl-dynamic-ipv6:/home/rashmika/Documents# ll
+total 0
+drwxr-xr-x. 1 root     root       0 Jun 18 13:13 My_K8s_Projects
+drwxr-xr-x. 1 rashmika rashmika 130 Jun  3 16:46 PFX_Certificate
+drwxr-xr-x. 1 root     root      82 Jun 11 10:09 testdata
+root@adsl-dynamic-ipv6:/home/rashmika/Documents# cd My_K8s_Projects
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# mkdir Pods
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# mkkdir deployments
+bash: mkkdir: command not found...
+Similar command is: 'mkdir'
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# mkdir deployments
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# mkdir services
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# mkdir configmaps
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# mkdir secrets
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# mkdir namespaces
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# rmdir Pods
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# mkdir pods
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# ll
+total 0
+drwxr-xr-x. 1 root root 0 Jun 18 13:15 configmaps
+drwxr-xr-x. 1 root root 0 Jun 18 13:15 deployments
+drwxr-xr-x. 1 root root 0 Jun 18 13:16 namespaces
+drwxr-xr-x. 1 root root 0 Jun 18 13:17 pods
+drwxr-xr-x. 1 root root 0 Jun 18 13:16 secrets
+drwxr-xr-x. 1 root root 0 Jun 18 13:15 services
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# kubectl create deployment nginx
+error: required flag(s) "image" not set
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# kubectl create deployment nginx_deploy --image=nginx --port=80 --replicas=3 --dry-run-client -o yaml > /home/rashmika/Documents/My_K8s_Projects/deployments/
+bash: /home/rashmika/Documents/My_K8s_Projects/deployments/: Is a directory
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# kubectl create deployment nginx_deploy --image=nginx --port=80 --replicas=3 --dry-run-client -o yaml 
+error: unknown flag: --dry-run-client
+See 'kubectl create deployment --help' for usage.
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# kubectl create deployment nginx_deploy --image=nginx --port=80 --replicas=3 --dry-run=client -o yaml 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx_deploy
+  name: nginx_deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx_deploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx_deploy
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# 
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# cddeployments
+bash: cddeployments: command not found...
+^[[A^C
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# cd deployments
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects/deployments# ll
+total 0
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects/deployments# cd ..
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# ll
+total 0
+drwxr-xr-x. 1 root root 0 Jun 18 13:15 configmaps
+drwxr-xr-x. 1 root root 0 Jun 18 13:15 deployments
+drwxr-xr-x. 1 root root 0 Jun 18 13:16 namespaces
+drwxr-xr-x. 1 root root 0 Jun 18 13:17 pods
+drwxr-xr-x. 1 root root 0 Jun 18 13:16 secrets
+drwxr-xr-x. 1 root root 0 Jun 18 13:15 services
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# kubectl create deployment nginx_deploy --image=nginx --port=80 --replicas=3 --dry-run=client -o yaml > nginx_deploy.yaml
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# ll
+total 4
+drwxr-xr-x. 1 root root   0 Jun 18 13:15 configmaps
+drwxr-xr-x. 1 root root   0 Jun 18 13:15 deployments
+drwxr-xr-x. 1 root root   0 Jun 18 13:16 namespaces
+-rw-r--r--. 1 root root 455 Jun 18 13:35 nginx_deploy.yaml
+drwxr-xr-x. 1 root root   0 Jun 18 13:17 pods
+drwxr-xr-x. 1 root root   0 Jun 18 13:16 secrets
+drwxr-xr-x. 1 root root   0 Jun 18 13:15 services
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# mv nginx_deploy.yaml deployments
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# ll
+total 0
+drwxr-xr-x. 1 root root  0 Jun 18 13:15 configmaps
+drwxr-xr-x. 1 root root 34 Jun 18 13:36 deployments
+drwxr-xr-x. 1 root root  0 Jun 18 13:16 namespaces
+drwxr-xr-x. 1 root root  0 Jun 18 13:17 pods
+drwxr-xr-x. 1 root root  0 Jun 18 13:16 secrets
+drwxr-xr-x. 1 root root  0 Jun 18 13:15 services
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects# cd deployments
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects/deployments# ll
+total 4
+-rw-r--r--. 1 root root 455 Jun 18 13:35 nginx_deploy.yaml
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects/deployments# nano nginx_deploy.yaml
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects/deployments# kubectl cluster-info
+E0618 13:38:33.382487   79679 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp [::1]:8080: connect: connection refused"
+E0618 13:38:33.386546   79679 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp [::1]:8080: connect: connection refused"
+E0618 13:38:33.389989   79679 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp [::1]:8080: connect: connection refused"
+E0618 13:38:33.420517   79679 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp [::1]:8080: connect: connection refused"
+E0618 13:38:33.422924   79679 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp [::1]:8080: connect: connection refused"
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects/deployments# kubectl config get-contexts
+CURRENT   NAME   CLUSTER   AUTHINFO   NAMESPACE
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects/deployments# kind start
+ERROR: unknown command "start" for "kind"
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects/deployments# sudo kubectl cluster-info
+E0618 13:41:41.647481   80331 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp [::1]:8080: connect: connection refused"
+E0618 13:41:41.666970   80331 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp [::1]:8080: connect: connection refused"
+E0618 13:41:41.670126   80331 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp [::1]:8080: connect: connection refused"
+E0618 13:41:41.674188   80331 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp [::1]:8080: connect: connection refused"
+E0618 13:41:41.679034   80331 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp [::1]:8080: connect: connection refused"
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects/deployments# sudo kubectl config get-contexts
+CURRENT   NAME   CLUSTER   AUTHINFO   NAMESPACE
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects/deployments# minikube start
+😄  minikube v1.36.0 on Fedora 42 (vbox/amd64)
+✨  Automatically selected the podman driver. Other choices: qemu2, none, ssh
+🛑  The "podman" driver should not be used with root privileges. If you wish to continue as root, use --force.
+💡  If you are running minikube within a VM, consider using --driver=none:
+📘    https://minikube.sigs.k8s.io/docs/reference/drivers/none/
+
+❌  Exiting due to DRV_AS_ROOT: The "podman" driver should not be used with root privileges.
+
+root@adsl-dynamic-ipv6:/home/rashmika/Documents/My_K8s_Projects/deployments# cd
+root@adsl-dynamic-ipv6:~# minikube start
+😄  minikube v1.36.0 on Fedora 42 (vbox/amd64)
+✨  Automatically selected the qemu2 driver. Other choices: podman, none, ssh
+🛑  The "qemu2" driver should not be used with root privileges. If you wish to continue as root, use --force.
+💡  If you are running minikube within a VM, consider using --driver=none:
+📘    https://minikube.sigs.k8s.io/docs/reference/drivers/none/
+
+❌  Exiting due to DRV_AS_ROOT: The "qemu2" driver should not be used with root privileges.
+
+root@adsl-dynamic-ipv6:~# kubectl config get-contexts
+CURRENT   NAME   CLUSTER   AUTHINFO   NAMESPACE
+
+root@adsl-dynamic-ipv6:~# kubectl config get-contexts
+CURRENT   NAME   CLUSTER   AUTHINFO   NAMESPACE
+root@adsl-dynamic-ipv6:~# ^C
+root@adsl-dynamic-ipv6:~# sudo su
+root@adsl-dynamic-ipv6:~# exit
+exit
+root@adsl-dynamic-ipv6:~# sudo su -rashmika
+su: invalid option -- 'r'
+Try 'su --help' for more information.
+root@adsl-dynamic-ipv6:~# sudo su --rashmika
+su: unrecognized option '--rashmika'
+Try 'su --help' for more information.
+root@adsl-dynamic-ipv6:~# sudo -rashmika
+usage: sudo -h | -K | -k | -V
+usage: sudo -v [-ABkNnS] [-g group] [-h host] [-p prompt] [-u user]
+usage: sudo -l [-ABkNnS] [-g group] [-h host] [-p prompt] [-U user]
+            [-u user] [command [arg ...]]
+usage: sudo [-ABbEHkNnPS] [-r role] [-t type] [-C num] [-D directory]
+            [-g group] [-h host] [-p prompt] [-R directory] [-T timeout]
+            [-u user] [VAR=value] [-i | -s] [command [arg ...]]
+usage: sudo -e [-ABkNnS] [-r role] [-t type] [-C num] [-D directory]
+            [-g group] [-h host] [-p prompt] [-R directory] [-T timeout]
+            [-u user] file ...
+root@adsl-dynamic-ipv6:~# sudo rashmika
+sudo: rashmika: command not found
+root@adsl-dynamic-ipv6:~# su -raashmika
+su: invalid option -- 'r'
+Try 'su --help' for more information.
+root@adsl-dynamic-ipv6:~# su -rashmika
+su: invalid option -- 'r'
+Try 'su --help' for more information.
+root@adsl-dynamic-ipv6:~# su - rashmika
+rashmika@adsl-dynamic-ipv6:~$ kubectl config get-contexts
+CURRENT   NAME        CLUSTER     AUTHINFO    NAMESPACE
+*         kind-kind   kind-kind   kind-kind   
+          minikube    minikube    minikube    default
+rashmika@adsl-dynamic-ipv6:~$ ll
+total 188432
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Desktop
+drwxr-xr-x. 1 rashmika rashmika        76 Jun 18 13:13 Documents
+drwxr-xr-x. 1 rashmika rashmika       104 Jun  2 10:00 Downloads
+-rw-r--r--. 1 root     root      60121272 Jun 12 11:42 kubectl
+-rw-r--r--. 1 rashmika rashmika     10174 Apr 20  2024 LICENSE
+drwxr-xr-x. 1 rashmika rashmika         0 Jun  2 11:55 Media
+-rw-r--r--. 1 root     root     132766301 Jun 11 16:45 minikube-linux-amd64
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Music
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Pictures
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Public
+-rw-r--r--. 1 rashmika rashmika     49052 Apr 19 23:37 README.md
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Templates
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Videos
+rashmika@adsl-dynamic-ipv6:~$ cd Documents
+rashmika@adsl-dynamic-ipv6:~/Documents$ ll
+total 0
+drwxr-xr-x. 1 root     root     100 Jun 18 13:36 My_K8s_Projects
+drwxr-xr-x. 1 rashmika rashmika 130 Jun  3 16:46 PFX_Certificate
+drwxr-xr-x. 1 root     root      82 Jun 11 10:09 testdata
+rashmika@adsl-dynamic-ipv6:~/Documents$ cd My_K8s_Projects
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ cd deployments
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ ll
+total 4
+-rw-r--r--. 1 root root 455 Jun 18 13:35 nginx_deploy.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ nano nginxx_deploy.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ nano nginx_deploy.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ ll
+total 4
+-rw-r--r--. 1 root root 455 Jun 18 13:35 nginx_deploy.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ cd
+rashmika@adsl-dynamic-ipv6:~$ kubectl get deploy
+No resources found in default namespace.
+rashmika@adsl-dynamic-ipv6:~$ kubectl get pods
+No resources found in default namespace.
+rashmika@adsl-dynamic-ipv6:~$ kubectl get nodes
+NAME                 STATUS   ROLES           AGE    VERSION
+kind-control-plane   Ready    control-plane   117m   v1.29.2
+rashmika@adsl-dynamic-ipv6:~$ kubectl create -f nginx_deploy.yaml
+error: the path "nginx_deploy.yaml" does not exist
+rashmika@adsl-dynamic-ipv6:~$ cd /Documents/My_K8s_Projects/deployments
+-bash: cd: /Documents/My_K8s_Projects/deployments: Not a directory
+rashmika@adsl-dynamic-ipv6:~$ cd Documents/My_K8s_Projects/deployments
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl create -f nginx_deploy.yaml
+The Deployment "nginx_deploy" is invalid: metadata.name: Invalid value: "nginx_deploy": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ nano nginx_deploy.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ nano nginx_deploy.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ nano nginx_deploy.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ nano nginx_deploy.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ sudo nano nginx_deploy.yaml
+[sudo] password for rashmika: 
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl create -f nginx_deploy.yaml
+deployment.apps/nginx-deploy created
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl get deploy
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deploy   0/3     0            0           14s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl get nodes
+NAME                 STATUS   ROLES           AGE    VERSION
+kind-control-plane   Ready    control-plane   142m   v1.29.2
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl get pods
+No resources found in default namespace.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ cd /Documents/My_K8s_Projects/deployments^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl get deploy
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deploy   0/3     3            0           17m
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl delete deploy nginx-deploy
+deployment.apps "nginx-deploy" deleted
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl get deploy
+No resources found in default namespace.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl create -f nginx_deploy.yaml
+deployment.apps/nginx-deploy created
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl get deploy
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deploy   0/3     0            0           14s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl get nodes
+NAME                 STATUS   ROLES           AGE    VERSION
+kind-control-plane   Ready    control-plane   142m   v1.29.2
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl get pods
+No resources found in default namespace.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ cd /Documents/My_K8s_Projects/deployments^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl delete deploy nginx_deploy
+Unable to connect to the server: net/http: TLS handshake timeout
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl delete deploy nginx_deploy
+Unable to connect to the server: net/http: TLS handshake timeout
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl get deploy
+Unable to connect to the server: net/http: TLS handshake timeout
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl ip
+error: unknown command "ip" for "kubectl"
+
+Did you mean this?
+	top
+	cp
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kind ip
+ERROR: unknown command "ip" for "kind"
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kind profile list
+ERROR: unknown command "profile" for "kind"
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ sudo kind profile list
+[sudo] password for rashmika: 
+ERROR: unknown command "profile" for "kind"
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kind-kind profile list
+bash: kind-kind: command not found...
+^[[A^[[A^[[A^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kind-kind ip
+bash: kind-kind: command not found...
+^[[A^[[A^[[A^[[A^[[A^[[A^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl delete deploy nginx_deploy
+Error from server (NotFound): deployments.apps "nginx_deploy" not found
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl get deploy
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deploy   0/3     3            0           17m
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl delete deploy nginx-deploy
+deployment.apps "nginx-deploy" deleted
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl get deploy
+No resources found in default namespace.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ kubectl get ns
+NAME                 STATUS   AGE
+default              Active   165m
+kube-node-lease      Active   165m
+kube-public          Active   165m
+kube-system          Active   165m
+local-path-storage   Active   163m
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/deployments$ cd ..
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ cd namespace
+-bash: cd: namespace: No such file or directory
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ cd namespaces
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl create namespace myspace --dry-run=client -o yaml > myspace.yaml
+-bash: myspace.yaml: Permission denied
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ sudo kubectl create namespace myspace --dry-run=client -o yaml > myspace.yaml
+-bash: myspace.yaml: Permission denied
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ sudo chmod +x /Documents/My_K8s_Projects/namespaces
+[sudo] password for rashmika: 
+chmod: cannot access '/Documents/My_K8s_Projects/namespaces': Not a directory
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ sudo chmod +x /Documents/My_K8s_Projects/
+chmod: cannot access '/Documents/My_K8s_Projects/': Not a directory
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ sudo kubectl create namespace myspace --dry-run=client -o yaml > myspace.yaml
+-bash: myspace.yaml: Permission denied
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ sudo kubectl create namespace myspace --dry-run=client -o yaml > sudo tee myspace.yaml
+-bash: sudo: Permission denied
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ sudo chown -R $USER:$USER ~/Documents/My_K8s_Projects
+[sudo] password for rashmika: 
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ sudo kubectl create namespace myspace --dry-run=client -o yaml > myspace.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ ll
+total 4
+-rw-r--r--. 1 rashmika rashmika 103 Jun 18 15:12 myspace.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ nano myspace.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl ns
+error: unknown command "ns" for "kubectl"
+
+Did you mean this?
+	cp
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ cd
+rashmika@adsl-dynamic-ipv6:~$ kubectl get ns
+NAME                 STATUS   AGE
+default              Active   3h6m
+kube-node-lease      Active   3h6m
+kube-public          Active   3h6m
+kube-system          Active   3h6m
+local-path-storage   Active   3h3m
+rashmika@adsl-dynamic-ipv6:~$ cd /Documents/My_K8s_Projects/namespaces
+-bash: cd: /Documents/My_K8s_Projects/namespaces: Not a directory
+rashmika@adsl-dynamic-ipv6:~$ cd Documents/My_K8s_Projects/namespaces
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl apply -f namespce.yaml
+error: the path "namespce.yaml" does not exist
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl apply -f namespace.yaml
+error: the path "namespace.yaml" does not exist
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl apply -f myspace.yaml
+namespace/myspace created
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl get ns
+NAME                 STATUS   AGE
+default              Active   3h9m
+kube-node-lease      Active   3h9m
+kube-public          Active   3h9m
+kube-system          Active   3h9m
+local-path-storage   Active   3h6m
+myspace              Active   20s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl get pods --all namespaces
+error: unknown flag: --all
+See 'kubectl get --help' for usage.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl get pods --all-namespaces
+NAMESPACE            NAME                                         READY   STATUS             RESTARTS         AGE
+kube-system          coredns-76f75df574-4dnnd                     1/1     Running            0                3h10m
+kube-system          coredns-76f75df574-wnbx5                     1/1     Running            0                3h10m
+kube-system          etcd-kind-control-plane                      1/1     Running            0                3h13m
+kube-system          kindnet-rzcx9                                1/1     Running            3 (37m ago)      3h10m
+kube-system          kube-apiserver-kind-control-plane            1/1     Running            2                3h13m
+kube-system          kube-controller-manager-kind-control-plane   0/1     CrashLoopBackOff   33 (42s ago)     3h13m
+kube-system          kube-proxy-5g9bd                             1/1     Running            0                3h10m
+kube-system          kube-scheduler-kind-control-plane            1/1     Running            29 (2m16s ago)   3h13m
+local-path-storage   local-path-provisioner-7577fdbbfb-dnlvw      1/1     Running            0                3h10m
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl get pods -n kube-system
+NAME                                         READY   STATUS             RESTARTS         AGE
+coredns-76f75df574-4dnnd                     1/1     Running            0                3h14m
+coredns-76f75df574-wnbx5                     1/1     Running            0                3h14m
+etcd-kind-control-plane                      1/1     Running            0                3h17m
+kindnet-rzcx9                                1/1     Running            3 (41m ago)      3h14m
+kube-apiserver-kind-control-plane            1/1     Running            2                3h17m
+kube-controller-manager-kind-control-plane   0/1     CrashLoopBackOff   33 (4m24s ago)   3h17m
+kube-proxy-5g9bd                             1/1     Running            0                3h14m
+kube-scheduler-kind-control-plane            0/1     CrashLoopBackOff   29 (32s ago)     3h17m
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl config set-context --current --namespace=default
+Context "kind-kind" modified.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl config get-context
+error: unknown command "get-context"
+See 'kubectl config -h' for help and examples
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl config current-context
+kind-kind
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl config current-context -ns
+kind-kind
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl config view --minify --output 'jsonpath={..namespace}'
+defaultrashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl config set-context --current --namespace=myspace
+Context "kind-kind" modified.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl config view --minify --output 'jsonpath={..namespace}'
+myspacerashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl config set-context --current --namespace=default
+Context "kind-kind" modified.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl config view --minify --output 'jsonpath={..namespace}'
+defaultrashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl get nodes
+NAME                 STATUS   ROLES           AGE     VERSION
+kind-control-plane   Ready    control-plane   4h13m   v1.29.2
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl describe node kind-control-plane
+Name:               kind-control-plane
+Roles:              control-plane
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=kind-control-plane
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/control-plane=
+Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: unix:///run/containerd/containerd.sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Wed, 18 Jun 2025 12:12:00 +0530
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  kind-control-plane
+  AcquireTime:     <unset>
+  RenewTime:       Wed, 18 Jun 2025 16:26:34 +0530
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Wed, 18 Jun 2025 16:23:51 +0530   Wed, 18 Jun 2025 12:11:57 +0530   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Wed, 18 Jun 2025 16:23:51 +0530   Wed, 18 Jun 2025 12:11:57 +0530   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Wed, 18 Jun 2025 16:23:51 +0530   Wed, 18 Jun 2025 12:11:57 +0530   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Wed, 18 Jun 2025 16:23:51 +0530   Wed, 18 Jun 2025 12:16:30 +0530   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  172.18.0.2
+  Hostname:    kind-control-plane
+Capacity:
+  cpu:                2
+  ephemeral-storage:  39933Mi
+  hugepages-2Mi:      0
+  memory:             2366016Ki
+  pods:               110
+Allocatable:
+  cpu:                2
+  ephemeral-storage:  39933Mi
+  hugepages-2Mi:      0
+  memory:             2366016Ki
+  pods:               110
+System Info:
+  Machine ID:                 a7fc60b652fd4d4b8a4b08648ffa52ca
+  System UUID:                d7c331d9-944d-4227-811d-d53bcb8a7762
+  Boot ID:                    53d46502-9a75-4e7b-a6d7-e05b740faccc
+  Kernel Version:             6.14.9-300.fc42.x86_64
+  OS Image:                   Debian GNU/Linux 12 (bookworm)
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  containerd://1.7.13
+  Kubelet Version:            v1.29.2
+  Kube-Proxy Version:         v1.29.2
+PodCIDR:                      10.244.0.0/24
+PodCIDRs:                     10.244.0.0/24
+ProviderID:                   kind://docker/kind/kind-control-plane
+Non-terminated Pods:          (9 in total)
+  Namespace                   Name                                          CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                   ----                                          ------------  ----------  ---------------  -------------  ---
+  kube-system                 coredns-76f75df574-4dnnd                      100m (5%)     0 (0%)      70Mi (3%)        170Mi (7%)     4h11m
+  kube-system                 coredns-76f75df574-wnbx5                      100m (5%)     0 (0%)      70Mi (3%)        170Mi (7%)     4h11m
+  kube-system                 etcd-kind-control-plane                       100m (5%)     0 (0%)      100Mi (4%)       0 (0%)         4h14m
+  kube-system                 kindnet-rzcx9                                 100m (5%)     100m (5%)   50Mi (2%)        50Mi (2%)      4h11m
+  kube-system                 kube-apiserver-kind-control-plane             250m (12%)    0 (0%)      0 (0%)           0 (0%)         4h14m
+  kube-system                 kube-controller-manager-kind-control-plane    200m (10%)    0 (0%)      0 (0%)           0 (0%)         4h14m
+  kube-system                 kube-proxy-5g9bd                              0 (0%)        0 (0%)      0 (0%)           0 (0%)         4h11m
+  kube-system                 kube-scheduler-kind-control-plane             100m (5%)     0 (0%)      0 (0%)           0 (0%)         4h14m
+  local-path-storage          local-path-provisioner-7577fdbbfb-dnlvw       0 (0%)        0 (0%)      0 (0%)           0 (0%)         4h11m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests     Limits
+  --------           --------     ------
+  cpu                950m (47%)   100m (5%)
+  memory             290Mi (12%)  390Mi (16%)
+  ephemeral-storage  0 (0%)       0 (0%)
+  hugepages-2Mi      0 (0%)       0 (0%)
+Events:
+  Type    Reason          Age   From             Message
+  ----    ------          ----  ----             -------
+  Normal  RegisteredNode  54m   node-controller  Node kind-control-plane event: Registered Node kind-control-plane in Controller
+  Normal  RegisteredNode  40m   node-controller  Node kind-control-plane event: Registered Node kind-control-plane in Controller
+  Normal  RegisteredNode  26m   node-controller  Node kind-control-plane event: Registered Node kind-control-plane in Controller
+  Normal  RegisteredNode  18m   node-controller  Node kind-control-plane event: Registered Node kind-control-plane in Controller
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl get pods
+No resources found in default namespace.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ ^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ ^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ ^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ ^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ ^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ ^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl run nginxpod --image=nginx
+pod/nginxpod created
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl get pods
+NAME       READY   STATUS    RESTARTS   AGE
+nginxpod   0/1     Pending   0          20s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl get pod -o wide
+NAME       READY   STATUS    RESTARTS   AGE   IP       NODE     NOMINATED NODE   READINESS GATES
+nginxpod   0/1     Pending   0          46s   <none>   <none>   <none>           <none>
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl get pod -o wide
+NAME       READY   STATUS    RESTARTS   AGE   IP       NODE     NOMINATED NODE   READINESS GATES
+nginxpod   0/1     Pending   0          65s   <none>   <none>   <none>           <none>
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl get pod -o wide
+NAME       READY   STATUS    RESTARTS   AGE    IP           NODE                 NOMINATED NODE   READINESS GATES
+nginxpod   1/1     Running   0          3m8s   10.244.0.8   kind-control-plane   <none>           <none>
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl describe pod nginxpod
+Name:             nginxpod
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             kind-control-plane/172.18.0.2
+Start Time:       Wed, 18 Jun 2025 17:12:50 +0530
+Labels:           run=nginxpod
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.8
+IPs:
+  IP:  10.244.0.8
+Containers:
+  nginxpod:
+    Container ID:   containerd://b01687b27700b74b207d609b18661889526b59827aeb07620950a25da54a0761
+    Image:          nginx
+    Image ID:       docker.io/library/nginx@sha256:6784fb0834aa7dbbe12e3d7471e69c290df3e6ba810dc38b34ae33d3c1c05f7d
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 18 Jun 2025 17:13:20 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-vq825 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-vq825:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  2m6s  default-scheduler  Successfully assigned default/nginxpod to kind-control-plane
+  Normal  Pulling    110s  kubelet            Pulling image "nginx"
+  Normal  Pulled     103s  kubelet            Successfully pulled image "nginx" in 6.981s (6.981s including waiting)
+  Normal  Created    101s  kubelet            Created container nginxpod
+  Normal  Started    94s   kubelet            Started container nginxpod
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl delete pod nginxpod
+pod "nginxpod" deleted
+^Crashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl get pods
+NAME       READY   STATUS        RESTARTS   AGE
+nginxpod   0/1     Terminating   0          10m
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl run busyboxpod --image=busybox -it -- /bin/sh
+
+Error from server (Timeout): Timeout: request did not complete within requested timeout - context deadline exceeded
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl run busyboxpod --image=busybox -it -- /bin/sh
+Unable to connect to the server: http2: client connection lost
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl run busyboxpod --image=busybox -it -- /bin/sh
+Unable to connect to the server: read tcp 127.0.0.1:55984->127.0.0.1:33561: read: connection reset by peer
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl run busyboxpod --image=busybox -it -- /bin/sh
+Unable to connect to the server: net/http: TLS handshake timeout
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ kubectl run busyboxpod --image=busybox -it -- /bin/sh
+Unable to connect to the server: net/http: TLS handshake timeout
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/namespaces$ cd ..
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ kubectl run busyboxpod --image=busybox -it -- /bin/sh
+Unable to connect to the server: net/http: TLS handshake timeout
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ minikube status
+❗  Executing "docker container inspect minikube --format={{.State.Status}}" took an unusually long time: 4.196077068s
+💡  Restarting the docker service may improve performance.
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Stopped
+kubeconfig: Configured
+
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ minikube stop
+✋  Stopping node "minikube"  ...
+❗  Executing "docker container inspect minikube --format={{.State.Status}}" took an unusually long time: 4.950311944s
+💡  Restarting the docker service may improve performance.
+🛑  Powering off "minikube" via SSH ...
+🛑  1 node stopped.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ kubectl run busyboxpod --image=busybox -it -- /bin/sh
+If you don't see a command prompt, try pressing enter.
+/ # ll
+/bin/sh: ll: not found
+/ # ls
+bin           etc           lib           proc          product_uuid  sys           usr
+dev           home          lib64         product_name  root          tmp           var
+/ # echo -n 'This is a Secret' | base64
+VGhpcyBpcyBhIFNlY3JldA==
+/ # exit
+Session ended, resume using 'kubectl attach busyboxpod -c busyboxpod -i -t' command when the pod is running
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ kubectl delete pod busyboxpod --grace-period=0 --force
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+pod "busyboxpod" force deleted
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ kubectl create pod busyboxpod --image=busybox --dry-run=client -o yaml > busybox.yaml
+error: unknown flag: --image
+See 'kubectl create --help' for usage.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ kubectl create pod busyboxpod --dry-run=client -o yaml > busybox.yaml
+error: Unexpected args: [pod busyboxpod]
+See 'kubectl create -h' for help and examples
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ ^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ 

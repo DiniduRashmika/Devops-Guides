@@ -394,16 +394,13 @@ drwxr-xr-x. 1 root root  20 Jun 11 10:08 app
 -rw-r--r--. 1 root root  13 Jun  9 12:33 hello.txt
 rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ nano hello.txt
 rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ 
-
-.
-
 .
 .
 .
 .
 .
 .
-
+.
 .
 rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ kubectl get ns
 NAME              STATUS   AGE
