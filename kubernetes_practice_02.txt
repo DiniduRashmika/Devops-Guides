@@ -1016,3 +1016,566 @@ error: Unexpected args: [pod busyboxpod]
 See 'kubectl create -h' for help and examples
 rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ ^C
 rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ 
+.
+.
+.
+.
+.
+.
+.
+.
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: busyboxpod
+    app: busyboxpod
+    type: front-end
+  name: busyboxpod
+spec:
+  containers:
+  - image: busybox
+    name: busybox
+    command: ["sleep", "3600"]
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+	cpu: 200m
+        memory: 256Mi
+    ports:
+    - containerPort: 80
+      name: http
+      protocol: TCP
+    env:
+    -   name: DBCON
+        value: myconnectionstring
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+
+.
+..
+.
+.
+.
+.
+
+.
+..
+.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ ^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ ^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ kubectl run busyboxpod --image=busybox --dry-run=client -o yaml > busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ cd pods
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ll
+total 0
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ mv /Documents/My_K8s_Projects/busybox.yaml /Documents/My_K8s_Projects/pods
+mv: cannot stat '/Documents/My_K8s_Projects/busybox.yaml': Not a directory
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ cd ..
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ ll
+total 4
+-rw-r--r--. 1 rashmika rashmika 249 Jun 19 08:35 busybox.yaml
+drwxr-xr-x. 1 rashmika rashmika   0 Jun 18 13:15 configmaps
+drwxr-xr-x. 1 rashmika rashmika  34 Jun 18 13:36 deployments
+drwxr-xr-x. 1 rashmika rashmika  24 Jun 18 15:12 namespaces
+drwxr-xr-x. 1 rashmika rashmika   0 Jun 18 13:17 pods
+drwxr-xr-x. 1 rashmika rashmika   0 Jun 18 13:16 secrets
+drwxr-xr-x. 1 rashmika rashmika   0 Jun 18 13:15 services
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ mv busybox.yaml pods
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ cd pods
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ll
+total 4
+-rw-r--r--. 1 rashmika rashmika 249 Jun 19 08:35 busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl create -f busybox.yaml
+error: error parsing busybox.yaml: error converting YAML to JSON: yaml: line 15: did not find expected key
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl create -f busybox.yaml
+error: error parsing busybox.yaml: error converting YAML to JSON: yaml: line 14: did not find expected key
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl create -f busybox.yaml
+pod/busyboxpod created
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pods
+NAME         READY   STATUS             RESTARTS     AGE
+busyboxpod   0/1     CrashLoopBackOff   1 (6s ago)   16s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pod -o wide
+NAME         READY   STATUS      RESTARTS      AGE   IP            NODE                 NOMINATED NODE   READINESS GATES
+busyboxpod   0/1     Completed   2 (26s ago)   36s   10.244.0.10   kind-control-plane   <none>           <none>
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl describe pod busyboxpod
+Name:             busyboxpod
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             kind-control-plane/172.18.0.2
+Start Time:       Thu, 19 Jun 2025 09:17:22 +0530
+Labels:           app=busyboxpod
+                  run=busyboxpod
+                  type=front-end
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.10
+IPs:
+  IP:  10.244.0.10
+Containers:
+  busyboxpod:
+    Container ID:   containerd://2f6963f69292ff1980860b8cb86da10f46e9f826e26ffdc731137bfa21da6695
+    Image:          busybox
+    Image ID:       docker.io/library/busybox@sha256:f85340bf132ae937d2c2a763b8335c9bab35d6e8293f70f606b9c6178d84f42b
+    Port:           80/TCP
+    Host Port:      0/TCP
+    State:          Waiting
+      Reason:       CrashLoopBackOff
+    Last State:     Terminated
+      Reason:       Completed
+      Exit Code:    0
+      Started:      Thu, 19 Jun 2025 09:20:49 +0530
+      Finished:     Thu, 19 Jun 2025 09:20:49 +0530
+    Ready:          False
+    Restart Count:  5
+    Limits:
+      cpu:     200m
+      memory:  256Mi
+    Requests:
+      cpu:     100m
+      memory:  128Mi
+    Environment:
+      DBCON:  myconnectionstring
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-xrtgf (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-xrtgf:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                   From               Message
+  ----     ------     ----                  ----               -------
+  Normal   Scheduled  6m9s                  default-scheduler  Successfully assigned default/busyboxpod to kind-control-plane
+  Normal   Pulled     6m5s                  kubelet            Successfully pulled image "busybox" in 2.483s (2.483s including waiting)
+  Normal   Pulled     6m1s                  kubelet            Successfully pulled image "busybox" in 2.296s (2.296s including waiting)
+  Normal   Pulled     5m45s                 kubelet            Successfully pulled image "busybox" in 1.96s (1.96s including waiting)
+  Normal   Created    5m15s (x4 over 6m5s)  kubelet            Created container busyboxpod
+  Normal   Pulled     5m15s                 kubelet            Successfully pulled image "busybox" in 2.242s (2.242s including waiting)
+  Normal   Started    5m13s (x4 over 6m4s)  kubelet            Started container busyboxpod
+  Normal   Pulling    4m20s (x5 over 6m8s)  kubelet            Pulling image "busybox"
+  Warning  BackOff    60s (x23 over 5m59s)  kubelet            Back-off restarting failed container busyboxpod in pod busyboxpod_default(3c4e2a9f-1dc5-41b2-91b6-d95fe3bb46d3)
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod --bash
+error: unknown flag: --bash
+See 'kubectl exec --help' for usage.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- bash
+error: unable to upgrade connection: container not found ("busyboxpod")
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod-pod -- bash
+Error from server (NotFound): pods "busyboxpod-pod" not found
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- bash
+error: unable to upgrade connection: container not found ("busyboxpod")
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pod -o wide
+NAME         READY   STATUS             RESTARTS       AGE   IP            NODE                 NOMINATED NODE   READINESS GATES
+busyboxpod   0/1     CrashLoopBackOff   6 (4m1s ago)   10m   10.244.0.10   kind-control-plane   <none>           <none>
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- bash
+error: unable to upgrade connection: container not found ("busyboxpod")
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- sh
+error: unable to upgrade connection: container not found ("busyboxpod")
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl logs busybox
+error: error from server (NotFound): pods "busybox" not found in namespace "default"
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl logs busyboxpod
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- bash
+error: unable to upgrade connection: container not found ("busyboxpod")
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl logs busyboxpod
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ll
+total 4
+-rw-r--r--. 1 rashmika rashmika 562 Jun 19 09:35 busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busybox-pod -- bash
+Error from server (NotFound): pods "busybox-pod" not found
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busybox-- bash
+error: exec [POD] [COMMAND] is not supported anymore. Use exec [POD] -- [COMMAND] instead
+See 'kubectl exec -h' for help and examples
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busybox -- bash
+Error from server (NotFound): pods "busybox" not found
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- bash
+
+error: unable to upgrade connection: container not found ("busyboxpod")
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- bash
+
+error: unable to upgrade connection: container not found ("busyboxpod")
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busybox -- bash
+Error from server (NotFound): pods "busybox" not found
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- bash
+error: unable to upgrade connection: container not found ("busyboxpod")
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pods
+NAME         READY   STATUS             RESTARTS      AGE
+busyboxpod   0/1     CrashLoopBackOff   10 (3m ago)   29m
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl logs busyboxpod
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl delete pod busyboxpod
+pod "busyboxpod" deleted
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f busyboxpod
+error: the path "busyboxpod" does not exist
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f busybox.yaml
+pod/busyboxpod created
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pods
+NAME         READY   STATUS    RESTARTS   AGE
+busyboxpod   1/1     Running   0          9s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- bash
+error: Internal error occurred: error executing command in container: failed to exec in container: failed to start exec "42595e55233ba061ff079489cf96a651c797a6d713a17c9a91f085e4a1b642b4": OCI runtime exec failed: exec failed: unable to start container process: exec: "bash": executable file not found in $PATH: unknown
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pods
+NAME         READY   STATUS    RESTARTS   AGE
+busyboxpod   1/1     Running   0          31s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- sh
+/ # ll
+sh: ll: not found
+/ # ls
+bin           etc           lib           proc          product_uuid  sys           usr
+dev           home          lib64         product_name  root          tmp           var
+/ # echo $DBCON
+myconnectionstring
+/ # exit
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ 
+
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ ^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ kubectl run busyboxpod --image=busybox --dry-run=client -o yaml > busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ cd pods
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ll
+total 0
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ mv /Documents/My_K8s_Projects/busybox.yaml /Documents/My_K8s_Projects/pods
+mv: cannot stat '/Documents/My_K8s_Projects/busybox.yaml': Not a directory
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ cd ..
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ ll
+total 4
+-rw-r--r--. 1 rashmika rashmika 249 Jun 19 08:35 busybox.yaml
+drwxr-xr-x. 1 rashmika rashmika   0 Jun 18 13:15 configmaps
+drwxr-xr-x. 1 rashmika rashmika  34 Jun 18 13:36 deployments
+drwxr-xr-x. 1 rashmika rashmika  24 Jun 18 15:12 namespaces
+drwxr-xr-x. 1 rashmika rashmika   0 Jun 18 13:17 pods
+drwxr-xr-x. 1 rashmika rashmika   0 Jun 18 13:16 secrets
+drwxr-xr-x. 1 rashmika rashmika   0 Jun 18 13:15 services
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ mv busybox.yaml pods
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ cd pods
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ll
+total 4
+-rw-r--r--. 1 rashmika rashmika 249 Jun 19 08:35 busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl create -f busybox.yaml
+error: error parsing busybox.yaml: error converting YAML to JSON: yaml: line 15: did not find expected key
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl create -f busybox.yaml
+error: error parsing busybox.yaml: error converting YAML to JSON: yaml: line 14: did not find expected key
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl create -f busybox.yaml
+pod/busyboxpod created
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pods
+NAME         READY   STATUS             RESTARTS     AGE
+busyboxpod   0/1     CrashLoopBackOff   1 (6s ago)   16s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pod -o wide
+NAME         READY   STATUS      RESTARTS      AGE   IP            NODE                 NOMINATED NODE   READINESS GATES
+busyboxpod   0/1     Completed   2 (26s ago)   36s   10.244.0.10   kind-control-plane   <none>           <none>
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl describe pod busyboxpod
+Name:             busyboxpod
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             kind-control-plane/172.18.0.2
+Start Time:       Thu, 19 Jun 2025 09:17:22 +0530
+Labels:           app=busyboxpod
+                  run=busyboxpod
+                  type=front-end
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.10
+IPs:
+  IP:  10.244.0.10
+Containers:
+  busyboxpod:
+    Container ID:   containerd://2f6963f69292ff1980860b8cb86da10f46e9f826e26ffdc731137bfa21da6695
+    Image:          busybox
+    Image ID:       docker.io/library/busybox@sha256:f85340bf132ae937d2c2a763b8335c9bab35d6e8293f70f606b9c6178d84f42b
+    Port:           80/TCP
+    Host Port:      0/TCP
+    State:          Waiting
+      Reason:       CrashLoopBackOff
+    Last State:     Terminated
+      Reason:       Completed
+      Exit Code:    0
+      Started:      Thu, 19 Jun 2025 09:20:49 +0530
+      Finished:     Thu, 19 Jun 2025 09:20:49 +0530
+    Ready:          False
+    Restart Count:  5
+    Limits:
+      cpu:     200m
+      memory:  256Mi
+    Requests:
+      cpu:     100m
+      memory:  128Mi
+    Environment:
+      DBCON:  myconnectionstring
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-xrtgf (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-xrtgf:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                   From               Message
+  ----     ------     ----                  ----               -------
+  Normal   Scheduled  6m9s                  default-scheduler  Successfully assigned default/busyboxpod to kind-control-plane
+  Normal   Pulled     6m5s                  kubelet            Successfully pulled image "busybox" in 2.483s (2.483s including waiting)
+  Normal   Pulled     6m1s                  kubelet            Successfully pulled image "busybox" in 2.296s (2.296s including waiting)
+  Normal   Pulled     5m45s                 kubelet            Successfully pulled image "busybox" in 1.96s (1.96s including waiting)
+  Normal   Created    5m15s (x4 over 6m5s)  kubelet            Created container busyboxpod
+  Normal   Pulled     5m15s                 kubelet            Successfully pulled image "busybox" in 2.242s (2.242s including waiting)
+  Normal   Started    5m13s (x4 over 6m4s)  kubelet            Started container busyboxpod
+  Normal   Pulling    4m20s (x5 over 6m8s)  kubelet            Pulling image "busybox"
+  Warning  BackOff    60s (x23 over 5m59s)  kubelet            Back-off restarting failed container busyboxpod in pod busyboxpod_default(3c4e2a9f-1dc5-41b2-91b6-d95fe3bb46d3)
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod --bash
+error: unknown flag: --bash
+See 'kubectl exec --help' for usage.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- bash
+error: unable to upgrade connection: container not found ("busyboxpod")
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod-pod -- bash
+Error from server (NotFound): pods "busyboxpod-pod" not found
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- bash
+error: unable to upgrade connection: container not found ("busyboxpod")
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pod -o wide
+NAME         READY   STATUS             RESTARTS       AGE   IP            NODE                 NOMINATED NODE   READINESS GATES
+busyboxpod   0/1     CrashLoopBackOff   6 (4m1s ago)   10m   10.244.0.10   kind-control-plane   <none>           <none>
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- bash
+error: unable to upgrade connection: container not found ("busyboxpod")
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- sh
+error: unable to upgrade connection: container not found ("busyboxpod")
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl logs busybox
+error: error from server (NotFound): pods "busybox" not found in namespace "default"
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl logs busyboxpod
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- bash
+error: unable to upgrade connection: container not found ("busyboxpod")
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl logs busyboxpod
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ll
+total 4
+-rw-r--r--. 1 rashmika rashmika 562 Jun 19 09:35 busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busybox-pod -- bash
+Error from server (NotFound): pods "busybox-pod" not found
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busybox-- bash
+error: exec [POD] [COMMAND] is not supported anymore. Use exec [POD] -- [COMMAND] instead
+See 'kubectl exec -h' for help and examples
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busybox -- bash
+Error from server (NotFound): pods "busybox" not found
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- bash
+
+error: unable to upgrade connection: container not found ("busyboxpod")
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- bash
+
+error: unable to upgrade connection: container not found ("busyboxpod")
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busybox -- bash
+Error from server (NotFound): pods "busybox" not found
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- bash
+error: unable to upgrade connection: container not found ("busyboxpod")
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pods
+NAME         READY   STATUS             RESTARTS      AGE
+busyboxpod   0/1     CrashLoopBackOff   10 (3m ago)   29m
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl logs busyboxpod
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl delete pod busyboxpod
+pod "busyboxpod" deleted
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f busyboxpod
+error: the path "busyboxpod" does not exist
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f busybox.yaml
+pod/busyboxpod created
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pods
+NAME         READY   STATUS    RESTARTS   AGE
+busyboxpod   1/1     Running   0          9s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- bash
+error: Internal error occurred: error executing command in container: failed to exec in container: failed to start exec "42595e55233ba061ff079489cf96a651c797a6d713a17c9a91f085e4a1b642b4": OCI runtime exec failed: exec failed: unable to start container process: exec: "bash": executable file not found in $PATH: unknown
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pods
+NAME         READY   STATUS    RESTARTS   AGE
+busyboxpod   1/1     Running   0          31s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl exec -it busyboxpod -- sh
+/ # ll
+sh: ll: not found
+/ # ls
+bin           etc           lib           proc          product_uuid  sys           usr
+dev           home          lib64         product_name  root          tmp           var
+/ # echo $DBCON
+myconnectionstring
+/ # exit
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl  delete busyboxpod
+error: the server doesn't have a resource type "busyboxpod"
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl delete busyboxpod
+error: the server doesn't have a resource type "busyboxpod"
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl delete pod  busyboxpod
+pod "busyboxpod" deleted
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl run pod myapp --dry-run=client -o yaml
+error: required flag(s) "image" not set
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl run pod myapp --image=nginx --dry-run=client -o yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: pod
+  name: pod
+spec:
+  containers:
+  - args:
+    - myapp
+    image: nginx
+    name: pod
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ll
+total 4
+-rw-r--r--. 1 rashmika rashmika 559 Jun 19 09:44 busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl run pod myapp --image=nginx --dry-run=client -o yaml > myapp.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ll
+total 8
+-rw-r--r--. 1 rashmika rashmika 559 Jun 19 09:44 busybox.yaml
+-rw-r--r--. 1 rashmika rashmika 248 Jun 19 17:21 myapp.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano myapp.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl create service myservice --dry-run=client -o yaml> myservice.yaml
+error: unknown flag: --dry-run
+See 'kubectl create service --help' for usage.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl run service myservice --dry-run=client -o yaml> myservice.yaml
+error: required flag(s) "image" not set
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl create service clusterip myservice --tcp=80 --dry-run=client -o yaml> myservice.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ll
+total 12
+-rw-r--r--. 1 rashmika rashmika 559 Jun 19 09:44 busybox.yaml
+-rw-r--r--. 1 rashmika rashmika 559 Jun 19 17:23 myapp.yaml
+-rw-r--r--. 1 rashmika rashmika 268 Jun 19 17:49 myservice.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ mv myservice.yaml /Documents/My_K8s_Projects/services
+mv: cannot stat '/Documents/My_K8s_Projects/services': Not a directory
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ rm myservice.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ll
+total 8
+-rw-r--r--. 1 rashmika rashmika 559 Jun 19 09:44 busybox.yaml
+-rw-r--r--. 1 rashmika rashmika 559 Jun 19 17:23 myapp.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ cd ..
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ ll
+total 0
+drwxr-xr-x. 1 rashmika rashmika  0 Jun 18 13:15 configmaps
+drwxr-xr-x. 1 rashmika rashmika 34 Jun 18 13:36 deployments
+drwxr-xr-x. 1 rashmika rashmika 24 Jun 18 15:12 namespaces
+drwxr-xr-x. 1 rashmika rashmika 44 Jun 19 17:52 pods
+drwxr-xr-x. 1 rashmika rashmika  0 Jun 18 13:16 secrets
+drwxr-xr-x. 1 rashmika rashmika  0 Jun 18 13:15 services
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ cd services
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/services$ kubectl create service clusterip myservice --tcp=80:80 --dry-run=client -o yaml> myservice.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/services$ ll
+total 4
+-rw-r--r--. 1 rashmika rashmika 269 Jun 19 17:53 myservice.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/services$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/services$ cd..
+bash: cd..: command not found...
+^C
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/services$ cd ..
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ cd pods
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ cat myapp.yaml
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: busyboxpod
+    app: busyboxpod
+    type: front-end
+  name: busyboxpod
+spec:
+  containers:
+  - image: busybox
+    name: busybox
+    command: ["sleep", "3600"]
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 200m
+        memory: 256Mi
+    ports:
+    - containerPort: 80
+      name: http
+      protocol: TCP
+    env:
+    -   name: DBCON
+        value: myconnectionstring
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ 
+
+
