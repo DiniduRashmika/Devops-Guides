@@ -1577,5 +1577,805 @@ spec:
   restartPolicy: Always
 status: {}
 rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ 
+.
+.
+.
+.
+.
+.
+.
+.
+.
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: myservice
+  name: myservice
+spec:
+  ports:
+  - name: 80-80
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: busyboxpod
+  type: front-end
+status:
+  loadBalancer: {}
+
+.
+.
+.
+.
+.
+.
+.
+.
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: busyboxpod
+    app: busyboxpod
+    type: ClusterIP
+  name: busyboxpod
+spec:
+  containers:
+  - image: busybox
+    name: busybox
+    command: ["sleep", "3600"]
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+	cpu: 200m
+        memory: 256Mi
+    ports:
+    - containerPort: 80
+      name: http
+      protocol: TCP
+    env:
+    -   name: DBCON
+        value: myconnectionstring
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+
+.
+.
+..
+.
+.
+.
+
+.
+..
+
+..
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: myservice
+  name: myservice
+spec:
+  ports:
+  - name: 80-80
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: myservice
+  type: ClusterIP
+status:
+  loadBalancer: {}
+.
+.
+.
+
+.
+.
+..
+
+.
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: busyboxpod
+    app: busyboxpod
+    type: front-end
+  name: busyboxpod
+spec:
+  containers:
+  - image: busybox
+    name: busybox
+    command: ["sleep", "3600"]
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 200m
+        memory: 256Mi
+    ports:
+    - containerPort: 80
+      name: http
+      protocol: TCP
+    env:
+    -   name: DBCON
+        value: myconnectionstring
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f myapp.yaml
+pod/busyboxpod created
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pod
+NAME         READY   STATUS    RESTARTS   AGE
+busyboxpod   1/1     Running   0          10s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pods
+NAME         READY   STATUS    RESTARTS   AGE
+busyboxpod   1/1     Running   0          18s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ll
+total 8
+-rw-r--r--. 1 rashmika rashmika 559 Jun 19 09:44 busybox.yaml
+-rw-r--r--. 1 rashmika rashmika 559 Jun 19 17:23 myapp.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano myapp.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ busybox.yaml
+bash: busybox.yaml: command not found...
+^[[Drashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f myservice.yaml
+error: the path "myservice.yaml" does not exist
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f /Documents/My_K8s_Projects/service/myservice.yaml
+error: the path "/Documents/My_K8s_Projects/service/myservice.yaml" cannot be accessed: stat /Documents/My_K8s_Projects/service/myservice.yaml: not a directory
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f /Documents/My_K8s_Projects/service/
+error: the path "/Documents/My_K8s_Projects/service/" cannot be accessed: stat /Documents/My_K8s_Projects/service/: not a directory
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f ~/Documents/My_K8s_Projects/service/myservice.yaml
+error: the path "/home/rashmika/Documents/My_K8s_Projects/service/myservice.yaml" does not exist
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f ~/Documents/My_K8s_Projects/services/myservice.yaml
+service/myservice created
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get service
+NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP   46h
+myservice    ClusterIP   10.96.129.115   <none>        80/TCP    15s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ cat ~/Documents/My_K8s_Projects/services/myservice.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: busyboxpod
+    app: busyboxpod
+    type: front-end
+  name: busyboxpod
+spec:
+  containers:
+  - image: busybox
+    name: busybox
+    command: ["sleep", "3600"]
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 200m
+        memory: 256Mi
+    ports:
+    - containerPort: 80
+      name: http
+      protocol: TCP
+    env:
+    -   name: DBCON
+        value: myconnectionstring
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f myapp.yaml
+pod/busyboxpod created
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pod
+NAME         READY   STATUS    RESTARTS   AGE
+busyboxpod   1/1     Running   0          10s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pods
+NAME         READY   STATUS    RESTARTS   AGE
+busyboxpod   1/1     Running   0          18s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ll
+total 8
+-rw-r--r--. 1 rashmika rashmika 559 Jun 19 09:44 busybox.yaml
+-rw-r--r--. 1 rashmika rashmika 559 Jun 19 17:23 myapp.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano myapp.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ busybox.yaml
+bash: busybox.yaml: command not found...
+^[[Drashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f myservice.yaml
+error: the path "myservice.yaml" does not exist
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f /Documents/My_K8s_Projects/service/myservice.yaml
+error: the path "/Documents/My_K8s_Projects/service/myservice.yaml" cannot be accessed: stat /Documents/My_K8s_Projects/service/myservice.yaml: not a directory
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f /Documents/My_K8s_Projects/service/
+error: the path "/Documents/My_K8s_Projects/service/" cannot be accessed: stat /Documents/My_K8s_Projects/service/: not a directory
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f ~/Documents/My_K8s_Projects/service/myservice.yaml
+error: the path "/home/rashmika/Documents/My_K8s_Projects/service/myservice.yaml" does not exist
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f ~/Documents/My_K8s_Projects/services/myservice.yaml
+service/myservice created
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get service
+NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP   46h
+myservice    ClusterIP   10.96.129.115   <none>        80/TCP    15s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ cat ~/Documents/My_K8s_Projects/services/myservice.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: myservice
+  name: myservice
+spec:
+  ports:
+  - name: 80-80
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: myservice
+  type: ClusterIP
+status:
+  loadBalancer: {}
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get po -o wide
+NAME         READY   STATUS    RESTARTS   AGE   IP            NODE                 NOMINATED NODE   READINESS GATES
+busyboxpod   1/1     Running   0          24m   10.244.0.12   kind-control-plane   <none>           <none>
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get ep myservice
+NAME        ENDPOINTS   AGE
+myservice   <none>      18m
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get ep myservice
+
+NAME        ENDPOINTS   AGE
+myservice   <none>      19m
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano busybox.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano myapp.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano myservice.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ cd ..
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ cd services
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/services$ ll
+total 4
+-rw-r--r--. 1 rashmika rashmika 269 Jun 19 17:53 myservice.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/services$ nano myservice.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/services$ cat myservice.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: myservice
+  name: myservice
+spec:
+  ports:
+  - name: 80-80
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: busyboxpod
+  type: front-end
+status:
+  loadBalancer: {}
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/services$ kubectl get po -o wide
+NAME         READY   STATUS    RESTARTS   AGE   IP            NODE                 NOMINATED NODE   READINESS GATES
+busyboxpod   1/1     Running   0          30m   10.244.0.12   kind-control-plane   <none>           <none>
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/services$ kubectl get ep myservice
+NAME        ENDPOINTS   AGE
+myservice   <none>      23m
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/services$ kubectl delete service myservice
+service "myservice" deleted
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/services$ kubectl apply -f myservice.yaml
+The Service "myservice" is invalid: spec.type: Unsupported value: "front-end": supported values: "ClusterIP", "ExternalName", "LoadBalancer", "NodePort"
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/services$ nano myservice.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/services$ kubectl apply -f myservice.yaml
+service/myservice created
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/services$ cd ..
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects$ cd pods
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ll
+total 8
+-rw-r--r--. 1 rashmika rashmika 559 Jun 19 09:44 busybox.yaml
+-rw-r--r--. 1 rashmika rashmika 559 Jun 19 17:23 myapp.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano myapp.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f myapp.yaml
+pod/busyboxpod configured
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get po -o wide
+NAME         READY   STATUS    RESTARTS   AGE   IP            NODE                 NOMINATED NODE   READINESS GATES
+busyboxpod   1/1     Running   0          34m   10.244.0.12   kind-control-plane   <none>           <none>
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get ep myservice
+NAME        ENDPOINTS        AGE
+myservice   10.244.0.12:80   93s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get nodes
+NAME                 STATUS   ROLES           AGE   VERSION
+kind-control-plane   Ready    control-plane   47h   v1.29.2
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get nodes --all-namespaces
+NAME                 STATUS   ROLES           AGE   VERSION
+kind-control-plane   Ready    control-plane   2d    v1.29.2
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get nodes -o wide --all-namespaces
+NAME                 STATUS   ROLES           AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION           CONTAINER-RUNTIME
+kind-control-plane   Ready    control-plane   2d    v1.29.2   172.18.0.2    <none>        Debian GNU/Linux 12 (bookworm)   6.14.9-300.fc42.x86_64   containerd://1.7.13
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano myapp.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl run pod two-containers --image=nginx --tcp=80 --image=busybox --tcp=81 --dry-run=client -o yaml > twocontainers.yaml 
+error: unknown flag: --tcp
+See 'kubectl run --help' for usage.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl run pod two-containers --image=nginx --tcp=80:80 --image=busybox --tcp=81:81 --dry-run=client -o yaml > twocontainers.yaml 
+error: unknown flag: --tcp
+See 'kubectl run --help' for usage.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl run pod two-containers --image=nginx --tcp=80:80 --dry-run=client -o yaml > twocontainers.yaml 
+error: unknown flag: --tcp
+See 'kubectl run --help' for usage.
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl run pod two-containers --image=nginx --image=busybox --dry-run=client -o yaml > twocontainers.yaml 
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pods
+NAME         READY   STATUS    RESTARTS      AGE
+busyboxpod   1/1     Running   5 (31m ago)   5h32m
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl run pod two-containers --image=nginx --dry-run=client -o yaml > twocontainers.yaml 
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pods
+NAME         READY   STATUS    RESTARTS      AGE
+busyboxpod   1/1     Running   5 (32m ago)   5h32m
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl run pod two-containers --image=nginx --dry-run=client -o yaml > twocontainers.yaml 
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pods
+NAME         READY   STATUS    RESTARTS      AGE
+busyboxpod   1/1     Running   5 (39m ago)   5h40m
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl run pod twocontainers --image=nginx --dry-run=client -o yaml > twocontainers.yaml 
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pods
+NAME         READY   STATUS    RESTARTS      AGE
+busyboxpod   1/1     Running   5 (40m ago)   5h40m
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ ll
+total 12
+-rw-r--r--. 1 rashmika rashmika 559 Jun 19 09:44 busybox.yaml
+-rw-r--r--. 1 rashmika rashmika 560 Jun 20 11:01 myapp.yaml
+-rw-r--r--. 1 rashmika rashmika 256 Jun 20 16:09 twocontainers.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano twocontainers.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano twocontainers.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano twocontainers.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano twocontainers.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano twocontainers.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ nano twocontainers.yaml
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl apply -f twocontainers.yaml
+pod/twocontainers created
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pods
+NAME            READY   STATUS    RESTARTS      AGE
+busyboxpod      1/1     Running   6 (28m ago)   6h29m
+twocontainers   2/2     Running   0             29s
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ kubectl get pods -o wide
+NAME            READY   STATUS    RESTARTS      AGE     IP            NODE                 NOMINATED NODE   READINESS GATES
+busyboxpod      1/1     Running   6 (28m ago)   6h29m   10.244.0.12   kind-control-plane   <none>           <none>
+twocontainers   2/2     Running   0             44s     10.244.0.13   kind-control-plane   <none>           <none>
+rashmika@adsl-dynamic-ipv6:~/Documents/My_K8s_Projects/pods$ 
 
 
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+rashmika@adsl-dynamic-ipv6:~$ docker countainer ls
+docker: unknown command: docker countainer
+
+Run 'docker --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE                  COMMAND                  CREATED      STATUS         PORTS                       NAMES
+c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   5 days ago   Up 3 minutes   127.0.0.1:33561->6443/tcp   kind-control-plane
+rashmika@adsl-dynamic-ipv6:~$ docker container ls -a
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED             STATUS                         PORTS                       NAMES
+01b67c3ff8ae   alpine                                "/bin/sh"                49 minutes ago      Exited (0) 42 minutes ago                                  my-alpine-version
+dc72e5c87345   alpine:latest                         "/bin/sh"                About an hour ago   Exited (0) About an hour ago                               intelligent_mcnulty
+06a48006f4d9   hello-world                           "/hello"                 2 hours ago         Exited (0) 2 hours ago                                     magical_kepler
+71772759fab1   hello-world                           "/hello"                 2 hours ago         Exited (0) 2 hours ago                                     bold_franklin
+c6ebe07cd850   kindest/node:v1.29.2                  "/usr/local/bin/entr…"   5 days ago          Up 3 minutes                   127.0.0.1:33561->6443/tcp   kind-control-plane
+3782424a3812   gcr.io/k8s-minikube/kicbase:v0.0.47   "/usr/local/bin/entr…"   11 days ago         Exited (130) 4 days ago                                    minikube
+5368d41673d6   nginx:latest                          "/docker-entrypoint.…"   2 weeks ago         Exited (0) 11 days ago                                     devtest1
+874fa916beb8   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 2 weeks ago                                     dazzling_bouman
+2e8a9037a6ed   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 2 weeks ago                                     boring_cray
+79fb67a33490   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 11 days ago                                     webserver
+4fc1c4c5be12   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 2 weeks ago                                     adoring_knuth
+c59c046016d2   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (127) 2 weeks ago                                   boring_hodgkin
+03fefa750bb8   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 2 weeks ago                                     optimistic_mcnulty
+c2c0bf89a5a9   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 2 weeks ago                                     wizardly_jennings
+1362307064d8   hello-world                           "/hello"                 2 weeks ago         Exited (0) 2 weeks ago                                     dreamy_galileo
+rashmika@adsl-dynamic-ipv6:~$ docker container run --name=my-alpine-version2 -it alpine /bin/sh
+/ # ls
+bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
+/ # uname -a
+Linux d45fe2e914c6 6.14.11-300.fc42.x86_64 #1 SMP PREEMPT_DYNAMIC Tue Jun 10 16:24:16 UTC 2025 x86_64 Linux
+/ # if config
+> ^C
+
+/ # ifconfig
+eth0      Link encap:Ethernet  HWaddr 1E:C1:57:63:DE:32  
+          inet addr:172.17.0.2  Bcast:172.17.255.255  Mask:255.255.0.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:48 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:6810 (6.6 KiB)  TX bytes:126 (126.0 B)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+/ # exit
+rashmika@adsl-dynamic-ipv6:~$ uname -a
+Linux adsl-dynamic-ipv6.slt.lk 6.14.11-300.fc42.x86_64 #1 SMP PREEMPT_DYNAMIC Tue Jun 10 16:24:16 UTC 2025 x86_64 GNU/Linux
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE                  COMMAND                  CREATED      STATUS         PORTS                       NAMES
+c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   5 days ago   Up 8 minutes   127.0.0.1:33561->6443/tcp   kind-control-plane
+rashmika@adsl-dynamic-ipv6:~$ docker container ls -a
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED             STATUS                         PORTS                       NAMES
+d45fe2e914c6   alpine                                "/bin/sh"                2 minutes ago       Exited (0) 2 minutes ago                                   my-alpine-version2
+01b67c3ff8ae   alpine                                "/bin/sh"                54 minutes ago      Exited (0) 47 minutes ago                                  my-alpine-version
+dc72e5c87345   alpine:latest                         "/bin/sh"                About an hour ago   Exited (0) About an hour ago                               intelligent_mcnulty
+06a48006f4d9   hello-world                           "/hello"                 2 hours ago         Exited (0) 2 hours ago                                     magical_kepler
+71772759fab1   hello-world                           "/hello"                 3 hours ago         Exited (0) 3 hours ago                                     bold_franklin
+c6ebe07cd850   kindest/node:v1.29.2                  "/usr/local/bin/entr…"   5 days ago          Up 8 minutes                   127.0.0.1:33561->6443/tcp   kind-control-plane
+3782424a3812   gcr.io/k8s-minikube/kicbase:v0.0.47   "/usr/local/bin/entr…"   11 days ago         Exited (130) 4 days ago                                    minikube
+5368d41673d6   nginx:latest                          "/docker-entrypoint.…"   2 weeks ago         Exited (0) 11 days ago                                     devtest1
+874fa916beb8   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 2 weeks ago                                     dazzling_bouman
+2e8a9037a6ed   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 2 weeks ago                                     boring_cray
+79fb67a33490   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 11 days ago                                     webserver
+4fc1c4c5be12   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 2 weeks ago                                     adoring_knuth
+c59c046016d2   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (127) 2 weeks ago                                   boring_hodgkin
+03fefa750bb8   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 2 weeks ago                                     optimistic_mcnulty
+c2c0bf89a5a9   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 2 weeks ago                                     wizardly_jennings
+1362307064d8   hello-world                           "/hello"                 2 weeks ago         Exited (0) 2 weeks ago                                     dreamy_galileo
+rashmika@adsl-dynamic-ipv6:~$ docker container run --name=my-live-alpine -dil alpine /bin/ash
+docker: invalid reference format
+
+Run 'docker run --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container run --name my-live-alpine -dil alpine /bin/ash
+docker: invalid reference format
+
+Run 'docker run --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container run --name my-live-alpine -dit alpine /bin/ash
+36d9acb76f5a617758ddb0507ab60ff4b209aa2f649ebae7594feec76ed2100a
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+
+CONTAINER ID   IMAGE                  COMMAND                  CREATED         STATUS          PORTS                       NAMES
+36d9acb76f5a   alpine                 "/bin/ash"               7 seconds ago   Up 7 seconds                                my-live-alpine
+c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   5 days ago      Up 14 minutes   127.0.0.1:33561->6443/tcp   kind-control-plane
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ docker container ls -a
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED          STATUS                      PORTS                       NAMES
+36d9acb76f5a   alpine                                "/bin/ash"               12 seconds ago   Up 12 seconds                                           my-live-alpine
+d45fe2e914c6   alpine                                "/bin/sh"                8 minutes ago    Exited (0) 7 minutes ago                                my-alpine-version2
+01b67c3ff8ae   alpine                                "/bin/sh"                59 minutes ago   Exited (0) 53 minutes ago                               my-alpine-version
+dc72e5c87345   alpine:latest                         "/bin/sh"                2 hours ago      Exited (0) 2 hours ago                                  intelligent_mcnulty
+06a48006f4d9   hello-world                           "/hello"                 2 hours ago      Exited (0) 2 hours ago                                  magical_kepler
+71772759fab1   hello-world                           "/hello"                 3 hours ago      Exited (0) 3 hours ago                                  bold_franklin
+c6ebe07cd850   kindest/node:v1.29.2                  "/usr/local/bin/entr…"   5 days ago       Up 14 minutes               127.0.0.1:33561->6443/tcp   kind-control-plane
+3782424a3812   gcr.io/k8s-minikube/kicbase:v0.0.47   "/usr/local/bin/entr…"   11 days ago      Exited (130) 4 days ago                                 minikube
+5368d41673d6   nginx:latest                          "/docker-entrypoint.…"   2 weeks ago      Exited (0) 11 days ago                                  devtest1
+874fa916beb8   nginx                                 "/docker-entrypoint.…"   2 weeks ago      Exited (0) 2 weeks ago                                  dazzling_bouman
+2e8a9037a6ed   nginx                                 "/docker-entrypoint.…"   2 weeks ago      Exited (0) 2 weeks ago                                  boring_cray
+79fb67a33490   nginx                                 "/docker-entrypoint.…"   2 weeks ago      Exited (0) 11 days ago                                  webserver
+4fc1c4c5be12   nginx                                 "/docker-entrypoint.…"   2 weeks ago      Exited (0) 2 weeks ago                                  adoring_knuth
+c59c046016d2   nginx                                 "/docker-entrypoint.…"   2 weeks ago      Exited (127) 2 weeks ago                                boring_hodgkin
+03fefa750bb8   nginx                                 "/docker-entrypoint.…"   2 weeks ago      Exited (0) 2 weeks ago                                  optimistic_mcnulty
+c2c0bf89a5a9   nginx                                 "/docker-entrypoint.…"   2 weeks ago      Exited (0) 2 weeks ago                                  wizardly_jennings
+1362307064d8   hello-world                           "/hello"                 2 weeks ago      Exited (0) 2 weeks ago                                  dreamy_galileo
+rashmika@adsl-dynamic-ipv6:~$ docker container run --help
+Usage:  docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+Create and run a new container from an image
+
+Aliases:
+  docker container run, docker run
+
+Options:
+      --add-host list                    Add a custom host-to-IP mapping (host:ip)
+      --annotation map                   Add an annotation to the container (passed through to the OCI runtime) (default map[])
+  -a, --attach list                      Attach to STDIN, STDOUT or STDERR
+      --blkio-weight uint16              Block IO (relative weight), between 10 and 1000, or 0 to disable (default 0)
+      --blkio-weight-device list         Block IO weight (relative device weight) (default [])
+      --cap-add list                     Add Linux capabilities
+      --cap-drop list                    Drop Linux capabilities
+      --cgroup-parent string             Optional parent cgroup for the container
+      --cgroupns string                  Cgroup namespace to use (host|private)
+                                         'host':    Run the container in the Docker host's cgroup namespace
+                                         'private': Run the container in its own private cgroup namespace
+                                         '':        Use the cgroup namespace as configured by the
+                                                    default-cgroupns-mode option on the daemon (default)
+      --cidfile string                   Write the container ID to the file
+      --cpu-period int                   Limit CPU CFS (Completely Fair Scheduler) period
+      --cpu-quota int                    Limit CPU CFS (Completely Fair Scheduler) quota
+      --cpu-rt-period int                Limit CPU real-time period in microseconds
+      --cpu-rt-runtime int               Limit CPU real-time runtime in microseconds
+  -c, --cpu-shares int                   CPU shares (relative weight)
+      --cpus decimal                     Number of CPUs
+      --cpuset-cpus string               CPUs in which to allow execution (0-3, 0,1)
+      --cpuset-mems string               MEMs in which to allow execution (0-3, 0,1)
+  -d, --detach                           Run container in background and print container ID
+      --detach-keys string               Override the key sequence for detaching a container
+      --device list                      Add a host device to the container
+      --device-cgroup-rule list          Add a rule to the cgroup allowed devices list
+      --device-read-bps list             Limit read rate (bytes per second) from a device (default [])
+      --device-read-iops list            Limit read rate (IO per second) from a device (default [])
+      --device-write-bps list            Limit write rate (bytes per second) to a device (default [])
+      --device-write-iops list           Limit write rate (IO per second) to a device (default [])
+      --disable-content-trust            Skip image verification (default true)
+      --dns list                         Set custom DNS servers
+      --dns-option list                  Set DNS options
+      --dns-search list                  Set custom DNS search domains
+      --domainname string                Container NIS domain name
+      --entrypoint string                Overwrite the default ENTRYPOINT of the image
+  -e, --env list                         Set environment variables
+      --env-file list                    Read in a file of environment variables
+      --expose list                      Expose a port or a range of ports
+      --gpus gpu-request                 GPU devices to add to the container ('all' to pass all GPUs)
+      --group-add list                   Add additional groups to join
+      --health-cmd string                Command to run to check health
+      --health-interval duration         Time between running the check (ms|s|m|h) (default 0s)
+      --health-retries int               Consecutive failures needed to report unhealthy
+      --health-start-interval duration   Time between running the check during the start period (ms|s|m|h) (default 0s)
+      --health-start-period duration     Start period for the container to initialize before starting health-retries countdown (ms|s|m|h)
+                                         (default 0s)
+      --health-timeout duration          Maximum time to allow one check to run (ms|s|m|h) (default 0s)
+      --help                             Print usage
+  -h, --hostname string                  Container host name
+      --init                             Run an init inside the container that forwards signals and reaps processes
+  -i, --interactive                      Keep STDIN open even if not attached
+      --ip string                        IPv4 address (e.g., 172.30.100.104)
+      --ip6 string                       IPv6 address (e.g., 2001:db8::33)
+      --ipc string                       IPC mode to use
+      --isolation string                 Container isolation technology
+      --kernel-memory bytes              Kernel memory limit
+  -l, --label list                       Set meta data on a container
+      --label-file list                  Read in a line delimited file of labels
+      --link list                        Add link to another container
+      --link-local-ip list               Container IPv4/IPv6 link-local addresses
+      --log-driver string                Logging driver for the container
+      --log-opt list                     Log driver options
+      --mac-address string               Container MAC address (e.g., 92:d0:c6:0a:29:33)
+  -m, --memory bytes                     Memory limit
+      --memory-reservation bytes         Memory soft limit
+      --memory-swap bytes                Swap limit equal to memory plus swap: '-1' to enable unlimited swap
+      --memory-swappiness int            Tune container memory swappiness (0 to 100) (default -1)
+      --mount mount                      Attach a filesystem mount to the container
+      --name string                      Assign a name to the container
+      --network network                  Connect a container to a network
+      --network-alias list               Add network-scoped alias for the container
+      --no-healthcheck                   Disable any container-specified HEALTHCHECK
+      --oom-kill-disable                 Disable OOM Killer
+      --oom-score-adj int                Tune host's OOM preferences (-1000 to 1000)
+      --pid string                       PID namespace to use
+      --pids-limit int                   Tune container pids limit (set -1 for unlimited)
+      --platform string                  Set platform if server is multi-platform capable
+      --privileged                       Give extended privileges to this container
+  -p, --publish list                     Publish a container's port(s) to the host
+  -P, --publish-all                      Publish all exposed ports to random ports
+      --pull string                      Pull image before running ("always", "missing", "never") (default "missing")
+  -q, --quiet                            Suppress the pull output
+      --read-only                        Mount the container's root filesystem as read only
+      --restart string                   Restart policy to apply when a container exits (default "no")
+      --rm                               Automatically remove the container and its associated anonymous volumes when it exits
+      --runtime string                   Runtime to use for this container
+      --security-opt list                Security Options
+      --shm-size bytes                   Size of /dev/shm
+      --sig-proxy                        Proxy received signals to the process (default true)
+      --stop-signal string               Signal to stop the container
+      --stop-timeout int                 Timeout (in seconds) to stop a container
+      --storage-opt list                 Storage driver options for the container
+      --sysctl map                       Sysctl options (default map[])
+      --tmpfs list                       Mount a tmpfs directory
+  -t, --tty                              Allocate a pseudo-TTY
+      --ulimit ulimit                    Ulimit options (default [])
+      --use-api-socket                   Bind mount Docker API socket and required auth
+  -u, --user string                      Username or UID (format: <name|uid>[:<group|gid>])
+      --userns string                    User namespace to use
+      --uts string                       UTS namespace to use
+  -v, --volume list                      Bind mount a volume
+      --volume-driver string             Optional volume driver for the container
+      --volumes-from list                Mount volumes from the specified container(s)
+  -w, --workdir string                   Working directory inside the container
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE                  COMMAND                  CREATED         STATUS          PORTS                       NAMES
+36d9acb76f5a   alpine                 "/bin/ash"               9 minutes ago   Up 9 minutes                                my-live-alpine
+c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   5 days ago      Up 23 minutes   127.0.0.1:33561->6443/tcp   kind-control-plane
+rashmika@adsl-dynamic-ipv6:~$ docker container exec 36d9acb76f5a
+docker: 'docker container exec' requires at least 2 arguments
+
+Usage:  docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+See 'docker container exec --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container exec 36d9acb76f5a hostname
+36d9acb76f5a
+rashmika@adsl-dynamic-ipv6:~$ docker container exec 36d9acb76f5a image
+OCI runtime exec failed: exec failed: unable to start container process: exec: "image": executable file not found in $PATH: unknown
+rashmika@adsl-dynamic-ipv6:~$ docker container exec 36d9acb76f5a ls
+bin
+dev
+etc
+home
+lib
+media
+mnt
+opt
+proc
+root
+run
+sbin
+srv
+sys
+tmp
+usr
+var
+rashmika@adsl-dynamic-ipv6:~$ docker container exec 36d9acb76f5a ifconfig
+eth0      Link encap:Ethernet  HWaddr 76:B6:1A:B6:A1:C4  
+          inet addr:172.17.0.2  Bcast:172.17.255.255  Mask:255.255.0.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:30 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:3883 (3.7 KiB)  TX bytes:126 (126.0 B)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+rashmika@adsl-dynamic-ipv6:~$ docker container run my-live-alpine
+Unable to find image 'my-live-alpine:latest' locally
+docker: Error response from daemon: pull access denied for my-live-alpine, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+
+Run 'docker run --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container exec my-live-alpine
+docker: 'docker container exec' requires at least 2 arguments
+
+Usage:  docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+See 'docker container exec --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ docker container run my-live-alpine -it alpine /bin/s 
+Unable to find image 'my-live-alpine:latest' locally
+^[[Adocker: Error response from daemon: pull access denied for my-live-alpine, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+
+Run 'docker run --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container run my-live-alpine -it alpine /bin/s ^C
+rashmika@adsl-dynamic-ipv6:~$ docker container run my-live-alpine -it alpine /bin/ash
+Unable to find image 'my-live-alpine:latest' locally
+docker: Error response from daemon: pull access denied for my-live-alpine, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+
+Run 'docker run --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container run my-live-alpine -it alpine /bin/ash
+Unable to find image 'my-live-alpine:latest' locally
+docker: Error response from daemon: pull access denied for my-live-alpine, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+
+Run 'docker run --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker exec -it my-live-alpine /bin/ash
+/ # ll
+/bin/ash: ll: not found
+/ # ls
+bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
+/ # exit
+rashmika@adsl-dynamic-ipv6:~$ docker container run my-live-alpine -it alpine /bin/ash
+Unable to find image 'my-live-alpine:latest' locally
+^[[Bdocker: Error response from daemon: pull access denied for my-live-alpine, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+
+Run 'docker run --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container run my-live-alpine -it alpine /bin/ash
+Unable to find image 'my-live-alpine:latest' locally
+docker: Error response from daemon: pull access denied for my-live-alpine, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+
+Run 'docker run --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker exec -it my-live-alpine /bin/ash
+/ # ps
+PID   USER     TIME  COMMAND
+    1 root      0:00 /bin/ash
+   42 root      0:00 /bin/ash
+   48 root      0:00 ps
+/ # exit
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS          PORTS                       NAMES
+36d9acb76f5a   alpine                 "/bin/ash"               23 minutes ago   Up 23 minutes                               my-live-alpine
+c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   5 days ago       Up 37 minutes   127.0.0.1:33561->6443/tcp   kind-control-plane
+rashmika@adsl-dynamic-ipv6:~$ docker exec -it my-live-alpine /bin/ash
+/ # ls
+bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
+/ # echo "This is a sample file to test" > test.txt
+/ # ls
+bin       etc       lib       mnt       proc      run       srv       test.txt  usr
+dev       home      media     opt       root      sbin      sys       tmp       var
+/ # nano test.txt
+/bin/ash: nano: not found
+/ # yum test.txt
+/bin/ash: yum: not found
+/ # vim test.txt
+/bin/ash: vim: not found
+/ # cat test.txt
+This is a sample file to test
+/ # ls
+bin       etc       lib       mnt       proc      run       srv       test.txt  usr
+dev       home      media     opt       root      sbin      sys       tmp       var
+/ # exit
+rashmika@adsl-dynamic-ipv6:~$ docker container run --name my-fresh-alpine -dit alpine bin/sh
+
+db2ece282699bb851f8a8af9b8673b20f9e333774b784b73f3ea16cf70172aaa
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ docker exec my-fresh-alpine -it -- /bin/sh
+OCI runtime exec failed: exec failed: unable to start container process: exec: "-it": executable file not found in $PATH: unknown
+rashmika@adsl-dynamic-ipv6:~$ docker exec my-fresh-alpine -it  /bin/sh
+OCI runtime exec failed: exec failed: unable to start container process: exec: "-it": executable file not found in $PATH: unknown
+rashmika@adsl-dynamic-ipv6:~$ docker exec -it  my-fresh-alpine  /bin/sh
+/ # ls
+bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
+/ # ifconfig
+eth0      Link encap:Ethernet  HWaddr 3E:50:AA:35:4C:42  
+          inet addr:172.17.0.3  Bcast:172.17.255.255  Mask:255.255.0.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:22 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:2980 (2.9 KiB)  TX bytes:126 (126.0 B)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+/ # exit
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS          PORTS                       NAMES
+db2ece282699   alpine                 "bin/sh"                 4 minutes ago    Up 3 minutes                                my-fresh-alpine
+36d9acb76f5a   alpine                 "/bin/ash"               31 minutes ago   Up 31 minutes                               my-live-alpine
+c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   5 days ago       Up 45 minutes   127.0.0.1:33561->6443/tcp   kind-control-plane
+rashmika@adsl-dynamic-ipv6:~$ docker container exec -it my-fresh-alpine
+docker: 'docker container exec' requires at least 2 arguments
+
+Usage:  docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+See 'docker container exec --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container rm my-fresh-alpine
+Error response from daemon: cannot remove container "my-fresh-alpine": container is running: stop the container before removing or force remove
+rashmika@adsl-dynamic-ipv6:~$ docker container stop  my-fresh-alpine
+my-fresh-alpine
+rashmika@adsl-dynamic-ipv6:~$ docker container rm my-fresh-alpine
+
+my-fresh-alpine
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS             PORTS                       NAMES
+36d9acb76f5a   alpine                 "/bin/ash"               55 minutes ago   Up 55 minutes                                  my-live-alpine
+c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   5 days ago       Up About an hour   127.0.0.1:33561->6443/tcp   kind-control-plane
+rashmika@adsl-dynamic-ipv6:~$ docker container stop  my-live-alpine
+my-live-alpine
+rashmika@adsl-dynamic-ipv6:~$ docker container rm my-live-alpine
+my-live-alpine
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE                  COMMAND                  CREATED      STATUS             PORTS                       NAMES
+c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   5 days ago   Up About an hour   127.0.0.1:33561->6443/tcp   kind-control-plane
+rashmika@adsl-dynamic-ipv6:~$ 
