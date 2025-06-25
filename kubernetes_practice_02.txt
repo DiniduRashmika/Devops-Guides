@@ -2379,3 +2379,1490 @@ rashmika@adsl-dynamic-ipv6:~$ docker container ls
 CONTAINER ID   IMAGE                  COMMAND                  CREATED      STATUS             PORTS                       NAMES
 c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   5 days ago   Up About an hour   127.0.0.1:33561->6443/tcp   kind-control-plane
 rashmika@adsl-dynamic-ipv6:~$ 
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+rashmika@adsl-dynamic-ipv6:~$ sudo cd /etc
+[sudo] password for rashmika: 
+rashmika@adsl-dynamic-ipv6:~$ ll
+total 188432
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Desktop
+drwxr-xr-x. 1 rashmika rashmika       110 Jun 19 11:37 Documents
+drwxr-xr-x. 1 rashmika rashmika       104 Jun  2 10:00 Downloads
+-rw-r--r--. 1 root     root      60121272 Jun 12 11:42 kubectl
+-rw-r--r--. 1 rashmika rashmika     10174 Apr 20  2024 LICENSE
+drwxr-xr-x. 1 rashmika rashmika         0 Jun  2 11:55 Media
+-rw-r--r--. 1 root     root     132766301 Jun 11 16:45 minikube-linux-amd64
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Music
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Pictures
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Public
+-rw-r--r--. 1 rashmika rashmika     49052 Apr 19 23:37 README.md
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Templates
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Videos
+rashmika@adsl-dynamic-ipv6:~$ cd /etc
+rashmika@adsl-dynamic-ipv6:/etc$ ll
+total 1440
+drwxr-xr-x. 1 root                 root                    126 Apr  9 17:39 abrt
+-rw-r--r--. 1 root                 root                     16 May 27 16:45 adjtime
+-rw-r--r--. 1 root                 root                   1529 Mar  5 05:30 aliases
+drwxr-xr-x. 1 root                 root                     70 Apr 14 05:30 alsa
+drwxr-xr-x. 1 root                 root                   1530 Jun 23 10:32 alternatives
+drwxr-xr-x. 1 root                 root                     56 Apr  9 17:45 anaconda
+-rw-r--r--. 1 root                 root                    541 Jan 27 05:30 anacrontab
+-rw-r--r--. 1 root                 root                    269 Jan 16 05:30 anthy-unicode.conf
+-rw-r--r--. 1 root                 root                     55 Apr 14 05:30 asound.conf
+-rw-r--r--. 1 root                 root                      1 Jan 27 05:30 at.deny
+drwxr-x---. 1 root                 root                    108 Apr  9 17:45 audit
+drwxr-xr-x. 1 root                 root                    232 May 27 16:45 authselect
+drwxr-xr-x. 1 root                 root                     66 Apr  9 17:36 avahi
+drwxr-xr-x. 1 root                 root                    158 Jun  3 12:18 bash_completion.d
+-rw-r--r--. 1 root                 root                   2709 Mar  5 05:30 bashrc
+-rw-r--r--. 1 root                 root                    535 Jan 20 05:30 bindresvport.blacklist
+drwxr-xr-x. 1 root                 root                      0 May 29 05:30 binfmt.d
+dr-xr-xr-x. 1 root                 root                     62 Jun 23 10:32 bluetooth
+-rw-r-----. 1 root                 brlapi                   33 Apr  9 17:44 brlapi.key
+drwxr-xr-x. 1 root                 root                     76 Apr  9 17:45 brltty
+-rw-r--r--. 1 root                 root                  30773 Feb  3 05:30 brltty.conf
+drwxr-xr-x. 1 root                 root                      0 Apr 16 05:30 ceph
+drwxr-xr-x. 1 root                 root                      0 May  9 05:30 chkconfig.d
+drwxr-xr-x. 1 root                 root                     44 Apr  9 17:45 chromium
+-rw-r--r--. 1 root                 root                   1381 Jun 11 05:30 chrony.conf
+drwxr-xr-x. 1 root                 root                     24 Jun  5 05:30 cifs-utils
+drwxr-xr-x. 1 root                 root                     72 Jun  4 05:30 cockpit
+drwxr-xr-x. 1 colord               colord                    0 May 29 11:04 colord
+drwxr-xr-x. 1 root                 root                     30 Jun  5 10:20 conntrackd
+drwxr-xr-x. 1 root                 root                     22 Jun  5 09:55 containerd
+drwxr-xr-x. 1 root                 root                    184 Jun  4 05:30 containers
+drwx------. 1 root                 root                      0 May 29 05:30 credstore
+drwx------. 1 root                 root                      0 May 29 05:30 credstore.encrypted
+drwxr-xr-x. 1 root                 root                     14 Apr  9 17:39 cron.d
+drwxr-xr-x. 1 root                 root                      0 Jan 16 05:30 cron.daily
+-rw-r--r--. 1 root                 root                      0 Jan 27 05:30 cron.deny
+drwxr-xr-x. 1 root                 root                     16 Apr  9 17:39 cron.hourly
+drwxr-xr-x. 1 root                 root                      0 Jan 16 05:30 cron.monthly
+-rw-r--r--. 1 root                 root                    451 Jan 16 05:30 crontab
+drwxr-xr-x. 1 root                 root                      0 Jan 16 05:30 cron.weekly
+drwxr-xr-x. 1 root                 root                     70 Apr  9 17:35 crypto-policies
+-rw-------. 1 root                 root                      0 May 27 16:33 crypttab
+-rw-r--r--. 1 root                 root                   1401 Mar  5 05:30 csh.cshrc
+-rw-r--r--. 1 root                 root                   1569 Mar  5 05:30 csh.login
+drwxr-xr-x. 1 root                 lp                      494 Jun 23 22:36 cups
+drwxr-xr-x. 1 root                 root                     40 Apr  9 17:44 cupshelpers
+drwxr-xr-x. 1 root                 root                     80 Apr  9 17:35 dbus-1
+drwxr-xr-x. 1 root                 root                     18 Apr  9 17:36 dconf
+drwxr-xr-x. 1 root                 root                     60 Apr  9 17:35 debuginfod
+drwxr-xr-x. 1 root                 root                     32 May  9 05:30 default
+drwxr-xr-x. 1 root                 root                      0 Jan 17 05:30 depmod.d
+drwxr-x---. 1 root                 root                     20 Jan 24 05:30 dhcp
+-rw-r--r--. 1 root                 root                   5955 May 28 05:30 DIR_COLORS
+-rw-r--r--. 1 root                 root                   6037 May 28 05:30 DIR_COLORS.lightbgcolor
+-rw-r--r--. 1 root                 root                   1174 Jan 16 05:30 dleyna-server-service.conf
+drwxr-xr-x. 1 root                 root                    274 Apr  9 17:39 dnf
+-rw-r--r--. 1 root                 root                  28602 Feb  7 05:30 dnsmasq.conf
+drwxr-xr-x. 1 root                 root                      0 Feb  7 05:30 dnsmasq.d
+drwxr-xr-x. 1 root                 root                      0 May 30 17:38 docker
+-rw-r--r--. 1 root                 root                    117 Apr  2 05:30 dracut.conf
+drwxr-xr-x. 1 root                 root                      0 Apr  2 05:30 dracut.conf.d
+drwxr-xr-x. 1 root                 root                     14 Apr  9 17:36 eac
+drwxr-xr-x. 1 root                 root                     46 Apr  9 17:44 egl
+-rw-r--r--. 1 root                 root                      0 Mar  5 05:30 environment
+-rw-r--r--. 1 root                 root                   1362 Mar  5 05:30 ethertypes
+-rw-r--r--. 1 root                 root                      0 Mar  5 05:30 exports
+drwxr-xr-x. 1 root                 root                      0 Jun 15 05:30 exports.d
+lrwxrwxrwx. 1 root                 root                     56 Mar 20 05:30 favicon.png -> /usr/share/icons/hicolor/16x16/apps/fedora-logo-icon.png
+lrwxrwxrwx. 1 root                 root                     25 Apr 11 05:30 fedora-release -> ../usr/lib/fedora-release
+-rw-r--r--. 1 root                 root                     66 Mar  5 05:30 filesystems
+drwxr-xr-x. 1 root                 root                      8 Jun 11 05:30 firefox
+drwxr-x---. 1 root                 root                    254 Jun 10 05:30 firewalld
+drwxr-xr-x. 1 root                 root                     18 May 12 05:30 flatpak
+drwxr-xr-x. 1 root                 root                     32 May 27 05:30 fonts
+-rw-r--r--. 1 root                 root                     20 Feb 21 01:50 fprintd.conf
+-rw-r--r--. 1 root                 root                    639 May 27 16:33 fstab
+-rwxr-xr-x. 1 root                 root                    209 Apr  9 17:34 fstab.script
+-rw-r--r--. 1 root                 root                     38 Jan 16 05:30 fuse.conf
+drwxr-xr-x. 1 root                 root                     68 Jun  4 05:30 fwupd
+drwxr-xr-x. 1 root                 root                      0 Jan 17 05:30 gcrypt
+-rw-r--r--. 1 root                 root                    265 May 13 05:30 gdbinit
+drwxr-xr-x. 1 root                 root                      0 May 13 05:30 gdbinit.d
+drwxr-xr-x. 1 root                 root                    106 May 30 19:10 gdm
+drwxr-xr-x. 1 root                 root                     36 Apr  9 17:36 geoclue
+drwxr-xr-x. 1 root                 root                     24 Apr  9 17:44 glvnd
+drwxr-xr-x. 1 gnome-remote-desktop gnome-remote-desktop      0 May 29 11:03 gnome-remote-desktop
+drwxr-xr-x. 1 root                 root                      0 Jan 23 05:30 gnupg
+-rw-r--r--. 1 root                 root                     94 Jan 17 05:30 GREP_COLORS
+drwxr-xr-x. 1 root                 root                     36 Apr  9 17:36 groff
+-rw-r--r--. 1 root                 root                   1171 Jun 23 11:17 group
+-rw-r--r--. 1 root                 root                   1185 Jun 12 10:52 group-
+lrwxrwxrwx. 1 root                 root                     22 Mar 27 05:30 grub2.cfg -> ../boot/grub2/grub.cfg
+lrwxrwxrwx. 1 root                 root                     22 Mar 27 05:30 grub2-efi.cfg -> ../boot/grub2/grub.cfg
+drwx------. 1 root                 root                    402 Apr  9 17:47 grub.d
+----------. 1 root                 root                    978 Jun 23 11:17 gshadow
+----------. 1 root                 root                    988 Jun 12 10:52 gshadow-
+drwxr-xr-x. 1 root                 root                     12 Jun  4 05:30 gss
+drwxr-xr-x. 1 root                 root                    114 Apr  9 17:45 gssproxy
+-rw-r--r--. 1 root                 root                      9 Mar  5 05:30 host.conf
+-rw-r--r--. 1 root                 root                      1 May 27 16:46 hostname
+-rw-r--r--. 1 root                 root                    384 Mar  5 05:30 hosts
+drwxr-xr-x. 1 root                 root                     20 May 26 05:30 hp
+drwxr-xr-x. 1 root                 root                     86 May 30 18:49 httpd
+-rw-r--r--. 1 root                 root                   5799 Jun 15 05:30 idmapd.conf
+drwxr-xr-x. 1 root                 root                    402 May 30 18:49 ImageMagick-7
+lrwxrwxrwx. 1 root                 root                     11 May  9 05:30 init.d -> rc.d/init.d
+-rw-r--r--. 1 root                 root                    490 May 29 05:30 inittab
+-rw-r--r--. 1 root                 root                    943 Mar  5 05:30 inputrc
+drwxr-xr-x. 1 root                 root                     36 Apr 11 05:30 ipp-usb
+drwxr-xr-x. 1 root                 root                     22 May 30 18:51 iscsi
+lrwxrwxrwx. 1 root                 root                     16 Apr 11 05:30 issue -> ../usr/lib/issue
+drwxr-xr-x. 1 root                 root                     26 Apr 11 05:30 issue.d
+lrwxrwxrwx. 1 root                 root                     20 Apr 11 05:30 issue.net -> ../usr/lib/issue.net
+drwxr-xr-x. 1 root                 root                     46 Apr  9 17:39 java
+drwxr-xr-x. 1 root                 root                      0 Jan 17 05:30 jvm
+drwxr-xr-x. 1 root                 root                      0 Jan 17 05:30 jvm-common
+drwxr-xr-x. 1 root                 root                     22 May  8 05:30 kdump
+-rw-r--r--. 1 root                 root                   8782 May 30 19:10 kdump.conf
+drwxr-xr-x. 1 root                 root                     32 May 29 05:30 kernel
+drwxr-xr-x. 1 root                 root                      6 May  9 05:30 keys
+drwxr-xr-x. 1 root                 root                      0 Jan 17 05:30 keyutils
+-rw-r--r--. 1 root                 root                    880 Jun  4 05:30 krb5.conf
+drwxr-xr-x. 1 root                 root                    106 Jun 23 10:35 krb5.conf.d
+drwxr-xr-x. 1 root                 root                     18 Jun 23 10:36 kubernetes
+-rw-r--r--. 1 root                 root                  76151 Jun 23 10:40 ld.so.cache
+-rw-r--r--. 1 root                 root                     28 Apr 14 13:52 ld.so.conf
+drwxr-xr-x. 1 root                 root                     90 Jun 23 10:32 ld.so.conf.d
+-rw-r-----. 1 root                 root                    191 Jan  7 14:04 libaudit.conf
+drwxr-xr-x. 1 root                 root                      2 Apr  9 17:36 libblockdev
+drwxr-xr-x. 1 root                 root                    418 Apr  9 17:36 libibverbs.d
+drwxr-xr-x. 1 root                 root                     26 Apr  9 17:35 libnl
+drwxr-xr-x. 1 root                 root                    244 Apr  9 17:36 libreport
+drwxr-xr-x. 1 root                 root                     80 Apr  9 17:35 libssh
+-rw-r--r--. 1 root                 root                   2393 Jan 24  2023 libuser.conf
+drwx------. 1 root                 root                    530 Apr 29 05:30 libvirt
+-rw-r--r--. 1 root                 root                     19 May 27 16:46 locale.conf
+lrwxrwxrwx. 1 root                 root                     34 May 29 11:16 localtime -> ../usr/share/zoneinfo/Asia/Kolkata
+-rw-r--r--. 1 root                 root                   8888 Mar 20 05:30 login.defs
+-rw-r--r--. 1 root                 root                    493 Jul  5  2021 logrotate.conf
+drwxr-xr-x. 1 root                 root                    272 Jun  5 05:30 logrotate.d
+drwxr-xr-x. 1 root                 root                    106 Apr  9 17:35 lvm
+-r--r--r--. 1 root                 root                     33 May 27 16:33 machine-id
+-rw-r--r--. 1 root                 root                    110 Jun  3 05:30 magic
+-rw-r--r--. 1 root                 root                    272 May 23  2023 mailcap
+-rw-r--r--. 1 root                 root                   5122 Apr 22 05:30 makedumpfile.conf.sample
+-rw-r--r--. 1 root                 root                   5242 Jan 17 05:30 man_db.conf
+drwxr-xr-x. 1 root                 root                     38 Apr  9 17:45 mcelog
+drwxr-xr-x. 1 root                 root                      0 Jan 28 05:30 mdevctl.d
+-rw-r--r--. 1 root                 root                  74869 May 23  2023 mime.types
+-rw-r--r--. 1 root                 root                    813 Jan 16 05:30 mke2fs.conf
+drwxr-xr-x. 1 root                 root                    600 Jun 23 10:36 modprobe.d
+drwxr-xr-x. 1 root                 root                     16 Jun  5 10:03 modules-load.d
+-rw-r--r--. 1 root                 root                      0 Mar  5 05:30 motd
+drwxr-xr-x. 1 root                 root                     14 Apr  9 17:44 motd.d
+lrwxrwxrwx. 1 root                 root                     19 May 29 11:03 mtab -> ../proc/self/mounts
+-rw-r--r--. 1 root                 root                   2620 Jun 15 05:30 mtools.conf
+-rw-r--r--. 1 root                 root                    202 Apr 24 05:30 my.cnf
+drwxr-xr-x. 1 root                 root                     20 Apr 24 05:30 my.cnf.d
+-rw-r--r--. 1 root                 root                  11924 Mar 20 05:30 nanorc
+drwxr-xr-x. 1 root                 root                      8 Jun 12 05:30 ndctl
+drwxr-xr-x. 1 root                 root                     44 Jun 12 05:30 ndctl.conf.d
+-rw-r--r--. 1 root                 root                    767 Jan 20 05:30 netconfig
+drwxr-xr-x. 1 root                 root                    160 Apr  9 17:35 NetworkManager
+-rw-r--r--. 1 root                 root                     58 Mar  5 05:30 networks
+-rw-r--r--. 1 root                 root                   1568 Jun 15 05:30 nfs.conf
+-rw-r--r--. 1 root                 root                   3598 Jun 15 05:30 nfsmount.conf
+drwx------. 1 root                 root                     56 Apr  9 17:35 nftables
+drwxr-xr-x. 1 root                 root                    500 Jun  3 09:52 nginx
+-rw-r--r--. 1 root                 root                   2484 Jan 17 05:30 nilfs_cleanerd.conf
+lrwxrwxrwx. 1 root                 root                     29 May 27 16:45 nsswitch.conf -> /etc/authselect/nsswitch.conf
+drwxr-xr-x. 1 root                 root                     54 Apr 11 05:30 nvme
+drwxr-xr-x. 1 root                 root                     22 Apr  9 17:39 openal
+drwxr-xr-x. 1 root                 root                     28 Apr  9 17:35 openldap
+-rw-r--r--. 1 root                 root                    389 Jan 17 05:30 opensc.conf
+lrwxrwxrwx. 1 root                 root                     16 Jan 17 05:30 opensc-x86_64.conf -> /etc/opensc.conf
+drwxr-xr-x. 1 root                 root                     24 Apr  2 05:30 openvpn
+drwxr-xr-x. 1 root                 root                     12 May  9 05:30 opt
+lrwxrwxrwx. 1 root                 root                     21 Apr 11 05:30 os-release -> ../usr/lib/os-release
+drwxr-xr-x. 1 root                 root                     18 Apr  9 17:36 ostree
+drwxr-xr-x. 1 root                 root                     92 Apr  9 17:45 PackageKit
+drwxr-xr-x. 1 root                 root                    586 May 30 19:10 pam.d
+-rw-r--r--. 1 root                 root                   1309 May  3  2022 paperspecs
+-rw-r--r--. 1 root                 root                     51 May  2 05:30 passim.conf
+-rw-r--r--. 1 root                 root                   3206 Jun 23 11:17 passwd
+-rw-r--r--. 1 root                 root                   3247 Jun  3 09:34 passwd-
+-rw-r--r--. 1 root                 root                    263 Jun 23  2023 passwdqc.conf
+-rw-r--r--. 1 root                 root                   2872 Jan 18 05:30 pinforc
+drwxr-xr-x. 1 root                 root                     14 Apr  9 17:35 pkcs11
+drwxr-xr-x. 1 root                 root                     26 Apr  9 17:35 pkgconfig
+drwxr-xr-x. 1 root                 root                    106 May  9 05:30 pki
+drwxr-xr-x. 1 root                 root                     28 Apr  9 17:36 plymouth
+drwxr-xr-x. 1 root                 root                     44 May  9 05:30 pm
+drwxr-xr-x. 1 root                 root                     84 Jun  6 05:30 polkit-1
+drwxr-xr-x. 1 root                 root                      0 Jan 18 05:30 popt.d
+drwxr-xr-x. 1 root                 root                    350 Apr  9 17:39 ppp
+-rw-r--r--. 1 root                 root                    233 Mar  5 05:30 printcap
+-rw-r--r--. 1 root                 root                   2058 Mar  5 05:30 profile
+drwxr-xr-x. 1 root                 root                    816 Jun 23 10:36 profile.d
+-rw-r--r--. 1 root                 root                   6714 Mar  5 05:30 protocols
+drwxr-xr-x. 1 root                 root                     22 Apr  9 17:44 pulse
+drwxr-xr-x. 1 root                 root                     22 May 30 05:30 qemu
+drwxr-xr-x. 1 root                 root                     56 Jun  4 17:57 qemu-ga
+lrwxrwxrwx. 1 root                 root                     10 May  9 05:30 rc0.d -> rc.d/rc0.d
+lrwxrwxrwx. 1 root                 root                     10 May  9 05:30 rc1.d -> rc.d/rc1.d
+lrwxrwxrwx. 1 root                 root                     10 May  9 05:30 rc2.d -> rc.d/rc2.d
+lrwxrwxrwx. 1 root                 root                     10 May  9 05:30 rc3.d -> rc.d/rc3.d
+lrwxrwxrwx. 1 root                 root                     10 May  9 05:30 rc4.d -> rc.d/rc4.d
+lrwxrwxrwx. 1 root                 root                     10 May  9 05:30 rc5.d -> rc.d/rc5.d
+lrwxrwxrwx. 1 root                 root                     10 May  9 05:30 rc6.d -> rc.d/rc6.d
+drwxr-xr-x. 1 root                 root                     82 May 29 05:30 rc.d
+drwxr-xr-x. 1 root                 root                     22 Jan 17 05:30 reader.conf.d
+lrwxrwxrwx. 1 root                 root                     14 Apr 11 05:30 redhat-release -> fedora-release
+-rw-r--r--. 1 root                 root                   1787 Jan 17 05:30 request-key.conf
+drwxr-xr-x. 1 root                 root                     94 Apr  9 17:45 request-key.d
+lrwxrwxrwx. 1 root                 root                     39 May 29 11:03 resolv.conf -> ../run/systemd/resolve/stub-resolv.conf
+-rw-r--r--. 1 root                 root                   1634 Apr 13 00:32 rpc
+drwxr-xr-x. 1 root                 root                      0 Feb 26 05:30 rpm
+-rw-r--r--. 1 root                 root                    458 Jan 30 05:30 rsyncd.conf
+-rw-r--r--. 1 root                 root                   3403 Jan 21 05:30 rsyslog.conf
+drwxr-xr-x. 1 root                 root                      0 Jan 21 05:30 rsyslog.d
+drwxr-xr-x. 1 root                 root                     42 Jun  5 05:30 rwtab.d
+-rw-r--r--. 1 root                 root                   5772 Mar 14 23:31 rygel.conf
+drwxr-xr-x. 1 root                 root                     62 Jun 23 10:32 samba
+drwxr-xr-x. 1 root                 root                   1876 Jun 23 10:32 sane.d
+drwxr-xr-x. 1 root                 root                     42 Apr  9 17:39 sasl2
+drwxr-xr-x. 1 root                 root                    400 May 30 18:49 security
+drwxr-xr-x. 1 root                 root                     82 Jun  3 05:30 selinux
+-rw-r--r--. 1 root                 root                 701707 Mar  5 05:30 services
+-rw-r--r--. 1 root                 root                    216 Jan 30 05:30 sestatus.conf
+drwxr-xr-x. 1 root                 root                     38 May 29 12:39 setroubleshoot
+drwxr-xr-x. 1 root                 root                     14 Apr  9 17:36 sgml
+----------. 1 root                 root                   1372 Jun 23 11:17 shadow
+----------. 1 root                 root                   1471 Jun  3 09:34 shadow-
+-rw-r--r--. 1 root                 root                     68 Apr  9 17:44 shells
+drwxr-xr-x. 1 root                 root                     80 May  9 05:30 skel
+drwxr-xr-x. 1 root                 root                     88 May 30 19:10 smartmontools
+drwxr-xr-x. 1 root                 root                     80 May  6 05:30 sos
+drwxr-xr-x. 1 root                 root                     52 May 30 18:51 speech-dispatcher
+drwxr-xr-x. 1 root                 root                    344 May 29 05:30 ssh
+drwxr-xr-x. 1 root                 root                    104 Jun  3 10:16 ssl
+drwxr-x---. 1 root                 sssd                     18 Jun  5 05:30 sssd
+drwxr-xr-x. 1 root                 root                      0 May  9 05:30 statetab.d
+-rw-r--r--. 1 root                 root                     22 Jun 23 11:17 subgid
+-rw-r--r--. 1 root                 root                     41 May 30 14:36 subgid-
+-rw-r--r--. 1 root                 root                     22 Jun 23 11:17 subuid
+-rw-r--r--. 1 root                 root                     41 May 30 14:36 subuid-
+-rw-r-----. 1 root                 root                   4316 Feb 26 05:30 sudo.conf
+-r--r-----. 1 root                 root                   4375 Feb 26 05:30 sudoers
+drwxr-x---. 1 root                 root                      0 Feb 26 05:30 sudoers.d
+drwxr-xr-x. 1 root                 root                     20 Apr 11 05:30 swid
+-rw-r--r--. 1 root                 root                    180 Apr 30 05:30 swtpm-localca.conf
+-rw-r--r--. 1 root                 root                     76 Apr 30 05:30 swtpm-localca.options
+-rw-r--r--. 1 root                 root                    400 Apr 30 05:30 swtpm_setup.conf
+drwxr-xr-x. 1 root                 root                    470 Jun  5 10:20 sysconfig
+-rw-r--r--. 1 root                 root                    449 May 29 05:30 sysctl.conf
+drwxr-xr-x. 1 root                 root                     44 Jun  5 10:03 sysctl.d
+drwxr-xr-x. 1 root                 root                     62 May 29 05:30 systemd
+lrwxrwxrwx. 1 root                 root                     14 Apr 11 05:30 system-release -> fedora-release
+lrwxrwxrwx. 1 root                 root                     29 Apr 11 05:30 system-release-cpe -> ../usr/lib/system-release-cpe
+drwxr-xr-x. 1 root                 root                      0 Jan 28 05:30 terminfo
+drwxr-xr-x. 1 root                 root                     52 Apr  9 17:45 thermald
+drwxr-xr-x. 1 root                 root                      0 May 29 05:30 tmpfiles.d
+drwxr-xr-x. 1 root                 root                     58 Apr  9 17:35 tpm2-tss
+-rw-r--r--. 1 root                 root                     45 Feb 15 04:30 Trolltech.conf
+-rw-r--r--. 1 root                 root                    750 Apr 25 05:30 trusted-key.key
+-rw-r--r--. 1 root                 root                   1007 Feb 15  2024 ts.conf
+drwxr-xr-x. 1 root                 root                    228 Apr  9 17:45 tuned
+drwxr-xr-x. 1 root                 root                     42 Jun 23 10:40 udev
+drwxr-xr-x. 1 root                 root                    104 Apr  9 17:39 udisks2
+drwxr-xr-x. 1 root                 root                     76 Jun  9 05:30 unbound
+-rw-r--r--. 1 root                 root                    616 Jan 18 05:30 updatedb.conf
+drwxr-xr-x. 1 root                 root                     22 May 21 05:30 UPower
+-rw-r--r--. 1 root                 root                   1689 Jan 19 05:30 uresourced.conf
+-rw-r--r--. 1 root                 root                   1523 Feb 27 05:30 usb_modeswitch.conf
+-rw-r--r--. 1 root                 root                    189 May 29 11:16 vconsole.conf
+-rw-r--r--. 1 root                 root                     51 Mar  7  2022 vdpau_wrapper.cfg
+-rw-r--r--. 1 root                 root                   1183 Jun  6 05:30 virc
+drwxr-xr-x. 1 root                 root                    260 May 30 19:10 vmware-tools
+drwxr-xr-x. 1 root                 root                     14 Apr  9 17:36 vpl
+drwxr-xr-x. 1 root                 root                     46 Apr  9 17:37 vpnc
+drwxr-xr-x. 1 root                 root                     74 May  7 05:30 vulkan
+-rw-r--r--. 1 root                 root                    380 Jan  3  2022 whois.conf
+drwxr-xr-x. 1 root                 root                     86 Apr  9 17:44 wireplumber
+drwxr-xr-x. 1 root                 root                     38 Apr  4 05:30 wpa_supplicant
+drwxr-xr-x. 1 root                 root                    118 May 30 19:09 X11
+-rw-r--r--. 1 root                 root                    817 Jan 16 05:30 xattr.conf
+drwxr-xr-x. 1 root                 root                    210 May  9 05:30 xdg
+drwxr-xr-x. 1 root                 root                     14 Apr  9 17:36 xml
+drwxr-xr-x. 1 root                 root                    510 Jun 17 11:13 yum.repos.d
+drwxr-xr-x. 1 root                 root                     28 Apr  9 17:45 zfs-fuse
+rashmika@adsl-dynamic-ipv6:/etc$ cd
+rashmika@adsl-dynamic-ipv6:~$ ll
+total 188432
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Desktop
+drwxr-xr-x. 1 rashmika rashmika       110 Jun 19 11:37 Documents
+drwxr-xr-x. 1 rashmika rashmika       104 Jun  2 10:00 Downloads
+-rw-r--r--. 1 root     root      60121272 Jun 12 11:42 kubectl
+-rw-r--r--. 1 rashmika rashmika     10174 Apr 20  2024 LICENSE
+drwxr-xr-x. 1 rashmika rashmika         0 Jun  2 11:55 Media
+-rw-r--r--. 1 root     root     132766301 Jun 11 16:45 minikube-linux-amd64
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Music
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Pictures
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Public
+-rw-r--r--. 1 rashmika rashmika     49052 Apr 19 23:37 README.md
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Templates
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Videos
+rashmika@adsl-dynamic-ipv6:~$ cd Documents
+rashmika@adsl-dynamic-ipv6:~/Documents$ ll
+total 0
+drwxr-xr-x. 1 rashmika rashmika 100 Jun 19 08:37 My_K8s_Projects
+drwxr-xr-x. 1 rashmika rashmika 130 Jun  3 16:46 PFX_Certificate
+drwxr-xr-x. 1 root     root      82 Jun 11 10:09 testdata
+drwxr-xr-x. 1 rashmika rashmika  62 Jun 19 13:55 Testlogs
+drwxr-xr-x. 1 rashmika rashmika   0 Jun 19 11:37 Testlogs2
+rashmika@adsl-dynamic-ipv6:~/Documents$ cd testdata
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ ll
+total 12
+drwxr-xr-x. 1 root     root      20 Jun 11 10:08 app
+-rw-r--r--. 1 root     root     157 Jun 11 10:12 docker-compose.yaml
+-rw-r--r--. 1 root     root      64 Jun 11 10:11 Dockerfile
+-rw-r--r--. 1 rashmika rashmika 435 Jun 12 15:52 hello.txt
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ docker container cp docker-compose.yaml my-new-alpine:/mtn
+Successfully copied 2.05kB to my-new-alpine:/mtn
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ docker container cp docker-compose.yaml my-new-alpine:/mnt
+Successfully copied 2.05kB to my-new-alpine:/mnt
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ docker container cp hello.txt my-new-alpine:/mnt
+Successfully copied 2.05kB to my-new-alpine:/mnt
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ systemctl info nginx
+Unknown command verb 'info', did you mean 'link'?
+rashmika@adsl-dynamic-ipv6:~/Documents/testdata$ systemctl status nginx
+● nginx.service - The nginx HTTP and reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf
+     Active: active (running) since Mon 2025-06-23 15:36:07 IST; 18h ago
+ Invocation: e4946a97f34144aea72a497130e44e2d
+    Process: 1012 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+    Process: 1048 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+    Process: 1093 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+   Main PID: 1130 (nginx)
+      Tasks: 3 (limit: 2730)
+     Memory: 476K (peak: 5.1M, swap: 2.9M, swap peak: 2.9M)
+        CPU: 341ms
+     CGroup: /system.slice/nginx.service
+             ├─1130 "nginx: master process /usr/sbin/nginx"
+             ├─1132 "nginx: worker process"
+             └─1134 "nginx: worker process"
+
+Jun 23 15:36:05 fedora systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+Jun 23 15:36:06 fedora nginx[1048]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Jun 23 15:36:06 fedora nginx[1048]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+Jun 23 15:36:07 fedora systemd[1]: Started nginx.service - The nginx HTTP and reverse proxy server.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE                  COMMAND                  CREATED      STATUS        PORTS                       NAMES
+c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   5 days ago   Up 17 hours   127.0.0.1:33561->6443/tcp   kind-control-plane
+rashmika@adsl-dynamic-ipv6:~$ docker container run --name my-live-alpine alpine /bin/sh
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE                  COMMAND                  CREATED      STATUS        PORTS                       NAMES
+c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   5 days ago   Up 17 hours   127.0.0.1:33561->6443/tcp   kind-control-plane
+rashmika@adsl-dynamic-ipv6:~$ docker container run --name my-live-alpine -dit alpine /bin/sh
+docker: Error response from daemon: Conflict. The container name "/my-live-alpine" is already in use by container "aba0086311a4a32830e98e4ed724948127347a92dea42c5712218071238dda57". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE                  COMMAND                  CREATED      STATUS        PORTS                       NAMES
+c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   5 days ago   Up 17 hours   127.0.0.1:33561->6443/tcp   kind-control-plane
+rashmika@adsl-dynamic-ipv6:~$ docker container ls -a
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED              STATUS                          PORTS                       NAMES
+aba0086311a4   alpine                                "/bin/sh"                About a minute ago   Exited (0) About a minute ago                               my-live-alpine
+d45fe2e914c6   alpine                                "/bin/sh"                17 hours ago         Exited (0) 17 hours ago                                     my-alpine-version2
+01b67c3ff8ae   alpine                                "/bin/sh"                18 hours ago         Exited (0) 18 hours ago                                     my-alpine-version
+dc72e5c87345   alpine:latest                         "/bin/sh"                19 hours ago         Exited (0) 19 hours ago                                     intelligent_mcnulty
+06a48006f4d9   hello-world                           "/hello"                 20 hours ago         Exited (0) 20 hours ago                                     magical_kepler
+71772759fab1   hello-world                           "/hello"                 20 hours ago         Exited (0) 20 hours ago                                     bold_franklin
+c6ebe07cd850   kindest/node:v1.29.2                  "/usr/local/bin/entr…"   5 days ago           Up 17 hours                     127.0.0.1:33561->6443/tcp   kind-control-plane
+3782424a3812   gcr.io/k8s-minikube/kicbase:v0.0.47   "/usr/local/bin/entr…"   11 days ago          Exited (130) 5 days ago                                     minikube
+5368d41673d6   nginx:latest                          "/docker-entrypoint.…"   2 weeks ago          Exited (0) 12 days ago                                      devtest1
+874fa916beb8   nginx                                 "/docker-entrypoint.…"   2 weeks ago          Exited (0) 2 weeks ago                                      dazzling_bouman
+2e8a9037a6ed   nginx                                 "/docker-entrypoint.…"   2 weeks ago          Exited (0) 2 weeks ago                                      boring_cray
+79fb67a33490   nginx                                 "/docker-entrypoint.…"   2 weeks ago          Exited (0) 12 days ago                                      webserver
+4fc1c4c5be12   nginx                                 "/docker-entrypoint.…"   2 weeks ago          Exited (0) 2 weeks ago                                      adoring_knuth
+c59c046016d2   nginx                                 "/docker-entrypoint.…"   2 weeks ago          Exited (127) 2 weeks ago                                    boring_hodgkin
+03fefa750bb8   nginx                                 "/docker-entrypoint.…"   2 weeks ago          Exited (0) 2 weeks ago                                      optimistic_mcnulty
+c2c0bf89a5a9   nginx                                 "/docker-entrypoint.…"   2 weeks ago          Exited (0) 2 weeks ago                                      wizardly_jennings
+1362307064d8   hello-world                           "/hello"                 2 weeks ago          Exited (0) 2 weeks ago                                      dreamy_galileo
+rashmika@adsl-dynamic-ipv6:~$ docker container run --name my-new-alpine -dit alpine /bin/sh
+59cd26576a3ff126dd32bf0d2f68436fdd462ee180f7c954e504f9da9037e2c9
+rashmika@adsl-dynamic-ipv6:~$ docker container ls -a
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED              STATUS                          PORTS                       NAMES
+59cd26576a3f   alpine                                "/bin/sh"                5 seconds ago        Up 5 seconds                                                my-new-alpine
+aba0086311a4   alpine                                "/bin/sh"                About a minute ago   Exited (0) About a minute ago                               my-live-alpine
+d45fe2e914c6   alpine                                "/bin/sh"                17 hours ago         Exited (0) 17 hours ago                                     my-alpine-version2
+01b67c3ff8ae   alpine                                "/bin/sh"                18 hours ago         Exited (0) 18 hours ago                                     my-alpine-version
+dc72e5c87345   alpine:latest                         "/bin/sh"                19 hours ago         Exited (0) 19 hours ago                                     intelligent_mcnulty
+06a48006f4d9   hello-world                           "/hello"                 20 hours ago         Exited (0) 20 hours ago                                     magical_kepler
+71772759fab1   hello-world                           "/hello"                 20 hours ago         Exited (0) 20 hours ago                                     bold_franklin
+c6ebe07cd850   kindest/node:v1.29.2                  "/usr/local/bin/entr…"   5 days ago           Up 17 hours                     127.0.0.1:33561->6443/tcp   kind-control-plane
+3782424a3812   gcr.io/k8s-minikube/kicbase:v0.0.47   "/usr/local/bin/entr…"   11 days ago          Exited (130) 5 days ago                                     minikube
+5368d41673d6   nginx:latest                          "/docker-entrypoint.…"   2 weeks ago          Exited (0) 12 days ago                                      devtest1
+874fa916beb8   nginx                                 "/docker-entrypoint.…"   2 weeks ago          Exited (0) 2 weeks ago                                      dazzling_bouman
+2e8a9037a6ed   nginx                                 "/docker-entrypoint.…"   2 weeks ago          Exited (0) 2 weeks ago                                      boring_cray
+79fb67a33490   nginx                                 "/docker-entrypoint.…"   2 weeks ago          Exited (0) 12 days ago                                      webserver
+4fc1c4c5be12   nginx                                 "/docker-entrypoint.…"   2 weeks ago          Exited (0) 2 weeks ago                                      adoring_knuth
+c59c046016d2   nginx                                 "/docker-entrypoint.…"   2 weeks ago          Exited (127) 2 weeks ago                                    boring_hodgkin
+03fefa750bb8   nginx                                 "/docker-entrypoint.…"   2 weeks ago          Exited (0) 2 weeks ago                                      optimistic_mcnulty
+c2c0bf89a5a9   nginx                                 "/docker-entrypoint.…"   2 weeks ago          Exited (0) 2 weeks ago                                      wizardly_jennings
+1362307064d8   hello-world                           "/hello"                 2 weeks ago          Exited (0) 2 weeks ago                                      dreamy_galileo
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE                  COMMAND                  CREATED         STATUS         PORTS                       NAMES
+59cd26576a3f   alpine                 "/bin/sh"                9 seconds ago   Up 9 seconds                               my-new-alpine
+c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   5 days ago      Up 17 hours    127.0.0.1:33561->6443/tcp   kind-control-plane
+rashmika@adsl-dynamic-ipv6:~$ docker container exec my-new-alpine 
+docker: 'docker container exec' requires at least 2 arguments
+
+Usage:  docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+See 'docker container exec --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container exec my-new-alpine /bin/sh
+rashmika@adsl-dynamic-ipv6:~$ docker exec -it my-new-alpine /bin/sh
+/ # ls
+bin    dev    etc    home   lib    media  mnt    mtn    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
+/ # cdmtn
+/bin/sh: cdmtn: not found
+/ # cd mtn
+/bin/sh: cd: can't cd to mtn: Not a directory
+/ # cat mtn
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/usr/share/nginx/html
+    container_name: compose-nginx
+/ # cd mnt
+/mnt # ll
+/bin/sh: ll: not found
+/mnt # ls
+docker-compose.yaml
+/mnt # ls
+docker-compose.yaml  hello.txt
+/mnt # ls
+docker-compose.yaml  hello.txt
+/mnt # install nano
+BusyBox v1.37.0 (2025-05-26 20:04:45 UTC) multi-call binary.
+
+Usage: install [-cdDsp] [-o USER] [-g GRP] [-m MODE] [-t DIR] [SOURCE]... DEST
+
+Copy files and set attributes
+
+	-c	Just copy (default)
+	-d	Create directories
+	-D	Create leading target directories
+	-s	Strip symbol table
+	-p	Preserve date
+	-o USER	Set ownership
+	-g GRP	Set group ownership
+	-m MODE	Set permissions
+	-t DIR	Install to DIR
+/mnt # cd ..
+/ # ls
+bin    dev    etc    home   lib    media  mnt    mtn    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
+/ # nano install
+/bin/sh: nano: not found
+/ # install
+BusyBox v1.37.0 (2025-05-26 20:04:45 UTC) multi-call binary.
+
+Usage: install [-cdDsp] [-o USER] [-g GRP] [-m MODE] [-t DIR] [SOURCE]... DEST
+
+Copy files and set attributes
+
+	-c	Just copy (default)
+	-d	Create directories
+	-D	Create leading target directories
+	-s	Strip symbol table
+	-p	Preserve date
+	-o USER	Set ownership
+	-g GRP	Set group ownership
+	-m MODE	Set permissions
+	-t DIR	Install to DIR
+/ # install nano
+BusyBox v1.37.0 (2025-05-26 20:04:45 UTC) multi-call binary.
+
+Usage: install [-cdDsp] [-o USER] [-g GRP] [-m MODE] [-t DIR] [SOURCE]... DEST
+
+Copy files and set attributes
+
+	-c	Just copy (default)
+	-d	Create directories
+	-D	Create leading target directories
+	-s	Strip symbol table
+	-p	Preserve date
+	-o USER	Set ownership
+	-g GRP	Set group ownership
+	-m MODE	Set permissions
+	-t DIR	Install to DIR
+/ # apt update && install -y nano
+/bin/sh: apt: not found
+/ # dnf update && install -y nano
+/bin/sh: dnf: not found
+/ # apk update && install -y nano
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.22/main/x86_64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.22/community/x86_64/APKINDEX.tar.gz
+v3.22.0-207-gcafa843a567 [https://dl-cdn.alpinelinux.org/alpine/v3.22/main]
+v3.22.0-212-ge3b599c79f4 [https://dl-cdn.alpinelinux.org/alpine/v3.22/community]
+OK: 26311 distinct packages available
+install: unrecognized option: y
+BusyBox v1.37.0 (2025-05-26 20:04:45 UTC) multi-call binary.
+
+Usage: install [-cdDsp] [-o USER] [-g GRP] [-m MODE] [-t DIR] [SOURCE]... DEST
+
+Copy files and set attributes
+
+	-c	Just copy (default)
+	-d	Create directories
+	-D	Create leading target directories
+	-s	Strip symbol table
+	-p	Preserve date
+	-o USER	Set ownership
+	-g GRP	Set group ownership
+	-m MODE	Set permissions
+	-t DIR	Install to DIR
+/ # y
+/bin/sh: y: not found
+/ # nano /mnt/hello.txt
+/bin/sh: nano: not found
+/ # cd mnt
+/mnt # nano hello.txt
+/bin/sh: nano: not found
+/mnt # apk add nano
+(1/3) Installing ncurses-terminfo-base (6.5_p20250503-r0)
+(2/3) Installing libncursesw (6.5_p20250503-r0)
+(3/3) Installing nano (8.4-r0)
+Executing busybox-1.37.0-r18.trigger
+OK: 8 MiB in 19 packages
+/mnt # nano hello.txt
+/mnt # cd
+~ # exit
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE                  COMMAND                  CREATED             STATUS             PORTS                       NAMES
+59cd26576a3f   alpine                 "/bin/sh"                About an hour ago   Up About an hour                               my-new-alpine
+c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   5 days ago          Up 19 hours        127.0.0.1:33561->6443/tcp   kind-control-plane
+rashmika@adsl-dynamic-ipv6:~$ docker container status nginx
+docker: unknown command: docker container status
+
+Usage:  docker container
+
+Run 'docker container --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container ls -a | grep "nginx"
+5368d41673d6   nginx:latest                          "/docker-entrypoint.…"   2 weeks ago         Exited (0) 12 days ago                                     devtest1
+874fa916beb8   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 2 weeks ago                                     dazzling_bouman
+2e8a9037a6ed   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 2 weeks ago                                     boring_cray
+79fb67a33490   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 12 days ago                                     webserver
+4fc1c4c5be12   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 2 weeks ago                                     adoring_knuth
+c59c046016d2   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (127) 2 weeks ago                                   boring_hodgkin
+03fefa750bb8   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 2 weeks ago                                     optimistic_mcnulty
+c2c0bf89a5a9   nginx                                 "/docker-entrypoint.…"   2 weeks ago         Exited (0) 2 weeks ago                                     wizardly_jennings
+rashmika@adsl-dynamic-ipv6:~$ docker continer run --name my-new-nginx nginx:alpine
+unknown flag: --name
+
+Usage:  docker [OPTIONS] COMMAND [ARG...]
+
+Run 'docker --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker continer run -d --name my-new-nginx nginx:alpine
+unknown shorthand flag: 'd' in -d
+
+Usage:  docker [OPTIONS] COMMAND [ARG...]
+
+Run 'docker --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container run -d --name my-new-nginx nginx:alpine
+Unable to find image 'nginx:alpine' locally
+alpine: Pulling from library/nginx
+f18232174bc9: Already exists 
+61ca4f733c80: Already exists 
+b464cfdf2a63: Already exists 
+d7e507024086: Already exists 
+81bd8ed7ec67: Already exists 
+197eb75867ef: Already exists 
+34a64644b756: Already exists 
+39c2ddfd6010: Already exists 
+Digest: sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10
+Status: Downloaded newer image for nginx:alpine
+efdb28b0ad371e8df2fe85c7f7b10b1f1a46a9ab0575fd8c0ce2afaf1703a5df
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE                  COMMAND                  CREATED             STATUS             PORTS                       NAMES
+efdb28b0ad37   nginx:alpine           "/docker-entrypoint.…"   19 seconds ago      Up 19 seconds      80/tcp                      my-new-nginx
+59cd26576a3f   alpine                 "/bin/sh"                About an hour ago   Up About an hour                               my-new-alpine
+c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   5 days ago          Up 19 hours        127.0.0.1:33561->6443/tcp   kind-control-plane
+rashmika@adsl-dynamic-ipv6:~$ service nginx status
+Redirecting to /bin/systemctl status nginx.service
+● nginx.service - The nginx HTTP and reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: disabled)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─10-timeout-abort.conf
+     Active: active (running) since Mon 2025-06-23 15:36:07 IST; 18h ago
+ Invocation: e4946a97f34144aea72a497130e44e2d
+    Process: 1012 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+    Process: 1048 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+    Process: 1093 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+   Main PID: 1130 (nginx)
+      Tasks: 3 (limit: 2730)
+     Memory: 488K (peak: 5.1M, swap: 2.9M, swap peak: 2.9M)
+        CPU: 341ms
+     CGroup: /system.slice/nginx.service
+             ├─1130 "nginx: master process /usr/sbin/nginx"
+             ├─1132 "nginx: worker process"
+             └─1134 "nginx: worker process"
+
+Jun 23 15:36:05 fedora systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+Jun 23 15:36:06 fedora nginx[1048]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Jun 23 15:36:06 fedora nginx[1048]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+Jun 23 15:36:07 fedora systemd[1]: Started nginx.service - The nginx HTTP and reverse proxy server.
+rashmika@adsl-dynamic-ipv6:~$ ps -aux | grep "nginx"
+root        1130  0.0  0.0  16624   992 ?        Ss   05:21   0:00 nginx: master process /usr/sbin/nginx
+nginx       1132  0.0  0.0  17044  1916 ?        S    05:21   0:00 nginx: worker process
+nginx       1134  0.0  0.0  17084  1988 ?        S    05:21   0:00 nginx: worker process
+root       29142  0.0  0.2   9524  5568 ?        Ss   10:22   0:00 nginx: master process nginx -g daemon off;
+101        29187  0.0  0.1   9988  2408 ?        S    10:22   0:00 nginx: worker process
+101        29188  0.0  0.0   9988  2276 ?        S    10:22   0:00 nginx: worker process
+rashmika   29481  0.0  0.0 231244  2024 pts/0    S+   10:26   0:00 grep --color=auto nginx
+rashmika@adsl-dynamic-ipv6:~$ ps -aux -a | grep "nginx"
+root        1130  0.0  0.0  16624   992 ?        Ss   05:21   0:00 nginx: master process /usr/sbin/nginx
+nginx       1132  0.0  0.0  17044  1916 ?        S    05:21   0:00 nginx: worker process
+nginx       1134  0.0  0.0  17084  1988 ?        S    05:21   0:00 nginx: worker process
+root       29142  0.0  0.2   9524  5568 ?        Ss   10:22   0:00 nginx: master process nginx -g daemon off;
+101        29187  0.0  0.1   9988  2408 ?        S    10:22   0:00 nginx: worker process
+101        29188  0.0  0.0   9988  2276 ?        S    10:22   0:00 nginx: worker process
+rashmika   29525  0.0  0.1 231244  2456 pts/0    S+   10:26   0:00 grep --color=auto nginx
+rashmika@adsl-dynamic-ipv6:~$ ps -aux 
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.3  0.5  37304 12848 ?        Ss   05:20   1:02 /usr/lib/systemd/systemd --switched-root --system --deserialize=50 rhgb
+root           2  0.0  0.0      0     0 ?        S    05:20   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    05:20   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-rcu_gp]
+root           5  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-sync_wq]
+root           6  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-kvfree_rcu_reclaim]
+root           7  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-slub_flushwq]
+root           8  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-netns]
+root          12  0.0  0.0      0     0 ?        I    05:20   0:00 [kworker/u8:0-events_unbound]
+root          13  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-mm_percpu_wq]
+root          14  0.0  0.0      0     0 ?        I    05:20   0:00 [kworker/u8:1-ipv6_addrconf]
+root          15  0.0  0.0      0     0 ?        I    05:20   0:00 [rcu_tasks_kthread]
+root          16  0.0  0.0      0     0 ?        I    05:20   0:00 [rcu_tasks_rude_kthread]
+root          17  0.0  0.0      0     0 ?        I    05:20   0:00 [rcu_tasks_trace_kthread]
+root          18  0.0  0.0      0     0 ?        S    05:20   0:10 [ksoftirqd/0]
+root          19  0.1  0.0      0     0 ?        I    05:20   0:20 [rcu_preempt]
+root          20  0.0  0.0      0     0 ?        S    05:20   0:00 [rcu_exp_par_gp_kthread_worker/0]
+root          21  0.0  0.0      0     0 ?        S    05:20   0:00 [rcu_exp_gp_kthread_worker]
+root          22  0.0  0.0      0     0 ?        S    05:20   0:00 [migration/0]
+root          23  0.0  0.0      0     0 ?        S    05:20   0:00 [idle_inject/0]
+root          24  0.0  0.0      0     0 ?        S    05:20   0:00 [cpuhp/0]
+root          25  0.0  0.0      0     0 ?        S    05:20   0:00 [cpuhp/1]
+root          26  0.0  0.0      0     0 ?        S    05:20   0:00 [idle_inject/1]
+root          27  0.0  0.0      0     0 ?        S    05:20   0:00 [migration/1]
+root          28  0.0  0.0      0     0 ?        S    05:20   0:02 [ksoftirqd/1]
+root          30  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/1:0H-kblockd]
+root          33  0.0  0.0      0     0 ?        S    05:20   0:00 [kdevtmpfs]
+root          34  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-inet_frag_wq]
+root          35  0.0  0.0      0     0 ?        S    05:20   0:00 [kauditd]
+root          36  0.0  0.0      0     0 ?        S    05:20   0:00 [oom_reaper]
+root          38  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-writeback]
+root          40  0.0  0.0      0     0 ?        S    05:20   0:08 [kcompactd0]
+root          41  0.0  0.0      0     0 ?        SN   05:20   0:00 [ksmd]
+root          42  0.0  0.0      0     0 ?        SN   05:20   0:00 [khugepaged]
+root          43  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-cryptd]
+root          44  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-kintegrityd]
+root          45  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-kblockd]
+root          46  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-blkcg_punt_bio]
+root          47  0.0  0.0      0     0 ?        S    05:20   0:00 [irq/9-acpi]
+root          49  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-tpm_dev_wq]
+root          50  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-ata_sff]
+root          51  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-md]
+root          52  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-md_bitmap]
+root          53  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-edac-poller]
+root          54  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-devfreq_wq]
+root          55  0.0  0.0      0     0 ?        S    05:20   0:00 [watchdogd]
+root          57  0.0  0.0      0     0 ?        I<   05:20   0:13 [kworker/0:1H-kblockd]
+root          58  0.1  0.0      0     0 ?        S    05:20   0:30 [kswapd0]
+root          66  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-kthrotld]
+root          69  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-acpi_thermal_pm]
+root          70  0.0  0.0      0     0 ?        S    05:20   0:00 [scsi_eh_0]
+root          71  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-scsi_tmf_0]
+root          72  0.0  0.0      0     0 ?        S    05:20   0:00 [scsi_eh_1]
+root          73  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-scsi_tmf_1]
+root          74  0.0  0.0      0     0 ?        S    05:20   0:00 [scsi_eh_2]
+root          75  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-scsi_tmf_2]
+root          80  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-dm_bufio_cache]
+root          81  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-mld]
+root          82  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-ipv6_addrconf]
+root          87  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-kstrp]
+root          98  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/u11:0]
+root          99  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/u12:0-ttm]
+root         100  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/u13:0-ttm]
+root         102  0.0  0.0      0     0 ?        I<   05:20   0:10 [kworker/1:1H-kblockd]
+root         415  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/0:2H]
+root         453  0.0  0.0      0     0 ?        S    05:20   0:00 [irq/18-vmwgfx]
+root         454  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-ttm]
+root         457  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-btrfs-worker]
+root         458  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-btrfs-delalloc]
+root         459  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-btrfs-flush_delalloc]
+root         460  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-btrfs-cache]
+root         462  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-btrfs-fixup]
+root         463  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-btrfs-endio]
+root         464  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-btrfs-endio-meta]
+root         465  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-btrfs-rmw]
+root         466  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-btrfs-endio-write]
+root         467  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-btrfs-compressed-write]
+root         468  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-btrfs-freespace-write]
+root         469  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-btrfs-delayed-meta]
+root         470  0.0  0.0      0     0 ?        I<   05:20   0:00 [kworker/R-btrfs-qgroup-rescan]
+root         472  0.0  0.0      0     0 ?        S    05:20   0:00 [btrfs-cleaner]
+root         473  0.2  0.0      0     0 ?        S    05:20   0:37 [btrfs-transaction]
+root         559  0.0  0.0      0     0 ?        S    05:20   0:00 [psimon]
+root         575  0.0  1.3  74704 33024 ?        Ss   05:20   0:13 /usr/lib/systemd/systemd-journald
+root         590  0.0  0.2  15572  5800 ?        Ss   05:21   0:00 /usr/lib/systemd/systemd-userdbd
+root         620  0.0  0.3  37392  7824 ?        Ss   05:21   0:01 /usr/lib/systemd/systemd-udevd
+root         621  0.0  0.0      0     0 ?        S    05:21   0:00 [psimon]
+root         674  0.0  0.0      0     0 ?        S    05:21   0:00 [jbd2/sda2-8]
+root         675  0.0  0.0      0     0 ?        I<   05:21   0:00 [kworker/R-ext4-rsv-conversion]
+systemd+     707  0.5  0.2  16296  6576 ?        Ss   05:21   1:34 /usr/lib/systemd/systemd-oomd
+systemd+     708  0.0  0.3  25788  7780 ?        Ss   05:21   0:03 /usr/lib/systemd/systemd-resolved
+root         709  0.0  0.0  93988  2280 ?        S<sl 05:21   0:01 /usr/bin/auditd
+root         711  0.0  0.1   6532  3348 ?        S<   05:21   0:00 /usr/sbin/sedispatch
+root         728  0.0  0.0      0     0 ?        I<   05:21   0:00 [kworker/R-rpciod]
+root         729  0.0  0.0      0     0 ?        I<   05:21   0:00 [kworker/R-xprtiod]
+dbus         754  0.0  0.1   9524  3912 ?        Ss   05:21   0:00 /usr/bin/dbus-broker-launch --scope system --audit
+dbus         755  0.0  0.1   9848  4688 ?        S    05:21   0:16 dbus-broker --log 4 --controller 9 --machine-id 075c811898514db0981d0d690477edc2 --
+avahi        757  0.0  0.1   7100  4328 ?        Ss   05:21   0:16 avahi-daemon: running [fedora.local]
+root         759  0.0  0.1  80808  3840 ?        Ssl  05:21   0:03 /usr/sbin/irqbalance
+chrony       760  0.0  0.1  86048  3356 ?        Ss   05:21   0:00 /usr/sbin/chronyd -n -F 2
+root         761  0.0  0.2 302952  5784 ?        SLsl 05:21   0:00 /usr/libexec/low-memory-monitor
+root         762  0.0  0.0   3188  1740 ?        Ss   05:21   0:00 /usr/sbin/mcelog --daemon --foreground
+polkitd      763  0.1  0.4 384748 11140 ?        Ssl  05:21   0:18 /usr/lib/polkit-1/polkitd --no-debug --log-level=notice
+rtkit        764  0.0  0.1  21660  3304 ?        SNsl 05:21   0:00 /usr/libexec/rtkit-daemon
+root         765  0.0  0.3 533924  7260 ?        Ssl  05:21   0:01 /usr/libexec/accounts-daemon
+root         766  0.0  0.2 531268  5644 ?        Ssl  05:21   0:00 /usr/libexec/switcheroo-control
+root         767  0.0  0.2  16376  6512 ?        Ss   05:21   0:03 /usr/lib/systemd/systemd-homed
+root         768  0.0  0.3  18916  7552 ?        Ss   05:21   0:08 /usr/lib/systemd/systemd-logind
+root         769  0.0  0.2  16164  6492 ?        Ss   05:21   0:06 /usr/lib/systemd/systemd-machined
+root         770  0.0  0.3 542336  8660 ?        Ssl  05:21   0:00 /usr/libexec/udisks2/udisksd
+root         771  0.0  0.3 540668  8076 ?        Ssl  05:21   0:08 /usr/libexec/upowerd
+root         772  0.0  0.0 446064  2160 ?        Ssl  05:21   0:09 /usr/bin/VBoxDRMClient
+avahi        778  0.0  0.0   6484  1244 ?        S    05:21   0:00 avahi-daemon: chroot helper
+root         781  0.0  0.1 582208  3268 ?        Ssl  05:21   0:12 /usr/sbin/VBoxService -f
+root         818  0.0  0.0      0     0 ?        S    05:21   0:00 [psimon]
+root         820  0.0  0.0      0     0 ?        I<   05:21   0:00 [kworker/u12:1]
+root         822  0.0  0.0      0     0 ?        S    05:21   0:00 [psimon]
+root         833  0.0  0.1   4700  2552 ?        SNs  05:21   0:00 /usr/sbin/alsactl -s -n 19 -c -E ALSA_CONFIG_PATH=/etc/alsa/alsactl.conf --initfile
+root         838  0.0  0.3 552528  7392 ?        Ssl  05:21   0:00 /usr/sbin/abrtd -d -s
+root         876  0.0  0.3 390576  7536 ?        Ssl  05:21   0:00 /usr/bin/ModemManager
+root         877  0.0  0.5 370524 12576 ?        Ssl  05:21   0:03 /usr/bin/python3 -sP /usr/bin/firewalld --nofork --nopid
+root         887  0.0  0.6 597852 15000 ?        Ss   05:21   0:00 /usr/bin/abrt-dump-journal-core -D -T -f -e
+root         888  0.0  0.6 556888 15224 ?        Ss   05:21   0:00 /usr/bin/abrt-dump-journal-oops -fxtD
+root         889  0.0  0.6 565636 15312 ?        Ss   05:21   0:00 /usr/bin/abrt-dump-journal-xorg -fxtD
+root         940  0.0  0.5 1173096 12024 ?       Ssl  05:21   0:08 /usr/bin/NetworkManager --no-daemon
+root         950  0.0  0.2 251460  5972 ?        Ss   05:21   0:00 /usr/bin/cupsd -l
+root         951  0.0  0.1 281748  4120 ?        Ssl  05:21   0:00 /usr/bin/gssproxy -i
+root         952  0.0  0.1   8184  2748 ?        Ss   05:21   0:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root         953  0.0  0.5 496948 13056 ?        Ssl  05:21   0:05 /usr/bin/python3 -Es /usr/sbin/tuned -l -P
+root         962  0.0  0.9 1802356 21748 ?       Ssl  05:21   0:09 /usr/bin/containerd
+root         995  0.0  0.1   5036  2852 ?        Ss   05:21   0:00 /usr/sbin/atd -f
+root         998  0.0  0.1 232540  2888 ?        Ss   05:21   0:00 /usr/sbin/crond -n
+root        1000  0.0  0.3 535196  7456 ?        Ssl  05:21   0:00 /usr/bin/gdm
+root        1015  0.0  0.6 480000 15220 ?        Ssl  05:21   0:10 /usr/sbin/rsyslogd -n
+root        1096  0.0  0.2 306032  6632 ?        Ssl  05:21   0:00 /usr/libexec/uresourced
+root        1130  0.0  0.0  16624   992 ?        Ss   05:21   0:00 nginx: master process /usr/sbin/nginx
+nginx       1132  0.0  0.0  17044  1916 ?        S    05:21   0:00 nginx: worker process
+nginx       1134  0.0  0.0  17084  1988 ?        S    05:21   0:00 nginx: worker process
+root        1140  0.0  1.7 2456532 41080 ?       Ssl  05:21   0:15 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+root        1164  0.0  0.3 495592  8692 ?        Ssl  05:21   0:02 /usr/bin/python3 -Es /usr/sbin/tuned-ppd -l
+colord      1495  0.0  0.3 537628  7148 ?        Ssl  05:21   0:00 /usr/libexec/colord
+root        1636  0.0  0.1 1238364 4568 ?        Sl   05:21   0:07 /usr/bin/containerd-shim-runc-v2 -namespace moby -id c6ebe07cd8502e3d362adc520cf1fb
+root        1665  0.0  0.2  22664  5124 ?        Ss   05:21   0:05 /sbin/init
+root        1705  0.0  0.0 1671388 1720 ?        Sl   05:21   0:00 /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 33561 -container-ip 
+root        1949  0.0  0.2 551700  6940 ?        Ssl  05:21   0:00 /usr/bin/pcscd --foreground --auto-exit
+root        2026  0.0  0.0  24800  2116 ?        Ss   05:21   0:00 /lib/systemd/systemd-journald
+root        2095  3.7  1.7 1921320 41152 ?       Ssl  05:21  11:43 /usr/local/bin/containerd
+geoclue     2158  0.0  0.7 1321756 18352 ?       Ssl  05:21   0:03 /usr/libexec/geoclue
+root        2177  0.0  0.1  14896  3624 ?        Ss   05:21   0:00 /usr/sbin/wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant.conf -u -s
+root        2352  6.3  2.2 2259428 54372 ?       Ssl  05:21  19:30 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --ku
+root        2371  0.0  0.0      0     0 ?        I<   05:21   0:00 [kworker/u13:1]
+root        2495  0.0  0.2 722648  5572 ?        Sl   05:21   0:11 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 0dff29fd7837885380d84a
+root        2507  0.0  0.2 722648  5512 ?        Sl   05:21   0:10 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id e8dd351fa03fa9d6c7b251
+root        2541  0.0  0.2 722904  5544 ?        Sl   05:21   0:10 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 1a1b8099c5a3580856ae66
+root        2543  0.0  0.2 722648  5556 ?        Sl   05:21   0:10 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 0532482da3e37d156c78a1
+65535       2623  0.0  0.0    996   140 ?        Ss   05:21   0:00 /pause
+65535       2645  0.0  0.0    996   140 ?        Ss   05:21   0:00 /pause
+65535       2664  0.0  0.0    996   140 ?        Ss   05:21   0:00 /pause
+65535       2677  0.0  0.0    996   140 ?        Ss   05:21   0:00 /pause
+root        2759  8.6  8.8 1447696 208532 ?      Ssl  05:21  26:43 kube-apiserver --advertise-address=172.18.0.2 --allow-privileged=true --authorizati
+root        2768  2.7  2.0 1303944 48432 ?       Ssl  05:21   8:26 kube-controller-manager --allocate-node-cidrs=true --authentication-kubeconfig=/etc
+root        2804  4.1  2.3 11221896 55784 ?      Ssl  05:21  12:44 etcd --advertise-client-urls=https://172.18.0.2:2379 --cert-file=/etc/kubernetes/pk
+root        2815  0.7  1.0 1284000 25720 ?       Ssl  05:21   2:21 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --authori
+root        2821  0.0  0.3 616844  8872 ?        Sl   05:21   0:00 gdm-session-worker [pam/gdm-password]
+rashmika    2936  0.0  0.4  23768  9752 ?        Ss   05:21   0:02 /usr/lib/systemd/systemd --user
+rashmika    2940  0.0  0.0  16332  1744 ?        S    05:21   0:00 (sd-pam)
+rashmika    2959  0.0  0.2 406864  4924 ?        Sl   05:21   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+rashmika    2977  0.0  0.2 391588  5512 tty2     Ssl+ 05:21   0:00 /usr/libexec/gdm-wayland-session /usr/bin/gnome-session
+rashmika    2986  0.0  0.1   9012  3492 ?        Ss   05:21   0:00 /usr/bin/dbus-broker-launch --scope user
+rashmika    2987  0.0  0.1   7104  4192 ?        S    05:21   0:00 dbus-broker --log 4 --controller 9 --machine-id 075c811898514db0981d0d690477edc2 --
+rashmika    2989  0.0  0.3 493780  7160 tty2     Sl+  05:21   0:00 /usr/libexec/gnome-session-binary
+rashmika    3042  0.0  0.2 311664  4916 ?        Ssl  05:21   0:00 /usr/libexec/gnome-session-ctl --monitor
+rashmika    3043  0.0  0.3 381840  8084 ?        Ssl  05:21   0:00 /usr/libexec/uresourced --user
+rashmika    3047  0.0  0.3 1117180 8200 ?        Ssl  05:21   0:00 /usr/libexec/gnome-session-binary --systemd-service --session=gnome
+rashmika    3051  0.0  0.2 539772  5560 ?        Ssl  05:21   0:00 /usr/libexec/gvfsd
+rashmika    3061  0.0  0.2 615608  5608 ?        Sl   05:21   0:00 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f
+rashmika    3065  0.0  0.3 328344  8756 ?        S<sl 05:21   0:01 /usr/bin/pipewire
+rashmika    3066  0.0  0.4 937304 11672 ?        S<sl 05:21   0:02 /usr/bin/wireplumber
+rashmika    3120  1.2  6.5 4189152 154748 ?      Ssl  05:21   3:46 /usr/bin/gnome-shell
+rashmika    3149  0.0  0.2 380776  6532 ?        Ssl  05:22   0:00 /usr/libexec/at-spi-bus-launcher
+rashmika    3155  0.0  0.1   8884  3500 ?        S    05:22   0:00 /usr/bin/dbus-broker-launch --config-file=/usr/share/defaults/at-spi2/accessibility
+rashmika    3156  0.0  0.1   5152  3088 ?        S    05:22   0:00 dbus-broker --log 4 --controller 9 --machine-id 075c811898514db0981d0d690477edc2 --
+rashmika    3157  0.0  0.2 168340  6288 ?        Ssl  05:22   0:00 /usr/libexec/at-spi2-registryd --use-gnome-session
+rashmika    3183  0.0  0.3 664724  8288 ?        Ssl  05:22   0:00 /usr/libexec/gnome-shell-calendar-server
+rashmika    3188  0.0  0.2 163960  5696 ?        Ssl  05:22   0:00 /usr/libexec/dconf-service
+rashmika    3189  0.0  0.2 530748  5452 ?        Ssl  05:22   0:00 /usr/libexec/xdg-permission-store
+rashmika    3195  0.0  0.6 2837072 16360 ?       Ssl  05:22   0:00 /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.Shell.Notifications
+rashmika    3202  0.0  0.3 611152  9300 ?        Ssl  05:22   0:16 /usr/bin/ibus-daemon --panel disable
+rashmika    3204  0.0  0.2 465776  5804 ?        Ssl  05:22   0:00 /usr/libexec/gsd-a11y-settings
+rashmika    3207  0.0  0.3 718660  8640 ?        Ssl  05:22   0:00 /usr/libexec/gsd-color
+rashmika    3209  0.0  0.3 482320  7328 ?        Ssl  05:22   0:00 /usr/libexec/gsd-datetime
+rashmika    3252  0.0  0.2 607740  6700 ?        Ssl  05:22   0:03 /usr/libexec/gsd-housekeeping
+rashmika    3268  0.0  0.3 717236  7568 ?        Ssl  05:22   0:00 /usr/libexec/gsd-keyboard
+rashmika    3273  0.0  0.4 862964 10260 ?        Ssl  05:22   0:00 /usr/libexec/gsd-media-keys
+rashmika    3339  0.0  0.6 787808 14604 ?        Ssl  05:22   0:00 /usr/libexec/gsd-power
+root        3351  0.0  0.2 722648  5384 ?        Sl   05:22   0:12 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id cf906730f218d74f1e77b9
+65535       3385  0.0  0.0    996   140 ?        Ss   05:22   0:00 /pause
+rashmika    3392  0.0  0.3 549308  8256 ?        Ssl  05:22   0:00 /usr/libexec/gsd-print-notifications
+rashmika    3400  0.0  0.2 678916  6168 ?        Ssl  05:22   0:00 /usr/libexec/gsd-rfkill
+rashmika    3408  0.0  0.2 391764  5672 ?        Ssl  05:22   0:00 /usr/libexec/gsd-screensaver-proxy
+rashmika    3409  0.0  0.3 690344  8564 ?        Ssl  05:22   0:00 /usr/libexec/gsd-sharing
+rashmika    3414  0.0  0.2 614320  6508 ?        Ssl  05:22   0:00 /usr/libexec/gsd-smartcard
+rashmika    3415  0.0  0.2 473084  6780 ?        Ssl  05:22   0:00 /usr/libexec/gsd-sound
+root        3419  0.0  0.2 722392  5536 ?        Sl   05:22   0:14 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id e7b8f7ae6114167e232f56
+rashmika    3474  0.0  0.2 689208  6656 ?        Ssl  05:22   0:00 /usr/libexec/gsd-usb-protection
+rashmika    3482  0.0  0.3 645204  7792 ?        Ssl  05:22   0:00 /usr/libexec/gsd-wacom
+root        3556  0.0  0.2 722648  5828 ?        Sl   05:22   0:13 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 2bbee37fe16bd6f2f39660
+65535       3603  0.0  0.0    996   132 ?        Ss   05:22   0:00 /pause
+root        3626  0.0  0.3 722904  7764 ?        Sl   05:22   0:17 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 248570e8b27d3ac578d02d
+65535       3653  0.0  0.0    996   140 ?        Ss   05:22   0:00 /pause
+root        3684  0.0  0.2 722648  5464 ?        Sl   05:22   0:11 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 429b61bfdd089b7b6a2487
+root        3704  0.0  0.2 722392  5476 ?        Sl   05:22   0:12 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 5c609c68cdc20439ccbf71
+root        3715  0.0  0.3 722648  7404 ?        Sl   05:22   0:11 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 615175dbca1bc01c6d66a3
+65535       3728  0.0  0.0    996   140 ?        Ss   05:22   0:00 /pause
+65535       3808  0.0  0.0    996   140 ?        Ss   05:22   0:00 /pause
+root        3815  0.0  0.6 1282572 16016 ?       Ssl  05:22   0:10 /usr/local/bin/kube-proxy --config=/var/lib/kube-proxy/config.conf --hostname-overr
+65535       3817  0.0  0.0    996   140 ?        Ss   05:22   0:00 /pause
+65535       3841  0.0  0.0    996   140 ?        Ss   05:22   0:00 /pause
+rashmika    3876  0.0  0.3 645624  7752 ?        Sl   05:22   0:00 /usr/libexec/gsd-printer
+rashmika    3895  0.0  0.2 466392  5808 ?        Sl   05:22   0:00 /usr/libexec/ibus-dconf
+rashmika    3896  0.0  0.3 654212  8892 ?        Sl   05:22   0:14 /usr/libexec/ibus-extension-gtk3
+rashmika    3981  0.0  0.6 2910820 15876 ?       Ssl  05:22   0:00 /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.ScreenSaver
+65532       3995  0.3  0.7 768324 18616 ?        Ssl  05:22   0:56 /coredns -conf /etc/coredns/Corefile
+65532       4043  0.2  0.7 768580 17808 ?        Ssl  05:22   0:49 /coredns -conf /etc/coredns/Corefile
+rashmika    4087  0.0  0.2 531868  5952 ?        Ssl  05:22   0:00 /usr/libexec/ibus-portal
+rashmika    4089  0.0  0.3 1705100 8536 ?        Ssl  05:22   0:00 /usr/libexec/evolution-source-registry
+rashmika    4109  0.0  0.2 305664  6148 ?        Sl   05:22   0:00 /usr/libexec/gsd-disk-utility-notify
+root        4131  0.0  0.4 741368 10692 ?        Ssl  05:22   0:15 /bin/kindnetd
+rashmika    4159  0.0  0.4 1335636 10424 ?       Sl   05:22   0:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+rashmika    4182  0.0  0.3 621912  7716 ?        Ssl  05:22   0:00 /usr/libexec/gvfs-udisks2-volume-monitor
+rashmika    4186  0.2  1.2 1607064 28896 ?       Sl   05:22   0:51 /usr/bin/gnome-software --gapplication-service
+rashmika    4229  0.0  0.3 508408  8848 ?        Ssl  05:22   0:00 /usr/bin/abrt-applet --gapplication-service
+rashmika    4230  0.0  0.2 531332  5980 ?        Ssl  05:22   0:00 /usr/libexec/gvfs-mtp-volume-monitor
+rashmika    4259  0.0  0.2 533196  6444 ?        Ssl  05:22   0:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+rashmika    4268  0.0  0.2 611760  6892 ?        Ssl  05:22   0:00 /usr/libexec/gvfs-afc-volume-monitor
+rashmika    4278  0.0  0.2 531020  5468 ?        Ssl  05:22   0:00 /usr/libexec/gvfs-goa-volume-monitor
+rashmika    4283  0.0  0.3 736464  8580 ?        Ssl  05:22   0:00 /usr/libexec/goa-daemon
+rashmika    4465  0.0  0.2 619172  6884 ?        Ssl  05:22   0:02 /usr/libexec/goa-identity-service
+rashmika    4497  0.0  0.2 222396  6520 ?        S    05:22   0:00 /usr/bin/Xwayland :0 -rootless -noreset -accessx -core -auth /run/user/1000/.mutter
+rashmika    4595  0.0  0.2 392676  6356 ?        Sl   05:22   0:04 /usr/libexec/ibus-engine-simple
+root        4599  0.0  0.3 552640  8020 ?        Ssl  05:22   0:00 /usr/sbin/abrt-dbus -t133
+rashmika    4633  0.0  0.3 1194628 8964 ?        Ssl  05:22   0:00 /usr/libexec/evolution-calendar-factory
+rashmika    4713  0.0  0.3 394952  8704 ?        S<sl 05:22   0:00 /usr/bin/pipewire-pulse
+rashmika    4754  0.0  0.3 774724  8020 ?        Ssl  05:22   0:00 /usr/libexec/gsd-xsettings
+rashmika    4796  0.0  0.2 178880  6552 ?        Sl   05:22   0:00 /usr/libexec/ibus-x11
+rashmika    4801  0.0  0.5 1337632 12168 ?       Sl   05:22   0:00 /usr/libexec/mutter-x11-frames
+rashmika    4813  0.0  0.3 1047192 8324 ?        Ssl  05:22   0:00 /usr/libexec/evolution-addressbook-factory
+rashmika    4817  0.0  0.4 846260 10316 ?        Ssl  05:22   0:00 /usr/libexec/xdg-desktop-portal
+rashmika    4826  0.0  0.2 830644  6328 ?        Ssl  05:22   0:00 /usr/libexec/xdg-document-portal
+root        4832  0.0  0.0   2568  1992 ?        Ss   05:22   0:00 fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/us
+rashmika    4840  0.0  0.4 897108 11256 ?        Ssl  05:22   0:01 /usr/libexec/xdg-desktop-portal-gnome
+rashmika    4844  0.0  0.0 241364  1252 ?        S    05:22   0:00 /usr/bin/VBoxClient --clipboard
+rashmika    4845  0.0  0.1 509820  2872 ?        Sl   05:22   0:00 /usr/bin/VBoxClient --clipboard
+rashmika    4966  0.0  0.3 719152  8520 ?        Ssl  05:22   0:00 /usr/libexec/xdg-desktop-portal-gtk
+rashmika    4978  0.0  0.2 392312  5820 ?        Ssl  05:22   0:00 /usr/libexec/gvfsd-metadata
+rashmika    5006  0.6  3.1 1872124 74356 ?       Ssl  05:22   2:07 /usr/bin/ptyxis --gapplication-service
+rashmika    5030  0.0  0.2 377936  6664 ?        Ssl  05:22   0:06 /usr/libexec/ptyxis-agent --socket-fd=3 --rlimit-nofile=1024
+rashmika    5049  0.0  0.0   1048   140 ?        S    05:22   0:00 catatonit -P
+rashmika    5107  0.0  0.6 796748 14240 ?        Sl   05:22   0:05 /usr/bin/python3 /usr/share/ibus-typing-booster/engine/main.py --ibus
+rashmika    5145  0.0  0.1 233928  3884 pts/0    Ss   05:23   0:00 /usr/bin/bash
+root        5203  0.0  0.4 739876 10164 ?        Ssl  05:23   0:17 local-path-provisioner --debug start --helper-image docker.io/kindest/local-path-he
+root       19172  0.0  0.0      0     0 ?        I    08:15   0:07 [kworker/u9:0-events_unbound]
+sssd       20032  0.0  0.2 246988  6156 ?        Ss   08:26   0:02 /usr/libexec/sssd/sssd_kcm --logger=files
+passim     20265  0.0  0.3 320768  9112 ?        Ssl  08:27   0:00 /usr/libexec/passimd
+rashmika   22427  0.0  0.1 233928  4140 pts/1    Ss+  08:55   0:00 /usr/bin/bash
+root       23189  0.0  0.6 1238364 14508 ?       Sl   09:02   0:02 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 59cd26576a3ff126dd32bf0d2f6843
+root       23213  0.0  0.0   1736   728 pts/0    Ss+  09:02   0:00 /bin/sh
+root       25261  0.0  0.0      0     0 ?        I    09:30   0:03 [kworker/u9:5-btrfs-endio]
+root       25407  0.0  0.0   4288   372 ?        Ss   09:30   0:00 sleep 3600
+root       26460  0.0  0.0      0     0 ?        I    09:44   0:02 [kworker/u9:2-btrfs-endio-meta]
+root       26626  0.0  0.0      0     0 ?        I    09:47   0:02 [kworker/u10:4-btrfs-endio-write]
+root       27338  0.0  0.0      0     0 ?        I    09:57   0:01 [kworker/u9:1-btrfs-endio-write]
+root       27881  0.1  0.0      0     0 ?        I    10:05   0:02 [kworker/u10:1-btrfs-endio]
+root       28239  0.0  0.0      0     0 ?        I    10:10   0:00 [kworker/u10:5-blkcg_punt_bio]
+root       28639  0.0  0.0      0     0 ?        I    10:16   0:00 [kworker/1:2-events]
+root       28768  0.0  0.0      0     0 ?        I    10:18   0:00 [kworker/0:1-events]
+root       28839  0.1  0.0      0     0 ?        I    10:18   0:00 [kworker/u9:4-btrfs-endio]
+root       29030  0.0  0.0      0     0 ?        I    10:21   0:00 [kworker/1:0-cgroup_destroy]
+root       29084  0.1  0.0      0     0 ?        I    10:22   0:00 [kworker/u10:2-blkcg_punt_bio]
+root       29108  0.1  0.0      0     0 ?        I    10:22   0:00 [kworker/u10:3-btrfs-endio-write]
+root       29119  0.0  0.6 1237852 14812 ?       Sl   10:22   0:00 /usr/bin/containerd-shim-runc-v2 -namespace moby -id efdb28b0ad371e8df2fe85c7f7b10b
+root       29142  0.0  0.2   9524  5568 ?        Ss   10:22   0:00 nginx: master process nginx -g daemon off;
+101        29187  0.0  0.1   9988  2408 ?        S    10:22   0:00 nginx: worker process
+101        29188  0.0  0.0   9988  2276 ?        S    10:22   0:00 nginx: worker process
+root       29288  0.0  0.0      0     0 ?        I    10:23   0:00 [kworker/0:0-ata_sff]
+root       29546  0.0  0.3  16136  7356 ?        S    10:27   0:00 systemd-userwork: waiting...
+root       29555  0.0  0.0      0     0 ?        I    10:27   0:00 [kworker/1:1-cgroup_destroy]
+root       29588  0.1  0.0      0     0 ?        I    10:27   0:00 [kworker/u10:0-btrfs-endio-write]
+root       29611  0.0  0.3  16180  7584 ?        S    10:28   0:00 systemd-userwork: waiting...
+root       29679  0.0  0.0      0     0 ?        I    10:28   0:00 [kworker/0:2-ata_sff]
+root       29744  0.0  0.3  16136  7192 ?        S    10:29   0:00 systemd-userwork: waiting...
+root       29782  2.3  0.0      0     0 ?        I    10:30   0:00 [kworker/u9:3-writeback]
+rashmika   29823  350  0.2 235172  4912 pts/0    R+   10:30   0:00 ps -aux
+rashmika@adsl-dynamic-ipv6:~$ ps -aux -a | grep "nginx"
+
+root        1130  0.0  0.0  16624   992 ?        Ss   05:21   0:00 nginx: master process /usr/sbin/nginx
+nginx       1132  0.0  0.0  17044  1916 ?        S    05:21   0:00 nginx: worker process
+nginx       1134  0.0  0.0  17084  1988 ?        S    05:21   0:00 nginx: worker process
+root       29142  0.0  0.2   9524  5568 ?        Ss   10:22   0:00 nginx: master process nginx -g daemon off;
+101        29187  0.0  0.1   9988  2408 ?        S    10:22   0:00 nginx: worker process
+101        29188  0.0  0.0   9988  2276 ?        S    10:22   0:00 nginx: worker process
+rashmika   30100  0.0  0.0 231244  2328 pts/0    S+   10:32   0:00 grep --color=auto nginx
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ docker container exec -it my-new-nginx /bin/sh
+/ # ps
+PID   USER     TIME  COMMAND
+    1 root      0:00 nginx: master process nginx -g daemon off;
+   30 nginx     0:00 nginx: worker process
+   31 nginx     0:00 nginx: worker process
+   32 root      0:00 /bin/sh
+   38 root      0:00 ps
+/ # exit
+rashmika@adsl-dynamic-ipv6:~$ docker container top
+docker: 'docker container top' requires at least 1 argument
+
+Usage:  docker container top CONTAINER [ps OPTIONS]
+
+See 'docker container top --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container top my-new-nginx
+UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+root                29142               29119               0                   10:22               ?                   00:00:00            nginx: master process nginx -g daemon off;
+101                 29187               29142               0                   10:22               ?                   00:00:00            nginx: worker process
+101                 29188               29142               0                   10:22               ?                   00:00:00            nginx: worker process
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS          PORTS                       NAMES
+efdb28b0ad37   nginx:alpine           "/docker-entrypoint.…"   34 minutes ago   Up 34 minutes   80/tcp                      my-new-nginx
+59cd26576a3f   alpine                 "/bin/sh"                2 hours ago      Up 2 hours                                  my-new-alpine
+c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   5 days ago       Up 19 hours     127.0.0.1:33561->6443/tcp   kind-control-plane
+rashmika@adsl-dynamic-ipv6:~$ kill -9 29142
+bash: kill: (29142) - Operation not permitted
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS          PORTS                       NAMES
+efdb28b0ad37   nginx:alpine           "/docker-entrypoint.…"   34 minutes ago   Up 34 minutes   80/tcp                      my-new-nginx
+59cd26576a3f   alpine                 "/bin/sh"                2 hours ago      Up 2 hours                                  my-new-alpine
+c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   5 days ago       Up 19 hours     127.0.0.1:33561->6443/tcp   kind-control-plane
+rashmika@adsl-dynamic-ipv6:~$ ps -aux | grep "nginx"
+root        1130  0.0  0.0  16624   992 ?        Ss   05:21   0:00 nginx: master process /usr/sbin/nginx
+nginx       1132  0.0  0.0  17044  1916 ?        S    05:21   0:00 nginx: worker process
+nginx       1134  0.0  0.0  17084  1988 ?        S    05:21   0:00 nginx: worker process
+root       29142  0.0  0.2   9524  5568 ?        Ss   10:22   0:00 nginx: master process nginx -g daemon off;
+101        29187  0.0  0.1   9988  2408 ?        S    10:22   0:00 nginx: worker process
+101        29188  0.0  0.0   9988  2276 ?        S    10:22   0:00 nginx: worker process
+rashmika   31940  0.0  0.0 231244  2328 pts/0    S+   10:58   0:00 grep --color=auto nginx
+rashmika@adsl-dynamic-ipv6:~$ kill -9 29142
+bash: kill: (29142) - Operation not permitted
+rashmika@adsl-dynamic-ipv6:~$ kill -9 29142
+bash: kill: (29142) - Operation not permitted
+rashmika@adsl-dynamic-ipv6:~$ sudo kill -9 29142
+[sudo] password for rashmika: 
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE                  COMMAND                  CREATED       STATUS        PORTS                       NAMES
+59cd26576a3f   alpine                 "/bin/sh"                6 hours ago   Up 6 hours                                my-new-alpine
+c6ebe07cd850   kindest/node:v1.29.2   "/usr/local/bin/entr…"   6 days ago    Up 23 hours   127.0.0.1:33561->6443/tcp   kind-control-plane
+rashmika@adsl-dynamic-ipv6:~$ ^C
+rashmika@adsl-dynamic-ipv6:~$ ^C
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ Docker container rm -f $(docker container ls -aq)
+bash: Docker: command not found...
+Similar command is: 'docker'
+rashmika@adsl-dynamic-ipv6:~$ docker container rm -f $(docker container ls -aq)
+efdb28b0ad37
+59cd26576a3f
+aba0086311a4
+d45fe2e914c6
+01b67c3ff8ae
+dc72e5c87345
+06a48006f4d9
+71772759fab1
+c6ebe07cd850
+3782424a3812
+5368d41673d6
+874fa916beb8
+2e8a9037a6ed
+79fb67a33490
+4fc1c4c5be12
+c59c046016d2
+03fefa750bb8
+c2c0bf89a5a9
+1362307064d8
+rashmika@adsl-dynamic-ipv6:~$ docker continer ls -a
+unknown shorthand flag: 'a' in -a
+
+Usage:  docker [OPTIONS] COMMAND [ARG...]
+
+Run 'docker --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container ls -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+rashmika@adsl-dynamic-ipv6:~$ docker container ls 
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+rashmika@adsl-dynamic-ipv6:~$ ifconfig
+br-a50b3580d470: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.49.1  netmask 255.255.255.0  broadcast 192.168.49.255
+        ether 06:54:a2:c9:55:42  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 41 overruns 0  carrier 0  collisions 0
+
+br-c3a2d9c4aa48: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.18.0.1  netmask 255.255.0.0  broadcast 172.18.255.255
+        inet6 fe80::e857:4aff:fec4:eebe  prefixlen 64  scopeid 0x20<link>
+        inet6 fc00:f853:ccd:e793::1  prefixlen 64  scopeid 0x0<global>
+        ether ea:57:4a:c4:ee:be  txqueuelen 0  (Ethernet)
+        RX packets 882  bytes 140496 (137.2 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 806  bytes 382366 (373.4 KiB)
+        TX errors 0  dropped 13 overruns 0  carrier 0  collisions 0
+
+docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        inet6 fe80::80ee:52ff:fe8e:d431  prefixlen 64  scopeid 0x20<link>
+        ether 82:ee:52:8e:d4:31  txqueuelen 0  (Ethernet)
+        RX packets 1326  bytes 81501 (79.5 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1613  bytes 3064674 (2.9 MiB)
+        TX errors 0  dropped 53 overruns 0  carrier 0  collisions 0
+
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.93  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 2402:d000:8134:1d0b:b35a:7fd2:5443:e052  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::cbf8:1694:28eb:92d7  prefixlen 64  scopeid 0x20<link>
+        inet6 2402:d000:8134:1a11:fa45:af5:acc2:146  prefixlen 64  scopeid 0x0<global>
+        ether 08:00:27:4b:2f:3f  txqueuelen 1000  (Ethernet)
+        RX packets 241797  bytes 41901962 (39.9 MiB)
+        RX errors 0  dropped 3919  overruns 0  frame 0
+        TX packets 13347  bytes 1497024 (1.4 MiB)
+        TX errors 0  dropped 27 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 1604  bytes 155725 (152.0 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1604  bytes 155725 (152.0 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+rashmika@adsl-dynamic-ipv6:~$ docker container run -d --name my-new-nginx nginx:alpine
+f20834d45b88594909a467353472fa99148facc97c272d527ec35bf92526b5da
+rashmika@adsl-dynamic-ipv6:~$ docker container exec -it my-new-nginx /bin/sh
+/ # ifconfig
+eth0      Link encap:Ethernet  HWaddr 8E:37:86:1B:4A:E1  
+          inet addr:172.17.0.2  Bcast:172.17.255.255  Mask:255.255.0.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:22 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:3095 (3.0 KiB)  TX bytes:126 (126.0 B)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+/ #  exit
+rashmika@adsl-dynamic-ipv6:~$ curl 172.17.0.2
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$  
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ docker container run --name my-live-nginx -p 8080:80 nginx:alpine
+/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+/docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+/docker-entrypoint.sh: Configuration complete; ready for start up
+2025/06/24 10:39:43 [notice] 1#1: using the "epoll" event method
+2025/06/24 10:39:43 [notice] 1#1: nginx/1.27.5
+2025/06/24 10:39:43 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/06/24 10:39:43 [notice] 1#1: OS: Linux 6.14.11-300.fc42.x86_64
+2025/06/24 10:39:43 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1073741816:1073741816
+2025/06/24 10:39:43 [notice] 1#1: start worker processes
+2025/06/24 10:39:43 [notice] 1#1: start worker process 31
+2025/06/24 10:39:43 [notice] 1#1: start worker process 32
+^C2025/06/24 10:43:02 [notice] 1#1: signal 2 (SIGINT) received, exiting
+2025/06/24 10:43:02 [notice] 31#31: exiting
+2025/06/24 10:43:02 [notice] 32#32: exiting
+2025/06/24 10:43:02 [notice] 31#31: exit
+2025/06/24 10:43:02 [notice] 32#32: exit
+2025/06/24 10:43:02 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2025/06/24 10:43:02 [notice] 1#1: worker process 32 exited with code 0
+2025/06/24 10:43:02 [notice] 1#1: signal 29 (SIGIO) received
+2025/06/24 10:43:02 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2025/06/24 10:43:02 [notice] 1#1: worker process 31 exited with code 0
+2025/06/24 10:43:02 [notice] 1#1: exit
+rashmika@adsl-dynamic-ipv6:~$ docker contail ls -a
+unknown shorthand flag: 'a' in -a
+
+Usage:  docker [OPTIONS] COMMAND [ARG...]
+
+Run 'docker --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container ls -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                      PORTS     NAMES
+779e886b6bd7   nginx:alpine   "/docker-entrypoint.…"   3 minutes ago    Exited (0) 33 seconds ago             my-live-nginx
+f20834d45b88   nginx:alpine   "/docker-entrypoint.…"   28 minutes ago   Up 28 minutes               80/tcp    my-new-nginx
+rashmika@adsl-dynamic-ipv6:~$ netstat -plat | grep 8080
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+^C
+rashmika@adsl-dynamic-ipv6:~$  netstat -plant | grep 8080
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+rashmika@adsl-dynamic-ipv6:~$  netstat -plant | grep 9090
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+rashmika@adsl-dynamic-ipv6:~$ docker container run -d --name my-live-nginx -p 9090:90 nginx:alpine
+docker: Error response from daemon: Conflict. The container name "/my-live-nginx" is already in use by container "779e886b6bd70cceb1f587a264eb180c60addc5fe759a08ad60f760e3209bc3c". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container run -d --name my-live01-nginx -p 9090:90 nginx:alpine
+643f9ee66d6c239385c1714f6444ff8f8e5d955a20779da0017a1e83e66c56bc
+rashmika@adsl-dynamic-ipv6:~$  netstat -plant | grep 9090
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+tcp        0      0 0.0.0.0:9090            0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 :::9090                 :::*                    LISTEN      -                   
+rashmika@adsl-dynamic-ipv6:~$ hostid
+a8c05d01
+rashmika@adsl-dynamic-ipv6:~$ docker container ls -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                      PORTS                                             NAMES
+643f9ee66d6c   nginx:alpine   "/docker-entrypoint.…"   13 minutes ago   Up 13 minutes               80/tcp, 0.0.0.0:9090->90/tcp, [::]:9090->90/tcp   my-live01-nginx
+779e886b6bd7   nginx:alpine   "/docker-entrypoint.…"   22 minutes ago   Exited (0) 19 minutes ago                                                     my-live-nginx
+f20834d45b88   nginx:alpine   "/docker-entrypoint.…"   46 minutes ago   Up 46 minutes               80/tcp                                            my-new-nginx
+rashmika@adsl-dynamic-ipv6:~$  netstat -plant | grep docker-proxy
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+rashmika@adsl-dynamic-ipv6:~$ ifconfig
+br-a50b3580d470: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.49.1  netmask 255.255.255.0  broadcast 192.168.49.255
+        ether 06:54:a2:c9:55:42  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 42 overruns 0  carrier 0  collisions 0
+
+br-c3a2d9c4aa48: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.18.0.1  netmask 255.255.0.0  broadcast 172.18.255.255
+        inet6 fe80::e857:4aff:fec4:eebe  prefixlen 64  scopeid 0x20<link>
+        inet6 fc00:f853:ccd:e793::1  prefixlen 64  scopeid 0x0<global>
+        ether ea:57:4a:c4:ee:be  txqueuelen 0  (Ethernet)
+        RX packets 882  bytes 140496 (137.2 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 806  bytes 382366 (373.4 KiB)
+        TX errors 0  dropped 15 overruns 0  carrier 0  collisions 0
+
+docker0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        inet6 fe80::80ee:52ff:fe8e:d431  prefixlen 64  scopeid 0x20<link>
+        ether 82:ee:52:8e:d4:31  txqueuelen 0  (Ethernet)
+        RX packets 1381  bytes 84418 (82.4 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1667  bytes 3068666 (2.9 MiB)
+        TX errors 0  dropped 53 overruns 0  carrier 0  collisions 0
+
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.93  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 2402:d000:8134:1d0b:b35a:7fd2:5443:e052  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::cbf8:1694:28eb:92d7  prefixlen 64  scopeid 0x20<link>
+        inet6 2402:d000:8134:1a11:fa45:af5:acc2:146  prefixlen 64  scopeid 0x0<global>
+        ether 08:00:27:4b:2f:3f  txqueuelen 1000  (Ethernet)
+        RX packets 312104  bytes 51136820 (48.7 MiB)
+        RX errors 0  dropped 4752  overruns 0  frame 0
+        TX packets 21160  bytes 2222114 (2.1 MiB)
+        TX errors 0  dropped 27 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 2561  bytes 241629 (235.9 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2561  bytes 241629 (235.9 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+veth51e70d9: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet6 fe80::a8f9:78ff:fe4a:f18f  prefixlen 64  scopeid 0x20<link>
+        ether aa:f9:78:4a:f1:8f  txqueuelen 0  (Ethernet)
+        RX packets 42  bytes 2160 (2.1 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 68  bytes 6330 (6.1 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+vethe8704e0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet6 fe80::84c1:41ff:fe51:fb0b  prefixlen 64  scopeid 0x20<link>
+        ether 86:c1:41:51:fb:0b  txqueuelen 0  (Ethernet)
+        RX packets 10  bytes 1401 (1.3 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 50  bytes 5123 (5.0 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+rashmika@adsl-dynamic-ipv6:~$ lsof -i
+rashmika@adsl-dynamic-ipv6:~$ systemctl lsof -i
+Unknown command verb 'lsof', did you mean 'stop'?
+rashmika@adsl-dynamic-ipv6:~$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED             STATUS             PORTS                                             NAMES
+643f9ee66d6c   nginx:alpine   "/docker-entrypoint.…"   51 minutes ago      Up 51 minutes      80/tcp, 0.0.0.0:9090->90/tcp, [::]:9090->90/tcp   my-live01-nginx
+f20834d45b88   nginx:alpine   "/docker-entrypoint.…"   About an hour ago   Up About an hour   80/tcp                                            my-new-nginx
+rashmika@adsl-dynamic-ipv6:~$ docker container exec -it my-live01-nginx /bin/bash
+OCI runtime exec failed: exec failed: unable to start container process: exec: "/bin/bash": stat /bin/bash: no such file or directory: unknown
+rashmika@adsl-dynamic-ipv6:~$ docker container exec -it my-live01-nginx /bin/sh
+/ # ls
+bin                   etc                   mnt                   run                   tmp
+dev                   home                  opt                   sbin                  usr
+docker-entrypoint.d   lib                   proc                  srv                   var
+docker-entrypoint.sh  media                 root                  sys
+/ # cd docker entrypoint.d
+/bin/sh: cd: can't cd to docker: No such file or directory
+/ # cd docker-entrypoint.d
+/docker-entrypoint.d # ls
+10-listen-on-ipv6-by-default.sh  15-local-resolvers.envsh         20-envsubst-on-templates.sh      30-tune-worker-processes.sh
+/docker-entrypoint.d # cd
+~ # ccd usr
+/bin/sh: ccd: not found
+~ # cd usr
+/bin/sh: cd: can't cd to usr: No such file or directory
+~ # ls
+~ # sudo su
+/bin/sh: sudo: not found
+~ # cd usr
+/bin/sh: cd: can't cd to usr: No such file or directory
+~ # ls
+~ # cd
+~ # exit
+rashmika@adsl-dynamic-ipv6:~$ docker container exec -it my-live01-nginx /bin/sh
+/ # ls
+bin                   etc                   mnt                   run                   tmp
+dev                   home                  opt                   sbin                  usr
+docker-entrypoint.d   lib                   proc                  srv                   var
+docker-entrypoint.sh  media                 root                  sys
+/ # cd usr
+/usr # ls
+bin    lib    local  sbin   share
+/usr # cd lib
+/usr/lib # ls
+engines-3                    libbsd.so.0                  libjpeg.so.8.3.2             libxcb-dbe.so.0              libxcb-xinerama.so.0
+libGeoIP.so.1                libbsd.so.0.12.2             liblzma.so.5                 libxcb-dbe.so.0.0.0          libxcb-xinerama.so.0.0.0
+libGeoIP.so.1.6.12           libbz2.so.1                  liblzma.so.5.6.3             libxcb-dpms.so.0             libxcb-xinput.so.0
+libICE.so.6                  libbz2.so.1.0.8              libmd.so.0                   libxcb-dpms.so.0.0.0         libxcb-xinput.so.0.1.0
+libICE.so.6.3.0              libcares.so.2                libmd.so.0.1.0               libxcb-dri2.so.0             libxcb-xkb.so.1
+libSM.so.6                   libcares.so.2.19.4           libncursesw.so.6             libxcb-dri2.so.0.0.0         libxcb-xkb.so.1.0.0
+libSM.so.6.0.1               libcrypto.so.3               libncursesw.so.6.5           libxcb-dri3.so.0             libxcb-xtest.so.0
+libX11-xcb.so.1              libcurl.so.4                 libnghttp2.so.14             libxcb-dri3.so.0.1.0         libxcb-xtest.so.0.0.0
+libX11-xcb.so.1.0.0          libcurl.so.4.8.0             libnghttp2.so.14.28.3        libxcb-glx.so.0              libxcb-xv.so.0
+libX11.so.6                  libdav1d.so.7                libpcre2-8.so.0              libxcb-glx.so.0.0.0          libxcb-xv.so.0.0.0
+libX11.so.6.4.0              libdav1d.so.7.0.0            libpcre2-8.so.0.12.0         libxcb-present.so.0          libxcb-xvmc.so.0
+libXau.so.6                  libedit.so.0                 libpcre2-posix.so.3          libxcb-present.so.0.0.0      libxcb-xvmc.so.0.0.0
+libXau.so.6.0.0              libedit.so.0.0.74            libpcre2-posix.so.3.0.5      libxcb-randr.so.0            libxcb.so.1
+libXdmcp.so.6                libexpat.so.1                libpng16.so.16               libxcb-randr.so.0.1.0        libxcb.so.1.1.0
+libXdmcp.so.6.0.0            libexpat.so.1.10.1           libpng16.so.16.47.0          libxcb-record.so.0           libxml2.so.2
+libXext.so.6                 libexslt.so.0                libpsl.so.5                  libxcb-record.so.0.0.0       libxml2.so.2.13.4
+libXext.so.6.4.0             libexslt.so.0.8.23           libpsl.so.5.3.5              libxcb-render.so.0           libxslt-plugins
+libXpm.so.4                  libfontconfig.so.1           libsharpyuv.so.0             libxcb-render.so.0.0.0       libxslt.so.1
+libXpm.so.4.11.0             libfontconfig.so.1.12.1      libsharpyuv.so.0.1.0         libxcb-res.so.0              libxslt.so.1.1.42
+libXt.so.6                   libfreetype.so.6             libssl.so.3                  libxcb-res.so.0.0.0          libz.so.1
+libXt.so.6.0.0               libfreetype.so.6.20.2        libtiff.so.6                 libxcb-screensaver.so.0      libz.so.1.3.1
+libaom.so.3                  libgcrypt.so.20              libtiff.so.6.1.0             libxcb-screensaver.so.0.0.0  libzstd.so.1
+libaom.so.3.11.0             libgcrypt.so.20.4.3          libunistring.so.5            libxcb-shape.so.0            libzstd.so.1.5.6
+libapk.so.2.14.0             libgd.so.3                   libunistring.so.5.1.0        libxcb-shape.so.0.0.0        modules-load.d
+libavif.so.16                libgd.so.3.0.11              libuuid.so.1                 libxcb-shm.so.0              nginx
+libavif.so.16.0.4            libgpg-error.so.0            libuuid.so.1.3.0             libxcb-shm.so.0.0.0          os-release
+libbrotlicommon.so.1         libgpg-error.so.0.38.0       libwebp.so.7                 libxcb-sync.so.1             ossl-modules
+libbrotlicommon.so.1.1.0     libidn2.so.0                 libwebp.so.7.1.9             libxcb-sync.so.1.0.0         sysctl.d
+libbrotlidec.so.1            libidn2.so.0.4.0             libxcb-composite.so.0        libxcb-xf86dri.so.0
+libbrotlidec.so.1.1.0        libintl.so.8                 libxcb-composite.so.0.0.0    libxcb-xf86dri.so.0.0.0
+libbrotlienc.so.1            libintl.so.8.4.0             libxcb-damage.so.0           libxcb-xfixes.so.0
+libbrotlienc.so.1.1.0        libjpeg.so.8                 libxcb-damage.so.0.0.0       libxcb-xfixes.so.0.0.0
+/usr/lib # cd nginx
+/usr/lib/nginx # ls
+modules
+/usr/lib/nginx # cd moduls
+/bin/sh: cd: can't cd to moduls: No such file or directory
+/usr/lib/nginx # cd modules
+/usr/lib/nginx/modules # ls
+ngx_http_geoip_module-debug.so         ngx_http_js_module-debug.so            ngx_stream_geoip_module-debug.so
+ngx_http_geoip_module.so               ngx_http_js_module.so                  ngx_stream_geoip_module.so
+ngx_http_image_filter_module-debug.so  ngx_http_xslt_filter_module-debug.so   ngx_stream_js_module-debug.so
+ngx_http_image_filter_module.so        ngx_http_xslt_filter_module.so         ngx_stream_js_module.so
+/usr/lib/nginx/modules # cd ..
+/usr/lib/nginx # cd ..
+/usr/lib # cd /share/nginx/html
+/bin/sh: cd: can't cd to /share/nginx/html: No such file or directory
+/usr/lib # cd /share/nginx/html/
+/bin/sh: cd: can't cd to /share/nginx/html/: No such file or directory
+/usr/lib # cd share/nginx/html/
+/bin/sh: cd: can't cd to share/nginx/html/: No such file or directory
+/usr/lib # cd ..
+/usr # cd share/nginx/html/
+/usr/share/nginx/html # ls
+50x.html    index.html
+/usr/share/nginx/html # nano index.html
+/bin/sh: nano: not found
+/usr/share/nginx/html # cat index.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+/usr/share/nginx/html # ^C
+
+/usr/share/nginx/html # exit
+rashmika@adsl-dynamic-ipv6:~$ docker container run -d --name my-live03-nginx -p 9090:9090 nginx:alpine
+de6c1ffa17353a17c6ea48171ca121756d50c9c588b379b50013aa1589d55fef
+docker: Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint my-live03-nginx (b3e65b0ecbc1c0e80da569395c1874411af0354f002d24f616585386bf4c1594): Bind for 0.0.0.0:9090 failed: port is already allocated
+
+Run 'docker run --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container run -d --name my-live03-nginx -p 9091:9091 nginx:alpine
+docker: Error response from daemon: Conflict. The container name "/my-live03-nginx" is already in use by container "de6c1ffa17353a17c6ea48171ca121756d50c9c588b379b50013aa1589d55fef". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container run -d --name my-live04-nginx -p 9091:9091 nginx:alpine
+5d3064ca9bfb76ae1c061347cac9145bebb007b557c16e1f5e0e7c57d3328fa3
+rashmika@adsl-dynamic-ipv6:~$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED             STATUS             PORTS                                                 NAMES
+5d3064ca9bfb   nginx:alpine   "/docker-entrypoint.…"   58 seconds ago      Up 56 seconds      80/tcp, 0.0.0.0:9091->9091/tcp, [::]:9091->9091/tcp   my-live04-nginx
+643f9ee66d6c   nginx:alpine   "/docker-entrypoint.…"   About an hour ago   Up About an hour   80/tcp, 0.0.0.0:9090->90/tcp, [::]:9090->90/tcp       my-live01-nginx
+f20834d45b88   nginx:alpine   "/docker-entrypoint.…"   2 hours ago         Up 2 hours         80/tcp                                                my-new-nginx
+rashmika@adsl-dynamic-ipv6:~$ docker container exec -it my-live01-nginx /bin/sh
+/ # ps
+PID   USER     TIME  COMMAND
+    1 root      0:00 nginx: master process nginx -g daemon off;
+   31 nginx     0:00 nginx: worker process
+   32 nginx     0:00 nginx: worker process
+   62 root      0:00 /bin/sh
+   68 root      0:00 ps
+/ # ps -a
+PID   USER     TIME  COMMAND
+    1 root      0:00 nginx: master process nginx -g daemon off;
+   31 nginx     0:00 nginx: worker process
+   32 nginx     0:00 nginx: worker process
+   62 root      0:00 /bin/sh
+   69 root      0:00 ps -a
+/ # netstat tuln
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       
+Active UNIX domain sockets (w/o servers)
+Proto RefCnt Flags       Type       State         I-Node Path
+unix  3      [ ]         STREAM     CONNECTED     1915618 
+unix  3      [ ]         STREAM     CONNECTED     1915619 
+unix  3      [ ]         STREAM     CONNECTED     1916369 
+unix  3      [ ]         STREAM     CONNECTED     1916370 
+/ # ss tuln
+/bin/sh: ss: not found
+/ # netstat -tuln
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      
+tcp        0      0 :::80                   :::*                    LISTEN      
+/ # exit
+rashmika@adsl-dynamic-ipv6:~$ docker container run -d --name my-live05-nginx -p 9092:80 nginx:alpine
+a7b18ad62cce739d121bb378ecfc851d140f47597233f9f7519d62f910271c11
+rashmika@adsl-dynamic-ipv6:~$  netstat -plant | grep 9092
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+tcp        0      0 0.0.0.0:9092            0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 :::9092                 :::*                    LISTEN      -                   
+rashmika@adsl-dynamic-ipv6:~$ ^C
+rashmika@adsl-dynamic-ipv6:~$ 
+
