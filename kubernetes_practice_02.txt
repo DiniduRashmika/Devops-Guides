@@ -3865,4 +3865,1809 @@ tcp        0      0 0.0.0.0:9092            0.0.0.0:*               LISTEN      
 tcp6       0      0 :::9092                 :::*                    LISTEN      -                   
 rashmika@adsl-dynamic-ipv6:~$ ^C
 rashmika@adsl-dynamic-ipv6:~$ 
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+
+.
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE          COMMAND                  CREATED        STATUS        PORTS                                                 NAMES
+a7b18ad62cce   nginx:alpine   "/docker-entrypoint.…"   16 hours ago   Up 16 hours   0.0.0.0:9092->80/tcp, [::]:9092->80/tcp               my-live05-nginx
+5d3064ca9bfb   nginx:alpine   "/docker-entrypoint.…"   16 hours ago   Up 16 hours   80/tcp, 0.0.0.0:9091->9091/tcp, [::]:9091->9091/tcp   my-live04-nginx
+643f9ee66d6c   nginx:alpine   "/docker-entrypoint.…"   17 hours ago   Up 17 hours   80/tcp, 0.0.0.0:9090->90/tcp, [::]:9090->90/tcp       my-live01-nginx
+f20834d45b88   nginx:alpine   "/docker-entrypoint.…"   18 hours ago   Up 18 hours   80/tcp                                                my-new-nginx
+rashmika@adsl-dynamic-ipv6:~$ docker containe inspect a7b
+docker: unknown command: docker containe
+
+Run 'docker --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker containe inspect my-live05-nginx
+docker: unknown command: docker containe
+
+Run 'docker --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container inspect a7b
+[
+    {
+        "Id": "a7b18ad62cce739d121bb378ecfc851d140f47597233f9f7519d62f910271c11",
+        "Created": "2025-06-24T12:05:27.305926853Z",
+        "Path": "/docker-entrypoint.sh",
+        "Args": [
+            "nginx",
+            "-g",
+            "daemon off;"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 50626,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2025-06-24T12:05:27.551800152Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:6769dc3a703c719c1d2756bda113659be28ae16cf0da58dd5fd823d6b9a050ea",
+        "ResolvConfPath": "/var/lib/docker/containers/a7b18ad62cce739d121bb378ecfc851d140f47597233f9f7519d62f910271c11/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/a7b18ad62cce739d121bb378ecfc851d140f47597233f9f7519d62f910271c11/hostname",
+        "HostsPath": "/var/lib/docker/containers/a7b18ad62cce739d121bb378ecfc851d140f47597233f9f7519d62f910271c11/hosts",
+        "LogPath": "/var/lib/docker/containers/a7b18ad62cce739d121bb378ecfc851d140f47597233f9f7519d62f910271c11/a7b18ad62cce739d121bb378ecfc851d140f47597233f9f7519d62f910271c11-json.log",
+        "Name": "/my-live05-nginx",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {
+                "80/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "9092"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                26,
+                150
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "a7b18ad62cce739d121bb378ecfc851d140f47597233f9f7519d62f910271c11",
+                "LowerDir": "/var/lib/docker/overlay2/7ba7c5a37a0a9b3e8d962d448d88e690a404d4199624da68b97a465bcc7990c9-init/diff:/var/lib/docker/overlay2/4bff74a2a40979e0cc26e5796f2de5ac62e83284f39ba1db0964d23fca4cd043/diff:/var/lib/docker/overlay2/445f1b62552792b89604a0cf8a9d57b33ee3702a20ad438443b659f51514a37d/diff:/var/lib/docker/overlay2/f3c69ca8c9018f60da2641e8ae7e600e9f1d7f43b23cdbc1d4d806620f30fdfa/diff:/var/lib/docker/overlay2/fca52370451e879f5648b54c81137649c94ff2c9c9088887495a15aa1c4bb347/diff:/var/lib/docker/overlay2/fafa2bd6755e3ff19d2b0958bbbfea5a5c5d4af4940631e470e2069045c2a79e/diff:/var/lib/docker/overlay2/94115be7b55dace67b6cec699dd913b8461d1256ba6d7a76e1c4fce5e9c10bd4/diff:/var/lib/docker/overlay2/d615e4b3f61ecb03eaf300b22bd35f76c60ff433466fd643fbc1e11434338e72/diff:/var/lib/docker/overlay2/9a5582cbcb7418f0966dea70928d1c1ca24978d13c34820432dd23a74e40860d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/7ba7c5a37a0a9b3e8d962d448d88e690a404d4199624da68b97a465bcc7990c9/merged",
+                "UpperDir": "/var/lib/docker/overlay2/7ba7c5a37a0a9b3e8d962d448d88e690a404d4199624da68b97a465bcc7990c9/diff",
+                "WorkDir": "/var/lib/docker/overlay2/7ba7c5a37a0a9b3e8d962d448d88e690a404d4199624da68b97a465bcc7990c9/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "a7b18ad62cce",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NGINX_VERSION=1.27.5",
+                "PKG_RELEASE=1",
+                "DYNPKG_RELEASE=1",
+                "NJS_VERSION=0.8.10",
+                "NJS_RELEASE=1"
+            ],
+            "Cmd": [
+                "nginx",
+                "-g",
+                "daemon off;"
+            ],
+            "Image": "nginx:alpine",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": [
+                "/docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>"
+            },
+            "StopSignal": "SIGQUIT"
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "c49a678c9bee3dfe0100e43991971b8dff75a7f898ff50d52f867dcb6f44f2a5",
+            "SandboxKey": "/var/run/docker/netns/c49a678c9bee",
+            "Ports": {
+                "80/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "9092"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "9092"
+                    }
+                ]
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "9919d4980048d1885c98663fd2dc096b0d05777c35fabccfac6d8a3c37caa174",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.5",
+            "IPPrefixLen": 16,
+CONTAINER ID   NAME              CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS 
+a7b18ad62cce   my-live05-nginx   --        -- / --             --        --        --          -- 
+ 
+^C
+got 3 SIGTERM/SIGINTs, forcefully exiting
+rashmika@adsl-dynamic-ipv6:~$ ^C
+rashmika@adsl-dynamic-ipv6:~$ ^C
+rashmika@adsl-dynamic-ipv6:~$ history
+    1  nginx -version
+    2  sudo su
+    3  sudo su -ashan
+    4  sudo su - ashan
+    5  sudo su
+    6  chmod 600 rashmika_key.pem
+    7  ssh -i /home/rashmika/rashmika_key.pem rashmika@10.0.2.15
+    8  ssh -i /home/rashmika/Downloads/rashmika_key.pem rashmika@10.0.2.15
+    9  ipconfig
+   10  ip -a
+   11  ifconfig
+   12  ifconfig | grep 192
+   13  ifconfig
+   14  ssh -i /home/rashmika/Downloads/rashmika_key.pem rashmika@10.0.2.15
+   15  sudo adduser ashan
+   16  sudo password ashan
+   17  sudo passwd
+   18  sudo passwd ashan
+   19  su -ashan
+   20  su - ashan
+   21  sudo deluser ashan
+   22  sudo apt update && sudo apt install adduser
+   23  sudo dnf update && sudo apt install adduser
+   24  sudo deluser ashan
+   25  sudo su -ashan
+   26  sudo 
+   27   ping 10.0.2.15
+   28  ll
+   29  ifconfig
+   30  ping 192.168.134.241
+   31  clear
+   32  pwd
+   33  su ashan
+   34  clear
+   35  sudo systemctl start ssh
+   36  ll
+   37  clear
+   38  which sshd
+   39  sudo apt install openssh-server
+   40  ~sudo apt update
+   41  sudo apt update
+   42  sudo dnf update
+   43  sudo dnf install openssh-server -y
+   44  sudo systemctl enable sshd
+   45  sudo systemctl start sshd
+   46  sudo systemctl status sshd
+   47  sudo firewall-cmd --permanent --add-service=ssh
+   48  sudo firewall-cmd --reload
+   49  sudo firewall-cmd --list-all
+   50  FedoraWorkstation (default, active)
+   51    target: default
+   52    ingress-priority: 0
+   53    egress-priority: 0
+   54    icmp-block-inversion: no
+   55    interfaces: enp0s3
+   56    sources: 
+   57    services: dhcpv6-client samba-client ssh
+   58    ports: 1025-65535/udp 1025-65535/tcp
+   59    protocols: 
+   60    forward: yes
+   61    masquerade: no
+   62    forward-ports: 
+   63    source-ports: 
+   64    icmp-blocks: 
+   65    rich rules: 
+   66  clear
+   67  sudo ss -tuln | grep :22
+   68  ll
+   69  su ashan
+   70  sudo ashan
+   71  ll
+   72  su ashan
+   73  cd ..
+   74  ll
+   75  cd ashan/
+   76  sudo cd ashan/
+   77  ll
+   78  sudo cd ashan/
+   79  sudo ashan/
+   80  clerar
+   81  clear
+   82  ll
+   83  su ashan
+   84  sudo su
+   85  sudo su
+   86  su
+   87  cd media
+   88  mkdir media
+   89  ll
+   90  rm media
+   91  rmdir media
+   92  ll
+   93  mkdir Media
+   94  ll
+   95  sudo usermod -a -G vboxsf rashmika
+   96  sudo reboot
+   97  sudo ashan
+   98  sudo -ashan
+   99  su -ashan
+  100  su ashan
+  101  su 
+  102  ssh -i rashmika@10.0.2.15
+  103  ssh dp
+  104  cd Media
+  105  ll
+  106  cd /Media/sf_Fedora
+  107  cd /Media/sf_fedora
+  108  ll
+  109  sudo usermod -a -G vboxsf rashmika
+  110  ll
+  111  sudo roboot
+  112  sudo reboot
+  113  su
+  114  ll
+  115  cd Media
+  116  ll
+  117  su
+  118  cd
+  119  su rashmika
+  120  sudo instal epel-release
+  121  sudo dnf instal epel-release
+  122  sudo dnf install epel-release
+  123  sudo instal epel-release
+  124  su
+  125  su rashmika
+  126  sudo dnf install certbot python3-cerrtbot-nginx
+  127  sudo dnf update
+  128  sudo dnf install certbot python3-cerrtbot-nginx
+  129  cd Documents
+  130  ll
+  131  mkdir PFX_Certificate
+  132  cp /home/rashmika/Download/dinidu.pem /home/rashmika/Documents/PFX_Certificte
+  133  cd ..
+  134  cd Downloads
+  135  ll
+  136  cp /home/rashmika/Downloads/dinidu.pem /home/rashmika/Documents/PFX_Certificte
+  137  cp /etc/ssl/certs/nginx-selfsigned.crt /home/rashmika/Documents/PFX_Certificte
+  138  cp /etc/ssl/private/nginx-selfsigned.key  /home/rashmika/Documents/PFX_Certificte
+  139  sudo cp /etc/ssl/private/nginx-selfsigned.key  /home/rashmika/Documents/PFX_Certificte
+  140  cd ..
+  141  cd Documents
+  142  ll
+  143   move PFX_Certificte PFX_Certificate
+  144   mv PFX_Certificte PFX_Certificate
+  145  cd PDF_Certificate
+  146  cd PFX_Certificate
+  147  ll
+  148  cd PFX_Certificte
+  149  rm PFX_Certificte
+  150  cd ..
+  151  ll
+  152  cp /etc/ssl/certs/nginx-selfsigned.crt /home/rashmika/Documents/PFX_Certificate
+  153  cp /etc/ssl/private/nginx-selfsigned.key  /home/rashmika/Documents/PFX_Certificate
+  154  sudo cp /etc/ssl/private/nginx-selfsigned.key  /home/rashmika/Documents/PFX_Certificate
+  155  cp /home/rashmika/Downloads/dinidu.pem /home/rashmika/Documents/PFX_Certificate
+  156  cd PFX_Certificate
+  157  ll
+  158  cat dinidu.pem
+  159  openssl pkcs -export -out Certificate_PFX -inkey nginx-selfsigned.key in nginx-selfsigned.crt 
+  160  openssl pkcs12 -export -out Certificate_PFX -inkey nginx-selfsigned.key in nginx-selfsigned.crt 
+  161  openssl pkcs12 -export -out Certificate_PFX -inkey nginx-selfsigned.key -in nginx-selfsigned.crt 
+  162  sudo openssl pkcs12 -export -out Certificate_PFX -inkey nginx-selfsigned.key -in nginx-selfsigned.crt 
+  163  ll
+  164  cat Certificate_PFX
+  165  sudo cat Certificate_PFX
+  166  ll
+  167  openssl pkcs12 -info -n Certificate_PFX
+  168  openssl pkcs12 -info -in Certificate_PFX
+  169  sudo openssl pkcs12 -info -in Certificate_PFX
+  170  clear
+  171  cd
+  172  top
+  173  htop
+  174  sudo dnf install htop
+  175  cd Media
+  176  ll
+  177  clear
+  178  cd
+  179  sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+  180  sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+  181  sudo nano /etc/nginx/sites-available/default
+  182  cd etc
+  183  su
+  184  cd
+  185  ll
+  186  cd /ect/
+  187  ~/
+  188  ~/root
+  189  sudo su
+  190  docker ps -a
+  191  sudo su
+  192  kubectl config view
+  193  sudo su
+  194  minikube start
+  195  minikube start --driver=none
+  196  minidube delete --driver=quem2
+  197  minikube delete
+  198  dnf list installed | grep qemu
+  199  minikube start --driver=none
+  200  sudo minikube start --driver=none
+  201  sudo minikube start --driver=docker
+  202  minikube delete
+  203  sudo minikube start --driver=docker
+  204  sudo minikube delete
+  205  sudo minikube start --driver=docker
+  206  minikube start --driver=docker
+  207  sudo su
+  208  minikube start --driver=docker
+  209  sudo usermod -aG docker $USER
+  210  minikube start --driver=docker
+  211  docker version
+  212  minikube start --driver=docker
+  213  sudo minikube start --driver=docker
+  214   '/opt/Lens/lens-desktop' -p '"5d54c2e3dc73464892e49ddbaec3ba0c" + JSON.stringify(process.env) + "5d54c2e3dc73464892e49ddbaec3ba0c"'
+  215   '/opt/Lens/lens-desktop' -p '"2fff14d8700a440fa31e42bd023ac506" + JSON.stringify(process.env) + "2fff14d8700a440fa31e42bd023ac506"'
+  216   '/opt/Lens/lens-desktop' -p '"4f11e8f876694465bd69bfd0982cf24a" + JSON.stringify(process.env) + "4f11e8f876694465bd69bfd0982cf24a"'
+  217  nano ~/Documents/Testlogs/move_file.sh
+  218  dos2unix ~/Documents/Testlogs/move_file.sh
+  219  chmod +x ~/Documents/Testlogs/move_file.sh
+  220  sudo nano /etc/systemd/system/movegz.service
+  221  sudo systemctl daemon-reload
+  222  sudo systemctl start movegz.service
+  223  sudo systemctl status movegz.service
+  224  ls -l /home/rashmika/Documents/Testlogs/move_file.sh
+  225  chmod +x /home/rashmika/Documents/Testlogs/move_file.sh
+  226  nano /home/rashmika/Documents/Testlogs/move_file.sh
+  227  sudo dnf install dos2unix -y
+  228  ll
+  229  cd Documents
+  230  ll
+  231  cd Testlogs
+  232  ll
+  233  cd gz files
+  234  cd 'gz files'
+  235  ll
+  236  gzip access.log.gz
+  237  zcat access.log.gz
+  238  gzip-d  access.log.gz
+  239  gzip -d  access.log.gz
+  240  ll
+  241  cd..
+  242  cd ..
+  243  ll
+  244  gzip -d 'gz files.zip'
+  245  gzip -d gz files.zip
+  246  ll
+  247  gzip -d gzfiles.zip
+  248  gunzip  gzfiles.zip
+  249  unzip  gzfiles.zip
+  250  ll
+  251  cd ..
+  252  mkdir Testlogs2
+  253  cd Test
+  254  cd Testlog
+  255  cd Testlogs
+  256  nano move_file.sh
+  257  sudo chmod +x /home/rashmika/Documents/Testlogs/move_file.sh
+  258  sudo nano /etc/systemd/system/movegz.service
+  259  sudo systemctl daemon-reload
+  260  cd ..
+  261  cd Testlogs2
+  262  ll
+  263  crontab -e
+  264  crontab -i
+  265  crontab i
+  266  ll
+  267  crontab -l
+  268  ll
+  269  sudo nano /etc/systemd/system/movegz.service
+  270  sudo systemctl daemon-reload
+  271  sudo systemctl start movegz.service
+  272  ll
+  273  sudo systemctl status movegz.service
+  274  ls -l /home/rashmika/Documents/Testlogs/move_file.sh
+  275  cd ..
+  276  ll
+  277  cd Testlog
+  278  cd Testlogs
+  279  ll
+  280  sudo nano /etc/systemd/system/movegz.service
+  281  sudo systemctl daemon-reload
+  282  sudo systemctl start movegz.service
+  283  sudo systemctl status movegz.service
+  284  sudo nano /etc/systemd/system/movegz.service
+  285  sudo systemctl daemon-reload
+  286  sudo systemctl start movegz.service
+  287  sudo systemctl status movegz.service
+  288  sudo nano /etc/systemd/system/movegz.service
+  289  sudo systemctl start movegz.service
+  290  sudo systemctl daemon-reload
+  291  sudo systemctl start movegz.service
+  292  sudo nano /etc/systemd/system/movegz.service
+  293  sudo systemctl daemon-reload
+  294  sudo systemctl start movegz.service
+  295  ll
+  296  sudo systemctl status movegz.service
+  297  cd
+  298  sudo su
+  299  kubectl cluster-info
+  300  minikube status
+  301  minikube start
+  302  minikube status
+  303  minikube ip
+  304  ping 192.168.49.2
+  305  minikube profile list
+  306  kubectl cluster info
+  307  kubectl cluster-info
+  308  kubectl get nodes
+  309  kubectl config get-contexts
+  310  kubectl config current-context
+  311  kubectl get pods -A
+  312  kubectx
+  313  kubectl cluster-info --context kind-kind
+  314  kind version
+  315  curl -Lo ./kind https://kind.sigs.k8s.io/dl/latest/kind-linux-amd64
+  316  chmod +x ./kind
+  317  sudo mv ./kind /usr/local/bin/kind
+  318  chmod +x ./kind
+  319  curl -Lo ./kind https://kind.sigs.k8s.io/dl/latest/kind-linux-amd64
+  320  chmod +x ./kind
+  321  sudo mv ./kind /usr/local/bin/kind
+  322  kind version
+  323  kind create cluster
+  324  kind create cluster --image kindest/node:v1.29.2
+  325  kubectl config get-contexts 
+  326  kubectl get nodes
+  327  su
+  328  sudo su
+  329  sudo su
+  330  kubectl config get-contexts
+  331  ll
+  332  cd Documents
+  333  ll
+  334  cd My_K8s_Projects
+  335  cd deployments
+  336  ll
+  337  nano nginxx_deploy.yaml
+  338  nano nginx_deploy.yaml
+  339  ll
+  340  cd
+  341  kubectl get deploy
+  342  kubectl get pods
+  343  kubectl get nodes
+  344  kubectl create -f nginx_deploy.yaml
+  345  cd /Documents/My_K8s_Projects/deployments
+  346  cd Documents/My_K8s_Projects/deployments
+  347  kubectl create -f nginx_deploy.yaml
+  348  nano nginx_deploy.yaml
+  349  sudo nano nginx_deploy.yaml
+  350  kubectl create -f nginx_deploy.yaml
+  351  kubectl get deploy
+  352  kubectl get nodes
+  353  kubectl get pods
+  354  kubectl delete deploy nginx_deploy
+  355  kubectl get deploy
+  356  kubectl ip
+  357  kind ip
+  358  kind profile list
+  359  sudo kind profile list
+  360  kind-kind profile list
+  361  kind-kind ip
+  362  kubectl delete deploy nginx_deploy
+  363  kubectl get deploy
+  364  kubectl delete deploy nginx-deploy
+  365  kubectl get deploy
+  366  kubectl get ns
+  367  cd ..
+  368  cd namespace
+  369  cd namespaces
+  370  kubectl create namespace myspace --dry-run=client -o yaml > myspace.yaml
+  371  sudo kubectl create namespace myspace --dry-run=client -o yaml > myspace.yaml
+  372  sudo chmod +x /Documents/My_K8s_Projects/namespaces
+  373  sudo chmod +x /Documents/My_K8s_Projects/
+  374  sudo kubectl create namespace myspace --dry-run=client -o yaml > myspace.yaml
+  375  sudo kubectl create namespace myspace --dry-run=client -o yaml > sudo tee myspace.yaml
+  376  sudo chown -R $USER:$USER ~/Documents/My_K8s_Projects
+  377  sudo kubectl create namespace myspace --dry-run=client -o yaml > myspace.yaml
+  378  ll
+  379  nano myspace.yaml
+  380  kubectl ns
+  381  cd
+  382  kubectl get ns
+  383  cd /Documents/My_K8s_Projects/namespaces
+  384  cd Documents/My_K8s_Projects/namespaces
+  385  kubectl apply -f namespce.yaml
+  386  kubectl apply -f namespace.yaml
+  387  kubectl apply -f myspace.yaml
+  388  kubectl get ns
+  389  kubectl get pods --all namespaces
+  390  kubectl get pods --all-namespaces
+  391  kubectl get pods -n kube-system
+  392  kubectl config set-context --current --namespace=default
+  393  kubectl config get-context
+  394  kubectl config current-context
+  395  kubectl config current-context -ns
+  396  kubectl config view --minify --output 'jsonpath={..namespace}'
+  397  kubectl config set-context --current --namespace=myspace
+  398  kubectl config view --minify --output 'jsonpath={..namespace}'
+  399  kubectl config set-context --current --namespace=default
+  400  kubectl config view --minify --output 'jsonpath={..namespace}'
+  401  kubectl get nodes
+  402  kubectl describe node kind-control-plane
+  403  kubectl get pods
+  404  kubectl run nginxpod --image=nginx
+  405  kubectl get pods
+  406  kubectl get pod -o wide
+  407  kubectl describe pod nginxpod
+  408  kubectl delete pod nginxpod
+  409  kubectl get pods
+  410  kubectl run busyboxpod --image=busybox -it -- /bin/sh
+  411  cd ..
+  412  kubectl run busyboxpod --image=busybox -it -- /bin/sh
+  413  minikube status
+  414  minikube stop
+  415  kubectl run busyboxpod --image=busybox -it -- /bin/sh
+  416  kubectl delete pod busyboxpod --grace-period=0 --force
+  417  kubectl create pod busyboxpod --image=busybox --dry-run=client -o yaml > busybox.yaml
+  418  kubectl create pod busyboxpod --dry-run=client -o yaml > busybox.yaml
+  419  kubectl run busyboxpod --image=busybox --dry-run=client -o yaml > busybox.yaml
+  420  cd pods
+  421  ll
+  422  mv /Documents/My_K8s_Projects/busybox.yaml /Documents/My_K8s_Projects/pods
+  423  cd ..
+  424  ll
+  425  mv busybox.yaml pods
+  426  cd pods
+  427  ll
+  428  nano busybox.yaml
+  429  kubectl create -f busybox.yaml
+  430  nano busybox.yaml
+  431  kubectl create -f busybox.yaml
+  432  nano busybox.yaml
+  433  kubectl create -f busybox.yaml
+  434  kubectl get pods
+  435  kubectl get pod -o wide
+  436  kubectl describe pod busyboxpod
+  437  kubectl exec -it busyboxpod --bash
+  438  kubectl exec -it busyboxpod -- bash
+  439  kubectl exec -it busyboxpod-pod -- bash
+  440  kubectl exec -it busyboxpod -- bash
+  441  kubectl get pod -o wide
+  442  kubectl exec -it busyboxpod -- bash
+  443  kubectl exec -it busyboxpod -- sh
+  444  kubectl logs busybox
+  445  kubectl logs busyboxpod
+  446  nano busybox.yaml
+  447  kubectl exec -it busyboxpod -- bash
+  448  kubectl logs busyboxpod
+  449  ll
+  450  kubectl exec -it busybox-pod -- bash
+  451  kubectl exec -it busybox-- bash
+  452  kubectl exec -it busybox -- bash
+  453  kubectl exec -it busyboxpod -- bash
+  454  nano busybox.yaml
+  455  kubectl exec -it busyboxpod -- bash
+  456  kubectl exec -it busybox -- bash
+  457  kubectl exec -it busyboxpod -- bash
+  458  kubectl get pods
+  459  kubectl logs busyboxpod
+  460  nano busybox.yaml
+  461  kubectl delete pod busyboxpod
+  462  kubectl apply -f busyboxpod
+  463  kubectl apply -f busybox.yaml
+  464  kubectl get pods
+  465  kubectl exec -it busyboxpod -- bash
+  466  kubectl get pods
+  467  kubectl exec -it busyboxpod -- sh
+  468  nano busybox.yaml
+  469  kubectl  delete busyboxpod
+  470  kubectl delete busyboxpod
+  471  kubectl delete pod  busyboxpod
+  472  kubectl run pod myapp --dry-run=client -o yaml
+  473  kubectl run pod myapp --image=nginx --dry-run=client -o yaml
+  474  ll
+  475  kubectl run pod myapp --image=nginx --dry-run=client -o yaml > myapp.yaml
+  476  ll
+  477  nano myapp.yaml
+  478  kubectl create service myservice --dry-run=client -o yaml> myservice.yaml
+  479  kubectl run service myservice --dry-run=client -o yaml> myservice.yaml
+  480  kubectl create service clusterip myservice --tcp=80 --dry-run=client -o yaml> myservice.yaml
+  481  ll
+  482  mv myservice.yaml /Documents/My_K8s_Projects/services
+  483  rm myservice.yaml
+  484  ll
+  485  cd ..
+  486  ll
+  487  cd services
+  488  kubectl create service clusterip myservice --tcp=80:80 --dry-run=client -o yaml> myservice.yaml
+  489  ll
+  490  cd..
+  491  cd ..
+  492  cd pods
+  493  cat myapp.yaml
+  494  kubectl apply -f myapp.yaml
+  495  kubectl get pod
+  496  kubectl get pods
+  497  ll
+  498  nano myapp.yaml
+  499  busybox.yaml
+  500  nano busybox.yaml
+  501  kubectl apply -f myservice.yaml
+  502  kubectl apply -f /Documents/My_K8s_Projects/service/myservice.yaml
+  503  kubectl apply -f /Documents/My_K8s_Projects/service/
+  504  kubectl apply -f ~/Documents/My_K8s_Projects/service/myservice.yaml
+  505  kubectl apply -f ~/Documents/My_K8s_Projects/services/myservice.yaml
+  506  kubectl get service
+  507  cat ~/Documents/My_K8s_Projects/services/myservice.yaml
+  508  kubectl get po -o wide
+  509  kubectl get ep myservice
+  510  nano busybox.yaml
+  511  nano myapp.yaml
+  512  nano myservice.yaml
+  513  cd ..
+  514  cd services
+  515  ll
+  516  nano myservice.yaml
+  517  cat myservice.yaml
+  518  kubectl get po -o wide
+  519  kubectl get ep myservice
+  520  kubectl delete service myservice
+  521  kubectl apply -f myservice.yaml
+  522  nano myservice.yaml
+  523  kubectl apply -f myservice.yaml
+  524  cd ..
+  525  cd pods
+  526  ll
+  527  nano myapp.yaml
+  528  kubectl apply -f myapp.yaml
+  529  kubectl get po -o wide
+  530  kubectl get ep myservice
+  531  kubectl get nodes
+  532  kubectl get nodes --all-namespaces
+  533  kubectl get nodes -o wide --all-namespaces
+  534  nano myapp.yaml
+  535  kubectl run pod two-containers --image=nginx --tcp=80 --image=busybox --tcp=81 --dry-run=client -o yaml > twocontainers.yaml 
+  536  kubectl run pod two-containers --image=nginx --tcp=80:80 --image=busybox --tcp=81:81 --dry-run=client -o yaml > twocontainers.yaml 
+  537  kubectl run pod two-containers --image=nginx  --dry-run=client -o yaml > twocontainers.yaml 
+  538  kubectl run pod two-containers --image=nginx --image=busybox --dry-run=client -o yaml > twocontainers.yaml 
+  539  kubectl get pods
+  540  kubectl run pod two-containers --image=nginx --dry-run=client -o yaml > twocontainers.yaml 
+  541  kubectl get pods
+  542  kubectl run pod two-containers --image=nginx --dry-run=client -o yaml > twocontainers.yaml 
+  543  kubectl get pods
+  544  kubectl run pod twocontainers --image=nginx --dry-run=client -o yaml > twocontainers.yaml 
+  545  kubectl get pods
+  546  ll
+  547  nano twocontainers.yaml
+  548  kubectl apply -f twocontainers.yaml
+  549  kubectl get pods
+  550  kubectl get pods -o wide
+  551  ll
+  552  cd ect
+  553  cd etc
+  554  cd ~/etc/
+  555  cd etc
+  556  cd ~etc
+  557  root
+  558  ~/
+  559  cd
+  560  exit
+  561  ll
+  562  ls
+  563  exit
+  564  clear
+  565  docker countainer ls
+  566  docker container ls
+  567  docker container ls -a
+  568  docker container run --name=my-alpine-version2 -it alpine /bin/sh
+  569  uname -a
+  570  docker container ls
+  571  docker container ls -a
+  572  docker container run --name=my-live-alpine -dil alpine /bin/ash
+  573  docker container run --name my-live-alpine -dil alpine /bin/ash
+  574  docker container run --name my-live-alpine -dit alpine /bin/ash
+  575  docker container ls
+  576  docker container ls -a
+  577  docker container run --help
+  578  docker container ls
+  579  docker container exec 36d9acb76f5a
+  580  docker container exec 36d9acb76f5a hostname
+  581  docker container exec 36d9acb76f5a image
+  582  docker container exec 36d9acb76f5a ls
+  583  docker container exec 36d9acb76f5a ifconfig
+  584  docker container run my-live-alpine
+  585  docker container exec my-live-alpine
+  586  docker container run my-live-alpine -it alpine /bin/s 
+  587  docker container run my-live-alpine -it alpine /bin/ash
+  588  docker exec -it my-live-alpine /bin/ash
+  589  docker container run my-live-alpine -it alpine /bin/ash
+  590  docker exec -it my-live-alpine /bin/ash
+  591  docker container ls
+  592  docker exec -it my-live-alpine /bin/ash
+  593  docker container run --name my-fresh-alpine -dit alpine bin/sh
+  594  docker exec my-fresh-alpine -it -- /bin/sh
+  595  docker exec my-fresh-alpine -it  /bin/sh
+  596  docker exec -it  my-fresh-alpine  /bin/sh
+  597  docker container ls
+  598  docker container exec -it my-fresh-alpine
+  599  docker container rm my-fresh-alpine
+  600  docker container stop  my-fresh-alpine
+  601  docker container rm my-fresh-alpine
+  602  docker container ls
+  603  docker container stop  my-live-alpine
+  604  docker container rm my-live-alpine
+  605  docker container ls
+  606  docker container run --name my-live-alpine alpine /bin/sh
+  607  docker container ls
+  608  docker container run --name my-live-alpine -dit alpine /bin/sh
+  609  docker container ls
+  610  docker container ls -a
+  611  docker container run --name my-new-alpine -dit alpine /bin/sh
+  612  docker container ls -a
+  613  docker container ls
+  614  docker container exec my-new-alpine 
+  615  docker container exec my-new-alpine /bin/sh
+  616  docker exec -it my-new-alpine /bin/sh
+  617  docker container ls
+  618  docker container status nginx
+  619  docker container ls -a | grep "nginx"
+  620  docker continer run --name my-new-nginx nginx:alpine
+  621  docker continer run -d --name my-new-nginx nginx:alpine
+  622  docker container run -d --name my-new-nginx nginx:alpine
+  623  docker container ls
+  624  service nginx status
+  625  ps -aux | grep "nginx"
+  626  ps -aux -a | grep "nginx"
+  627  ps -aux 
+  628  ps -aux -a | grep "nginx"
+  629  docker container exec -it my-new-nginx /bin/sh
+  630  docker container top
+  631  docker container top my-new-nginx
+  632  docker container ls
+  633  kill -9 29142
+  634  docker container ls
+  635  ps -aux | grep "nginx"
+  636  kill -9 29142
+  637  sudo kill -9 29142
+  638  docker container ls
+  639  Docker container rm -f $(docker container ls -aq)
+  640  docker container rm -f $(docker container ls -aq)
+  641  docker continer ls -a
+  642  docker container ls -a
+  643  docker container ls 
+  644  ifconfig
+  645  docker container run -d --name my-new-nginx nginx:alpine
+  646  docker container exec -it my-new-nginx /bin/sh
+  647  curl 172.17.0.2
+  648   
+  649  docker container run --name my-live-nginx -p 8080:80 nginx:alpine
+  650  docker contail ls -a
+  651  docker container ls -a
+  652  netstat -plat | grep 8080
+  653   netstat -plant | grep 8080
+  654   netstat -plant | grep 9090
+  655  docker container run -d --name my-live-nginx -p 9090:90 nginx:alpine
+  656  docker container run -d --name my-live01-nginx -p 9090:90 nginx:alpine
+  657   netstat -plant | grep 9090
+  658  hostid
+  659  docker container ls -a
+  660   netstat -plant | grep docker-proxy
+  661  ifconfig
+  662  lsof -i
+  663  systemctl lsof -i
+  664  docker ps
+  665  docker container exec -it my-live01-nginx /bin/bash
+  666  docker container exec -it my-live01-nginx /bin/sh
+  667  docker container run -d --name my-live03-nginx -p 9090:9090 nginx:alpine
+  668  docker container run -d --name my-live03-nginx -p 9091:9091 nginx:alpine
+  669  docker container run -d --name my-live04-nginx -p 9091:9091 nginx:alpine
+  670  docker ps
+  671  docker container exec -it my-live01-nginx /bin/sh
+  672  docker container run -d --name my-live05-nginx -p 9092:80 nginx:alpine
+  673   netstat -plant | grep 9092
+  674  docker container ls
+  675  docker containe inspect a7b
+  676  docker containe inspect my-live05-nginx
+  677  docker container inspect a7b
+  678  docker container stats my-live05-nginx
+  679  history
+rashmika@adsl-dynamic-ipv6:~$ docker containers
+docker: unknown command: docker containers
+
+Run 'docker --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker containers ls
+docker: unknown command: docker containers
+
+Run 'docker --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE          COMMAND                  CREATED        STATUS        PORTS                                                 NAMES
+a7b18ad62cce   nginx:alpine   "/docker-entrypoint.…"   17 hours ago   Up 17 hours   0.0.0.0:9092->80/tcp, [::]:9092->80/tcp               my-live05-nginx
+5d3064ca9bfb   nginx:alpine   "/docker-entrypoint.…"   18 hours ago   Up 18 hours   80/tcp, 0.0.0.0:9091->9091/tcp, [::]:9091->9091/tcp   my-live04-nginx
+643f9ee66d6c   nginx:alpine   "/docker-entrypoint.…"   19 hours ago   Up 19 hours   80/tcp, 0.0.0.0:9090->90/tcp, [::]:9090->90/tcp       my-live01-nginx
+f20834d45b88   nginx:alpine   "/docker-entrypoint.…"   19 hours ago   Up 19 hours   80/tcp                                                my-new-nginx
+rashmika@adsl-dynamic-ipv6:~$ docker container run -dit --name my-alpine alpine /bin/sh
+
+2ea047c2aa3bee1f86bf604a8e2339f670b69e35c2fc68f3ce0b833171486baa
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS         PORTS                                                 NAMES
+2ea047c2aa3b   alpine         "/bin/sh"                10 seconds ago   Up 8 seconds                                                         my-alpine
+a7b18ad62cce   nginx:alpine   "/docker-entrypoint.…"   17 hours ago     Up 17 hours    0.0.0.0:9092->80/tcp, [::]:9092->80/tcp               my-live05-nginx
+5d3064ca9bfb   nginx:alpine   "/docker-entrypoint.…"   18 hours ago     Up 18 hours    80/tcp, 0.0.0.0:9091->9091/tcp, [::]:9091->9091/tcp   my-live04-nginx
+643f9ee66d6c   nginx:alpine   "/docker-entrypoint.…"   19 hours ago     Up 19 hours    80/tcp, 0.0.0.0:9090->90/tcp, [::]:9090->90/tcp       my-live01-nginx
+f20834d45b88   nginx:alpine   "/docker-entrypoint.…"   19 hours ago     Up 19 hours    80/tcp                                                my-new-nginx
+rashmika@adsl-dynamic-ipv6:~$ docker container -it alpine /bin/sh
+unknown shorthand flag: 'i' in -it
+
+Usage:  docker container
+
+Run 'docker container --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container exec -it my-alpine alpine /bin/sh
+OCI runtime exec failed: exec failed: unable to start container process: exec: "alpine": executable file not found in $PATH: unknown
+rashmika@adsl-dynamic-ipv6:~$ docker container exec -it my-alpine /bin/sh
+/ # ls
+bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
+/ # apk update
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.22/main/x86_64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.22/community/x86_64/APKINDEX.tar.gz
+v3.22.0-207-gcafa843a567 [https://dl-cdn.alpinelinux.org/alpine/v3.22/main]
+v3.22.0-212-ge3b599c79f4 [https://dl-cdn.alpinelinux.org/alpine/v3.22/community]
+OK: 26311 distinct packages available
+/ # apk figlet
+ERROR: 'figlet' is not an apk command. See 'apk --help'.
+/ # apk add figlet
+(1/1) Installing figlet (2.2.5-r3)
+Executing busybox-1.37.0-r18.trigger
+OK: 8 MiB in 17 packages
+/ # figlet DINIDU RASHMIKA
+ ____ ___ _   _ ___ ____  _   _ 
+|  _ \_ _| \ | |_ _|  _ \| | | |
+| | | | ||  \| || || | | | | | |
+| |_| | || |\  || || |_| | |_| |
+|____/___|_| \_|___|____/ \___/ 
+                                
+ ____      _    ____  _   _ __  __ ___ _  __    _    
+|  _ \    / \  / ___|| | | |  \/  |_ _| |/ /   / \   
+| |_) |  / _ \ \___ \| |_| | |\/| || || ' /   / _ \  
+|  _ <  / ___ \ ___) |  _  | |  | || || . \  / ___ \ 
+|_| \_\/_/   \_\____/|_| |_|_|  |_|___|_|\_\/_/   \_\
+                                                     
+/ # figlet DOCKER DONE AND DUSTED | THANK YOU PAYMEDIA
+/bin/sh: THANK: not found
+/ # figlet DOCKER DONE AND DUSTED! THANK YOU PAYMEDIA!
+ ____   ___   ____ _  _______ ____    ____   ___  _   _ _____ 
+|  _ \ / _ \ / ___| |/ / ____|  _ \  |  _ \ / _ \| \ | | ____|
+| | | | | | | |   | ' /|  _| | |_) | | | | | | | |  \| |  _|  
+| |_| | |_| | |___| . \| |___|  _ <  | |_| | |_| | |\  | |___ 
+|____/ \___/ \____|_|\_\_____|_| \_\ |____/ \___/|_| \_|_____|
+                                                              
+    _    _   _ ____    ____  _   _ ____ _____ _____ ____  _ 
+   / \  | \ | |  _ \  |  _ \| | | / ___|_   _| ____|  _ \| |
+  / _ \ |  \| | | | | | | | | | | \___ \ | | |  _| | | | | |
+ / ___ \| |\  | |_| | | |_| | |_| |___) || | | |___| |_| |_|
+/_/   \_\_| \_|____/  |____/ \___/|____/ |_| |_____|____/(_)
+                                                            
+ _____ _   _    _    _   _ _  __ __   _____  _   _ 
+|_   _| | | |  / \  | \ | | |/ / \ \ / / _ \| | | |
+  | | | |_| | / _ \ |  \| | ' /   \ V / | | | | | |
+  | | |  _  |/ ___ \| |\  | . \    | || |_| | |_| |
+  |_| |_| |_/_/   \_\_| \_|_|\_\   |_| \___/ \___/ 
+                                                   
+ ____   _ __   ____  __ _____ ____ ___    _    _ 
+|  _ \ / \\ \ / /  \/  | ____|  _ \_ _|  / \  | |
+| |_) / _ \\ V /| |\/| |  _| | | | | |  / _ \ | |
+|  __/ ___ \| | | |  | | |___| |_| | | / ___ \|_|
+|_| /_/   \_\_| |_|  |_|_____|____/___/_/   \_(_)
+                                                 
+/ # figlet I LOVE YOU! > mytext01.txt
+/ # ls
+bin           etc           lib           mnt           opt           root          sbin          sys           usr
+dev           home          media         mytext01.txt  proc          run           srv           tmp           var
+/ # cat mytext01.txt
+ ___   _     _____     _______  __   _____  _   _ _ 
+|_ _| | |   / _ \ \   / / ____| \ \ / / _ \| | | | |
+ | |  | |  | | | \ \ / /|  _|    \ V / | | | | | | |
+ | |  | |__| |_| |\ V / | |___    | || |_| | |_| |_|
+|___| |_____\___/  \_/  |_____|   |_| \___/ \___/(_)
+                                                    
+/ # ^C
+
+/ # 
+.
+.
+.
+
+.
+.
+.
+.
+.
+..
+.
+.
+.
+.
+.
+
+rashmika@adsl-dynamic-ipv6:~$ node -v
+bash: node: command not found...
+Install package 'nodejs' to provide command 'node'? [N/y] y
+
+
+ * Waiting in queue... 
+ * Loading list of packages.... 
+The following packages have to be installed:
+ nodejs-1:22.16.0-1.fc42.x86_64	JavaScript runtime
+ nodejs-docs-1:22.16.0-1.fc42.noarch	Node.js API documentation
+ nodejs-full-i18n-1:22.16.0-1.fc42.x86_64	Non-English locale data for Node.js
+ nodejs-libs-1:22.16.0-1.fc42.x86_64	Node.js and v8 libraries
+ nodejs-npm-1:10.9.2-1.22.16.0.1.fc42.x86_64	Node.js Package Manager
+Proceed with changes? [N/y] y
+
+
+ * Waiting in queue... 
+ * Waiting for authentication... 
+ * Waiting in queue... 
+ * Downloading packages... 
+ * Requesting data... 
+ * Testing changes... 
+ * Installing packages... 
+v22.16.0
+
+rashmika@adsl-dynamic-ipv6:~$ node -v
+v22.16.0
+rashmika@adsl-dynamic-ipv6:~$ npm -v
+10.9.2
+rashmika@adsl-dynamic-ipv6:~$ ll
+total 188432
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Desktop
+drwxr-xr-x. 1 rashmika rashmika       110 Jun 19 11:37 Documents
+drwxr-xr-x. 1 rashmika rashmika       134 Jun 25 15:23 Downloads
+-rw-r--r--. 1 root     root      60121272 Jun 12 11:42 kubectl
+-rw-r--r--. 1 rashmika rashmika     10174 Apr 20  2024 LICENSE
+drwxr-xr-x. 1 rashmika rashmika         0 Jun  2 11:55 Media
+-rw-r--r--. 1 root     root     132766301 Jun 11 16:45 minikube-linux-amd64
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Music
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Pictures
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Public
+-rw-r--r--. 1 rashmika rashmika     49052 Apr 19 23:37 README.md
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Templates
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Videos
+rashmika@adsl-dynamic-ipv6:~$ cd Downloads
+rashmika@adsl-dynamic-ipv6:~/Downloads$ ll
+total 144
+-rw-r--r--. 1 rashmika rashmika   1704 May 30 14:04 dinidu.pem
+-rw-------. 1 root     root       3381 Jun  2 10:00 id_rsa
+-rwxrwx---. 1 rashmika rashmika 129081 Jun 25 15:20 MyShop-main.zip
+-rw-r--r--. 1 rashmika rashmika   3414 May 30 15:41 rashmika_key.pem
+-rw-------. 1 root     root       3381 May 30 16:13 rashmika_private.key
+rashmika@adsl-dynamic-ipv6:~/Downloads$ 
+rashmika@adsl-dynamic-ipv6:~/Downloads$ ll
+total 144
+-rw-r--r--. 1 rashmika rashmika   1704 May 30 14:04 dinidu.pem
+-rw-------. 1 root     root       3381 Jun  2 10:00 id_rsa
+-rwxrwx---. 1 rashmika rashmika 129081 Jun 25 15:20 MyShop-main.zip
+-rw-r--r--. 1 rashmika rashmika   3414 May 30 15:41 rashmika_key.pem
+-rw-------. 1 root     root       3381 May 30 16:13 rashmika_private.key
+rashmika@adsl-dynamic-ipv6:~/Downloads$ cd ..
+rashmika@adsl-dynamic-ipv6:~$ ll
+total 188432
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Desktop
+drwxr-xr-x. 1 rashmika rashmika       122 Jun 25 15:54 Documents
+drwxr-xr-x. 1 rashmika rashmika       134 Jun 25 15:23 Downloads
+-rw-r--r--. 1 root     root      60121272 Jun 12 11:42 kubectl
+-rw-r--r--. 1 rashmika rashmika     10174 Apr 20  2024 LICENSE
+drwxr-xr-x. 1 rashmika rashmika         0 Jun  2 11:55 Media
+-rw-r--r--. 1 root     root     132766301 Jun 11 16:45 minikube-linux-amd64
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Music
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Pictures
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Public
+-rw-r--r--. 1 rashmika rashmika     49052 Apr 19 23:37 README.md
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Templates
+drwxr-xr-x. 1 rashmika rashmika         0 May 29 11:20 Videos
+rashmika@adsl-dynamic-ipv6:~$ cd Documents
+rashmika@adsl-dynamic-ipv6:~/Documents$ ll
+total 0
+drwxrwx---. 1 rashmika rashmika 272 Jun 25 15:50 my-app
+drwxr-xr-x. 1 rashmika rashmika 100 Jun 19 08:37 My_K8s_Projects
+drwxr-xr-x. 1 rashmika rashmika 130 Jun  3 16:46 PFX_Certificate
+drwxr-xr-x. 1 root     root      82 Jun 11 10:09 testdata
+drwxr-xr-x. 1 rashmika rashmika  62 Jun 19 13:55 Testlogs
+drwxr-xr-x. 1 rashmika rashmika   0 Jun 19 11:37 Testlogs2
+rashmika@adsl-dynamic-ipv6:~/Documents$ cd my-app
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ ll
+total 84
+drwxrwx---. 1 rashmika rashmika    80 Jun 25 15:47 app
+-rwxrwx---. 1 rashmika rashmika   133 Jun 25 15:25 next.config.ts
+-rwxrwx---. 1 rashmika rashmika   211 Jun 25 15:25 next-env.d.ts
+drwxrwx---. 1 rashmika rashmika   936 Jun 25 15:50 node_modules
+-rwxrwx---. 1 rashmika rashmika   490 Jun 25 15:26 package.json
+-rwxrwx---. 1 rashmika rashmika 58466 Jun 25 15:42 package-lock.json
+-rwxrwx---. 1 rashmika rashmika    81 Jun 25 15:25 postcss.config.mjs
+drwxrwx---. 1 rashmika rashmika    90 Jun 25 15:50 public
+-rwxrwx---. 1 rashmika rashmika  1450 Jun 25 15:25 README.md
+-rwxrwx---. 1 rashmika rashmika   598 Jun 25 15:26 tsconfig.json
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ nano Dockerfile
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ ll
+total 88
+drwxrwx---. 1 rashmika rashmika    80 Jun 25 15:47 app
+-rw-r--r--. 1 rashmika rashmika   115 Jun 25 16:27 Dockerfile
+-rwxrwx---. 1 rashmika rashmika   133 Jun 25 15:25 next.config.ts
+-rwxrwx---. 1 rashmika rashmika   211 Jun 25 15:25 next-env.d.ts
+drwxrwx---. 1 rashmika rashmika   936 Jun 25 15:50 node_modules
+-rwxrwx---. 1 rashmika rashmika   490 Jun 25 15:26 package.json
+-rwxrwx---. 1 rashmika rashmika 58466 Jun 25 15:42 package-lock.json
+-rwxrwx---. 1 rashmika rashmika    81 Jun 25 15:25 postcss.config.mjs
+drwxrwx---. 1 rashmika rashmika    90 Jun 25 15:50 public
+-rwxrwx---. 1 rashmika rashmika  1450 Jun 25 15:25 README.md
+-rwxrwx---. 1 rashmika rashmika   598 Jun 25 15:26 tsconfig.json
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image build -t next:v1
+ERROR: docker: 'docker buildx build' requires 1 argument
+
+Usage:  docker buildx build [OPTIONS] PATH | URL | -
+
+Run 'docker buildx build --help' for more information
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image build -t next:v1 .
+[+] Building 0.5s (1/1) FINISHED                                                                                                       docker:default
+ => [internal] load build definition from Dockerfile                                                                                             0.1s
+ => => transferring dockerfile: 211B                                                                                                             0.0s
+Dockerfile:3
+--------------------
+   1 |     FROM node:22
+   2 |     WORKDIR ./app 
+   3 | >>> COPY ./app
+   4 |     
+   5 |     RUN npm install
+--------------------
+ERROR: failed to solve: dockerfile parse error on line 3: COPY requires at least two arguments, but only one was provided. Destination could not be determined
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ nano Dockerfile
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image build -t next:v1 .
+[+] Building 0.2s (1/1) FINISHED                                                                                                       docker:default
+ => [internal] load build definition from Dockerfile                                                                                             0.0s
+ => => transferring dockerfile: 230B                                                                                                             0.0s
+Dockerfile:3
+--------------------
+   1 |     FROM node:22
+   2 |     WORKDIR ./app 
+   3 | >>> COPY ./app
+   4 |     COPY package.json
+   5 |     RUN npm install
+--------------------
+ERROR: failed to solve: dockerfile parse error on line 3: COPY requires at least two arguments, but only one was provided. Destination could not be determined
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ nano Dockerfile
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image build -t next:v1 .
+[+] Building 0.3s (1/1) FINISHED                                                                                                       docker:default
+ => [internal] load build definition from Dockerfile                                                                                             0.1s
+ => => transferring dockerfile: 229B                                                                                                             0.0s
+Dockerfile:5
+--------------------
+   3 |     COPY package*.json ./
+   4 |     RUN npm install
+   5 | >>> COPY ..
+   6 |     RUN npm run build
+   7 |     
+--------------------
+ERROR: failed to solve: dockerfile parse error on line 5: COPY requires at least two arguments, but only one was provided. Destination could not be determined
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ nano Dockerfile
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image build -t next:v1 .
+
+[+] Building 0.3s (1/1) FINISHED                                                                                                       docker:default
+ => [internal] load build definition from Dockerfile                                                                                             0.0s
+ => => transferring dockerfile: 228B                                                                                                             0.0s
+Dockerfile:5
+--------------------
+   3 |     COPY package*.json ./
+   4 |     RUN npm install
+   5 | >>> COPY..
+   6 |     RUN npm run build
+   7 |     
+--------------------
+ERROR: failed to solve: dockerfile parse error on line 5: unknown instruction: COPY.. (did you mean COPY?)
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ nano Dockerfile
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image build -t next:v1 .
+
+[+] Building 3110.7s (8/9)                                                                                                             docker:default
+ => [internal] load build definition from Dockerfile                                                                                             0.1s
+ => => transferring dockerfile: 229B                                                                                                             0.0s
+ => [internal] load metadata for docker.io/library/node:22                                                                                       4.8s
+ => [internal] load .dockerignore                                                                                                                0.1s
+ => => transferring context: 2B                                                                                                                  0.0s
+ => [1/5] FROM docker.io/library/node:22@sha256:71bcbb3b215b3fa84b5b167585675072f4c270855e37a599803f1a58141a0716                              1342.5s
+ => => resolve docker.io/library/node:22@sha256:71bcbb3b215b3fa84b5b167585675072f4c270855e37a599803f1a58141a0716                                 0.1s
+ => => sha256:71bcbb3b215b3fa84b5b167585675072f4c270855e37a599803f1a58141a0716 6.41kB / 6.41kB                                                   0.0s
+ => => sha256:a676f1268cf25605dbee49dcc3c73497311288da421855bdf19f25b8da6a95df 2.49kB / 2.49kB                                                   0.0s
+ => => sha256:638ba469d588b3cb0f612c751f2442c1d2a4a06cc31cef4ad06a5b8cb9dd193e 6.42kB / 6.42kB                                                   0.0s
+ => => sha256:3b1eb73e993990490aa137c00e60ff4ca9d1715bafb8e888dbb0986275edb13f 24.02MB / 24.02MB                                               155.4s
+ => => sha256:b1b8a0660a31403a35d70b276c3c86b1200b8683e83cd77a92ec98744017684a 64.40MB / 64.40MB                                               828.2s
+ => => sha256:0c01110621e0ec1eded421406c9f117f7ae5486c8f7b0a0d1a37cc7bc9317226 48.49MB / 48.49MB                                               550.0s
+ => => sha256:48b8862a18fa961ebfbac8484877dd4894e96ee88177d8c4f1f54d9727262b7d 211.37MB / 211.37MB                                            1293.5s
+ => => sha256:852ca85dc0705c0f97cf087761f9c489918131f39799ea756e47e8f0d7c01a3f 3.32kB / 3.32kB                                                 659.9s
+ => => extracting sha256:0c01110621e0ec1eded421406c9f117f7ae5486c8f7b0a0d1a37cc7bc9317226                                                       11.0s
+ => => extracting sha256:3b1eb73e993990490aa137c00e60ff4ca9d1715bafb8e888dbb0986275edb13f                                                        2.8s
+ => => sha256:0dd3b888366dcd76189c68676ea2dbb8f87fbdd8ddc725e2d8cd329c5672b619 56.37MB / 56.37MB                                               943.0s
+ => => sha256:304c6aaba4d72dc535a76a913f5ef3fb98119b7a8e893f1d1446963226964860 1.25MB / 1.25MB                                                 838.4s
+ => => extracting sha256:b1b8a0660a31403a35d70b276c3c86b1200b8683e83cd77a92ec98744017684a                                                       10.2s
+ => => sha256:5e4491d457de3c9525d99163dd554e0ffe53907a216b930283c95515bb08ef68 448B / 448B                                                     838.7s
+ => => extracting sha256:48b8862a18fa961ebfbac8484877dd4894e96ee88177d8c4f1f54d9727262b7d                                                       34.0s
+ => => extracting sha256:852ca85dc0705c0f97cf087761f9c489918131f39799ea756e47e8f0d7c01a3f                                                        0.0s
+ => => extracting sha256:0dd3b888366dcd76189c68676ea2dbb8f87fbdd8ddc725e2d8cd329c5672b619                                                       12.5s
+ => => extracting sha256:304c6aaba4d72dc535a76a913f5ef3fb98119b7a8e893f1d1446963226964860                                                        0.1s
+ => => extracting sha256:5e4491d457de3c9525d99163dd554e0ffe53907a216b930283c95515bb08ef68                                                        0.0s
+ => [internal] load build context                                                                                                                1.0s
+ => => transferring context: 59.17kB                                                                                                             0.8s
+ => [2/5] WORKDIR ./app                                                                                                                          0.9s
+ => [3/5] COPY package*.json ./                                                                                                                  0.4s
+ => ERROR [4/5] RUN npm install                                                                                                               1761.6s
+------
+ > [4/5] RUN npm install:
+1760.0 npm error code ETIMEDOUT
+1760.0 npm error syscall read
+1760.0 npm error errno -110
+1760.0 npm error network read ETIMEDOUT
+1760.0 npm error network This is a problem related to network connectivity.
+1760.0 npm error network In most cases you are behind a proxy or have bad network settings.
+1760.0 npm error network
+1760.0 npm error network If you are behind a proxy, please make sure that the
+1760.0 npm error network 'proxy' config is set properly.  See: 'npm help config'
+1760.0 npm error A complete log of this run can be found in: /root/.npm/_logs/2025-06-25T11_51_35_035Z-debug-0.log
+------
+
+ 1 warning found (use docker --debug to expand):
+ - WorkdirRelativePath: Relative workdir "./app" can have unexpected results if the base image changes (line 2)
+Dockerfile:4
+--------------------
+   2 |     WORKDIR ./app 
+   3 |     COPY package*.json ./
+   4 | >>> RUN npm install
+   5 |     #COPY..
+   6 |     RUN npm run build
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm install" did not complete successfully: exit code: 146
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ ping google.com -c 3
+PING google.com (2404:6800:4003:c02::66) 56 data bytes
+From adsl-dynamic-ipv6.slt.lk (2402:d000:8134:1d0b:b60f:3bff:fe02:cf50) icmp_seq=1 Destination unreachable: Source address failed ingress/egress policy
+From adsl-dynamic-ipv6.slt.lk (2402:d000:8134:1d0b:b60f:3bff:fe02:cf50) icmp_seq=2 Destination unreachable: Source address failed ingress/egress policy
+From adsl-dynamic-ipv6.slt.lk (2402:d000:8134:1d0b:b60f:3bff:fe02:cf50) icmp_seq=3 Destination unreachable: Source address failed ingress/egress policy
+
+--- google.com ping statistics ---
+3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2060ms
+
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ ping google.com -c 3
+ping: google.com: Name or service not known
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ ping google.com     
+ping: google.com: Name or service not known
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image build -t next:v1 .
+[+] Building 4.1s (2/2) FINISHED                                                                                                       docker:default
+ => [internal] load build definition from Dockerfile                                                                                             0.0s
+ => => transferring dockerfile: 229B                                                                                                             0.0s
+ => ERROR [internal] load metadata for docker.io/library/node:22                                                                                 3.9s
+------
+ > [internal] load metadata for docker.io/library/node:22:
+------
+Dockerfile:1
+--------------------
+   1 | >>> FROM node:22
+   2 |     WORKDIR ./app 
+   3 |     COPY package*.json ./
+--------------------
+ERROR: failed to solve: node:22: failed to resolve source metadata for docker.io/library/node:22: failed to do request: Head "https://registry-1.docker.io/v2/library/node/manifests/22": dial tcp: lookup registry-1.docker.io: no such host
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image build -t next:v1 .
+[+] Building 431.6s (9/9) FINISHED                                                                                                     docker:default
+ => [internal] load build definition from Dockerfile                                                                                             0.6s
+ => => transferring dockerfile: 229B                                                                                                             0.0s
+ => [internal] load metadata for docker.io/library/node:22                                                                                      14.8s
+ => [internal] load .dockerignore                                                                                                                0.0s
+ => => transferring context: 2B                                                                                                                  0.0s
+ => [1/5] FROM docker.io/library/node:22@sha256:0c0734eb7051babbb3e95cd74e684f940552b31472152edf0bb23e54ab44a0d7                               106.3s
+ => => resolve docker.io/library/node:22@sha256:0c0734eb7051babbb3e95cd74e684f940552b31472152edf0bb23e54ab44a0d7                                 0.1s
+ => => sha256:0c0734eb7051babbb3e95cd74e684f940552b31472152edf0bb23e54ab44a0d7 6.41kB / 6.41kB                                                   0.0s
+ => => sha256:1133446f5a79bf7568ed59254c80e2810c49c2f5636e1cbaeee4a18cd19a8c13 2.49kB / 2.49kB                                                   0.0s
+ => => sha256:b0a29cf1eca058b9a70a8be493eacfe2d1ed764e4e1c0ea72a9162b40af1f79a 6.42kB / 6.42kB                                                   0.0s
+ => => sha256:66c945334f0694722812d0ebd7f0ec6872875e04fd0b0fba5266f9c3dd4beb3a 3.33kB / 3.33kB                                                   0.5s
+ => => sha256:97a7f918b8f7ddf85d879d2913ba3c8e78b08a4de66f7f9d786e43ff07a9aac4 1.25MB / 1.25MB                                                   8.0s
+ => => sha256:ad47b6c85558c94d45db6b6f2dd9f037af6237e7cfdf4988508368b6fe9b5924 56.45MB / 56.45MB                                                95.2s
+ => => extracting sha256:66c945334f0694722812d0ebd7f0ec6872875e04fd0b0fba5266f9c3dd4beb3a                                                        0.0s
+ => => sha256:c679f505fe98f24c0c72003defc3c6f3f9f72cd5126ea83d95ea515b2dca030e 446B / 446B                                                       1.8s
+ => => extracting sha256:ad47b6c85558c94d45db6b6f2dd9f037af6237e7cfdf4988508368b6fe9b5924                                                        9.8s
+ => => extracting sha256:97a7f918b8f7ddf85d879d2913ba3c8e78b08a4de66f7f9d786e43ff07a9aac4                                                        0.2s
+ => => extracting sha256:c679f505fe98f24c0c72003defc3c6f3f9f72cd5126ea83d95ea515b2dca030e                                                        0.0s
+ => [internal] load build context                                                                                                                1.9s
+ => => transferring context: 190B                                                                                                                1.8s
+ => [2/5] WORKDIR ./app                                                                                                                          0.6s
+ => [3/5] COPY package*.json ./                                                                                                                  0.3s
+ => [4/5] RUN npm install                                                                                                                      303.4s
+ => ERROR [5/5] RUN npm run build                                                                                                                5.3s 
+------
+ > [5/5] RUN npm run build:
+1.578 
+1.578 > my-app@0.1.0 build
+1.578 > next build
+1.578 
+4.736 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+4.738 This information is used to shape Next.js' roadmap and prioritize features.
+4.738 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+4.738 https://nextjs.org/telemetry
+4.738 
+4.820 
+4.821 > Build error occurred
+4.838 [Error: > Couldn't find any `pages` or `app` directory. Please create one under the project root]
+------
+
+ 1 warning found (use docker --debug to expand):
+ - WorkdirRelativePath: Relative workdir "./app" can have unexpected results if the base image changes (line 2)
+Dockerfile:6
+--------------------
+   4 |     RUN npm install
+   5 |     #COPY..
+   6 | >>> RUN npm run build
+   7 |     
+   8 |     EXPOSE 3000
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker build --network=host -t next:v1 .
+[+] Building 267.2s (9/9) FINISHED                                                                                                     docker:default
+ => [internal] load build definition from Dockerfile                                                                                             0.1s
+ => => transferring dockerfile: 229B                                                                                                             0.0s
+ => [internal] load metadata for docker.io/library/node:22                                                                                       2.8s
+ => [internal] load .dockerignore                                                                                                                0.0s
+ => => transferring context: 2B                                                                                                                  0.0s
+ => [1/5] FROM docker.io/library/node:22@sha256:0c0734eb7051babbb3e95cd74e684f940552b31472152edf0bb23e54ab44a0d7                                 0.0s
+ => [internal] load build context                                                                                                                0.7s
+ => => transferring context: 190B                                                                                                                0.7s
+ => CACHED [2/5] WORKDIR ./app                                                                                                                   0.0s
+ => CACHED [3/5] COPY package*.json ./                                                                                                           0.0s
+ => [4/5] RUN npm install                                                                                                                      259.1s
+ => ERROR [5/5] RUN npm run build                                                                                                                4.3s 
+------                                                                                                                                                
+ > [5/5] RUN npm run build:                                                                                                                           
+1.025                                                                                                                                                 
+1.025 > my-app@0.1.0 build                                                                                                                            
+1.025 > next build                                                                                                                                    
+1.025                                                                                                                                                 
+3.726 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+3.729 This information is used to shape Next.js' roadmap and prioritize features.
+3.732 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+3.732 https://nextjs.org/telemetry
+3.732 
+4.077 
+4.077 > Build error occurred
+4.092 [Error: > Couldn't find any `pages` or `app` directory. Please create one under the project root]
+------
+
+ 1 warning found (use docker --debug to expand):
+ - WorkdirRelativePath: Relative workdir "./app" can have unexpected results if the base image changes (line 2)
+Dockerfile:6
+--------------------
+   4 |     RUN npm install
+   5 |     #COPY..
+   6 | >>> RUN npm run build
+   7 |     
+   8 |     EXPOSE 3000
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ nano Dockerfile
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker build --network=host -t next:v1 .
+[+] Building 8.4s (9/9) FINISHED                                                                                                       docker:default
+ => [internal] load build definition from Dockerfile                                                                                             0.1s
+ => => transferring dockerfile: 228B                                                                                                             0.0s
+ => [internal] load metadata for docker.io/library/node:22                                                                                       2.8s
+ => [internal] load .dockerignore                                                                                                                0.0s
+ => => transferring context: 2B                                                                                                                  0.0s
+ => [1/5] FROM docker.io/library/node:22@sha256:0c0734eb7051babbb3e95cd74e684f940552b31472152edf0bb23e54ab44a0d7                                 0.0s
+ => [internal] load build context                                                                                                                0.8s
+ => => transferring context: 190B                                                                                                                0.8s
+ => CACHED [2/5] WORKDIR /app                                                                                                                    0.0s
+ => CACHED [3/5] COPY package*.json ./                                                                                                           0.0s
+ => CACHED [4/5] RUN npm install                                                                                                                 0.0s
+ => ERROR [5/5] RUN npm run build                                                                                                                4.4s
+------                                                                                                                                                
+ > [5/5] RUN npm run build:                                                                                                                           
+0.966                                                                                                                                                 
+0.966 > my-app@0.1.0 build                                                                                                                            
+0.966 > next build                                                                                                                                    
+0.966                                                                                                                                                 
+3.730 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+3.730 This information is used to shape Next.js' roadmap and prioritize features.
+3.730 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+3.730 https://nextjs.org/telemetry
+3.730 
+4.094 
+4.094 > Build error occurred
+4.111 [Error: > Couldn't find any `pages` or `app` directory. Please create one under the project root]
+------
+Dockerfile:6
+--------------------
+   4 |     RUN npm install
+   5 |     #COPY..
+   6 | >>> RUN npm run build
+   7 |     
+   8 |     EXPOSE 3000
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ nano Dockerfile
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image build -t next:v1 .
+[+] Building 252.0s (10/10) FINISHED                                                                                                   docker:default
+ => [internal] load build definition from Dockerfile                                                                                             0.1s
+ => => transferring dockerfile: 229B                                                                                                             0.0s
+ => [internal] load metadata for docker.io/library/node:22                                                                                       1.2s
+ => [internal] load .dockerignore                                                                                                                0.0s
+ => => transferring context: 2B                                                                                                                  0.0s
+ => [1/6] FROM docker.io/library/node:22@sha256:0c0734eb7051babbb3e95cd74e684f940552b31472152edf0bb23e54ab44a0d7                                 0.0s
+ => [internal] load build context                                                                                                               27.4s
+ => => transferring context: 373.51MB                                                                                                           27.2s
+ => CACHED [2/6] WORKDIR /app                                                                                                                    0.0s
+ => CACHED [3/6] COPY package*.json ./                                                                                                           0.0s
+ => CACHED [4/6] RUN npm install                                                                                                                 0.0s
+ => [5/6] COPY . .                                                                                                                              26.3s
+ => ERROR [6/6] RUN npm run build                                                                                                              196.0s
+------                                                                                                                                                
+ > [6/6] RUN npm run build:                                                                                                                           
+2.441                                                                                                                                                 
+2.441 > my-app@0.1.0 build                                                                                                                            
+2.441 > next build                                                                                                                                    
+2.441                                                                                                                                                 
+5.809    Downloading swc package @next/swc-linux-x64-gnu... to /root/.cache/next-swc
+90.04    Downloading swc package @next/swc-linux-x64-musl... to /root/.cache/next-swc
+172.2 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+172.2 This information is used to shape Next.js' roadmap and prioritize features.
+172.2 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+172.2 https://nextjs.org/telemetry
+172.2 
+173.1    ▲ Next.js 15.3.4
+173.1 
+173.4    Creating an optimized production build ...
+195.0 Failed to compile.
+195.0 
+195.0 app/layout.tsx
+195.0 An error occurred in `next/font`.
+195.0 
+195.0 Error: Cannot find module '../lightningcss.linux-x64-gnu.node'
+195.0 Require stack:
+195.0 - /app/node_modules/lightningcss/node/index.js
+195.0 - /app/node_modules/@tailwindcss/node/dist/index.js
+195.0 - /app/node_modules/@tailwindcss/postcss/dist/index.js
+195.0 - /app/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js
+195.0 - /app/node_modules/next/dist/build/webpack/config/blocks/css/index.js
+195.0 - /app/node_modules/next/dist/build/webpack/config/index.js
+195.0 - /app/node_modules/next/dist/build/webpack-config.js
+195.0 - /app/node_modules/next/dist/build/webpack-build/impl.js
+195.0 - /app/node_modules/next/dist/compiled/jest-worker/processChild.js
+195.0     at Function.<anonymous> (node:internal/modules/cjs/loader:1401:15)
+195.0     at /app/node_modules/next/dist/server/require-hook.js:55:36
+195.0     at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+195.0     at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+195.0     at Function._load (node:internal/modules/cjs/loader:1211:37)
+195.0     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+195.0     at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+195.0     at Module.<anonymous> (node:internal/modules/cjs/loader:1487:12)
+195.0     at mod.require (/app/node_modules/next/dist/server/require-hook.js:65:28)
+195.0     at require (node:internal/modules/helpers:135:16)
+195.0 
+195.0 app/layout.tsx
+195.0 An error occurred in `next/font`.
+195.0 
+195.0 Error: Cannot find module '../lightningcss.linux-x64-gnu.node'
+195.0 Require stack:
+195.0 - /app/node_modules/lightningcss/node/index.js
+195.0 - /app/node_modules/@tailwindcss/node/dist/index.js
+195.0 - /app/node_modules/@tailwindcss/postcss/dist/index.js
+195.0 - /app/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js
+195.0 - /app/node_modules/next/dist/build/webpack/config/blocks/css/index.js
+195.0 - /app/node_modules/next/dist/build/webpack/config/index.js
+195.0 - /app/node_modules/next/dist/build/webpack-config.js
+195.0 - /app/node_modules/next/dist/build/webpack-build/impl.js
+195.0 - /app/node_modules/next/dist/compiled/jest-worker/processChild.js
+195.0     at Function.<anonymous> (node:internal/modules/cjs/loader:1401:15)
+195.0     at /app/node_modules/next/dist/server/require-hook.js:55:36
+195.0     at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+195.0     at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+195.0     at Function._load (node:internal/modules/cjs/loader:1211:37)
+195.0     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+195.0     at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+195.0     at Module.<anonymous> (node:internal/modules/cjs/loader:1487:12)
+195.0     at mod.require (/app/node_modules/next/dist/server/require-hook.js:65:28)
+195.0     at require (node:internal/modules/helpers:135:16)
+195.0 
+195.0 
+195.0 > Build failed because of webpack errors
+------
+Dockerfile:6
+--------------------
+   4 |     RUN npm install
+   5 |     COPY . .
+   6 | >>> RUN npm run build
+   7 |     
+   8 |     EXPOSE 3000
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ nano Dockerfile
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image build -t next:v1 .
+[+] Building 40.0s (8/10)                                                                                                              docker:default
+ => [internal] load build definition from Dockerfile                                                                                             0.1s
+ => => transferring dockerfile: 291B                                                                                                             0.0s
+ => [internal] load metadata for docker.io/library/node:22                                                                                       2.6s
+ => [internal] load .dockerignore                                                                                                                0.1s
+ => => transferring context: 2B                                                                                                                  0.0s
+ => [1/6] FROM docker.io/library/node:22@sha256:0c0734eb7051babbb3e95cd74e684f940552b31472152edf0bb23e54ab44a0d7                                 0.0s
+ => [internal] load build context                                                                                                                3.7s
+ => => transferring context: 1.57MB                                                                                                              3.5s
+ => CACHED [2/6] WORKDIR /app                                                                                                                    0.0s
+ => CACHED [3/6] COPY package*.json ./                                                                                                           0.0s
+ => ERROR [4/6] RUN npm install                                                                                                                 33.2s
+------                                                                                                                                                
+ > [4/6] RUN npm install:                                                                                                                             
+32.10 npm error code ETIMEDOUT                                                                                                                        
+32.10 npm error syscall read                                                                                                                          
+32.10 npm error errno -110                                                                                                                            
+32.10 npm error network read ETIMEDOUT                                                                                                                
+32.10 npm error network This is a problem related to network connectivity.
+32.10 npm error network In most cases you are behind a proxy or have bad network settings.
+32.10 npm error network
+32.10 npm error network If you are behind a proxy, please make sure that the
+32.10 npm error network 'proxy' config is set properly.  See: 'npm help config'
+32.11 npm notice
+32.11 npm notice New major version of npm available! 10.9.2 -> 11.4.2
+32.11 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.2
+32.11 npm notice To update run: npm install -g npm@11.4.2
+32.11 npm notice
+32.11 npm error A complete log of this run can be found in: /root/.npm/_logs/2025-06-26T03_36_06_094Z-debug-0.log
+------
+Dockerfile:6
+--------------------
+   4 |     ENV LIGHTNINGCSS_DOWNLOAD_BINARY=true
+   5 |     COPY package*.json ./
+   6 | >>> RUN npm install
+   7 |     COPY . .
+   8 |     RUN npm run build
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm install" did not complete successfully: exit code: 146
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker build --no-cache --network=host -t next:v1 .
+[+] Building 65.7s (8/10)                                                                                                              docker:default
+ => [internal] load build definition from Dockerfile                                                                                             0.1s
+ => => transferring dockerfile: 291B                                                                                                             0.0s
+ => [internal] load metadata for docker.io/library/node:22                                                                                       1.9s
+ => [internal] load .dockerignore                                                                                                                0.1s
+ => => transferring context: 2B                                                                                                                  0.0s
+ => [1/6] FROM docker.io/library/node:22@sha256:0c0734eb7051babbb3e95cd74e684f940552b31472152edf0bb23e54ab44a0d7                                 0.0s
+ => [internal] load build context                                                                                                                2.8s
+ => => transferring context: 1.57MB                                                                                                              2.7s
+ => CACHED [2/6] WORKDIR /app                                                                                                                    0.0s
+ => [3/6] COPY package*.json ./                                                                                                                  0.7s
+ => ERROR [4/6] RUN npm install                                                                                                                 59.9s
+------                                                                                                                                                
+ > [4/6] RUN npm install:                                                                                                                             
+59.07 npm error code ETIMEDOUT                                                                                                                        
+59.07 npm error syscall read                                                                                                                          
+59.08 npm error errno -110                                                                                                                            
+59.08 npm error network read ETIMEDOUT                                                                                                                
+59.08 npm error network This is a problem related to network connectivity.
+59.08 npm error network In most cases you are behind a proxy or have bad network settings.
+59.08 npm error network
+59.08 npm error network If you are behind a proxy, please make sure that the
+59.08 npm error network 'proxy' config is set properly.  See: 'npm help config'
+59.09 npm notice
+59.09 npm notice New major version of npm available! 10.9.2 -> 11.4.2
+59.09 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.2
+59.09 npm notice To update run: npm install -g npm@11.4.2
+59.09 npm notice
+59.09 npm error A complete log of this run can be found in: /root/.npm/_logs/2025-06-26T03_40_28_824Z-debug-0.log
+------
+Dockerfile:6
+--------------------
+   4 |     ENV LIGHTNINGCSS_DOWNLOAD_BINARY=true
+   5 |     COPY package*.json ./
+   6 | >>> RUN npm install
+   7 |     COPY . .
+   8 |     RUN npm run build
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm install" did not complete successfully: exit code: 146
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image build -t next:v1 .
+[+] Building 361.5s (10/10) FINISHED                                                                                                   docker:default
+ => [internal] load build definition from Dockerfile                                                                                             0.1s
+ => => transferring dockerfile: 291B                                                                                                             0.0s
+ => [internal] load metadata for docker.io/library/node:22                                                                                       4.3s
+ => [internal] load .dockerignore                                                                                                                0.0s
+ => => transferring context: 2B                                                                                                                  0.0s
+ => [1/6] FROM docker.io/library/node:22@sha256:0c0734eb7051babbb3e95cd74e684f940552b31472152edf0bb23e54ab44a0d7                                 0.0s
+ => [internal] load build context                                                                                                                3.8s
+ => => transferring context: 1.57MB                                                                                                              3.5s
+ => CACHED [2/6] WORKDIR /app                                                                                                                    0.0s
+ => CACHED [3/6] COPY package*.json ./                                                                                                           0.0s
+ => [4/6] RUN npm install                                                                                                                      290.9s
+ => [5/6] COPY . .                                                                                                                              30.1s 
+ => ERROR [6/6] RUN npm run build                                                                                                               31.3s 
+------                                                                                                                                                
+ > [6/6] RUN npm run build:                                                                                                                           
+2.415                                                                                                                                                 
+2.415 > my-app@0.1.0 build                                                                                                                            
+2.415 > next build                                                                                                                                    
+2.415                                                                                                                                                 
+6.840 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+6.840 This information is used to shape Next.js' roadmap and prioritize features.
+6.840 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+6.842 https://nextjs.org/telemetry
+6.842 
+7.236    ▲ Next.js 15.3.4
+7.236 
+8.659    Creating an optimized production build ...
+30.20 Failed to compile.
+30.20 
+30.20 app/layout.tsx
+30.20 An error occurred in `next/font`.
+30.20 
+30.20 Error: Cannot find module '../lightningcss.linux-x64-gnu.node'
+30.20 Require stack:
+30.20 - /app/node_modules/lightningcss/node/index.js
+30.20 - /app/node_modules/@tailwindcss/node/dist/index.js
+30.20 - /app/node_modules/@tailwindcss/postcss/dist/index.js
+30.20 - /app/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js
+30.20 - /app/node_modules/next/dist/build/webpack/config/blocks/css/index.js
+30.20 - /app/node_modules/next/dist/build/webpack/config/index.js
+30.20 - /app/node_modules/next/dist/build/webpack-config.js
+30.20 - /app/node_modules/next/dist/build/webpack-build/impl.js
+30.20 - /app/node_modules/next/dist/compiled/jest-worker/processChild.js
+30.20     at Function.<anonymous> (node:internal/modules/cjs/loader:1401:15)
+30.20     at /app/node_modules/next/dist/server/require-hook.js:55:36
+30.20     at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+30.20     at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+30.20     at Function._load (node:internal/modules/cjs/loader:1211:37)
+30.20     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+30.20     at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+30.20     at Module.<anonymous> (node:internal/modules/cjs/loader:1487:12)
+30.20     at mod.require (/app/node_modules/next/dist/server/require-hook.js:65:28)
+30.20     at require (node:internal/modules/helpers:135:16)
+30.20 
+30.20 app/layout.tsx
+30.20 An error occurred in `next/font`.
+30.20 
+30.20 Error: Cannot find module '../lightningcss.linux-x64-gnu.node'
+30.20 Require stack:
+30.20 - /app/node_modules/lightningcss/node/index.js
+30.20 - /app/node_modules/@tailwindcss/node/dist/index.js
+30.20 - /app/node_modules/@tailwindcss/postcss/dist/index.js
+30.20 - /app/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js
+30.20 - /app/node_modules/next/dist/build/webpack/config/blocks/css/index.js
+30.20 - /app/node_modules/next/dist/build/webpack/config/index.js
+30.20 - /app/node_modules/next/dist/build/webpack-config.js
+30.20 - /app/node_modules/next/dist/build/webpack-build/impl.js
+30.20 - /app/node_modules/next/dist/compiled/jest-worker/processChild.js
+30.20     at Function.<anonymous> (node:internal/modules/cjs/loader:1401:15)
+30.20     at /app/node_modules/next/dist/server/require-hook.js:55:36
+30.20     at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+30.20     at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+30.20     at Function._load (node:internal/modules/cjs/loader:1211:37)
+30.20     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+30.20     at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+30.20     at Module.<anonymous> (node:internal/modules/cjs/loader:1487:12)
+30.20     at mod.require (/app/node_modules/next/dist/server/require-hook.js:65:28)
+30.20     at require (node:internal/modules/helpers:135:16)
+30.20 
+30.25 
+30.26 > Build failed because of webpack errors
+------
+Dockerfile:8
+--------------------
+   6 |     RUN npm install
+   7 |     COPY . .
+   8 | >>> RUN npm run build
+   9 |     
+  10 |     EXPOSE 3000
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image build -t next:v1 .
+[+] Building 188.7s (11/11) FINISHED                                                                                                   docker:default
+ => [internal] load build definition from Dockerfile                                                                                             0.0s
+ => => transferring dockerfile: 291B                                                                                                             0.0s
+ => [internal] load metadata for docker.io/library/node:22                                                                                       3.1s
+ => [internal] load .dockerignore                                                                                                                0.1s
+ => => transferring context: 2B                                                                                                                  0.0s
+ => [1/6] FROM docker.io/library/node:22@sha256:0c0734eb7051babbb3e95cd74e684f940552b31472152edf0bb23e54ab44a0d7                                 0.0s
+ => [internal] load build context                                                                                                               11.3s
+ => => transferring context: 209.46MB                                                                                                           11.2s
+ => CACHED [2/6] WORKDIR /app                                                                                                                    0.0s
+ => CACHED [3/6] COPY package*.json ./                                                                                                           0.0s
+ => CACHED [4/6] RUN npm install                                                                                                                 0.0s
+ => [5/6] COPY . .                                                                                                                              27.2s
+ => [6/6] RUN npm run build                                                                                                                    123.6s
+ => exporting to image                                                                                                                          22.5s 
+ => => exporting layers                                                                                                                         22.4s 
+ => => writing image sha256:ca754666fcb3c77f43b40fbde23512897a4f765ab8cd066dcd55be62cc5c4c9a                                                     0.0s 
+ => => naming to docker.io/library/next:v1                                                                                                       0.0s 
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker images ls
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE                                                                                                      
+
+No images found matching "ls": did you mean "docker image ls"?
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker images ls -a
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+
+No images found matching "ls": did you mean "docker image ls"?
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image ls -a
+REPOSITORY                      TAG            IMAGE ID       CREATED         SIZE
+next                            v1             ca754666fcb3   3 minutes ago   2.36GB
+testdata-web                    latest         e84a5db31bef   2 weeks ago     48.2MB
+dinidurashmika/mainrepository   nginx-latest   c3b0bc95719b   2 weeks ago     48.2MB
+dinidurashmika/nginx            latest         c3b0bc95719b   2 weeks ago     48.2MB
+alpine                          latest         cea2ff433c61   3 weeks ago     8.31MB
+gcr.io/k8s-minikube/kicbase     v0.0.47        795ea6a69ce6   5 weeks ago     1.31GB
+kindest/node                    <none>         d6b20550c77b   5 weeks ago     1.07GB
+nginx                           latest         be69f2940aaf   2 months ago    192MB
+nginx                           alpine         6769dc3a703c   2 months ago    48.2MB
+hello-world                     latest         74cc54e27dc4   5 months ago    10.1kB
+kindest/node                    v1.29.2        09c50567d34e   16 months ago   956MB
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker container run --name my-first-next --p 8080 next:v1
+unknown flag: --p
+
+Usage:  docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+Run 'docker container run --help' for more information
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker container run --name my-first-next --p 8080:3000 next:v1
+unknown flag: --p
+
+Usage:  docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+Run 'docker container run --help' for more information
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker container run --name my-first-next -p 8080:3000 next:v1
+
+> my-app@0.1.0 dev
+> next dev --turbopack
+
+ ⚠ You are using a non-standard "NODE_ENV" value in your environment. This creates inconsistencies in the project and is strongly advised against. Read more: https://nextjs.org/docs/messages/non-standard-node-env
+   ▲ Next.js 15.3.4 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://172.17.0.2:3000
+
+ ✓ Starting...
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+ ✓ Ready in 4.6s
+ ○ Compiling / ...
+ ✓ Compiled / in 35.8s
+ GET / 200 in 38158ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 8s
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 8812ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 8770ms
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
 
