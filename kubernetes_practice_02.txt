@@ -5670,4 +5670,1574 @@ https://nextjs.org/telemetry
 .
 .
 .
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+3ec31554c60d   next:v1   "docker-entrypoint.s…"   57 minutes ago   Up 57 minutes   0.0.0.0:8080->3000/tcp, [::]:8080->3000/tcp   my-first-next
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker continer ls -a
+unknown shorthand flag: 'a' in -a
+
+Usage:  docker [OPTIONS] COMMAND [ARG...]
+
+Run 'docker --help' for more information
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker container ls -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                     PORTS                                         NAMES
+3ec31554c60d   next:v1        "docker-entrypoint.s…"   57 minutes ago   Up 57 minutes              0.0.0.0:8080->3000/tcp, [::]:8080->3000/tcp   my-first-next
+2ea047c2aa3b   alpine         "/bin/sh"                24 hours ago     Exited (137) 2 hours ago                                                 my-alpine
+a7b18ad62cce   nginx:alpine   "/docker-entrypoint.…"   41 hours ago     Exited (0) 2 hours ago                                                   my-live05-nginx
+5d3064ca9bfb   nginx:alpine   "/docker-entrypoint.…"   42 hours ago     Exited (0) 2 hours ago                                                   my-live04-nginx
+de6c1ffa1735   nginx:alpine   "/docker-entrypoint.…"   42 hours ago     Created                                                                  my-live03-nginx
+643f9ee66d6c   nginx:alpine   "/docker-entrypoint.…"   43 hours ago     Exited (0) 2 hours ago                                                   my-live01-nginx
+779e886b6bd7   nginx:alpine   "/docker-entrypoint.…"   43 hours ago     Exited (0) 43 hours ago                                                  my-live-nginx
+f20834d45b88   nginx:alpine   "/docker-entrypoint.…"   43 hours ago     Exited (0) 2 hours ago                                                   my-new-nginx
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image ls -a
+REPOSITORY                      TAG            IMAGE ID       CREATED             SIZE
+next                            v1             ca754666fcb3   About an hour ago   2.36GB
+dinidurashmika/mainrepository   nginx-latest   c3b0bc95719b   2 weeks ago         48.2MB
+dinidurashmika/nginx            latest         c3b0bc95719b   2 weeks ago         48.2MB
+testdata-web                    latest         e84a5db31bef   2 weeks ago         48.2MB
+alpine                          latest         cea2ff433c61   3 weeks ago         8.31MB
+gcr.io/k8s-minikube/kicbase     v0.0.47        795ea6a69ce6   5 weeks ago         1.31GB
+kindest/node                    <none>         d6b20550c77b   5 weeks ago         1.07GB
+nginx                           latest         be69f2940aaf   2 months ago        192MB
+nginx                           alpine         6769dc3a703c   2 months ago        48.2MB
+hello-world                     latest         74cc54e27dc4   5 months ago        10.1kB
+kindest/node                    v1.29.2        09c50567d34e   16 months ago       956MB
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ history my-first-next
+bash: history: my-first-next: numeric argument required
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ history > my-first-next
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ history | grep "my-first-next"
+  602  docker container run --name my-first-next --p 8080 next:v1
+  603  docker container run --name my-first-next --p 8080:3000 next:v1
+  604  docker container run --name my-first-next -p 8080:3000 next:v1
+  609  history my-first-next
+  610  history > my-first-next
+  611  history | grep "my-first-next"
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ cat my-first-next
+    1  nginx -version
+    2  sudo su
+    3  sudo su -ashan
+    4  sudo su - ashan
+    5  sudo su
+    6  chmod 600 rashmika_key.pem
+    7  ssh -i /home/rashmika/rashmika_key.pem rashmika@10.0.2.15
+    8  ssh -i /home/rashmika/Downloads/rashmika_key.pem rashmika@10.0.2.15
+    9  ipconfig
+   10  ip -a
+   11  ifconfig
+   12  ifconfig | grep 192
+   13  ifconfig
+   14  ssh -i /home/rashmika/Downloads/rashmika_key.pem rashmika@10.0.2.15
+   15  sudo adduser ashan
+   16  sudo password ashan
+   17  sudo passwd
+   18  sudo passwd ashan
+   19  su -ashan
+   20  su - ashan
+   21  sudo deluser ashan
+   22  sudo apt update && sudo apt install adduser
+   23  sudo dnf update && sudo apt install adduser
+   24  sudo deluser ashan
+   25  sudo su -ashan
+   26  sudo 
+   27   ping 10.0.2.15
+   28  ll
+   29  ifconfig
+   30  ping 192.168.134.241
+   31  clear
+   32  pwd
+   33  su ashan
+   34  clear
+   35  sudo systemctl start ssh
+   36  ll
+   37  clear
+   38  which sshd
+   39  sudo apt install openssh-server
+   40  ~sudo apt update
+   41  sudo apt update
+   42  sudo dnf update
+   43  sudo dnf install openssh-server -y
+   44  sudo systemctl enable sshd
+   45  sudo systemctl start sshd
+   46  sudo systemctl status sshd
+   47  sudo firewall-cmd --permanent --add-service=ssh
+   48  sudo firewall-cmd --reload
+   49  sudo firewall-cmd --list-all
+   50  FedoraWorkstation (default, active)
+   51    target: default
+   52    ingress-priority: 0
+   53    egress-priority: 0
+   54    icmp-block-inversion: no
+   55    interfaces: enp0s3
+   56    sources: 
+   57    services: dhcpv6-client samba-client ssh
+   58    ports: 1025-65535/udp 1025-65535/tcp
+   59    protocols: 
+   60    forward: yes
+   61    masquerade: no
+   62    forward-ports: 
+   63    source-ports: 
+   64    icmp-blocks: 
+   65    rich rules: 
+   66  clear
+   67  sudo ss -tuln | grep :22
+   68  ll
+   69  su ashan
+   70  sudo ashan
+   71  ll
+   72  su ashan
+   73  cd ..
+   74  ll
+   75  cd ashan/
+   76  sudo cd ashan/
+   77  ll
+   78  sudo cd ashan/
+   79  sudo ashan/
+   80  clerar
+   81  clear
+   82  ll
+   83  su ashan
+   84  sudo su
+   85  sudo su
+   86  su
+   87  cd media
+   88  mkdir media
+   89  ll
+   90  rm media
+   91  rmdir media
+   92  ll
+   93  mkdir Media
+   94  ll
+   95  sudo usermod -a -G vboxsf rashmika
+   96  sudo reboot
+   97  sudo ashan
+   98  sudo -ashan
+   99  su -ashan
+  100  su ashan
+  101  su 
+  102  ssh -i rashmika@10.0.2.15
+  103  ssh dp
+  104  cd Media
+  105  ll
+  106  cd /Media/sf_Fedora
+  107  cd /Media/sf_fedora
+  108  ll
+  109  sudo usermod -a -G vboxsf rashmika
+  110  ll
+  111  sudo roboot
+  112  sudo reboot
+  113  su
+  114  ll
+  115  cd Media
+  116  ll
+  117  su
+  118  cd
+  119  su rashmika
+  120  sudo instal epel-release
+  121  sudo dnf instal epel-release
+  122  sudo dnf install epel-release
+  123  sudo instal epel-release
+  124  su
+  125  su rashmika
+  126  sudo dnf install certbot python3-cerrtbot-nginx
+  127  sudo dnf update
+  128  sudo dnf install certbot python3-cerrtbot-nginx
+  129  cd Documents
+  130  ll
+  131  mkdir PFX_Certificate
+  132  cp /home/rashmika/Download/dinidu.pem /home/rashmika/Documents/PFX_Certificte
+  133  cd ..
+  134  cd Downloads
+  135  ll
+  136  cp /home/rashmika/Downloads/dinidu.pem /home/rashmika/Documents/PFX_Certificte
+  137  cp /etc/ssl/certs/nginx-selfsigned.crt /home/rashmika/Documents/PFX_Certificte
+  138  cp /etc/ssl/private/nginx-selfsigned.key  /home/rashmika/Documents/PFX_Certificte
+  139  sudo cp /etc/ssl/private/nginx-selfsigned.key  /home/rashmika/Documents/PFX_Certificte
+  140  cd ..
+  141  cd Documents
+  142  ll
+  143   move PFX_Certificte PFX_Certificate
+  144   mv PFX_Certificte PFX_Certificate
+  145  cd PDF_Certificate
+  146  cd PFX_Certificate
+  147  ll
+  148  cd PFX_Certificte
+  149  rm PFX_Certificte
+  150  cd ..
+  151  ll
+  152  cp /etc/ssl/certs/nginx-selfsigned.crt /home/rashmika/Documents/PFX_Certificate
+  153  cp /etc/ssl/private/nginx-selfsigned.key  /home/rashmika/Documents/PFX_Certificate
+  154  sudo cp /etc/ssl/private/nginx-selfsigned.key  /home/rashmika/Documents/PFX_Certificate
+  155  cp /home/rashmika/Downloads/dinidu.pem /home/rashmika/Documents/PFX_Certificate
+  156  cd PFX_Certificate
+  157  ll
+  158  cat dinidu.pem
+  159  openssl pkcs -export -out Certificate_PFX -inkey nginx-selfsigned.key in nginx-selfsigned.crt 
+  160  openssl pkcs12 -export -out Certificate_PFX -inkey nginx-selfsigned.key in nginx-selfsigned.crt 
+  161  openssl pkcs12 -export -out Certificate_PFX -inkey nginx-selfsigned.key -in nginx-selfsigned.crt 
+  162  sudo openssl pkcs12 -export -out Certificate_PFX -inkey nginx-selfsigned.key -in nginx-selfsigned.crt 
+  163  ll
+  164  cat Certificate_PFX
+  165  sudo cat Certificate_PFX
+  166  ll
+  167  openssl pkcs12 -info -n Certificate_PFX
+  168  openssl pkcs12 -info -in Certificate_PFX
+  169  sudo openssl pkcs12 -info -in Certificate_PFX
+  170  clear
+  171  cd
+  172  top
+  173  htop
+  174  sudo dnf install htop
+  175  cd Media
+  176  ll
+  177  clear
+  178  cd
+  179  sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+  180  sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+  181  sudo nano /etc/nginx/sites-available/default
+  182  cd etc
+  183  su
+  184  cd
+  185  ll
+  186  cd /ect/
+  187  ~/
+  188  ~/root
+  189  sudo su
+  190  docker ps -a
+  191  sudo su
+  192  kubectl config view
+  193  sudo su
+  194  minikube start
+  195  minikube start --driver=none
+  196  minidube delete --driver=quem2
+  197  minikube delete
+  198  dnf list installed | grep qemu
+  199  minikube start --driver=none
+  200  sudo minikube start --driver=none
+  201  sudo minikube start --driver=docker
+  202  minikube delete
+  203  sudo minikube start --driver=docker
+  204  sudo minikube delete
+  205  sudo minikube start --driver=docker
+  206  minikube start --driver=docker
+  207  sudo su
+  208  minikube start --driver=docker
+  209  sudo usermod -aG docker $USER
+  210  minikube start --driver=docker
+  211  docker version
+  212  minikube start --driver=docker
+  213  sudo minikube start --driver=docker
+  214   '/opt/Lens/lens-desktop' -p '"5d54c2e3dc73464892e49ddbaec3ba0c" + JSON.stringify(process.env) + "5d54c2e3dc73464892e49ddbaec3ba0c"'
+  215   '/opt/Lens/lens-desktop' -p '"2fff14d8700a440fa31e42bd023ac506" + JSON.stringify(process.env) + "2fff14d8700a440fa31e42bd023ac506"'
+  216   '/opt/Lens/lens-desktop' -p '"4f11e8f876694465bd69bfd0982cf24a" + JSON.stringify(process.env) + "4f11e8f876694465bd69bfd0982cf24a"'
+  217  nano ~/Documents/Testlogs/move_file.sh
+  218  dos2unix ~/Documents/Testlogs/move_file.sh
+  219  chmod +x ~/Documents/Testlogs/move_file.sh
+  220  sudo nano /etc/systemd/system/movegz.service
+  221  sudo systemctl daemon-reload
+  222  sudo systemctl start movegz.service
+  223  sudo systemctl status movegz.service
+  224  ls -l /home/rashmika/Documents/Testlogs/move_file.sh
+  225  chmod +x /home/rashmika/Documents/Testlogs/move_file.sh
+  226  nano /home/rashmika/Documents/Testlogs/move_file.sh
+  227  sudo dnf install dos2unix -y
+  228  ll
+  229  cd Documents
+  230  ll
+  231  cd Testlogs
+  232  ll
+  233  cd gz files
+  234  cd 'gz files'
+  235  ll
+  236  gzip access.log.gz
+  237  zcat access.log.gz
+  238  gzip-d  access.log.gz
+  239  gzip -d  access.log.gz
+  240  ll
+  241  cd..
+  242  cd ..
+  243  ll
+  244  gzip -d 'gz files.zip'
+  245  gzip -d gz files.zip
+  246  ll
+  247  gzip -d gzfiles.zip
+  248  gunzip  gzfiles.zip
+  249  unzip  gzfiles.zip
+  250  ll
+  251  cd ..
+  252  mkdir Testlogs2
+  253  cd Test
+  254  cd Testlog
+  255  cd Testlogs
+  256  nano move_file.sh
+  257  sudo chmod +x /home/rashmika/Documents/Testlogs/move_file.sh
+  258  sudo nano /etc/systemd/system/movegz.service
+  259  sudo systemctl daemon-reload
+  260  cd ..
+  261  cd Testlogs2
+  262  ll
+  263  crontab -e
+  264  crontab -i
+  265  crontab i
+  266  ll
+  267  crontab -l
+  268  ll
+  269  sudo nano /etc/systemd/system/movegz.service
+  270  sudo systemctl daemon-reload
+  271  sudo systemctl start movegz.service
+  272  ll
+  273  sudo systemctl status movegz.service
+  274  ls -l /home/rashmika/Documents/Testlogs/move_file.sh
+  275  cd ..
+  276  ll
+  277  cd Testlog
+  278  cd Testlogs
+  279  ll
+  280  sudo nano /etc/systemd/system/movegz.service
+  281  sudo systemctl daemon-reload
+  282  sudo systemctl start movegz.service
+  283  sudo systemctl status movegz.service
+  284  sudo nano /etc/systemd/system/movegz.service
+  285  sudo systemctl daemon-reload
+  286  sudo systemctl start movegz.service
+  287  sudo systemctl status movegz.service
+  288  sudo nano /etc/systemd/system/movegz.service
+  289  sudo systemctl start movegz.service
+  290  sudo systemctl daemon-reload
+  291  sudo systemctl start movegz.service
+  292  sudo nano /etc/systemd/system/movegz.service
+  293  sudo systemctl daemon-reload
+  294  sudo systemctl start movegz.service
+  295  ll
+  296  sudo systemctl status movegz.service
+  297  cd
+  298  sudo su
+  299  kubectl cluster-info
+  300  minikube status
+  301  minikube start
+  302  minikube status
+  303  minikube ip
+  304  ping 192.168.49.2
+  305  minikube profile list
+  306  kubectl cluster info
+  307  kubectl cluster-info
+  308  kubectl get nodes
+  309  kubectl config get-contexts
+  310  kubectl config current-context
+  311  kubectl get pods -A
+  312  kubectx
+  313  kubectl cluster-info --context kind-kind
+  314  kind version
+  315  curl -Lo ./kind https://kind.sigs.k8s.io/dl/latest/kind-linux-amd64
+  316  chmod +x ./kind
+  317  sudo mv ./kind /usr/local/bin/kind
+  318  chmod +x ./kind
+  319  curl -Lo ./kind https://kind.sigs.k8s.io/dl/latest/kind-linux-amd64
+  320  chmod +x ./kind
+  321  sudo mv ./kind /usr/local/bin/kind
+  322  kind version
+  323  kind create cluster
+  324  kind create cluster --image kindest/node:v1.29.2
+  325  kubectl config get-contexts 
+  326  kubectl get nodes
+  327  su
+  328  sudo su
+  329  sudo su
+  330  kubectl config get-contexts
+  331  ll
+  332  cd Documents
+  333  ll
+  334  cd My_K8s_Projects
+  335  cd deployments
+  336  ll
+  337  nano nginxx_deploy.yaml
+  338  nano nginx_deploy.yaml
+  339  ll
+  340  cd
+  341  kubectl get deploy
+  342  kubectl get pods
+  343  kubectl get nodes
+  344  kubectl create -f nginx_deploy.yaml
+  345  cd /Documents/My_K8s_Projects/deployments
+  346  cd Documents/My_K8s_Projects/deployments
+  347  kubectl create -f nginx_deploy.yaml
+  348  nano nginx_deploy.yaml
+  349  sudo nano nginx_deploy.yaml
+  350  kubectl create -f nginx_deploy.yaml
+  351  kubectl get deploy
+  352  kubectl get nodes
+  353  kubectl get pods
+  354  kubectl delete deploy nginx_deploy
+  355  kubectl get deploy
+  356  kubectl ip
+  357  kind ip
+  358  kind profile list
+  359  sudo kind profile list
+  360  kind-kind profile list
+  361  kind-kind ip
+  362  kubectl delete deploy nginx_deploy
+  363  kubectl get deploy
+  364  kubectl delete deploy nginx-deploy
+  365  kubectl get deploy
+  366  kubectl get ns
+  367  cd ..
+  368  cd namespace
+  369  cd namespaces
+  370  kubectl create namespace myspace --dry-run=client -o yaml > myspace.yaml
+  371  sudo kubectl create namespace myspace --dry-run=client -o yaml > myspace.yaml
+  372  sudo chmod +x /Documents/My_K8s_Projects/namespaces
+  373  sudo chmod +x /Documents/My_K8s_Projects/
+  374  sudo kubectl create namespace myspace --dry-run=client -o yaml > myspace.yaml
+  375  sudo kubectl create namespace myspace --dry-run=client -o yaml > sudo tee myspace.yaml
+  376  sudo chown -R $USER:$USER ~/Documents/My_K8s_Projects
+  377  sudo kubectl create namespace myspace --dry-run=client -o yaml > myspace.yaml
+  378  ll
+  379  nano myspace.yaml
+  380  kubectl ns
+  381  cd
+  382  kubectl get ns
+  383  cd /Documents/My_K8s_Projects/namespaces
+  384  cd Documents/My_K8s_Projects/namespaces
+  385  kubectl apply -f namespce.yaml
+  386  kubectl apply -f namespace.yaml
+  387  kubectl apply -f myspace.yaml
+  388  kubectl get ns
+  389  kubectl get pods --all namespaces
+  390  kubectl get pods --all-namespaces
+  391  kubectl get pods -n kube-system
+  392  kubectl config set-context --current --namespace=default
+  393  kubectl config get-context
+  394  kubectl config current-context
+  395  kubectl config current-context -ns
+  396  kubectl config view --minify --output 'jsonpath={..namespace}'
+  397  kubectl config set-context --current --namespace=myspace
+  398  kubectl config view --minify --output 'jsonpath={..namespace}'
+  399  kubectl config set-context --current --namespace=default
+  400  kubectl config view --minify --output 'jsonpath={..namespace}'
+  401  kubectl get nodes
+  402  kubectl describe node kind-control-plane
+  403  kubectl get pods
+  404  kubectl run nginxpod --image=nginx
+  405  kubectl get pods
+  406  kubectl get pod -o wide
+  407  kubectl describe pod nginxpod
+  408  kubectl delete pod nginxpod
+  409  kubectl get pods
+  410  kubectl run busyboxpod --image=busybox -it -- /bin/sh
+  411  cd ..
+  412  kubectl run busyboxpod --image=busybox -it -- /bin/sh
+  413  minikube status
+  414  minikube stop
+  415  kubectl run busyboxpod --image=busybox -it -- /bin/sh
+  416  kubectl delete pod busyboxpod --grace-period=0 --force
+  417  kubectl create pod busyboxpod --image=busybox --dry-run=client -o yaml > busybox.yaml
+  418  kubectl create pod busyboxpod --dry-run=client -o yaml > busybox.yaml
+  419  kubectl run busyboxpod --image=busybox --dry-run=client -o yaml > busybox.yaml
+  420  cd pods
+  421  ll
+  422  mv /Documents/My_K8s_Projects/busybox.yaml /Documents/My_K8s_Projects/pods
+  423  cd ..
+  424  ll
+  425  mv busybox.yaml pods
+  426  cd pods
+  427  ll
+  428  nano busybox.yaml
+  429  kubectl create -f busybox.yaml
+  430  nano busybox.yaml
+  431  kubectl create -f busybox.yaml
+  432  nano busybox.yaml
+  433  kubectl create -f busybox.yaml
+  434  kubectl get pods
+  435  kubectl get pod -o wide
+  436  kubectl describe pod busyboxpod
+  437  kubectl exec -it busyboxpod --bash
+  438  kubectl exec -it busyboxpod -- bash
+  439  kubectl exec -it busyboxpod-pod -- bash
+  440  kubectl exec -it busyboxpod -- bash
+  441  kubectl get pod -o wide
+  442  kubectl exec -it busyboxpod -- bash
+  443  kubectl exec -it busyboxpod -- sh
+  444  kubectl logs busybox
+  445  kubectl logs busyboxpod
+  446  nano busybox.yaml
+  447  kubectl exec -it busyboxpod -- bash
+  448  kubectl logs busyboxpod
+  449  ll
+  450  kubectl exec -it busybox-pod -- bash
+  451  kubectl exec -it busybox-- bash
+  452  kubectl exec -it busybox -- bash
+  453  kubectl exec -it busyboxpod -- bash
+  454  nano busybox.yaml
+  455  kubectl exec -it busyboxpod -- bash
+  456  kubectl exec -it busybox -- bash
+  457  kubectl exec -it busyboxpod -- bash
+  458  kubectl get pods
+  459  kubectl logs busyboxpod
+  460  nano busybox.yaml
+  461  kubectl delete pod busyboxpod
+  462  kubectl apply -f busyboxpod
+  463  kubectl apply -f busybox.yaml
+  464  kubectl get pods
+  465  kubectl exec -it busyboxpod -- bash
+  466  kubectl get pods
+  467  kubectl exec -it busyboxpod -- sh
+  468  nano busybox.yaml
+  469  kubectl  delete busyboxpod
+  470  kubectl delete busyboxpod
+  471  kubectl delete pod  busyboxpod
+  472  kubectl run pod myapp --dry-run=client -o yaml
+  473  kubectl run pod myapp --image=nginx --dry-run=client -o yaml
+  474  ll
+  475  kubectl run pod myapp --image=nginx --dry-run=client -o yaml > myapp.yaml
+  476  ll
+  477  nano myapp.yaml
+  478  kubectl create service myservice --dry-run=client -o yaml> myservice.yaml
+  479  kubectl run service myservice --dry-run=client -o yaml> myservice.yaml
+  480  kubectl create service clusterip myservice --tcp=80 --dry-run=client -o yaml> myservice.yaml
+  481  ll
+  482  mv myservice.yaml /Documents/My_K8s_Projects/services
+  483  rm myservice.yaml
+  484  ll
+  485  cd ..
+  486  ll
+  487  cd services
+  488  kubectl create service clusterip myservice --tcp=80:80 --dry-run=client -o yaml> myservice.yaml
+  489  ll
+  490  cd..
+  491  cd ..
+  492  cd pods
+  493  cat myapp.yaml
+  494  kubectl apply -f myapp.yaml
+  495  kubectl get pod
+  496  kubectl get pods
+  497  ll
+  498  nano myapp.yaml
+  499  busybox.yaml
+  500  nano busybox.yaml
+  501  kubectl apply -f myservice.yaml
+  502  kubectl apply -f /Documents/My_K8s_Projects/service/myservice.yaml
+  503  kubectl apply -f /Documents/My_K8s_Projects/service/
+  504  kubectl apply -f ~/Documents/My_K8s_Projects/service/myservice.yaml
+  505  kubectl apply -f ~/Documents/My_K8s_Projects/services/myservice.yaml
+  506  kubectl get service
+  507  cat ~/Documents/My_K8s_Projects/services/myservice.yaml
+  508  kubectl get po -o wide
+  509  kubectl get ep myservice
+  510  nano busybox.yaml
+  511  nano myapp.yaml
+  512  nano myservice.yaml
+  513  cd ..
+  514  cd services
+  515  ll
+  516  nano myservice.yaml
+  517  cat myservice.yaml
+  518  kubectl get po -o wide
+  519  kubectl get ep myservice
+  520  kubectl delete service myservice
+  521  kubectl apply -f myservice.yaml
+  522  nano myservice.yaml
+  523  kubectl apply -f myservice.yaml
+  524  cd ..
+  525  cd pods
+  526  ll
+  527  nano myapp.yaml
+  528  kubectl apply -f myapp.yaml
+  529  kubectl get po -o wide
+  530  kubectl get ep myservice
+  531  kubectl get nodes
+  532  kubectl get nodes --all-namespaces
+  533  kubectl get nodes -o wide --all-namespaces
+  534  nano myapp.yaml
+  535  kubectl run pod two-containers --image=nginx --tcp=80 --image=busybox --tcp=81 --dry-run=client -o yaml > twocontainers.yaml 
+  536  kubectl run pod two-containers --image=nginx --tcp=80:80 --image=busybox --tcp=81:81 --dry-run=client -o yaml > twocontainers.yaml 
+  537  kubectl run pod two-containers --image=nginx  --dry-run=client -o yaml > twocontainers.yaml 
+  538  kubectl run pod two-containers --image=nginx --image=busybox --dry-run=client -o yaml > twocontainers.yaml 
+  539  kubectl get pods
+  540  kubectl run pod two-containers --image=nginx --dry-run=client -o yaml > twocontainers.yaml 
+  541  kubectl get pods
+  542  kubectl run pod two-containers --image=nginx --dry-run=client -o yaml > twocontainers.yaml 
+  543  kubectl get pods
+  544  kubectl run pod twocontainers --image=nginx --dry-run=client -o yaml > twocontainers.yaml 
+  545  kubectl get pods
+  546  ll
+  547  nano twocontainers.yaml
+  548  kubectl apply -f twocontainers.yaml
+  549  kubectl get pods
+  550  kubectl get pods -o wide
+  551  ll
+  552  cd ect
+  553  cd etc
+  554  cd ~/etc/
+  555  cd etc
+  556  cd ~etc
+  557  root
+  558  ~/
+  559  cd
+  560  exit
+  561  ll
+  562  ls
+  563  exit
+  564  node -v
+  565  npm -v
+  566  ll
+  567  cd Downloads
+  568  ll
+  569  cd ..
+  570  ll
+  571  cd Documents
+  572  ll
+  573  cd my-app
+  574  ll
+  575  nano Dockerfile
+  576  ll
+  577  docker image build -t next:v1
+  578  docker image build -t next:v1 .
+  579  nano Dockerfile
+  580  docker image build -t next:v1 .
+  581  nano Dockerfile
+  582  docker image build -t next:v1 .
+  583  nano Dockerfile
+  584  docker image build -t next:v1 .
+  585  nano Dockerfile
+  586  docker image build -t next:v1 .
+  587  ping google.com -c 3
+  588  ping google.com 
+  589  docker image build -t next:v1 .
+  590  docker build --network=host -t next:v1 .
+  591  nano Dockerfile
+  592  docker build --network=host -t next:v1 .
+  593  nano Dockerfile
+  594  docker image build -t next:v1 .
+  595  nano Dockerfile
+  596  docker image build -t next:v1 .
+  597  docker build --no-cache --network=host -t next:v1 .
+  598  docker image build -t next:v1 .
+  599  docker images ls
+  600  docker images ls -a
+  601  docker image ls -a
+  602  docker container run --name my-first-next --p 8080 next:v1
+  603  docker container run --name my-first-next --p 8080:3000 next:v1
+  604  docker container run --name my-first-next -p 8080:3000 next:v1
+  605  docker container ls
+  606  docker continer ls -a
+  607  docker container ls -a
+  608  docker image ls -a
+  609  history my-first-next
+  610  history > my-first-next
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ uptime
+ 11:12:46 up 21:36,  2 users,  load average: 0.06, 0.21, 0.20
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image history next:v1
+IMAGE          CREATED             CREATED BY                                      SIZE      COMMENT
+ca754666fcb3   About an hour ago   CMD ["npm" "run" "dev"]                         0B        buildkit.dockerfile.v0
+<missing>      About an hour ago   EXPOSE map[3000/tcp:{}]                         0B        buildkit.dockerfile.v0
+<missing>      About an hour ago   RUN /bin/sh -c npm run build # buildkit         42.6MB    buildkit.dockerfile.v0
+<missing>      About an hour ago   COPY . . # buildkit                             580MB     buildkit.dockerfile.v0
+<missing>      2 hours ago         RUN /bin/sh -c npm install # buildkit           615MB     buildkit.dockerfile.v0
+<missing>      2 hours ago         COPY package*.json ./ # buildkit                59kB      buildkit.dockerfile.v0
+<missing>      2 hours ago         ENV LIGHTNINGCSS_DOWNLOAD_BINARY=true           0B        buildkit.dockerfile.v0
+<missing>      2 hours ago         ENV NODE_ENV=production                         0B        buildkit.dockerfile.v0
+<missing>      3 hours ago         WORKDIR /app                                    0B        buildkit.dockerfile.v0
+<missing>      27 hours ago        CMD ["node"]                                    0B        buildkit.dockerfile.v0
+<missing>      27 hours ago        ENTRYPOINT ["docker-entrypoint.sh"]             0B        buildkit.dockerfile.v0
+<missing>      27 hours ago        COPY docker-entrypoint.sh /usr/local/bin/ # …   388B      buildkit.dockerfile.v0
+<missing>      27 hours ago        RUN /bin/sh -c set -ex   && export GNUPGHOME…   5.34MB    buildkit.dockerfile.v0
+<missing>      27 hours ago        ENV YARN_VERSION=1.22.22                        0B        buildkit.dockerfile.v0
+<missing>      27 hours ago        RUN /bin/sh -c ARCH= && dpkgArch="$(dpkg --p…   186MB     buildkit.dockerfile.v0
+<missing>      27 hours ago        ENV NODE_VERSION=22.17.0                        0B        buildkit.dockerfile.v0
+<missing>      27 hours ago        RUN /bin/sh -c groupadd --gid 1000 node   &&…   8.94kB    buildkit.dockerfile.v0
+<missing>      17 months ago       RUN /bin/sh -c set -ex;  apt-get update;  ap…   588MB     buildkit.dockerfile.v0
+<missing>      17 months ago       RUN /bin/sh -c set -eux;  apt-get update;  a…   177MB     buildkit.dockerfile.v0
+<missing>      2 years ago         RUN /bin/sh -c set -eux;  apt-get update;  a…   48.4MB    buildkit.dockerfile.v0
+<missing>      2 years ago         # debian.sh --arch 'amd64' out/ 'bookworm' '…   117MB     debuerreotype 0.15
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ ls /var/lib/docker/image/overlay2/layerdb/sha256/
+ls: cannot access '/var/lib/docker/image/overlay2/layerdb/sha256/': Permission denied
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ sudo ls /var/lib/docker/image/overlay2/layerdb/sha256/
+[sudo] password for rashmika: 
+018d9d54c2032d4d4c2d6cd9ad1292dec9463c41d3fbff9ae33947e9a071a8e1  9fa52bb9de68527645c793c86e92efad38c5d1d4c5572a498cd46ed66bd7dbb4
+045cdeefb80a61b23d31635a9d8a335431068f50da880a45cabbbf0dd47e74e8  ace34d1d784c01e3f9d156687089e8f58f786e23ccd097bdbbf337d6d28b3783
+04fb93dae4b83ea7d98c0dd17de552670f98428b66f8898fb5bd403ad87aba9a  af850aa76950be9bf18638f03cc51f0342c79a3a74713a1c6779dc52664f6ea0
+08000c18d16dadf9553d747a58cf44023423a9ab010aab96cf263d2216b8b350  b5f8b555874ebb40736633312119ce8d82f78798802a989198bf78f5c2133867
+0a2fd8cc81bde414b93a9a5a5860bbf55accf4119fea7494a477c784d2dfe7be  bb4a3b106b55fe6642c57603c27417276d9b07456089415e3f8587f0deaabb32
+19eff851fd11638d727babba9856dd8828f654cf28d04c665f7ec74fa4fed2c2  cacac18bde34e813635f0bee84f74148d14aa62d4921262df96a2e26003a1d8e
+2a32fcabd5b4531db5a4b9b77c12cd8de041028f2734801408e09409b0d50421  d00e2ac132029852da0c1d0caf465e59dc18bce7795eb10cf3b5a8a547db7365
+3c1060a9ec6601e87cbcb04366f323b6383b7f605153e7df398bc1f843e36141  d4b3df3b01538a659a8990a121e2f90340dec055232275eb6e121f3af230e3c4
+4033c2b5e093c9a211f26455b770f716674ee997415f584190c5c6813b88332b  d6189b151727a846370cf1355a8b5276f6c2aa41f378cc2945205a0eb03ea861
+61b1a4867a5ae766114a788e5bd5422883ed50a376763f2c623da4222aba2d81  debfdb355408e5fa97f9ffe7c51219252d9735ce45ab506d5f43df4f5d56110a
+63a41026379f4391a306242eb0b9f26dc3550d863b7fdbb97d899f6eb89efe72  e13b133075c72cd7945bd3f3ceeab882f679e6bcd5ecd2c1048929f91eac29b0
+65d42a4503620bb8eacfbf4f06b0792747ebf411fb918e448b9a88c71323b39e  e2ed3f3a89c7c2ee8010d57639185479eaa6692bd6aeb19d73f21d6b6950496d
+726f138814871cf405fa381491a0d192a49661f118d94057886a977f70d4b87e  eb85f39adaa54c0bdcd4c410785cccde672302de053b06d09e1f07113ab80b49
+737f9853aaaf89ede956c2d9a2841590765f6ad7cd2b4c26a49bbd284befa02d  ee697e6373f3f1a82f1a55fc29ef5ebc2c05158dcbfbeffcaf223406f429be8b
+7e255aea49cfab67e01a3351c1cc1baaf988c36fae16c7d37ad1f10546a7365c  efdb1ecff26cf03a36759e8ac244708be1c64cee51e59c8eceb6cd96c2b914b6
+89acd84061b68bafaa9a5d6074bf7858de5f206b6ad2dac72bb7fb17b222627d  f13bb3f5a0b612fa8b3ee54536cff9a57cc76a084b6a399d7762283e52393778
+8b8ba0c31936a63862b7bb3f9edd4e2721da3ccf99dc0e6dcaf289bbd212ba6f  fcef123e6b584f68369e1c45f4e582be8391b93abd1e5be6ef674ce3459ac7fd
+8d27589e131e7d5f11f8fa4514452b5fe257d0f41b0c28b9c25c39ee903bd5c1  fd2758d7a50e2b78d275ee7d1c218489f2439084449d895fa17eede6c61ab2c4
+8f003894a7efc4178494f1e133497ed2f325ae53b6a65869e54c04d1c51d588f  fd27bccbea999fc6d9105b8b1c9821c61a63eab7318393b6f2473065008f3fbe
+8f43be8a4daba1435a4de29cbd23e64a3280249976ade8f5d75adc871fce09ef  fd7abd203034d0cae1d72d04166033106316ee711e128ecc10817d7c76f723de
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ 
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image inspect --format "{{json.RootFS.Layers}}"
+docker: 'docker image inspect' requires at least 1 argument
+
+Usage:  docker image inspect [OPTIONS] IMAGE [IMAGE...]
+
+See 'docker image inspect --help' for more information
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image inspect --format "{{json.RootFS.Layers}}" next:v1
+
+template parsing error: template: :1:2: executing "" at <json>: wrong number of args for json: want 1 got 0
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image inspect --format '{{json.RootFS.Layers}}' next:v1
+
+template parsing error: template: :1:2: executing "" at <json>: wrong number of args for json: want 1 got 0
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image inspect --format '{{ json .RootFS.Layers }}' next:v1
+["sha256:8f003894a7efc4178494f1e133497ed2f325ae53b6a65869e54c04d1c51d588f","sha256:f5b8fb1def00d5f185660b75bac1eed1fce467d44cebd868dae2f344711321ef","sha256:1c49688bd8ebe54298be2b61f7d5efd32467862f115b5439b87c19e56e57c6b4","sha256:f9093a7aaa16f2994fe3a1436946cd10568f698a5b13f53713ee9454754bbe2a","sha256:24421373f51c6054d615d4af69907ac820fe4212d3b3e6ff85ee37fd2aa95ec9","sha256:c6368ee7cfffb1dad013ac70de53603ea755e3b7b84c9fa788c28d8ea943d3bc","sha256:c81d385b63ebaa3b8294c75ac6ea4f6a89957f0f51e1453ab9886ec9b9248341","sha256:a136430b22506303fada8c33ecc673e678403b20cf429e38c4812762bc5678c7","sha256:a430d500107a92b6a1b62eece0606293b0423789800a0ff9092602f87903c76a","sha256:7ceab4b9fd08fa0e72a29b27e4b4b35f426f318d875bb322643145cc99628e18","sha256:e8ffb986c96a92a096ab7241b27d2fbdb6909c2ffa17a134d5c687846f444dff","sha256:4526daa020617c2e0f2378a041b77f3ebcbbb1da917f060195f51f3220686068","sha256:99694f79a42d293e859a68ea2f63b85c75611d73ba51c91761a06b88e5df6504"]
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image inspect next:v1
+[
+    {
+        "Id": "sha256:ca754666fcb3c77f43b40fbde23512897a4f765ab8cd066dcd55be62cc5c4c9a",
+        "RepoTags": [
+            "next:v1"
+        ],
+        "RepoDigests": [],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2025-06-26T09:52:54.873093729+05:30",
+        "DockerVersion": "",
+        "Author": "",
+        "Config": {
+            "ExposedPorts": {
+                "3000/tcp": {}
+            },
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NODE_VERSION=22.17.0",
+                "YARN_VERSION=1.22.22",
+                "NODE_ENV=production",
+                "LIGHTNINGCSS_DOWNLOAD_BINARY=true"
+            ],
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "Cmd": [
+                "npm",
+                "run",
+                "dev"
+            ],
+            "WorkingDir": "/app",
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 2358121903,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/g9kpvue2eigvf7tkf56ciib38/diff:/var/lib/docker/overlay2/smtaglq3pc34rsyu7bqben656/diff:/var/lib/docker/overlay2/ycvpm24iv9kuxni2w6r8543s8/diff:/var/lib/docker/overlay2/fuzk1da98bksyr6tl6k88ya4x/diff:/var/lib/docker/overlay2/e472ed060691e1b513f5604ba6e151f5102b1fe2b72860c36521124810114928/diff:/var/lib/docker/overlay2/aa8182012fbc7ef8698c179514e8198477eb62a096851114d0136db309952f15/diff:/var/lib/docker/overlay2/d8a215aaf23b1ca3e52f0201c7f9109deaa7725ac3448d03ffe2427f182ad825/diff:/var/lib/docker/overlay2/6fc0043a0a727ab176a4c9ea2a8a12867fba8ac0315550d1ec9bd1add01be4d7/diff:/var/lib/docker/overlay2/1060d4963b5e172a01b931afc8cfa1a1cd58ae7e73ab9c65ec37c93647ea50e2/diff:/var/lib/docker/overlay2/9a7dc4c22f2f1495b036a606b30ddc8dbb46599a2ab34ef38b1e9d578f99fa2f/diff:/var/lib/docker/overlay2/31ce9ed213686d0be4d07fae71e50e8ac51f80e07fe8affb45639c54c42a71f7/diff:/var/lib/docker/overlay2/2429a8162efb3a9e61c762895dda04a6e3a314e7bbe3ff8449375581230b5f33/diff",
+                "MergedDir": "/var/lib/docker/overlay2/p0mktsk0rc5om4lu23ap83kyc/merged",
+                "UpperDir": "/var/lib/docker/overlay2/p0mktsk0rc5om4lu23ap83kyc/diff",
+                "WorkDir": "/var/lib/docker/overlay2/p0mktsk0rc5om4lu23ap83kyc/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:8f003894a7efc4178494f1e133497ed2f325ae53b6a65869e54c04d1c51d588f",
+                "sha256:f5b8fb1def00d5f185660b75bac1eed1fce467d44cebd868dae2f344711321ef",
+                "sha256:1c49688bd8ebe54298be2b61f7d5efd32467862f115b5439b87c19e56e57c6b4",
+                "sha256:f9093a7aaa16f2994fe3a1436946cd10568f698a5b13f53713ee9454754bbe2a",
+                "sha256:24421373f51c6054d615d4af69907ac820fe4212d3b3e6ff85ee37fd2aa95ec9",
+                "sha256:c6368ee7cfffb1dad013ac70de53603ea755e3b7b84c9fa788c28d8ea943d3bc",
+                "sha256:c81d385b63ebaa3b8294c75ac6ea4f6a89957f0f51e1453ab9886ec9b9248341",
+                "sha256:a136430b22506303fada8c33ecc673e678403b20cf429e38c4812762bc5678c7",
+                "sha256:a430d500107a92b6a1b62eece0606293b0423789800a0ff9092602f87903c76a",
+                "sha256:7ceab4b9fd08fa0e72a29b27e4b4b35f426f318d875bb322643145cc99628e18",
+                "sha256:e8ffb986c96a92a096ab7241b27d2fbdb6909c2ffa17a134d5c687846f444dff",
+                "sha256:4526daa020617c2e0f2378a041b77f3ebcbbb1da917f060195f51f3220686068",
+                "sha256:99694f79a42d293e859a68ea2f63b85c75611d73ba51c91761a06b88e5df6504"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2025-06-26T09:53:17.425305136+05:30"
+        }
+    }
+]
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ ping google.com
+PING google.com (2404:6800:4003:c06::8a) 56 data bytes
+
+
+^C
+--- google.com ping statistics ---
+40 packets transmitted, 0 received, 100% packet loss, time 40994ms
+
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED       STATUS       PORTS                                         NAMES
+3ec31554c60d   next:v1   "docker-entrypoint.s…"   8 hours ago   Up 8 hours   0.0.0.0:8080->3000/tcp, [::]:8080->3000/tcp   my-first-next
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image ls
+REPOSITORY                      TAG            IMAGE ID       CREATED         SIZE
+next                            v1             ca754666fcb3   8 hours ago     2.36GB
+dinidurashmika/mainrepository   nginx-latest   c3b0bc95719b   2 weeks ago     48.2MB
+dinidurashmika/nginx            latest         c3b0bc95719b   2 weeks ago     48.2MB
+testdata-web                    latest         e84a5db31bef   2 weeks ago     48.2MB
+alpine                          latest         cea2ff433c61   3 weeks ago     8.31MB
+gcr.io/k8s-minikube/kicbase     v0.0.47        795ea6a69ce6   5 weeks ago     1.31GB
+kindest/node                    <none>         d6b20550c77b   5 weeks ago     1.07GB
+nginx                           latest         be69f2940aaf   2 months ago    192MB
+nginx                           alpine         6769dc3a703c   2 months ago    48.2MB
+hello-world                     latest         74cc54e27dc4   5 months ago    10.1kB
+kindest/node                    v1.29.2        09c50567d34e   16 months ago   956MB
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ ls /var/lib/docker
+ls: cannot open directory '/var/lib/docker': Permission denied
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ sudp ls /var/lib/docker
+bash: sudp: command not found...
+^[[A^[[A^C
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ sudo ls /var/lib/docker
+[sudo] password for rashmika: 
+buildkit  containers  engine-id  image	network  overlay2  plugins  runtimes  swarm  tmp  volumes
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ sudo ls /var/lib/docker/image
+overlay2
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ sudo ls /var/lib/docker/image/overlay2
+distribution  imagedb  layerdb	repositories.json
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ sudo ls /var/lib/docker/image/overlay2/imagedb/
+content  metadata
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ sudo ls /var/lib/docker/image/overlay2/imagedb/content
+sha256
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ sudo ls /var/lib/docker/image/overlay2/imagedb/content/sga256
+ls: cannot access '/var/lib/docker/image/overlay2/imagedb/content/sga256': No such file or directory
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ $ docker run -d -p 5000:5000 --restart always --name registry registry:2
+bash: $: command not found...
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ cd
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ docker run -d -p 5000:5000 --restart always --name registry registry:2
+Unable to find image 'registry:2' locally
+2: Pulling from library/registry
+44cf07d57ee4: Pull complete 
+bbbdd6c6894b: Pull complete 
+8e82f80af0de: Pull complete 
+3493bf46cdec: Pull complete 
+6d464ea18732: Pull complete 
+Digest: sha256:a3d8aaa63ed8681a604f1dea0aa03f100d5895b6a58ace528858a7b332415373
+Status: Downloaded newer image for registry:2
+79c265decb54c373870cb4e8c503657b1432e6a90fc7aa5a2ec37aa06d068109
+rashmika@adsl-dynamic-ipv6:~$ docker image ls
+REPOSITORY                      TAG            IMAGE ID       CREATED         SIZE
+next                            v1             ca754666fcb3   8 hours ago     2.36GB
+dinidurashmika/mainrepository   nginx-latest   c3b0bc95719b   2 weeks ago     48.2MB
+dinidurashmika/nginx            latest         c3b0bc95719b   2 weeks ago     48.2MB
+testdata-web                    latest         e84a5db31bef   2 weeks ago     48.2MB
+alpine                          latest         cea2ff433c61   3 weeks ago     8.31MB
+gcr.io/k8s-minikube/kicbase     v0.0.47        795ea6a69ce6   5 weeks ago     1.31GB
+kindest/node                    <none>         d6b20550c77b   5 weeks ago     1.07GB
+nginx                           alpine         6769dc3a703c   2 months ago    48.2MB
+nginx                           latest         be69f2940aaf   2 months ago    192MB
+hello-world                     latest         74cc54e27dc4   5 months ago    10.1kB
+kindest/node                    v1.29.2        09c50567d34e   16 months ago   956MB
+registry                        2              26b2eb03618e   21 months ago   25.4MB
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE        COMMAND                  CREATED         STATUS         PORTS                                         NAMES
+79c265decb54   registry:2   "/entrypoint.sh /etc…"   3 minutes ago   Up 3 minutes   0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp   registry
+3ec31554c60d   next:v1      "docker-entrypoint.s…"   8 hours ago     Up 8 hours     0.0.0.0:8080->3000/tcp, [::]:8080->3000/tcp   my-first-next
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ docker container run -d -p 5000:5000 --restart=always --name=registy registry:2
+a50fb7ff764b60f84ce750a73f53320ac4401cda5ede3c323d7da8e8012b572d
+docker: Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint registy (6257dce61aec0abe632c1c89ebd3093864d0d21fb4b986949124b49ed7616831): Bind for 0.0.0.0:5000 failed: port is already allocated
+
+Run 'docker run --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ container ls
+bash: container: command not found...
+^[[A^[[A^Crashmika@adsl-dynamic-ipv6:~$ docker container run -d -p 5000:5000 --restart=always --name=registy-container registry:2
+80159adad251088633b9bc8a31f11c37589099d115c7ed382d11b5989327bd77
+docker: Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint registy-container (33a43703768c7a9a7e4f4c115b3b1ed511a81465d760bf13862b0c4bdba0543b): Bind for 0.0.0.0:5000 failed: port is already allocated
+
+Run 'docker run --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE        COMMAND                  CREATED        STATUS        PORTS                                         NAMES
+79c265decb54   registry:2   "/entrypoint.sh /etc…"   16 hours ago   Up 16 hours   0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp   registry
+3ec31554c60d   next:v1      "docker-entrypoint.s…"   24 hours ago   Up 24 hours   0.0.0.0:8080->3000/tcp, [::]:8080->3000/tcp   my-first-next
+rashmika@adsl-dynamic-ipv6:~$ docker container run -d -p 5001:5000 --restart=always --name=registy-container registry:2
+docker: Error response from daemon: Conflict. The container name "/registy-container" is already in use by container "80159adad251088633b9bc8a31f11c37589099d115c7ed382d11b5989327bd77". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container rm -f registy-container 
+registy-container
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE        COMMAND                  CREATED        STATUS        PORTS                                         NAMES
+79c265decb54   registry:2   "/entrypoint.sh /etc…"   16 hours ago   Up 16 hours   0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp   registry
+3ec31554c60d   next:v1      "docker-entrypoint.s…"   24 hours ago   Up 24 hours   0.0.0.0:8080->3000/tcp, [::]:8080->3000/tcp   my-first-next
+rashmika@adsl-dynamic-ipv6:~$ docker container ls -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS                      PORTS                                         NAMES
+a50fb7ff764b   registry:2     "/entrypoint.sh /etc…"   3 minutes ago   Created                                                                   registy
+79c265decb54   registry:2     "/entrypoint.sh /etc…"   16 hours ago    Up 16 hours                 0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp   registry
+3ec31554c60d   next:v1        "docker-entrypoint.s…"   24 hours ago    Up 24 hours                 0.0.0.0:8080->3000/tcp, [::]:8080->3000/tcp   my-first-next
+2ea047c2aa3b   alpine         "/bin/sh"                47 hours ago    Exited (137) 24 hours ago                                                 my-alpine
+a7b18ad62cce   nginx:alpine   "/docker-entrypoint.…"   2 days ago      Exited (0) 24 hours ago                                                   my-live05-nginx
+5d3064ca9bfb   nginx:alpine   "/docker-entrypoint.…"   2 days ago      Exited (0) 24 hours ago                                                   my-live04-nginx
+de6c1ffa1735   nginx:alpine   "/docker-entrypoint.…"   2 days ago      Created                                                                   my-live03-nginx
+643f9ee66d6c   nginx:alpine   "/docker-entrypoint.…"   2 days ago      Exited (0) 24 hours ago                                                   my-live01-nginx
+779e886b6bd7   nginx:alpine   "/docker-entrypoint.…"   2 days ago      Exited (0) 2 days ago                                                     my-live-nginx
+f20834d45b88   nginx:alpine   "/docker-entrypoint.…"   2 days ago      Exited (0) 24 hours ago                                                   my-new-nginx
+rashmika@adsl-dynamic-ipv6:~$ docker container rm -f registy 
+registy
+rashmika@adsl-dynamic-ipv6:~$ docker container ls -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED        STATUS                      PORTS                                         NAMES
+79c265decb54   registry:2     "/entrypoint.sh /etc…"   16 hours ago   Up 16 hours                 0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp   registry
+3ec31554c60d   next:v1        "docker-entrypoint.s…"   24 hours ago   Up 24 hours                 0.0.0.0:8080->3000/tcp, [::]:8080->3000/tcp   my-first-next
+2ea047c2aa3b   alpine         "/bin/sh"                47 hours ago   Exited (137) 24 hours ago                                                 my-alpine
+a7b18ad62cce   nginx:alpine   "/docker-entrypoint.…"   2 days ago     Exited (0) 24 hours ago                                                   my-live05-nginx
+5d3064ca9bfb   nginx:alpine   "/docker-entrypoint.…"   2 days ago     Exited (0) 24 hours ago                                                   my-live04-nginx
+de6c1ffa1735   nginx:alpine   "/docker-entrypoint.…"   2 days ago     Created                                                                   my-live03-nginx
+643f9ee66d6c   nginx:alpine   "/docker-entrypoint.…"   2 days ago     Exited (0) 24 hours ago                                                   my-live01-nginx
+779e886b6bd7   nginx:alpine   "/docker-entrypoint.…"   2 days ago     Exited (0) 2 days ago                                                     my-live-nginx
+f20834d45b88   nginx:alpine   "/docker-entrypoint.…"   2 days ago     Exited (0) 24 hours ago                                                   my-new-nginx
+rashmika@adsl-dynamic-ipv6:~$ docker container image ls
+docker: unknown command: docker container image
+
+Usage:  docker container
+
+Run 'docker container --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker image ls
+REPOSITORY                      TAG            IMAGE ID       CREATED         SIZE
+next                            v1             ca754666fcb3   24 hours ago    2.36GB
+testdata-web                    latest         e84a5db31bef   2 weeks ago     48.2MB
+dinidurashmika/mainrepository   nginx-latest   c3b0bc95719b   2 weeks ago     48.2MB
+dinidurashmika/nginx            latest         c3b0bc95719b   2 weeks ago     48.2MB
+alpine                          latest         cea2ff433c61   3 weeks ago     8.31MB
+gcr.io/k8s-minikube/kicbase     v0.0.47        795ea6a69ce6   5 weeks ago     1.31GB
+kindest/node                    <none>         d6b20550c77b   5 weeks ago     1.07GB
+nginx                           latest         be69f2940aaf   2 months ago    192MB
+nginx                           alpine         6769dc3a703c   2 months ago    48.2MB
+hello-world                     latest         74cc54e27dc4   5 months ago    10.1kB
+kindest/node                    v1.29.2        09c50567d34e   16 months ago   956MB
+registry                        2              26b2eb03618e   21 months ago   25.4MB
+rashmika@adsl-dynamic-ipv6:~$ docker image push nginx:latest
+The push refers to repository [docker.io/library/nginx]
+941dd9dd8ee4: Layer already exists 
+f6e33ee35fd0: Layer already exists 
+9fd8b974f616: Layer already exists 
+a8b606cdf152: Layer already exists 
+cb857378ec55: Layer already exists 
+deb7d8874f38: Layer already exists 
+ace34d1d784c: Layer already exists 
+errors:
+denied: requested access to the resource is denied
+unauthorized: authentication required
+
+rashmika@adsl-dynamic-ipv6:~$ docker image tag be69f2940aaf localhost:5000/nginx:latest
+rashmika@adsl-dynamic-ipv6:~$ docker image ls
+REPOSITORY                      TAG            IMAGE ID       CREATED         SIZE
+next                            v1             ca754666fcb3   24 hours ago    2.36GB
+testdata-web                    latest         e84a5db31bef   2 weeks ago     48.2MB
+dinidurashmika/mainrepository   nginx-latest   c3b0bc95719b   2 weeks ago     48.2MB
+dinidurashmika/nginx            latest         c3b0bc95719b   2 weeks ago     48.2MB
+alpine                          latest         cea2ff433c61   3 weeks ago     8.31MB
+gcr.io/k8s-minikube/kicbase     v0.0.47        795ea6a69ce6   5 weeks ago     1.31GB
+kindest/node                    <none>         d6b20550c77b   5 weeks ago     1.07GB
+nginx                           alpine         6769dc3a703c   2 months ago    48.2MB
+nginx                           latest         be69f2940aaf   2 months ago    192MB
+localhost:5000/nginx            latest         be69f2940aaf   2 months ago    192MB
+hello-world                     latest         74cc54e27dc4   5 months ago    10.1kB
+kindest/node                    v1.29.2        09c50567d34e   16 months ago   956MB
+registry                        2              26b2eb03618e   21 months ago   25.4MB
+rashmika@adsl-dynamic-ipv6:~$ docker image push 74cc54e27dc4 dinidurashmika/hello-world:latest
+docker: 'docker image push' requires 1 argument
+
+Usage:  docker image push [OPTIONS] NAME[:TAG]
+
+Run 'docker image push --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker push 74cc54e27dc4 dinidurashmika/hello-world:latest
+docker: 'docker push' requires 1 argument
+
+Usage:  docker push [OPTIONS] NAME[:TAG]
+
+Run 'docker push --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker push 74cc54e27dc4 dinidurashmika/hello-world
+docker: 'docker push' requires 1 argument
+
+Usage:  docker push [OPTIONS] NAME[:TAG]
+
+Run 'docker push --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker image push 74cc54e27dc4 dinidurashmika/hello-world
+docker: 'docker image push' requires 1 argument
+
+Usage:  docker image push [OPTIONS] NAME[:TAG]
+
+Run 'docker image push --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker image push dinidurashmika/hello-world
+Using default tag: latest
+The push refers to repository [docker.io/dinidurashmika/hello-world]
+An image does not exist locally with the tag: dinidurashmika/hello-world
+rashmika@adsl-dynamic-ipv6:~$ docker image ls
+REPOSITORY                      TAG            IMAGE ID       CREATED         SIZE
+next                            v1             ca754666fcb3   24 hours ago    2.36GB
+dinidurashmika/nginx            latest         c3b0bc95719b   2 weeks ago     48.2MB
+dinidurashmika/mainrepository   nginx-latest   c3b0bc95719b   2 weeks ago     48.2MB
+testdata-web                    latest         e84a5db31bef   2 weeks ago     48.2MB
+alpine                          latest         cea2ff433c61   3 weeks ago     8.31MB
+gcr.io/k8s-minikube/kicbase     v0.0.47        795ea6a69ce6   5 weeks ago     1.31GB
+kindest/node                    <none>         d6b20550c77b   5 weeks ago     1.07GB
+nginx                           alpine         6769dc3a703c   2 months ago    48.2MB
+nginx                           latest         be69f2940aaf   2 months ago    192MB
+localhost:5000/nginx            latest         be69f2940aaf   2 months ago    192MB
+hello-world                     latest         74cc54e27dc4   5 months ago    10.1kB
+kindest/node                    v1.29.2        09c50567d34e   16 months ago   956MB
+registry                        2              26b2eb03618e   21 months ago   25.4MB
+rashmika@adsl-dynamic-ipv6:~$ docker pull dinidurashmika/hello-world
+Using default tag: latest
+Error response from daemon: pull access denied for dinidurashmika/hello-world, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+rashmika@adsl-dynamic-ipv6:~$ docker login
+
+USING WEB-BASED LOGIN
+
+i Info → To sign in with credentials on the command line, use 'docker login -u <username>'
+         
+
+Your one-time device confirmation code is: RGBK-BNDP
+Press ENTER to open your browser or submit your device code here: https://login.docker.com/activate
+
+Waiting for authentication in the browser…
+
+Kodikara*4531
+^X^Clogin canceled
+rashmika@adsl-dynamic-ipv6:~$ docker pull dinidurashmika/hello-world
+Using default tag: latest
+Error response from daemon: pull access denied for dinidurashmika/hello-world, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+rashmika@adsl-dynamic-ipv6:~$ docker image push dinidurashmika/hello-world
+Using default tag: latest
+The push refers to repository [docker.io/dinidurashmika/hello-world]
+An image does not exist locally with the tag: dinidurashmika/hello-world
+rashmika@adsl-dynamic-ipv6:~$ docker image run -d -p 5001:5000 --restart=always --name hello-world hello-world:latest
+unknown shorthand flag: 'd' in -d
+
+Usage:  docker image
+
+Run 'docker image --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker image tag dinidurashmika/hello-world
+docker: 'docker image tag' requires 2 arguments
+
+Usage:  docker image tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+
+Run 'docker image tag --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker image tag 74cc54e27dc4 dinidurashmika/hello-world
+rashmika@adsl-dynamic-ipv6:~$ docker image ls 
+REPOSITORY                      TAG            IMAGE ID       CREATED         SIZE
+next                            v1             ca754666fcb3   25 hours ago    2.36GB
+testdata-web                    latest         e84a5db31bef   2 weeks ago     48.2MB
+dinidurashmika/mainrepository   nginx-latest   c3b0bc95719b   2 weeks ago     48.2MB
+dinidurashmika/nginx            latest         c3b0bc95719b   2 weeks ago     48.2MB
+alpine                          latest         cea2ff433c61   3 weeks ago     8.31MB
+gcr.io/k8s-minikube/kicbase     v0.0.47        795ea6a69ce6   5 weeks ago     1.31GB
+kindest/node                    <none>         d6b20550c77b   5 weeks ago     1.07GB
+nginx                           latest         be69f2940aaf   2 months ago    192MB
+localhost:5000/nginx            latest         be69f2940aaf   2 months ago    192MB
+nginx                           alpine         6769dc3a703c   2 months ago    48.2MB
+dinidurashmika/hello-world      latest         74cc54e27dc4   5 months ago    10.1kB
+hello-world                     latest         74cc54e27dc4   5 months ago    10.1kB
+kindest/node                    v1.29.2        09c50567d34e   16 months ago   956MB
+registry                        2              26b2eb03618e   21 months ago   25.4MB
+rashmika@adsl-dynamic-ipv6:~$ docker image push dinidurashmika/hello-world
+Using default tag: latest
+The push refers to repository [docker.io/dinidurashmika/hello-world]
+63a41026379f: Preparing 
+denied: requested access to the resource is denied
+rashmika@adsl-dynamic-ipv6:~$ docker image push dinidurashmika/hello-world
+Using default tag: latest
+The push refers to repository [docker.io/dinidurashmika/hello-world]
+63a41026379f: Preparing 
+denied: requested access to the resource is denied
+rashmika@adsl-dynamic-ipv6:~$ docker image push dinidurashmika/mainrepository/dinidurashmika/hello-world
+Using default tag: latest
+The push refers to repository [docker.io/dinidurashmika/mainrepository/dinidurashmika/hello-world]
+An image does not exist locally with the tag: dinidurashmika/mainrepository/dinidurashmika/hello-world
+rashmika@adsl-dynamic-ipv6:~$ docker image tag 74cc54e27dc4 dinidurashmika/mainrepository:hello-world
+rashmika@adsl-dynamic-ipv6:~$ docker image ls
+REPOSITORY                      TAG            IMAGE ID       CREATED         SIZE
+next                            v1             ca754666fcb3   25 hours ago    2.36GB
+dinidurashmika/mainrepository   nginx-latest   c3b0bc95719b   2 weeks ago     48.2MB
+dinidurashmika/nginx            latest         c3b0bc95719b   2 weeks ago     48.2MB
+testdata-web                    latest         e84a5db31bef   2 weeks ago     48.2MB
+alpine                          latest         cea2ff433c61   3 weeks ago     8.31MB
+gcr.io/k8s-minikube/kicbase     v0.0.47        795ea6a69ce6   5 weeks ago     1.31GB
+kindest/node                    <none>         d6b20550c77b   5 weeks ago     1.07GB
+nginx                           alpine         6769dc3a703c   2 months ago    48.2MB
+nginx                           latest         be69f2940aaf   2 months ago    192MB
+localhost:5000/nginx            latest         be69f2940aaf   2 months ago    192MB
+hello-world                     latest         74cc54e27dc4   5 months ago    10.1kB
+dinidurashmika/hello-world      latest         74cc54e27dc4   5 months ago    10.1kB
+dinidurashmika/mainrepository   hello-world    74cc54e27dc4   5 months ago    10.1kB
+kindest/node                    v1.29.2        09c50567d34e   16 months ago   956MB
+registry                        2              26b2eb03618e   21 months ago   25.4MB
+rashmika@adsl-dynamic-ipv6:~$ docker push dinidurashmika/mainrepository:hello-world
+The push refers to repository [docker.io/dinidurashmika/mainrepository]
+63a41026379f: Preparing 
+denied: requested access to the resource is denied
+rashmika@adsl-dynamic-ipv6:~$ docker login
+
+USING WEB-BASED LOGIN
+
+i Info → To sign in with credentials on the command line, use 'docker login -u <username>'
+         
+
+Your one-time device confirmation code is: MHFH-JCJF
+Press ENTER to open your browser or submit your device code here: https://login.docker.com/activate
+
+Waiting for authentication in the browser…
+
+
+WARNING! Your credentials are stored unencrypted in '/home/rashmika/.docker/config.json'.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/go/credential-store/
+
+Login Succeeded
+rashmika@adsl-dynamic-ipv6:~$ docker push dinidurashmika/mainrepository:hello-world
+The push refers to repository [docker.io/dinidurashmika/mainrepository]
+63a41026379f: Mounted from library/hello-world 
+^[[Ahello-world: digest: sha256:7565f2c7034d87673c5ddc3b1b8e97f8da794c31d9aa73ed26afffa1c8194889 size: 524
+rashmika@adsl-dynamic-ipv6:~$ docker image push dinidurashmika/hello-world
+Using default tag: latest
+
+The push refers to repository [docker.io/dinidurashmika/hello-world]
+63a41026379f: Mounted from dinidurashmika/mainrepository 
+latest: digest: sha256:7565f2c7034d87673c5ddc3b1b8e97f8da794c31d9aa73ed26afffa1c8194889 size: 524
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ ducker push localhost:5000/nginx
+bash: ducker: command not found...
+^[[A^C
+rashmika@adsl-dynamic-ipv6:~$ docker push localhost:5000/nginx
+Using default tag: latest
+The push refers to repository [localhost:5000/nginx]
+941dd9dd8ee4: Pushed 
+f6e33ee35fd0: Pushed 
+9fd8b974f616: Pushed 
+a8b606cdf152: Pushed 
+cb857378ec55: Pushed 
+deb7d8874f38: Pushed 
+ace34d1d784c: Pushed 
+latest: digest: sha256:e5e2c4be5cea9bf49b2c976c65b4fca33d9d094b276a5e517d8e5748100a3c73 size: 1778
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image ls
+REPOSITORY                      TAG            IMAGE ID       CREATED         SIZE
+next                            v1             ca754666fcb3   26 hours ago    2.36GB
+dinidurashmika/mainrepository   nginx-latest   c3b0bc95719b   2 weeks ago     48.2MB
+dinidurashmika/nginx            latest         c3b0bc95719b   2 weeks ago     48.2MB
+testdata-web                    latest         e84a5db31bef   2 weeks ago     48.2MB
+alpine                          latest         cea2ff433c61   3 weeks ago     8.31MB
+gcr.io/k8s-minikube/kicbase     v0.0.47        795ea6a69ce6   5 weeks ago     1.31GB
+kindest/node                    <none>         d6b20550c77b   5 weeks ago     1.07GB
+nginx                           latest         be69f2940aaf   2 months ago    192MB
+localhost:5000/nginx            latest         be69f2940aaf   2 months ago    192MB
+nginx                           alpine         6769dc3a703c   2 months ago    48.2MB
+dinidurashmika/hello-world      latest         74cc54e27dc4   5 months ago    10.1kB
+dinidurashmika/mainrepository   hello-world    74cc54e27dc4   5 months ago    10.1kB
+hello-world                     latest         74cc54e27dc4   5 months ago    10.1kB
+kindest/node                    v1.29.2        09c50567d34e   16 months ago   956MB
+registry                        2              26b2eb03618e   21 months ago   25.4MB
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image tag localhost:5000/hello-world
+docker: 'docker image tag' requires 2 arguments
+
+Usage:  docker image tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+
+Run 'docker image tag --help' for more information
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image tag 74cc54e27dc4 localhost:5000/hello-world
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker image ls
+REPOSITORY                      TAG            IMAGE ID       CREATED         SIZE
+next                            v1             ca754666fcb3   26 hours ago    2.36GB
+dinidurashmika/mainrepository   nginx-latest   c3b0bc95719b   2 weeks ago     48.2MB
+dinidurashmika/nginx            latest         c3b0bc95719b   2 weeks ago     48.2MB
+testdata-web                    latest         e84a5db31bef   2 weeks ago     48.2MB
+alpine                          latest         cea2ff433c61   3 weeks ago     8.31MB
+gcr.io/k8s-minikube/kicbase     v0.0.47        795ea6a69ce6   5 weeks ago     1.31GB
+kindest/node                    <none>         d6b20550c77b   5 weeks ago     1.07GB
+nginx                           alpine         6769dc3a703c   2 months ago    48.2MB
+localhost:5000/nginx            latest         be69f2940aaf   2 months ago    192MB
+nginx                           latest         be69f2940aaf   2 months ago    192MB
+dinidurashmika/hello-world      latest         74cc54e27dc4   5 months ago    10.1kB
+dinidurashmika/mainrepository   hello-world    74cc54e27dc4   5 months ago    10.1kB
+hello-world                     latest         74cc54e27dc4   5 months ago    10.1kB
+localhost:5000/hello-world      latest         74cc54e27dc4   5 months ago    10.1kB
+kindest/node                    v1.29.2        09c50567d34e   16 months ago   956MB
+registry                        2              26b2eb03618e   21 months ago   25.4MB
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ docker push localhost:5000/hello-world
+Using default tag: latest
+The push refers to repository [localhost:5000/hello-world]
+63a41026379f: Pushed 
+latest: digest: sha256:7565f2c7034d87673c5ddc3b1b8e97f8da794c31d9aa73ed26afffa1c8194889 size: 524
+rashmika@adsl-dynamic-ipv6:~/Documents/my-app$ 
+rashmika@adsl-dynamic-ipv6:~$ docker container exec -it registry /bin/sh
+/ # ls /var/lib/docker/
+ls: /var/lib/docker/: No such file or directory
+/ # ls /var/lib/registry/docker/
+registry
+/ # ls /var/lib/registry/docker/registry/
+v2
+/ # ls /var/lib/registry/docker/registry/v2/
+blobs         repositories
+/ # ls /var/lib/registry/docker/registry/v2/repositories/
+nginx
+/ # ls /var/lib/registry/docker/registry/v2/repositories/
+hello-world  nginx
+/ #  exit
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ docker container run -d -p -name proper-registry 5001:5000 --restart always -v /my-reg:/var/lib/registry/ registry:2
+docker: invalid containerPort: -name
+
+Run 'docker run --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container run -d -p --name proper-registry 5001:5000 --restart always -v /my-reg:/var/lib/registry/ registry:2
+docker: invalid containerPort: --name
+
+Run 'docker run --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ ^C
+rashmika@adsl-dynamic-ipv6:~$ docker container run -d -p 5001:5000 --name proper-registry --restart always -v /my-reg:/var/lib/registry/ registry:2
+9eb4b0dbbcc0c56bcb98c7bb876f597d44420c4f2b76aada7b3fa5a9ee832acb
+rashmika@adsl-dynamic-ipv6:~$ docker container ls
+CONTAINER ID   IMAGE        COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+9eb4b0dbbcc0   registry:2   "/entrypoint.sh /etc…"   47 seconds ago   Up 46 seconds   0.0.0.0:5001->5000/tcp, [::]:5001->5000/tcp   proper-registry
+79c265decb54   registry:2   "/entrypoint.sh /etc…"   18 hours ago     Up 18 hours     0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp   registry
+3ec31554c60d   next:v1      "docker-entrypoint.s…"   26 hours ago     Up 26 hours     0.0.0.0:8080->3000/tcp, [::]:8080->3000/tcp   my-first-next
+rashmika@adsl-dynamic-ipv6:~$ docker container exec -it registry /bin/sh
+/ # ls /var/lib/registry/
+docker
+/ # ls /my-reg:/var/lib/registry/
+ls: /my-reg:/var/lib/registry/: No such file or directory
+/ # ls /my-reg
+ls: /my-reg: No such file or directory
+/ # ls /var/lib/registry/
+docker
+/ # ls /var/lib/registry/dock
+ls: /var/lib/registry/dock: No such file or directory
+/ # ls /var/lib/registry/docker
+registry
+/ # exit
+rashmika@adsl-dynamic-ipv6:~$ ls /my-reg:/var/lib/registry/
+ls: cannot access '/my-reg:/var/lib/registry/': No such file or directory
+rashmika@adsl-dynamic-ipv6:~$ ls /var/lib/registry/
+ls: cannot access '/var/lib/registry/': No such file or directory
+rashmika@adsl-dynamic-ipv6:~$ docker image tag 74cc54e27dc4 localhost:5001/hello-world
+rashmika@adsl-dynamic-ipv6:~$ docker image ls
+REPOSITORY                      TAG            IMAGE ID       CREATED         SIZE
+next                            v1             ca754666fcb3   26 hours ago    2.36GB
+testdata-web                    latest         e84a5db31bef   2 weeks ago     48.2MB
+dinidurashmika/mainrepository   nginx-latest   c3b0bc95719b   2 weeks ago     48.2MB
+dinidurashmika/nginx            latest         c3b0bc95719b   2 weeks ago     48.2MB
+alpine                          latest         cea2ff433c61   3 weeks ago     8.31MB
+gcr.io/k8s-minikube/kicbase     v0.0.47        795ea6a69ce6   5 weeks ago     1.31GB
+kindest/node                    <none>         d6b20550c77b   5 weeks ago     1.07GB
+nginx                           latest         be69f2940aaf   2 months ago    192MB
+localhost:5000/nginx            latest         be69f2940aaf   2 months ago    192MB
+nginx                           alpine         6769dc3a703c   2 months ago    48.2MB
+localhost:5000/hello-world      latest         74cc54e27dc4   5 months ago    10.1kB
+localhost:5001/hello-world      latest         74cc54e27dc4   5 months ago    10.1kB
+dinidurashmika/hello-world      latest         74cc54e27dc4   5 months ago    10.1kB
+dinidurashmika/mainrepository   hello-world    74cc54e27dc4   5 months ago    10.1kB
+hello-world                     latest         74cc54e27dc4   5 months ago    10.1kB
+kindest/node                    v1.29.2        09c50567d34e   16 months ago   956MB
+registry                        2              26b2eb03618e   21 months ago   25.4MB
+rashmika@adsl-dynamic-ipv6:~$ docker push localhost:5001/hello-world
+Using default tag: latest
+The push refers to repository [localhost:5001/hello-world]
+63a41026379f: Pushed 
+latest: digest: sha256:7565f2c7034d87673c5ddc3b1b8e97f8da794c31d9aa73ed26afffa1c8194889 size: 524
+rashmika@adsl-dynamic-ipv6:~$ docker continer inspect proper-registry
+docker: unknown command: docker continer
+
+Run 'docker --help' for more information
+rashmika@adsl-dynamic-ipv6:~$ docker container inspect proper-registry
+[
+    {
+        "Id": "9eb4b0dbbcc0c56bcb98c7bb876f597d44420c4f2b76aada7b3fa5a9ee832acb",
+        "Created": "2025-06-27T06:28:31.148320702Z",
+        "Path": "/entrypoint.sh",
+        "Args": [
+            "/etc/docker/registry/config.yml"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 135202,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2025-06-27T06:28:31.58546283Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:26b2eb03618e749084668eaff68cff8f81dda12d06ac641be7a6398b82a6f25b",
+        "ResolvConfPath": "/var/lib/docker/containers/9eb4b0dbbcc0c56bcb98c7bb876f597d44420c4f2b76aada7b3fa5a9ee832acb/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/9eb4b0dbbcc0c56bcb98c7bb876f597d44420c4f2b76aada7b3fa5a9ee832acb/hostname",
+        "HostsPath": "/var/lib/docker/containers/9eb4b0dbbcc0c56bcb98c7bb876f597d44420c4f2b76aada7b3fa5a9ee832acb/hosts",
+        "LogPath": "/var/lib/docker/containers/9eb4b0dbbcc0c56bcb98c7bb876f597d44420c4f2b76aada7b3fa5a9ee832acb/9eb4b0dbbcc0c56bcb98c7bb876f597d44420c4f2b76aada7b3fa5a9ee832acb-json.log",
+        "Name": "/proper-registry",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/my-reg:/var/lib/registry/"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {
+                "5000/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "5001"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "always",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                26,
+                150
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "9eb4b0dbbcc0c56bcb98c7bb876f597d44420c4f2b76aada7b3fa5a9ee832acb",
+                "LowerDir": "/var/lib/docker/overlay2/abadbb2be3e57f98223ec5bf36aa265fdbd3cdcc2139a2dacc88754e0b0704ee-init/diff:/var/lib/docker/overlay2/284078a42ed8dfad2d89ad1fb1cad7aa55465c39a521c0dc1df70ab2a2f97335/diff:/var/lib/docker/overlay2/298d2b5793ab7eee5152bb2aa0c0f9877958b74320719a0f6d280a451c4ef0ca/diff:/var/lib/docker/overlay2/4ddd86f3da73c9d6e510e0bdbf0e108c890b5a047821a7fcbafce6890ff3d581/diff:/var/lib/docker/overlay2/b2177e84796495ff32d6d6b091efff68036baafff4cd370fe76daea8c62b9414/diff:/var/lib/docker/overlay2/e2002699a4da8a20e20b1d79ee02e0de1a728641e0fadaf7cf93ea33fe845d4f/diff",
+                "MergedDir": "/var/lib/docker/overlay2/abadbb2be3e57f98223ec5bf36aa265fdbd3cdcc2139a2dacc88754e0b0704ee/merged",
+                "UpperDir": "/var/lib/docker/overlay2/abadbb2be3e57f98223ec5bf36aa265fdbd3cdcc2139a2dacc88754e0b0704ee/diff",
+                "WorkDir": "/var/lib/docker/overlay2/abadbb2be3e57f98223ec5bf36aa265fdbd3cdcc2139a2dacc88754e0b0704ee/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/my-reg",
+                "Destination": "/var/lib/registry",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "9eb4b0dbbcc0",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "5000/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/etc/docker/registry/config.yml"
+            ],
+            "Image": "registry:2",
+            "Volumes": {
+                "/var/lib/registry": {}
+            },
+            "WorkingDir": "/",
+            "Entrypoint": [
+                "/entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "f39586c4de72a57d6415815709f7b3553bb271ba1ac1f1730d61203dc3f14f6e",
+            "SandboxKey": "/var/run/docker/netns/f39586c4de72",
+            "Ports": {
+                "5000/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "5001"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "5001"
+                    }
+                ]
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "4ed6fdae1c1889c862cfd5abb12b9875f18fab808feed6727a45f0d60004bcdb",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.4",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "66:94:f1:fb:16:ca",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "MacAddress": "66:94:f1:fb:16:ca",
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "5f86a1a343f2e76b1c8e885287a4c8a0caff7ed6c4de8c569ab20e9af68d3ae5",
+                    "EndpointID": "4ed6fdae1c1889c862cfd5abb12b9875f18fab808feed6727a45f0d60004bcdb",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.4",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        }
+    }
+]
+rashmika@adsl-dynamic-ipv6:~$ netstat -plant
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:5001            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:5000            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.54:53           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:27500           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:8080            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:5355            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:8080          127.0.0.1:54188         ESTABLISHED -                   
+tcp        0      0 192.168.1.93:52958      34.107.243.93:443       ESTABLISHED 45044/firefox       
+tcp        0      0 172.17.0.1:52440        172.17.0.2:3000         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:54188         127.0.0.1:8080          ESTABLISHED 45044/firefox       
+tcp6       0      0 :::5001                 :::*                    LISTEN      -                   
+tcp6       0      0 :::5000                 :::*                    LISTEN      -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+tcp6       0      0 :::80                   :::*                    LISTEN      -                   
+tcp6       0      0 :::8080                 :::*                    LISTEN      -                   
+tcp6       0      0 :::5355                 :::*                    LISTEN      -                   
+tcp6       0      0 ::1:631                 :::*                    LISTEN      -                   
+tcp6       0      0 2402:d000:8134:1d:57720 2600:1f18:2148:bc02:443 ESTABLISHED 45044/firefox       
+tcp6       0      0 2402:d000:8134:1d:57736 2600:1f18:2148:bc02:443 TIME_WAIT   -                   
+rashmika@adsl-dynamic-ipv6:~$ ls /
+afs  bin  boot  dev  Documents  etc  home  image  lib  lib64  media  mnt  my-reg  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+rashmika@adsl-dynamic-ipv6:~$ ld /my-reg
+ld: read in flex scanner failed
+rashmika@adsl-dynamic-ipv6:~$ ls /my-reg
+docker
+rashmika@adsl-dynamic-ipv6:~$ ls /my-reg/docker
+registry
+rashmika@adsl-dynamic-ipv6:~$ ls /my-reg/docker/registry
+v2
+rashmika@adsl-dynamic-ipv6:~$ ls /my-reg/docker/registry/v2
+blobs  repositories
+rashmika@adsl-dynamic-ipv6:~$ ls /my-reg/docker/registry/v2/repositories/
+hello-world
+rashmika@adsl-dynamic-ipv6:~$ 
+rashmika@adsl-dynamic-ipv6:~$ ^C
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+
 
